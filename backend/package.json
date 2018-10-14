@@ -1,0 +1,49 @@
+{
+	"name": "noc-berlin-nue-tools",
+	"version": "0.1.0",
+	"main": "src/index.js",
+	"author": "Guido Drahota und Robert Enk",
+	"private": true,
+	"scripts": {
+		"dev": "NODE_ENV=development NO_DEPRECATION=tedious nodemon src/index.js --exec babel-node",
+		"build": "NODE_ENV=production babel src -d dist",
+		"lint": "eslint src",
+		"oracle:init": "docker create -v /u01/app/oracle --name oracle-volume sath89/oracle-xe-11g",
+		"oracle:start": "docker run --name noc_oracle -d -p 9000:8080 -p 1521:1521 --volumes-from oracle-volume sath89/oracle-xe-11g",
+		"mssql:init": "docker create -v /var/opt/mssql --name mssql-volume microsoft/mssql-server-linux:2017-latest",
+		"mssql:start": "docker run --name noc_mssql -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Test@123' -p 1433:1433 --volumes-from mssql-volume -d microsoft/mssql-server-linux:2017-latest",
+		"mysql:init": "docker create -v /var/lib/mysql --name mysql-volume mysql:5.5.61",
+		"mysql:start": "docker run --name noc_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 --volumes-from mysql-volume -d mysql:5.5.61",
+		"jest": "node node_modules/.bin/jest --runInBand --no-cache --watch",
+		"jest:clearcache": "node node_modules/.bin/jest --clearCache"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.0.0-beta.52",
+		"@babel/core": "^7.0.0-beta.52",
+		"@babel/node": "^7.0.0-beta.52",
+		"@babel/preset-env": "^7.0.0-beta.52",
+		"babel-core": "^7.0.0-0",
+		"babel-jest": "^23.2.0",
+		"dotenv": "^6.0.0",
+		"eslint": "^5.1.0",
+		"jest": "^23.3.0",
+		"nodemon": "^1.17.5"
+	},
+	"dependencies": {
+		"@mdi/font": "^2.5.94",
+		"activedirectory": "^0.7.2",
+		"async": "^2.6.1",
+		"body-parser": "^1.18.3",
+		"connect-history-api-fallback": "^1.5.0",
+		"cron": "^1.3.0",
+		"express": "^4.16.3",
+		"moment-timezone": "^0.5.21",
+		"mongoose": "^5.2.2",
+		"mssql": "^4.1.0",
+		"mysql": "^2.16.0",
+		"oracledb": "^2.3.0",
+		"serve-static": "^1.13.2",
+		"socket.io": "^2.1.1",
+		"uuid": "^3.3.2"
+	}
+}

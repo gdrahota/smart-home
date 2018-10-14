@@ -1,0 +1,1542 @@
+{
+  "_id": {
+    "$oid": "57ad94464b461492503dd8d5"
+  },
+  "foreignId": {
+    "$numberInt": "1"
+  },
+  "facility_id": "BS_12266",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1471000200000"
+    }
+  },
+  "person": "???",
+  "purpose": "Zutritt/Sonstige",
+  "createdBy": "ivr",
+  "status": "betreten",
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "erdfadagd Guido's Test"
+}
+{
+  "_id": {
+    "$oid": "57bd41760b0fe4fb09a7e160"
+  },
+  "facility_id": "BS_14406",
+  "purpose": "Schädlingsbekämpfung",
+  "person": "meier 0160 97481111",
+  "batteryTestStatus": "",
+  "notes": "wichtig",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472020854742"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd4d830b0fe4fb09a7e162"
+  },
+  "facility_id": "B_BZCC01B_XNO0",
+  "purpose": "Wartung/Inspektion",
+  "person": "016097481222",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472023939607"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd4ecc0b0fe4fb09a7e163"
+  },
+  "facility_id": "BS_15493",
+  "purpose": "große Wartung",
+  "person": "016097481222",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472024268864"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd5f2e0b0fe4fb09a7e168"
+  },
+  "facility_id": "BS_24995",
+  "purpose": "kleine Wartung",
+  "person": "088358544945",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472028462145"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd5f850b0fe4fb09a7e169"
+  },
+  "facility_id": "BS_25407",
+  "purpose": "Entstörung",
+  "person": "974817481795",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472028549839"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd5fd80b0fe4fb09a7e16a"
+  },
+  "facility_id": "K0364_U1",
+  "purpose": "große Wartung",
+  "person": "016097484349",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472028632557"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd602c0b0fe4fb09a7e16b"
+  },
+  "facility_id": "BS_22523",
+  "purpose": "große Wartung",
+  "person": "016097482862",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472028716270"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd60620b0fe4fb09a7e16c"
+  },
+  "facility_id": "K0528_U1",
+  "purpose": "Batteriearbeiten",
+  "person": "016097482974",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472028770568"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "ghgh"
+}
+{
+  "_id": {
+    "$oid": "57bd60ab0b0fe4fb09a7e16d"
+  },
+  "facility_id": "BS_17273",
+  "purpose": "große Wartung",
+  "person": "016097481738",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472028843109"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd62250b0fe4fb09a7e16f"
+  },
+  "facility_id": "BS_16326",
+  "purpose": "Entstörung",
+  "person": "016097481722",
+  "batteryTestStatus": "",
+  "notes": "EDS*79890",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472029221965"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd62b00b0fe4fb09a7e170"
+  },
+  "facility_id": "BS_25317",
+  "purpose": "Inspektion",
+  "person": "0173729 ",
+  "batteryTestStatus": "",
+  "notes": "KCC",
+  "createdBy": "manually by user",
+  "status": "Info",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472029360684"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd64b40b0fe4fb09a7e171"
+  },
+  "facility_id": "BS_22479",
+  "purpose": "Entstörung",
+  "person": "016097482303",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472029876154"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd800b0b0fe4fb09a7e172"
+  },
+  "foreignId": {
+    "$numberInt": "3"
+  },
+  "facility_id": "BS_14406",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472044074423"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "Zutritt/Sonstige",
+  "createdBy": "ivr",
+  "status": "betreten",
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "asfaslfasfaslkfjkafla\nafaskdfjlaskfaö\nsadasdadsasda\nasdasdadads\nasdasdasd"
+}
+{
+  "_id": {
+    "$oid": "57bd80470b0fe4fb09a7e174"
+  },
+  "foreignId": {
+    "$numberInt": "4"
+  },
+  "facility_id": "BS_13854",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472044135066"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "Zutritt/Sonstige",
+  "createdBy": "ivr",
+  "status": "betreten",
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd8b2c0b0fe4fb09a7e176"
+  },
+  "facility_id": "BS_11832",
+  "purpose": "große Wartung",
+  "person": "016097483472",
+  "batteryTestStatus": "gestartet",
+  "notes": "Abbruch wegen Wespenangriff",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472039724289"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57bd8c420b0fe4fb09a7e177"
+  },
+  "foreignId": {
+    "$numberInt": "5"
+  },
+  "facility_id": "BS_14406",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1472047201360"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "Zutritt/Sonstige",
+  "createdBy": "ivr",
+  "status": "Info",
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "57e000dbce4ded5689568473"
+  },
+  "foreignId": {
+    "$numberInt": "9"
+  },
+  "facility_id": "BS_15711",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1474298074206"
+    }
+  },
+  "person": "Schulzelklk",
+  "purpose": "Zutritt/Sonstige",
+  "createdBy": "ivr",
+  "status": "Info",
+  "__v": {
+    "$numberInt": "0"
+  },
+  "leftAt": {
+    "$date": {
+      "$numberLong": "1476708867240"
+    }
+  }
+}
+{
+  "_id": {
+    "$oid": "57f767f4361e970e0ff7811c"
+  },
+  "facility_id": "BS_15013",
+  "purpose": "EBA Kontrolle",
+  "person": "Paule",
+  "batteryTestStatus": "",
+  "notes": "wie immer\nwenn er \nmal was macht",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1475831796499"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "leftAt": {
+    "$date": {
+      "$numberLong": "1476708836720"
+    }
+  }
+}
+{
+  "_id": {
+    "$oid": "5800a3d1da87b022f4233dee"
+  },
+  "foreignId": {
+    "$numberInt": "12"
+  },
+  "facility_id": "BS_14406",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476436945266"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "",
+  "createdBy": "ivr",
+  "status": "betreten",
+  "__v": {
+    "$numberInt": "0"
+  },
+  "batteryTestStatus": "gestartet"
+}
+{
+  "_id": {
+    "$oid": "5800a5b4da87b022f4233df0"
+  },
+  "foreignId": {
+    "$numberInt": "14"
+  },
+  "facility_id": "BS_14406",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476437428516"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "Wartung_Inspektion",
+  "createdBy": "ivr",
+  "status": "Info",
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5800a5f9da87b022f4233df1"
+  },
+  "foreignId": {
+    "$numberInt": "15"
+  },
+  "facility_id": "BS_14406",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476437497310"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "Change",
+  "createdBy": "ivr",
+  "status": "betreten",
+  "__v": {
+    "$numberInt": "0"
+  },
+  "batteryTestStatus": "beeendet"
+}
+{
+  "_id": {
+    "$oid": "5800a667da87b022f4233df2"
+  },
+  "foreignId": {
+    "$numberInt": "16"
+  },
+  "facility_id": "BS_13854",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476437607386"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "Sonstiges",
+  "createdBy": "ivr",
+  "status": "betreten",
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5800a7b2da87b022f4233df3"
+  },
+  "foreignId": {
+    "$numberInt": "17"
+  },
+  "facility_id": "BS_14406",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476437938310"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "Wartung_Inspektion",
+  "createdBy": "ivr",
+  "status": "betreten",
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5800b965da87b022f4233df4"
+  },
+  "foreignId": {
+    "$numberInt": "18"
+  },
+  "facility_id": "BS_21060",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476442467810"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "Standortkontrolle",
+  "createdBy": "ivr",
+  "status": "betreten",
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5800d570da87b022f4233df8"
+  },
+  "facility_id": "15015_3023",
+  "purpose": "kleine Wartung",
+  "person": "Torsten -2654",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "Info",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476449648450"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "leftAt": {
+    "$date": {
+      "$numberLong": "1476450177814"
+    }
+  }
+}
+{
+  "_id": {
+    "$oid": "58049a62ec9d312c4911b707"
+  },
+  "foreignId": {
+    "$numberInt": "19"
+  },
+  "facility_id": "BS_14406",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476696673880"
+    }
+  },
+  "person": "Kulack",
+  "purpose": "Entstörung",
+  "createdBy": "ivr",
+  "status": "betreten",
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "Tür bleibt offen"
+}
+{
+  "_id": {
+    "$oid": "5804bce0ec9d312c4911b708"
+  },
+  "facility_id": "*",
+  "purpose": "Changearbeiten",
+  "person": "bolle 4711",
+  "batteryTestStatus": "",
+  "notes": "Kabelarbeiten in West",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476705504486"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5804bdfdec9d312c4911b709"
+  },
+  "facility_id": "B_BZCC01B_XNO0",
+  "purpose": "Changearbeiten",
+  "person": "",
+  "batteryTestStatus": "",
+  "notes": "Messung Patchkabeltausch",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476705789699"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "leftAt": {
+    "$date": {
+      "$numberLong": "1476707883281"
+    }
+  }
+}
+{
+  "_id": {
+    "$oid": "5805c0501a2ea72e44d9f9e0"
+  },
+  "facility_id": ".",
+  "purpose": ".",
+  "person": "......",
+  "batteryTestStatus": "",
+  "notes": "Test",
+  "createdBy": "manually by user",
+  "status": "Info",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476771920792"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5805cc291a2ea72e44d9f9e6"
+  },
+  "facility_id": ".",
+  "purpose": ".",
+  "person": "....fhg",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476774953667"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "rgererer"
+}
+{
+  "_id": {
+    "$oid": "5805ccf11a2ea72e44d9f9e7"
+  },
+  "facility_id": "test",
+  "purpose": "ART",
+  "person": "1234",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476775153035"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "jhzfjgfjg",
+  "leftAt": {
+    "$date": {
+      "$numberLong": "1477029346398"
+    }
+  }
+}
+{
+  "_id": {
+    "$oid": "5805d48b1a2ea72e44d9f9e9"
+  },
+  "facility_id": "ohne",
+  "purpose": "Changearbeiten",
+  "person": "46456",
+  "batteryTestStatus": "",
+  "notes": "303518687 Spleiß Teillänge Strecke 3660 Dettingen - Kleinostheim",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476777099499"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "leftAt": {
+    "$date": {
+      "$numberLong": "1476951521469"
+    }
+  }
+}
+{
+  "_id": {
+    "$oid": "58085d5c957f37342b72069b"
+  },
+  "facility_id": ".",
+  "purpose": ".",
+  "person": "0160",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1476943196545"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "Speichertest"
+}
+{
+  "_id": {
+    "$oid": "58095a5f47c302378e10c9da"
+  },
+  "facility_id": "17475_U1",
+  "purpose": "Changearbeiten",
+  "person": "016097482014",
+  "batteryTestStatus": "",
+  "notes": "303531223",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1477007967091"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "580a08d247c302378e10c9e3"
+  },
+  "facility_id": "BS_24488",
+  "purpose": "große Wartung",
+  "person": "8000142",
+  "batteryTestStatus": "gestartet",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1477052626761"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "leftAt": {
+    "$date": {
+      "$numberLong": "1480065966577"
+    }
+  },
+  "notes": "hvjgj"
+}
+{
+  "_id": {
+    "$oid": "580dfcb4e3c23c3ef5c25bc5"
+  },
+  "facility_id": "BS_23746",
+  "purpose": "Entstörung",
+  "person": "0102655645122323",
+  "batteryTestStatus": "gestartet",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1477311668290"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "test"
+}
+{
+  "_id": {
+    "$oid": "5819ce7629fecb11b2dd341c"
+  },
+  "facility_id": "BS_15010",
+  "purpose": "EBA Kontrolle",
+  "person": "0175 6674344",
+  "batteryTestStatus": "",
+  "notes": "Herr Klima ist dabei.",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478086262316"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "581ae773f33a5712b807b1a0"
+  },
+  "facility_id": "BS_10341",
+  "purpose": "kleine Wartung",
+  "person": "97410634",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478158195071"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "läuft"
+}
+{
+  "_id": {
+    "$oid": "581ae7bef33a5712b807b1a1"
+  },
+  "facility_id": "BS_24208",
+  "purpose": "große Wartung",
+  "person": "3647",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478158270156"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "581aef00f33a5712b807b1a2"
+  },
+  "facility_id": "BS_24905",
+  "purpose": "große Wartung",
+  "person": "3460",
+  "batteryTestStatus": "gestartet",
+  "notes": "a",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478160128736"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "581b0b055724d114c9e15c17"
+  },
+  "facility_id": "ohne",
+  "purpose": "Stromarbeiten",
+  "person": "015237567657",
+  "batteryTestStatus": "",
+  "notes": "Standort Blankenheim\n127*37 BS_16877",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478167301971"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "581b3738b6ebba1597edf4cd"
+  },
+  "facility_id": "13611_1246",
+  "purpose": "Begehung/Schulung",
+  "person": "0160 97481670",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478178616751"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "kjh"
+}
+{
+  "_id": {
+    "$oid": "581b392eb6ebba1597edf4ce"
+  },
+  "facility_id": "BS_16973",
+  "purpose": "Stromarbeiten",
+  "person": "nicht angemeldet",
+  "batteryTestStatus": "",
+  "notes": "Test",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478179118974"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "581c22a4cfb1a42701f8a664"
+  },
+  "facility_id": "19014_2304",
+  "purpose": "große Wartung",
+  "person": "01145550256",
+  "batteryTestStatus": "",
+  "notes": "Walter macht das",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478238884653"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "581c7f43fc84200b704355d7"
+  },
+  "facility_id": "*",
+  "purpose": "Dokumentation",
+  "person": "Otto 016097444444",
+  "batteryTestStatus": "",
+  "notes": "er will mal gucken ...",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478262595845"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "581c7fd7fc84200b704355d8"
+  },
+  "facility_id": "BS_23551",
+  "purpose": "Inspektion",
+  "person": "Willi 123456789",
+  "batteryTestStatus": "",
+  "notes": "der Inspektor ist am inspizieren",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478262743822"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "582042dbd51f6e10cd3fde1d"
+  },
+  "facility_id": "BS_25751",
+  "purpose": "Entstörung",
+  "person": "3326",
+  "batteryTestStatus": "",
+  "notes": "2016082442079969\n",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478509275667"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "58247422cb882037c1cf794a"
+  },
+  "facility_id": "BS_10736",
+  "purpose": "Inspektion",
+  "person": "3762",
+  "batteryTestStatus": "",
+  "notes": "LWL Vorbereitung/Prüfung",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478784034491"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "58247f039eed4e3af73bcabe"
+  },
+  "facility_id": "BS_13456",
+  "purpose": "Erdungsarbeiten",
+  "person": "williwilli",
+  "batteryTestStatus": "",
+  "notes": "ist nur test",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478786819153"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5825b4069eed4e3af73bcabf"
+  },
+  "facility_id": "BS_13854",
+  "purpose": "Umbaumaßnahmen",
+  "person": "kukukukukukuk",
+  "batteryTestStatus": "",
+  "notes": "alles wird umgebaut",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478865926540"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5826bff1b9942a414dea785b"
+  },
+  "facility_id": "F2103",
+  "purpose": "Changearbeiten",
+  "person": "016097440233",
+  "batteryTestStatus": "",
+  "notes": "CO 303565452",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1478934513362"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5835381ce25093630e44edab"
+  },
+  "facility_id": "BS_15290",
+  "purpose": "Entstörung",
+  "person": "Tederan",
+  "batteryTestStatus": "",
+  "notes": "EDS*88891",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1479882780604"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5837df210356d0665a4010eb"
+  },
+  "facility_id": "BS_23075",
+  "purpose": "kleine Wartung",
+  "person": "Tederan",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1480056609249"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5837df700356d0665a4010ec"
+  },
+  "facility_id": "BS_22139",
+  "purpose": "große Wartung",
+  "person": "Schellenberg",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1480056688983"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "leftAt": {
+    "$date": {
+      "$numberLong": "1480064708836"
+    }
+  }
+}
+{
+  "_id": {
+    "$oid": "588f16a74631750b92d295ba"
+  },
+  "facility_id": "BS_13629",
+  "purpose": "ART",
+  "person": "Guido",
+  "batteryTestStatus": "gestartet",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1485772455438"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "588f218555ff710ce6ab69b4"
+  },
+  "facility_id": "BS_24773",
+  "purpose": "Batteriearbeiten",
+  "person": "Guido",
+  "batteryTestStatus": "gestartet",
+  "notes": "Guidos Batterie-Test",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1485775237311"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "58902d55f8d0880e01e441af"
+  },
+  "facility_id": "ohne",
+  "purpose": "Zutritt/Sonstige",
+  "person": "voxtron",
+  "batteryTestStatus": "",
+  "notes": "????",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1485843797145"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "58a1b3d06e719f2122b22b49"
+  },
+  "facility_id": "BS_11662",
+  "purpose": "Blitzschutz",
+  "person": "12345",
+  "batteryTestStatus": "gestartet",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1486992336912"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "58a430ea6e719f2122b22b62"
+  },
+  "facility_id": "BS_15711",
+  "purpose": "Inspektion",
+  "person": "Walter 0160 32323232556",
+  "batteryTestStatus": "",
+  "notes": "meldet sich nicht ab",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1487155434064"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "58c96c50dc06161f3d394529"
+  },
+  "facility_id": "K0897_U1",
+  "purpose": "große Wartung",
+  "person": "08154711",
+  "batteryTestStatus": "",
+  "notes": "nur mal guggen",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1489595472719"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "58c96e76dc06161f3d39452a"
+  },
+  "facility_id": "MSC_BBN1",
+  "purpose": "Begehung/Schulung",
+  "person": "Paule 1234",
+  "batteryTestStatus": "gestartet",
+  "notes": "testgrgerfwef",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1489596022452"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "594135e45569b65068b2dd13"
+  },
+  "facility_id": "BS_16074",
+  "purpose": "Schädlingsbekämpfung",
+  "person": "0815 08166633",
+  "batteryTestStatus": "",
+  "notes": "Rattenvsfvkhjuhfb",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1497445860772"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5954e6d578c960558f452e53"
+  },
+  "facility_id": "BS_19923",
+  "purpose": "Changearbeiten",
+  "person": "12345678",
+  "batteryTestStatus": "",
+  "notes": "huhuscasc",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1498736341355"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5954e70578c960558f452e54"
+  },
+  "facility_id": "BS_19923",
+  "purpose": "Dokumentation",
+  "person": "12345678",
+  "batteryTestStatus": "",
+  "notes": "qwersccxcfx",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1498736389708"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5954ec8d78c960558f452e59"
+  },
+  "facility_id": "BS_17903",
+  "purpose": "Changearbeiten",
+  "person": "879879807979",
+  "batteryTestStatus": "beeendet",
+  "notes": "777777",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1498737805442"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5954ed4778c960558f452e5a"
+  },
+  "facility_id": "12361_394",
+  "purpose": "Sonstiges",
+  "person": "12345",
+  "batteryTestStatus": "",
+  "notes": "csc",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1498737991230"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5954ed7b78c960558f452e5b"
+  },
+  "facility_id": "12365_492",
+  "purpose": "ART",
+  "person": "87878",
+  "batteryTestStatus": "beeendet",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1498738043834"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "asdasda4scsdsds"
+}
+{
+  "_id": {
+    "$oid": "598c2831f17f5a78a41929bc"
+  },
+  "facility_id": "15711_1220",
+  "purpose": "große Wartung",
+  "person": "4564647646340336",
+  "batteryTestStatus": "",
+  "notes": "jetztcscs",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1502357553403"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5a257ac1a624aa7bba42e965"
+  },
+  "facility_id": "BS_16774",
+  "purpose": "Inspektion",
+  "person": "016097488552",
+  "batteryTestStatus": "beeendet",
+  "notes": "Läuft nicht",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1512405697953"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5a257f6ca624aa7bba42e971"
+  },
+  "facility_id": "BS_10045",
+  "purpose": "Batteriearbeiten",
+  "person": "1232323232323",
+  "batteryTestStatus": "gestartet",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1512406892651"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "hgdhsgd"
+}
+{
+  "_id": {
+    "$oid": "5a278df72bf061021ac36cec"
+  },
+  "facility_id": "BS_15711",
+  "purpose": "Batteriearbeiten",
+  "person": "0160323232232",
+  "batteryTestStatus": "",
+  "notes": "dauert länger",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1512541687662"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5a96669e06ea61650fc978ad"
+  },
+  "facility_id": "24348_U1",
+  "purpose": "Inspektion",
+  "person": "Kasten",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1519806110606"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "notes": "Netcool"
+}
+{
+  "_id": {
+    "$oid": "5a9671d806ea61650fc978ae"
+  },
+  "facility_id": "BS_18241",
+  "purpose": "EBA Kontrolle",
+  "person": "Rainer Test",
+  "batteryTestStatus": "",
+  "notes": "Kontrollexvxv",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1519808984733"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}
+{
+  "_id": {
+    "$oid": "5a96886b06ea61650fc978af"
+  },
+  "facility_id": "BS_TestBS45",
+  "purpose": "Zutritt/Sonstige",
+  "person": "Mario I.",
+  "batteryTestStatus": "",
+  "createdBy": "manually by user",
+  "status": "betreten",
+  "enteredAt": {
+    "$date": {
+      "$numberLong": "1519814763341"
+    }
+  },
+  "__v": {
+    "$numberInt": "0"
+  }
+}

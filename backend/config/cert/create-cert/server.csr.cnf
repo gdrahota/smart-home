@@ -1,0 +1,14 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=DE
+ST=Berlin
+L=Berlin
+O=DB Training
+OU=DB Training
+emailAddress=robert.enk@db-training.de
+CN = localhost

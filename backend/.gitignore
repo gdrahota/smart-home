@@ -1,0 +1,14 @@
+node_modules/
+dist/
+temp/
+tests/unit/coverage
+*.env
+start_server.sh
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.zip

@@ -1,26 +1,63 @@
-import { facilityData } from './facility-data'
+import { socketInstance } from '../main'
 
 const state = {
   loading: true,
-  facilities: []
+  items: [],
+  selected: null
+}
+
+const loadAction = context => {
+  context.commit('setLoading', true)
+  socketInstance.emit('get_all_facilities')
+}
+const SOCKET_GET_ALL_FACILITIES_RESPONSE = (state, response) => {
+  state.items = response[0]
+  state.loading = false
+}
+
+const addAction = (context, item) => {
+  socketInstance.emit('add_facility', item)
+}
+const SOCKET_ADD_FACILITY_RESPONSE = (state, response) => {
+  state.items.push(response[0])
+}
+
+const setInactiveAction = (context, id) => {
+  socketInstance.emit('set_facility_inactive', id)
+}
+const SOCKET_SET_FACILITY_INACTIVE_RESPONSE = (state, response) => {
+  const mapFnc = item => {
+    return (item._id === response[0])
+      ? { ...item, state: 'inactive' }
+      : item
+  }
+  state.items = state.items.map(mapFnc)
+  state.selected = null
+}
+
+const selectMutation = (context, item) => {
+  state.selected = item
 }
 
 const actions = {
-  loadAction: context => {
-    context.commit('receivedMutation', facilityData)
-  }
+  loadAction,
+  addAction,
+  setInactiveAction
 }
 
 const mutations = {
-  receivedMutation: (state, facilities) => {
-    state.facilities = facilities
-    state.loading = false
-  }
+  setLoading: (state, status) => state.isLoading = status,
+  SOCKET_GET_ALL_FACILITIES_RESPONSE,
+  SOCKET_ADD_FACILITY_RESPONSE,
+  SOCKET_SET_FACILITY_INACTIVE_RESPONSE,
+  selectMutation
 }
 
 const getters = {
   isLoading: state => state.loading,
-  get: state => state.facilities
+  get: state => state.items,
+  getActive: state => state.items.filter(item => item.state === 'active'),
+  selected: state => state.selected
 }
 
 export default {

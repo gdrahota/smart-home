@@ -1,92 +1,79 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
     <v-navigation-drawer
-      persistent
-      :mini-variant="miniVariant"
-      :clipped="clipped"
+      :clipped="$vuetify.breakpoint.lgAndUp"
       v-model="drawer"
-      enable-resize-watcher
       fixed
       app
     >
-      <v-list>
-        <v-list-tile
-          value="true"
-          v-for="(item, i) in items"
-          :key="i"
-        >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
+      <menu-bar/>
     </v-navigation-drawer>
     <v-toolbar
+      :clipped-left="$vuetify.breakpoint.lgAndUp"
+      color="blue darken-3"
+      dark
       app
-      :clipped-left="clipped"
+      fixed
     >
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon v-html="miniVariant ? 'fa-chevron-right' : 'fa-chevron-left'"></v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>fa-globe</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>fa-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
+        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <span class="hidden-sm-and-down">SmartHome</span>
+      </v-toolbar-title>
+      <v-text-field
+        flat
+        solo-inverted
+        hide-details
+        prepend-inner-icon="fa-search"
+        label="Search"
+        class="hidden-sm-and-down"
+      ></v-text-field>
       <v-spacer></v-spacer>
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>fa-bars</v-icon>
+      <v-btn icon>
+        <v-icon>fa-calendar</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>fa-sign-out</v-icon>
       </v-btn>
     </v-toolbar>
-    <v-content>
-      <router-view/>
+    <v-content align-start>
+      <div class="pt-3 pl-3 pr-3 pb-3">
+        <page-header/>
+        <router-view/>
+      </div>
     </v-content>
-    <v-navigation-drawer
-      temporary
-      :right="right"
-      v-model="rightDrawer"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile @click="right = !right">
-          <v-list-tile-action>
-            <v-icon>fa-exchange</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2017</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
+  import PageHeader from './components/main/page-header'
+  import MenuBar from './components/menu-bar'
 
-export default {
-  name: 'App',
-  data () {
-    return {
-      clipped: false,
-      drawer: true,
-      fixed: false,
-      items: [{
-        icon: 'fa-bullseye',
-        title: 'Inspire'
-      }],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+  export default {
+    components: {
+      PageHeader,
+      MenuBar
+    },
+
+    created(){
+      this.loadFacilities()
+      this.loadControls()
+    },
+
+    data: () => ({
+      dialog: false,
+      drawer: null
+    }),
+
+    methods: {
+      ...mapActions({
+        loadFacilities: 'facilities/loadAction',
+        loadControls: 'controls/loadAction',
+      })
+    },
+
+    props: {
+      source: String
     }
   }
-}
 </script>
