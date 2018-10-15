@@ -2,7 +2,7 @@
   <v-select
     :items="facilities"
     v-model="facility"
-    label="Gebäude"
+    label="Gebäude auswählen..."
     clearable
     hide-actions
     box
@@ -21,22 +21,28 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapMutations } from 'vuex'
 
   export default {
     computed: {
       ...mapGetters({
-        facilities: 'facilities/getActive'
-      })
-    },
-
-    data: () => {
-      return {
-        facility: null
+        facilities: 'facilities/getActive',
+        selected: 'facilities/selected'
+      }),
+      facility: {
+        get () {
+          return this.selected
+        },
+        set (value) {
+          this.select(value)
+        }
       }
     },
 
     methods: {
+      ...mapMutations({
+        select: 'facilities/selectMutation'
+      }),
       getAddress: ({ city, postCode, street }) => {
         return postCode + ' ' + city + ', ' + street
       }

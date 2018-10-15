@@ -1,7 +1,7 @@
 <template>
   <v-layout wrap row>
     <v-flex xs4>
-      <v-card tile class="mb-2">
+      <v-card tile class="mb-2 elevation-0">
         <facilities-list @facility="facility => select(facility)"/>
       </v-card>
     </v-flex>

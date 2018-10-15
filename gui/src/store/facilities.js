@@ -35,6 +35,19 @@ const SOCKET_SET_FACILITY_INACTIVE_RESPONSE = (state, response) => {
   state.selected = null
 }
 
+const updateFacilityAction = (context, facility) => {
+  socketInstance.emit('update_facility', facility)
+}
+const SOCKET_UPDATE_FACILITY_RESPONSE = (state, response) => {
+  const mapFnc = item => {
+    return (item._id === response[0]._id)
+      ? response[0]
+      : item
+  }
+  state.items = state.items.map(mapFnc)
+  state.selected = response[0]
+}
+
 const selectMutation = (context, item) => {
   state.selected = item
 }
@@ -42,7 +55,8 @@ const selectMutation = (context, item) => {
 const actions = {
   loadAction,
   addAction,
-  setInactiveAction
+  setInactiveAction,
+  updateFacilityAction
 }
 
 const mutations = {
@@ -50,6 +64,7 @@ const mutations = {
   SOCKET_GET_ALL_FACILITIES_RESPONSE,
   SOCKET_ADD_FACILITY_RESPONSE,
   SOCKET_SET_FACILITY_INACTIVE_RESPONSE,
+  SOCKET_UPDATE_FACILITY_RESPONSE,
   selectMutation
 }
 

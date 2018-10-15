@@ -1,16 +1,28 @@
 <template>
   <div>
-    <v-card tile>
-      <v-card-title><span class="subheading">Adresse</span></v-card-title>
-      <v-card-text>{{ postCode }} {{ city }}, {{ street }}</v-card-text>
-    </v-card>
+    <facility-address
+      :address="facility.address"
+      @update="address => updateAddress(address)"
+    />
 
     <v-card tile class="mt-2">
-      <v-card-title><span class="subheading">Eigenschaften</span></v-card-title>
+      <v-card-title class="block">
+        <v-btn icon @click.stop="disabledAttributes = !disabledAttributes" :style="{ left: '-10px' }">
+          <v-icon v-if="disabledAttributes">fa-lock</v-icon>
+          <v-icon v-else>fa-unlock</v-icon>
+        </v-btn>
+        <span class="subheading">Eigenschaften</span>
+        <add-facility-attribute @add="name => addFacilityAttribute(name)" float-right/>
+      </v-card-title>
       <v-card-text>
         <v-layout wrap row>
-          <v-flex xs3 v-for="attribute of facility.attributes" :key="attribute._id">
-            <attribute :attribute="attribute"/>
+          <v-flex xs3 v-for="attribute of attributesByFacilityId(facility._id)" :key="attribute._id">
+            <attribute
+              :facilityId="facility._id"
+              :attribute="attribute"
+              :disabled="disabledAttributes"
+              @enable="() => { disabledAttributes = false }"
+            />
           </v-flex>
         </v-layout>
       </v-card-text>
@@ -19,27 +31,46 @@
 </template>
 
 <script>
+  import { mapActions, mapGetters } from 'vuex'
+  import AddFacilityAttribute from './add-facility-attribute'
+  import FacilityAddress from './facility-address'
   import Attribute from './attribute'
 
   export default {
     components: {
-      Attribute
+      AddFacilityAttribute,
+      Attribute,
+      FacilityAddress
     },
 
     computed: {
-      postCode () {
-        return this.facility.address.postCode
-      },
-      city () {
-        return this.facility.address.city
-      },
-      street () {
-        return this.facility.address.street
-      }
+      ...mapGetters({
+        attributesByFacilityId: 'facilityAttributes/getByFacilityId'
+      })
     },
 
     data () {
-      return {}
+      return {
+        disabledAttributes: true,
+        showAddNewAttribute: false
+      }
+    },
+
+    methods: {
+      ...mapActions({
+        updateFacility: 'facilities/updateFacilityAction',
+        addAttribute: 'facilityAttributes/addAction'
+      }),
+      updateAddress (address) {
+        this.updateFacility({ ...this.facility, address })
+      },
+      addFacilityAttribute (name) {
+        this.addAttribute({
+          facilityId: this.facility._id,
+          name,
+          values: []
+        })
+      }
     },
 
     props: {

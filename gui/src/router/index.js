@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import RouterContainer from '../components/router-container'
-import MaintainFacilities from '../components/admin/facilities'
+import Facilities from '../components/admin/facilities'
+import Controls from '../components/admin/controls'
 
 Vue.use(Router)
 
@@ -25,14 +26,14 @@ export default new Router({
           children: [
             {
               path: 'facilities',
-              component: MaintainFacilities,
+              component: Facilities,
               meta: {
                 title: 'Gebäude verwalten'
               }
             },
             {
               path: 'controls',
-              component: MaintainFacilities,
+              component: Controls,
               meta: {
                 title: 'Steuerelemente verwalten'
               }

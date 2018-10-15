@@ -1,7 +1,13 @@
 <template>
   <v-dialog v-model="show" width="500">
-    <v-btn slot="activator" fab small @click="show = true">
-      <v-icon small color="blue darken-2">fa-plus</v-icon>
+    <v-btn
+      slot="activator"
+      fab
+      small
+      @click="show = true"
+      class="elevation-2"
+    >
+      <v-icon small color="green darken-1">fa-plus</v-icon>
     </v-btn>
     <v-form>
       <v-card>
@@ -31,11 +37,21 @@
           </v-layout>
         </v-card-text>
         <v-card-actions>
-          <v-btn small outline color="grey lighten-1" @click="reset">
+          <v-btn
+            small
+            outline
+            color="grey lighten-1"
+            @click="reset"
+          >
             <v-icon small left>fa-times</v-icon>
             <span>Abbrechen</span>
           </v-btn>
-          <v-btn small outline color="blue darken-2" @click="submit">
+          <v-btn
+            small
+            outline
+            color="blue darken-2"
+            @click="submit"
+          >
             <v-icon small left>fa-plus</v-icon>
             <span>Hinzufügen</span>
           </v-btn>

@@ -45,7 +45,7 @@
 </template>
 
 <script>
-  import {mapActions} from 'vuex'
+  import { mapActions } from 'vuex'
   import PageHeader from './components/main/page-header'
   import MenuBar from './components/menu-bar'
 
@@ -55,8 +55,10 @@
       MenuBar
     },
 
-    created(){
+    created () {
       this.loadFacilities()
+      this.loadFacilityAttributes()
+      this.loadFacilityAttributeValues()
       this.loadControls()
     },
 
@@ -68,6 +70,8 @@
     methods: {
       ...mapActions({
         loadFacilities: 'facilities/loadAction',
+        loadFacilityAttributes: 'facilityAttributes/loadAction',
+        loadFacilityAttributeValues: 'facilityAttributeValues/loadAction',
         loadControls: 'controls/loadAction',
       })
     },

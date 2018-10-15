@@ -5,7 +5,15 @@ export let FacilityAttributeValueSchema
 export const registerSchema = () => {
   FacilityAttributeValueSchema = new mongoose.Schema(
     {
-      name: {
+      facilityId: {
+        type: mongoose.Schema.ObjectId,
+        required: true
+      },
+      facilityAttributeId: {
+        type: mongoose.Schema.ObjectId,
+        required: true
+      },
+      value: {
         type: String,
         required: true
       }

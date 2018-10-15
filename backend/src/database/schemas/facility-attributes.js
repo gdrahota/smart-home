@@ -1,11 +1,15 @@
 import mongoose from 'mongoose'
-import { FacilityAttributeValueSchema } from './facility-attribute-value'
+import { FacilityAttributeValueSchema } from './facility-attribute-values'
 
 export let FacilityAttributeSchema
 
 export const registerSchema = () => {
   FacilityAttributeSchema = new mongoose.Schema(
     {
+      facilityId: {
+        type: mongoose.Schema.ObjectId,
+        required: true
+      },
       name: {
         type: String,
         required: true

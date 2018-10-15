@@ -2,35 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa8a30f-911b-4abf-958a-204308acb4c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/database/schemas/facilities.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-value.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/database/schemas/facility-attributes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/config/client.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/assets/general-styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-form.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute-value.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/facilities-list.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/facility.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/main/page-header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/router-container.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/database/repository/controls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/database/repository/facility-attribute-values.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/database/repository/facility-attributes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/database/schemas/controls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/rest-api/controls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/rest-api/facility-attribute-values.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/rest-api/facility-attributes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/services/controls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/services/facility-attribute-values.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/services/facility-attributes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/controls/add-control-form.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/controls/controls-list.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/controls/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-attribute.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/facility-address.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/store/facility-attribute-values.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/store/facility-attributes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/guidodrahota.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/guidodrahota.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/gui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/database/repository/facilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/repository/facilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-value.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-values.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/facility-attributes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/facility-attributes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/rest-api/facilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/rest-api/facilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/rest-api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/rest-api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/enter-list-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/enter-reason-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/facilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/facilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/generic-list-history-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/generic-list-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/network-element-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/remote-maintenance-script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/remote-maintenance.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/value-store-service.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/router.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-form.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute-value.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute-value.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/facilities/facilities-list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/facilities-list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/facilities/facility.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/facility.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/facilities/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/store/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/controls.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/store/facilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/facilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/views/About.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/gui/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_1/src/components/admin/facilities/address.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_1/src/components/admin/facilities/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/facilities/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_1/src/components/admin/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_1/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,12 +73,12 @@
           <entry key="browserslistrc" value="3" />
           <entry key="css" value="2" />
           <entry key="env" value="1" />
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="4" />
           <entry key="html" value="4" />
-          <entry key="js" value="82" />
+          <entry key="js" value="152" />
           <entry key="json" value="11" />
-          <entry key="vue" value="59" />
-          <entry key="xml" value="1" />
+          <entry key="vue" value="98" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -68,21 +86,22 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="4" />
           <entry key="JSON" value="11" />
-          <entry key="JavaScript" value="82" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Vue.js" value="59" />
-          <entry key="XML" value="1" />
+          <entry key="JavaScript" value="152" />
+          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="Vue.js" value="98" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="browserslistrc" value="1" />
           <entry key="css" value="58" />
+          <entry key="gitignore" value="22" />
           <entry key="html" value="4" />
-          <entry key="js" value="3834" />
+          <entry key="js" value="5257" />
           <entry key="json" value="8" />
-          <entry key="txt" value="33" />
-          <entry key="vue" value="7630" />
+          <entry key="txt" value="121" />
+          <entry key="vue" value="12489" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -90,9 +109,9 @@
           <entry key="CSS" value="58" />
           <entry key="HTML" value="4" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="3834" />
-          <entry key="PLAIN_TEXT" value="34" />
-          <entry key="Vue.js" value="7630" />
+          <entry key="JavaScript" value="5257" />
+          <entry key="PLAIN_TEXT" value="144" />
+          <entry key="Vue.js" value="12489" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -105,31 +124,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/index.vue">
+        <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="930">
+              <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="861">
+              <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
               <folding>
-                <element signature="e#797#856#0" expanded="true" />
+                <element signature="e#668#701#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-form.vue">
+        <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/controls.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="323">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue">
+        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/add-control-form.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="559">
+              <caret line="104" column="48" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/src/store/facilities.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="802">
+              <caret line="73" column="11" selection-start-line="73" selection-start-column="2" selection-end-line="73" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -145,9 +185,11 @@
       <find>drawer</find>
       <find>First, solve the problem</find>
       <find>v-for</find>
+      <find>facility</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
+      <replace>control</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -156,56 +198,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gui/src/store/structures.js" />
-        <option value="$PROJECT_DIR$/gui/src/store/facilities-data.js" />
-        <option value="$PROJECT_DIR$/gui/src/store/index.js" />
-        <option value="$PROJECT_DIR$/gui/src/store/controls.js" />
-        <option value="$PROJECT_DIR$/gui/src/store/control-data.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/facilities/index.vue" />
-        <option value="$PROJECT_DIR$/gui/.eslintrc.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/facilities/addresses.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/facilities/facilities.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/menu.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/index.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/menu-bar.vue" />
-        <option value="$PROJECT_DIR$/gui/.browserslistrc" />
-        <option value="$PROJECT_DIR$/gui/babel.config.js" />
-        <option value="$PROJECT_DIR$/gui_1/src/main.js" />
-        <option value="$PROJECT_DIR$/gui/public/index.html" />
-        <option value="$PROJECT_DIR$/gui/src/components/main/bread-crumb.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/main/breadcrumb.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/main/page-header.vue" />
-        <option value="$PROJECT_DIR$/gui/package.json" />
-        <option value="$PROJECT_DIR$/gui/src/router/index.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/router-container.vue" />
-        <option value="$PROJECT_DIR$/gui/src/App.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/address.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" />
         <option value="$PROJECT_DIR$/gui/src/assets/general-styles.css" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute-instance.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute-value.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/facility.vue" />
         <option value="$PROJECT_DIR$/backend/src/index.js" />
         <option value="$PROJECT_DIR$/backend/src/database/schemas/client.js" />
-        <option value="$PROJECT_DIR$/backend/src/database/schemas/facility-attributes.js" />
-        <option value="$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-value.js" />
-        <option value="$PROJECT_DIR$/backend/src/database/schemas/index.js" />
         <option value="$PROJECT_DIR$/backend/src/services/clients.js" />
         <option value="$PROJECT_DIR$/backend/src/rest-api/clients.js" />
-        <option value="$PROJECT_DIR$/backend/src/rest-api/index.js" />
         <option value="$PROJECT_DIR$/gui/config/client.js" />
         <option value="$PROJECT_DIR$/backend/config/server.js" />
         <option value="$PROJECT_DIR$/backend/src/database/schemas/facilities.js" />
-        <option value="$PROJECT_DIR$/backend/src/services/facilities.js" />
-        <option value="$PROJECT_DIR$/backend/src/database/repository/facilities.js" />
-        <option value="$PROJECT_DIR$/backend/src/rest-api/facilities.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-form.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/facilities-list.vue" />
-        <option value="$PROJECT_DIR$/gui/src/store/facilities.js" />
         <option value="$PROJECT_DIR$/gui/src/main.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/backend/src/services/facilities.js" />
+        <option value="$PROJECT_DIR$/gui/src/store/facilities.js" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/index.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/facility-address.vue" />
+        <option value="$PROJECT_DIR$/backend/src/database/repository/facilities.js" />
+        <option value="$PROJECT_DIR$/gui/src/store/facility-attributes.js" />
+        <option value="$PROJECT_DIR$/backend/src/services/facility-attributes.js" />
+        <option value="$PROJECT_DIR$/backend/src/database/repository/facility-attributes.js" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-form.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-attribute.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-attribute-value.vue" />
+        <option value="$PROJECT_DIR$/gui/src/App.vue" />
+        <option value="$PROJECT_DIR$/gui/src/store/facility-attribute-values.js" />
+        <option value="$PROJECT_DIR$/backend/src/rest-api/facility-attribute-values.js" />
+        <option value="$PROJECT_DIR$/backend/src/rest-api/facility-attributes.js" />
+        <option value="$PROJECT_DIR$/backend/src/rest-api/facilities.js" />
+        <option value="$PROJECT_DIR$/backend/src/services/facility-attribute-values.js" />
+        <option value="$PROJECT_DIR$/gui/src/store/index.js" />
+        <option value="$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-value.js" />
+        <option value="$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-values.js" />
+        <option value="$PROJECT_DIR$/backend/src/database/schemas/facility-attributes.js" />
+        <option value="$PROJECT_DIR$/backend/src/database/repository/facility-attribute-values.js" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/facility.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute-value.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/attribute.vue" />
+        <option value="$PROJECT_DIR$/backend/src/database/schemas/index.js" />
+        <option value="$PROJECT_DIR$/backend/src/database/repository/controls.js" />
+        <option value="$PROJECT_DIR$/backend/src/services/controls.js" />
+        <option value="$PROJECT_DIR$/backend/src/rest-api/controls.js" />
+        <option value="$PROJECT_DIR$/backend/src/rest-api/index.js" />
+        <option value="$PROJECT_DIR$/gui/src/store/controls.js" />
+        <option value="$PROJECT_DIR$/gui/src/router/index.js" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/facilities/facilities-list.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/controls/add-control.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/controls/controls-list.vue" />
+        <option value="$PROJECT_DIR$/backend/src/database/schemas/controls.js" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/controls/index.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/controls/add-control-form.vue" />
       </list>
     </option>
   </component>
@@ -268,6 +311,32 @@
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="schemas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -281,24 +350,7 @@
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="facilities" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -311,7 +363,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539554687370" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539612713467" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -329,11 +381,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/src/database/schemas" />
       <recent name="$PROJECT_DIR$/gui/src/components" />
       <recent name="$PROJECT_DIR$/gui/src" />
       <recent name="$PROJECT_DIR$/gui_1/src" />
       <recent name="$PROJECT_DIR$/gui_1/src/components" />
-      <recent name="$PROJECT_DIR$/gui/src/components/admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -361,7 +413,7 @@
       <workItem from="1538338758229" duration="18697000" />
       <workItem from="1538691958954" duration="293000" />
       <workItem from="1538692292123" duration="2905000" />
-      <workItem from="1539524556634" duration="19183000" />
+      <workItem from="1539524556634" duration="37307000" />
     </task>
     <task id="LOCAL-00001" summary="vuex installed">
       <created>1538378435025</created>
@@ -370,11 +422,25 @@
       <option name="project" value="LOCAL" />
       <updated>1538378435025</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="server rest api created, communication via web socket added, manage facilities enhanced">
+      <created>1539554666549</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539554666549</updated>
+    </task>
+    <task id="LOCAL-00003" summary="server rest api created, communication via web socket added, manage facilities enhanced">
+      <created>1539554722160</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539554722160</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41078000" />
+    <option name="totallyTimeSpent" value="59202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -464,133 +530,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="vuex installed" />
-    <option name="LAST_COMMIT_MESSAGE" value="vuex installed" />
+    <MESSAGE value="server rest api created, communication via web socket added, manage facilities enhanced" />
+    <option name="LAST_COMMIT_MESSAGE" value="server rest api created, communication via web socket added, manage facilities enhanced" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gui/cypress.json" />
-    <entry file="file://$PROJECT_DIR$/gui/.browserslistrc_" />
-    <entry file="file://$PROJECT_DIR$/gui_1/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/.postcssrc.js" />
-    <entry file="file://$PROJECT_DIR$/gui/babel.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui_1/babel.config.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui_1/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui_1/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/plugins/vuetify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/router.js_" />
-    <entry file="file://$PROJECT_DIR$/gui/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/main/page-header.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/index.vue_" />
-    <entry file="file://$PROJECT_DIR$/gui/src/views/Home.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/router-container.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/menu-bar/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/assets/general-styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/facility.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/attribute.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/attribute-value.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/.env">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/database/repository/facilities.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -627,30 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-value.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/facility-attributes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/services/clients.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -665,37 +584,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/config/client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -706,94 +598,329 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/App.vue">
+    <entry file="file://$PROJECT_DIR$/gui/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
           <folding>
-            <element signature="n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
-            <element signature="n#v-toolbar#0;n#v-app#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-app#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#6083#6089#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/facilities.js">
+    <entry file="file://$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/database/repository/facilities.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/facilities.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/facilities.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/facilities-list.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/store/facilities.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="59" column="10" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="10" />
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/facility-address.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="81" column="12" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-attribute-value.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/facility-attributes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="18" lean-forward="true" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+          <folding>
+            <element signature="n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
+            <element signature="n#v-toolbar#0;n#v-app#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-app#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#1123#1156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/facility-attributes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/facility-attribute-values.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/services/facility-attributes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/services/facility-attribute-values.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="95" selection-start-column="70" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/repository/facility-attributes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/repository/facility-attribute-values.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/facility-attributes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-values.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-attribute.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/facility-attribute-values.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/attribute-value.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/facility.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#1068#1113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/attribute.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+          <folding>
+            <element signature="e#1309#1354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/facilities.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/repository/facilities.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/repository/controls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/services/facilities.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="14" lean-forward="true" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/services/controls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/facilities.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="12" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/controls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/facilities-list.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#797#856#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="31">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/admin/facilities/add-facility-form.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="153">
+          <caret line="9" column="41" selection-end-line="96" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue">
+    <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="930">
+          <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+          <folding>
+            <element signature="e#668#701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/controls-list.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/controls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/facilities.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="802">
+          <caret line="73" column="11" selection-start-line="73" selection-start-column="2" selection-end-line="73" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/add-control-form.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="104" column="48" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
         </state>
       </provider>
     </entry>

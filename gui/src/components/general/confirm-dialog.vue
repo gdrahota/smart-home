@@ -9,8 +9,9 @@
       v-if="label"
       slot="activator"
       outline
-      :small="small"
       color="red"
+      class="elevation-2"
+      :small="small"
       :fab="fab"
       :disabled="disabled"
       :medium="medium"
@@ -23,8 +24,9 @@
     <v-btn
       v-else
       slot="activator"
-      :disabled="disabled"
       fab
+      class="elevation-2"
+      :disabled="disabled"
       :large="large"
       :medium="medium"
       :small="small"
