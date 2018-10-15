@@ -9,7 +9,7 @@
           hide-details
           v-model="value"
           :disabled="disabled"
-        />
+        ></v-text-field>
       </v-flex>
 
       <v-flex xs2>

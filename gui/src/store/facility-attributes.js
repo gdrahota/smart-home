@@ -21,7 +21,7 @@ const SOCKET_ADD_FACILITY_ATTRIBUTE_RESPONSE = (state, response) => {
   state.items.push(response[0])
 }
 
-const updateFacilityAttributeAction = (context, attribute) => {
+const updateAction = (context, attribute) => {
   socketInstance.emit('update_facility_attribute', attribute)
 }
 const SOCKET_UPDATE_FACILITY_ATTRIBUTE_RESPONSE = (state, response) => {
@@ -44,7 +44,7 @@ const SOCKET_REMOVE_FACILITY_ATTRIBUTE_RESPONSE = (state, response) => {
 const actions = {
   loadAction,
   addAction,
-  updateFacilityAttributeAction,
+  updateAction,
   removeAction
 }
 
@@ -59,7 +59,8 @@ const mutations = {
 const getters = {
   isLoading: state => state.loading,
   get: state => state.items,
-  getByFacilityId: state => id => state.items.filter(i => i.facilityId === id)
+  getByFacilityId: state => id => state.items.filter(i => i.facilityId === id),
+  getByFacilityAttributeId: state => id => state.items.filter(i => i.facilityAttributeId === id)
 }
 
 export default {

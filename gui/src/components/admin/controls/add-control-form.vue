@@ -22,17 +22,17 @@
                 v-model="facilityId"
                 item-text="name"
                 item-value="_id"
-                label="Gebäude"
+                label="Anlage"
               />
             </v-flex>
 
             <v-flex xs5 class="pr-2">
               <v-select
-                :items="types"
-                v-model="type"
+                :items="controlTypes"
+                v-model="controlType"
                 item-text="label"
                 item-value="type"
-                label="Typ"
+                label="Art des Steuerelements"
               />
             </v-flex>
             <v-flex xs3 class="pr-2">
@@ -96,10 +96,10 @@
       return {
         show: this.showDialog,
         facilityId: null,
-        type: null,
+        controlType: null,
         name: '',
         description: '',
-        types: [
+        controlTypes: [
           { label: 'Licht (an/aus)', type: 'lightSwitch' },
           { label: 'Licht (dimmbar)', type: 'lightDimmer' },
           { label: 'Rollladen', type: 'blinds' }
@@ -110,21 +110,21 @@
     methods: {
       submit () {
         const control = {
-          address: {
-            facilityId: this.facilityId,
-            type: this.type,
-            name: this.name,
-            description: this.description
-          },
+          facilityId: this.facilityId,
+          controlType: this.controlType,
+          name: this.name,
+          description: this.description,
+          endPoints: [],
           attributeValues: []
         }
         this.$emit('add', control)
         this.reset()
       },
       reset () {
+        this.facilityId = null
+        this.controlType = null
         this.name = ''
         this.description = ''
-        this.type = null
         this.show = false
       }
     }

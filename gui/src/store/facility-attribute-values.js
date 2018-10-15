@@ -58,6 +58,7 @@ const mutations = {
 const getters = {
   isLoading: state => state.loading,
   get: state => state.items,
+  getById: state => id => state.items.find(i => i._id === id),
   getByFacilityId: state => id => state.items.filter(i => i.facilityId === id),
   getByFacilityAttributeId: state => id => state.items.filter(i => i.facilityAttributeId === id)
 }

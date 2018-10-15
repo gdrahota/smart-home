@@ -2,6 +2,18 @@
 	float: right !important;
 }
 
+.float-left, [float-left]{
+	float: left !important;
+}
+
 .block {
 	display: block !important;
+}
+
+.full-width, [full-width] {
+	width: 100% !important;
+}
+
+.text-right, [text-right] {
+	text-align: right;
 }

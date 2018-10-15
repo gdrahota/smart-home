@@ -5,16 +5,28 @@
     label="Steuerelement auswählen..."
     clearable
     hide-actions
-    box
-    flat
     hide-details
+    class="pl-2 pt-4 pr-2 pb-2"
   >
     <template slot="item" slot-scope="data">
-      <v-list-tile-content>{{ data.item }}</v-list-tile-content>
+      <v-list-tile-content>{{ data.item.name }}</v-list-tile-content>
     </template>
 
-    <template slot="selection" slot-scope="data">
-      <span class="pl-3">{{ data.item }}</span>
+    <template
+      slot="selection"
+      slot-scope="data"
+      class="pl-2 pt-4 pr-2 pb-3"
+    >
+      <v-list-tile-content full-width>
+        <v-list-tile-title>
+          <div fiftyPercent float-left>
+            {{ data.item.name }}
+          </div>
+          <div fiftyPercent float-left text-right class="body-1">
+            {{ data.item.technology }} - {{ data.item.controlType }}
+          </div>
+        </v-list-tile-title>
+      </v-list-tile-content>
     </template>
 
   </v-select>
@@ -46,3 +58,9 @@
     }
   }
 </script>
+
+<style scoped>
+  [fiftyPercent] {
+    width: 49%;
+  }
+</style>

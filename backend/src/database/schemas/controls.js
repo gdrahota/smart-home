@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-import { FacilityAttributeValueSchema } from './facility-attribute-values'
 
 export const registerSchema = () => {
   const Schema = mongoose.Schema
@@ -11,13 +10,22 @@ export const registerSchema = () => {
     },
     description: {
       type: String,
-      required: true
+      default: ''
     },
     facilityId: {
       type: Schema.ObjectId,
       required: true
     },
-    attributeValues: [FacilityAttributeValueSchema],
+    technology: {
+      type: String,
+      default: 'KNX-TP'
+    },
+    controlType: {
+      type: String,
+      required: true
+    },
+    endPoints: [],
+    attributeValues: [Schema.ObjectId],
     state: {
       type: String,
       default: 'active'

@@ -13,8 +13,7 @@ export const registerSchema = () => {
       name: {
         type: String,
         required: true
-      },
-      values: [FacilityAttributeValueSchema]
+      }
     }, { collection: 'facility-attributes' }
   )
 

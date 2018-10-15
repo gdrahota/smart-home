@@ -20,10 +20,11 @@ const addAction = (context, item) => {
 }
 const SOCKET_ADD_CONTROL_RESPONSE = (state, response) => {
   state.items.push(response[0])
+  state.selected = response[0]
 }
 
-const updateAction = (context, facility) => {
-  socketInstance.emit('update_control', facility)
+const updateAction = (context, item) => {
+  socketInstance.emit('update_control', item)
 }
 const SOCKET_UPDATE_CONTROL_RESPONSE = (state, response) => {
   const mapFnc = item => {
@@ -35,8 +36,8 @@ const SOCKET_UPDATE_CONTROL_RESPONSE = (state, response) => {
   state.selected = response[0]
 }
 
-const removeAction = (context, facility) => {
-  socketInstance.emit('remove_control', facility)
+const removeAction = (context, itemId) => {
+  socketInstance.emit('remove_control', itemId)
 }
 const SOCKET_REMOVE_CONTROL_RESPONSE = (state, response) => {
   state.items = state.items.filter(i => i._id !== response[0])
