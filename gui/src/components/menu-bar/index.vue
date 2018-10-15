@@ -26,8 +26,8 @@
       >
         <v-list-tile slot="activator">
           <v-list-tile-content>
-            <v-list-tile-title v-if="item.to" :to="item.to">{{ item.text }} 11</v-list-tile-title>
-            <v-list-tile-title v-else>{{ item.text }} 22</v-list-tile-title>
+            <v-list-tile-title v-if="item.to" :to="item.to">{{ item.text }}</v-list-tile-title>
+            <v-list-tile-title v-else>{{ item.text }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile
@@ -57,14 +57,13 @@
       return {
         items: [
           { icon: 'fa-home', text: 'Home', to: { path: '/' } },
-          { icon: '', text: 'Räume' },
           {
             icon: 'fa-angle-left', 'icon-alt': 'fa-angle-right',
             text: 'Einstellungen',
             model: true,
             children: [
-              { icon: 'fa-building', text: 'Gebäude', to: { path: '/admin/facilities' } },
-              { icon: 'fa-cubes', text: 'Steuerelemente', to: { path: '/admin/controls' } }
+              { icon: 'far fa-minus-square', text: 'Gebäude', to: { path: '/admin/facilities' } },
+              { icon: 'fa-sliders', text: 'Steuerelemente', to: { path: '/admin/controls' } }
             ]
           }
         ]

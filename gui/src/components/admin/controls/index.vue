@@ -27,18 +27,7 @@
       </v-layout>
     </v-card>
 
-    <v-card>
-      <v-card-text>
-        <v-chip
-          v-for="value of facilityAttributeValues"
-          :key="value._id"
-          close
-          label
-        >
-          {{ value.value }}
-        </v-chip>
-      </v-card-text>
-    </v-card>
+    <show-facility-attribute-values/>
 
     <manage-attribute-values v-if="selected"/>
   </div>
@@ -49,19 +38,20 @@
   import AddControlForm from './add-control-form'
   import ControlsList from './controls-list'
   import ManageAttributeValues from './manage-attribute-values'
+  import ShowFacilityAttributeValues from './manage-attribute-values/show-attribute-values'
 
   export default {
     components: {
       AddControlForm,
       ControlsList,
-      ManageAttributeValues
+      ManageAttributeValues,
+      ShowFacilityAttributeValues
     },
 
     computed: {
       ...mapGetters({
         controls: 'controls/get',
-        selected: 'controls/selected',
-        facilityAttributeValuesById: 'facilityAttributeValues/getById'
+        selected: 'controls/selected'
       }),
       selectedControl: {
         get () {
@@ -69,15 +59,6 @@
         },
         set (value) {
         }
-      },
-      facilityAttributeValues () {
-        if (!this.selected) {
-          return []
-        }
-        return this
-          .selected
-          .attributeValues
-          .map(attributeValueId => this.facilityAttributeValuesById(attributeValueId))
       }
     },
 
@@ -92,7 +73,9 @@
         add: 'controls/addAction',
         remove: 'controls/removeAction'
       }),
-      select (control) {},
+      removeValue (valueId) {
+        console.log('removeValue', valueId)
+      },
       addControl (control) {
         this.add({
           ...control,
