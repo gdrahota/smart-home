@@ -1,11 +1,16 @@
 <template>
-  <v-layout wrap row>
+  <div class="border-top">
+    <v-card-title>
+      <div class="body-1">
+        Verfügbare Tags:
+      </div>
+    </v-card-title>
     <select-attribute-value
       v-for="attribute of attributes"
       :attribute="attribute"
       :key="attribute._id"
-    />
-  </v-layout>
+    ></select-attribute-value>
+  </div>
 </template>
 
 <script>
@@ -32,3 +37,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .border-top {
+    border-top: 1px solid #eee !important;
+  }
+</style>

@@ -10,6 +10,7 @@ import socketIoClient from 'socket.io-client'
 import vueSocketIO from 'vue-socket.io'
 import config from '../config/client'
 import Confirm from './components/general/confirm-dialog'
+import './filter/knx-data-type'
 
 import ('./assets/general-styles.css')
 

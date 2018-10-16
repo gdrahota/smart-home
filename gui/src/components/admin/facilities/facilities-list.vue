@@ -3,11 +3,12 @@
     :items="facilities"
     v-model="facility"
     label="Gebäude auswählen..."
+    class="pt-4 pr-2 pb-2"
+    box
     clearable
     hide-actions
-    box
-    flat
     hide-details
+    solo
   >
     <template slot="item" slot-scope="data">
       <v-list-tile-content v-text="getAddress(data.item.address)"/>

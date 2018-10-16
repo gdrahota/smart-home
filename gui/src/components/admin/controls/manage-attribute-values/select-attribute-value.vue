@@ -1,36 +1,37 @@
 <template>
-  <v-flex xs3 class="pr-3 pt-2">
-    <v-card>
-      <v-card-text>
-        <v-list dense subheader>
-          <v-subheader head>
-            <v-text-field
-              v-model="name"
-              :disabled="disabled"
-              class="head"
-              hide-details
-              single-line
-              solo
-              flat
-            ></v-text-field>
-          </v-subheader>
+  <v-card-text>
+    <v-layout wrap row>
+      <v-flex xs1>
+        <v-text-field
+          v-model="name"
+          :disabled="disabled"
+          class="head body-1"
+          hide-details
+          single-line
+          solo
+          flat
+        ></v-text-field>
+      </v-flex>
 
-          <v-chip
-            v-for="attributeValue of attributeValues"
-            :key="attributeValue._id"
-            outline
-            color="grey"
-          >
-            <v-avatar color="grey lighten-1" @click="() => addToControl(attributeValue._id)">
-              <v-icon color="white" small>fa-plus</v-icon>
-            </v-avatar>
-            <span class="black--text">{{ attributeValue.value }}</span>
-          </v-chip>
-
-        </v-list>
-      </v-card-text>
-    </v-card>
-  </v-flex>
+      <v-flex xs11>
+        <v-chip
+          v-for="attributeValue of availableAttributeValues"
+          :key="attributeValue._id"
+          outline
+          color="grey"
+        >
+          <v-icon
+            color="green darken-2"
+            left
+            @click="() => addToControl(attributeValue._id)"
+            class="clickable"
+          >fa-plus-circle
+          </v-icon>
+          <span class="black--text">{{ attributeValue.value }}</span>
+        </v-chip>
+      </v-flex>
+    </v-layout>
+  </v-card-text>
 </template>
 
 <script>
@@ -42,8 +43,9 @@
         attributeValuesByFacilityAttributeId: 'facilityAttributeValues/getByFacilityAttributeId',
         control: 'controls/selected'
       }),
-      attributeValues () {
-        return this.attributeValuesByFacilityAttributeId(this.attribute._id)
+      availableAttributeValues () {
+        const currentValues = this.control.attributeValues
+        return this.attributeValuesByFacilityAttributeId(this.attribute._id).filter(value => currentValues.indexOf(value._id) === -1)
       }
     },
 
@@ -83,5 +85,9 @@
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
     height: 50px;
+  }
+
+  .clickable {
+    cursor: pointer;
   }
 </style>

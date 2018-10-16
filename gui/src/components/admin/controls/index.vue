@@ -1,35 +1,48 @@
 <template>
   <div>
-    <v-card tile class="mb-2 elevation-1">
-      <v-layout wrap row>
-        <v-flex xs4>
-          <controls-list/>
-        </v-flex>
-        <v-flex xs8 class="pl-2">
-          <add-control-form
-            v-if="!selectedControl"
-            :showDialog="showAddNewDialog"
-            @add="control => addControl(control)"
-            @cancel="() => cancelAddFacility()"
-            class="pt-3"
-          />
+    <v-layout wrap row>
+      <v-flex xs4>
+        <controls-list/>
+      </v-flex>
+      <v-flex xs8 class="mb-3">
+        <add-control-form
+          v-if="!selected"
+          :showDialog="showAddNewDialog"
+          @add="control => addControl(control)"
+          @cancel="() => cancelAddFacility()"
+          class="pt-4"
+        />
+        <confirm
+          v-if="selected"
+          title="Steuerelement Löschen"
+          description="Dieses Steuerelement löschen?"
+          :small="true"
+          :fab="true"
+          @agree="() => remove(selected._id)"
+          class="pt-4"
+        />
+      </v-flex>
+    </v-layout>
 
-          <confirm
-            title="Steuerelement Löschen"
-            description="Dieses Steuerelement löschen?"
-            :small="true"
-            :fab="true"
-            @agree="() => remove(selected._id)"
-            class="pt-3"
-          />
-        </v-flex>
+    <v-tabs
+      v-if="selected"
+      v-model="activeTab"
+      slider-color="cyan"
+      color="grey lighten-3"
+    >
+      <v-tab ripple :key="0">Anschlüsse</v-tab>
+      <v-tab ripple :key="1">Tags</v-tab>
 
-      </v-layout>
-    </v-card>
-
-    <show-facility-attribute-values/>
-
-    <manage-attribute-values v-if="selected"/>
+      <v-tab-item :key="0">
+        <manage-data-points/>
+      </v-tab-item>
+      <v-tab-item :key="1">
+        <v-card>
+          <show-facility-attribute-values/>
+          <manage-attribute-values/>
+        </v-card>
+      </v-tab-item>
+    </v-tabs>
   </div>
 </template>
 
@@ -39,12 +52,14 @@
   import ControlsList from './controls-list'
   import ManageAttributeValues from './manage-attribute-values'
   import ShowFacilityAttributeValues from './manage-attribute-values/show-attribute-values'
+  import ManageDataPoints from './manage-data-points/index'
 
   export default {
     components: {
       AddControlForm,
       ControlsList,
       ManageAttributeValues,
+      ManageDataPoints,
       ShowFacilityAttributeValues
     },
 
@@ -64,7 +79,8 @@
 
     data () {
       return {
-        showAddNewDialog: false
+        showAddNewDialog: false,
+        activeTab: null
       }
     },
 

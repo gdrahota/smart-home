@@ -1,11 +1,9 @@
 <template>
   <v-layout wrap row>
-    <v-flex xs4>
-      <v-card tile class="mb-2 elevation-0">
-        <facilities-list @facility="facility => select(facility)"/>
-      </v-card>
+    <v-flex xs4 class="mb-2 elevation-0">
+      <facilities-list @facility="facility => select(facility)"/>
     </v-flex>
-    <v-flex xs8 class="pl-2">
+    <v-flex xs8 class="pt-4">
       <add-facility-form
         v-if="!selectedFacility"
         :showDialog="showAddNewDialog"

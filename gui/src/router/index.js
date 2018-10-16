@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import RouterContainer from '../components/router-container'
 import Facilities from '../components/admin/facilities'
 import Controls from '../components/admin/controls'
+import DataPoints from '../components/admin/data-points'
 
 Vue.use(Router)
 
@@ -36,6 +37,13 @@ export default new Router({
               component: Controls,
               meta: {
                 title: 'Steuerelemente verwalten'
+              }
+            },
+            {
+              path: 'data-points',
+              component: DataPoints,
+              meta: {
+                title: 'Endpunkte verwalten'
               }
             }
           ]

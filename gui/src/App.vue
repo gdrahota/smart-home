@@ -36,7 +36,7 @@
       </v-btn>
     </v-toolbar>
     <v-content align-start>
-      <div class="pt-3 pl-3 pr-3 pb-3">
+      <div class="pl-3 pr-3 pb-3">
         <page-header/>
         <router-view/>
       </div>
@@ -56,10 +56,12 @@
     },
 
     created () {
+      this.loadControls()
+      this.loadControlDataPoints()
+      this.loadDataPoints()
       this.loadFacilities()
       this.loadFacilityAttributes()
       this.loadFacilityAttributeValues()
-      this.loadControls()
     },
 
     data: () => ({
@@ -69,10 +71,12 @@
 
     methods: {
       ...mapActions({
+        loadControls: 'controls/loadAction',
+        loadControlDataPoints: 'controlDataPoints/loadAction',
+        loadDataPoints: 'dataPoints/loadAction',
         loadFacilities: 'facilities/loadAction',
         loadFacilityAttributes: 'facilityAttributes/loadAction',
-        loadFacilityAttributeValues: 'facilityAttributeValues/loadAction',
-        loadControls: 'controls/loadAction',
+        loadFacilityAttributeValues: 'facilityAttributeValues/loadAction'
       })
     },
 
