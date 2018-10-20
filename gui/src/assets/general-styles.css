@@ -2,7 +2,7 @@
 	float: right !important;
 }
 
-.float-left, [float-left]{
+.float-left, [float-left] {
 	float: left !important;
 }
 

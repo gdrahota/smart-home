@@ -17,14 +17,14 @@ const SOCKET_GET_ALL_DATA_POINTS_RESPONSE = (state, response) => {
 const addAction = (context, item) => {
   socketInstance.emit('add_data_point', item)
 }
-const SOCKET_ADD_DATA_POINTS_RESPONSE = (state, response) => {
+const SOCKET_ADD_DATA_POINT_RESPONSE = (state, response) => {
   state.items.push(response[0])
 }
 
 const updateAction = (context, dataPoint) => {
   socketInstance.emit('update_data_point', dataPoint)
 }
-const SOCKET_UPDATE_DATA_POINTS_RESPONSE = (state, response) => {
+const SOCKET_UPDATE_DATA_POINT_RESPONSE = (state, response) => {
   const mapFnc = item => {
     return (item._id === response[0]._id)
       ? response[0]
@@ -37,7 +37,7 @@ const SOCKET_UPDATE_DATA_POINTS_RESPONSE = (state, response) => {
 const removeAction = (context, item) => {
   socketInstance.emit('remove_data_point', item)
 }
-const SOCKET_REMOVE_DATA_POINTS_RESPONSE = (state, response) => {
+const SOCKET_REMOVE_DATA_POINT_RESPONSE = (state, response) => {
   state.items.push(response[0])
 }
 
@@ -51,14 +51,21 @@ const actions = {
 const mutations = {
   setLoading: (state, status) => state.isLoading = status,
   SOCKET_GET_ALL_DATA_POINTS_RESPONSE,
-  SOCKET_ADD_DATA_POINTS_RESPONSE,
-  SOCKET_UPDATE_DATA_POINTS_RESPONSE,
-  SOCKET_REMOVE_DATA_POINTS_RESPONSE
+  SOCKET_ADD_DATA_POINT_RESPONSE,
+  SOCKET_UPDATE_DATA_POINT_RESPONSE,
+  SOCKET_REMOVE_DATA_POINT_RESPONSE
 }
+
+const isAddressAlreadyUsed =
+  state =>
+    (controlSystemId, address) =>
+      !!state.items.find(item => item.controlSystem === controlSystemId && item.address === address)
 
 const getters = {
   isLoading: state => state.loading,
-  get: state => state.items
+  get: state => state.items,
+  getByControlSystemId: state => id => state.items.filter(item => item.controlSystem === id),
+  isAddressAlreadyUsed
 }
 
 export default {

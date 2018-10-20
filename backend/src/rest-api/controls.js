@@ -23,10 +23,10 @@ export const registerControlEndpoints = (io, socket) => {
     })
 
   const cbUpdate = control =>
-    ControlService.update(control, (err, savedFacility) => {
+    ControlService.update(control, (err, savedItem) => {
       err
         ? socket.emit('update_control_failed', err)
-        : io.emit('update_control_response', savedFacility)
+        : io.emit('update_control_response', savedItem)
     })
 
   socket

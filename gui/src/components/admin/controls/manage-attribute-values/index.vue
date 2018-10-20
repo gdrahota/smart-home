@@ -1,16 +1,14 @@
 <template>
-  <div class="border-top">
+  <v-card class="border-top">
     <v-card-title>
-      <div class="body-1">
-        Verfügbare Tags:
-      </div>
+      <div class="body-1">Verfügbare Tags:</div>
     </v-card-title>
     <select-attribute-value
       v-for="attribute of attributes"
       :attribute="attribute"
       :key="attribute._id"
     ></select-attribute-value>
-  </div>
+  </v-card>
 </template>
 
 <script>

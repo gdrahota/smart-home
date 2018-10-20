@@ -1,33 +1,31 @@
 import mongoose from 'mongoose'
 
+export const controlSystemTypes = ['KNX-TP']
+
 export const registerSchema = () => {
   const Schema = mongoose.Schema
 
   const typeDefinition = {
-    controlSystem: {
-      type: Schema.ObjectId,
-      required: true
-    },
-    address: {
-      type: Number,
+    name: {
+      type: String,
       required: true
     },
     description: {
       type: String,
       default: ''
     },
-    dataType: {
-      type: Number,
+    type: {
+      type: String,
       required: true
     }
   }
 
-  const options = { collection: 'data-points' }
+  const options = { collection: 'control-systems' }
 
   const ControlSchema = new Schema(typeDefinition, options)
 
   try {
-    mongoose.model('data-points', ControlSchema)
+    mongoose.model('control-systems', ControlSchema)
   } catch (err) {
   }
 }

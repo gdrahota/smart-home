@@ -2,28 +2,26 @@ import mongoose from 'mongoose'
 
 const getAll = cb =>
   mongoose
-    .model('data-points')
+    .model('control-systems')
     .find()
     .exec((err, items) => cb(err, items))
 
 const add = (item, cb) =>
   mongoose
-    .model('data-points')(item)
+    .model('control-systems')(item)
     .save((err, item) => cb(err, item))
 
 const remove = (id, cb) =>
   mongoose
-    .model('data-points')
+    .model('control-systems')
     .remove({ _id: id })
     .exec(err => cb(err, id))
 
-const update = (item, cb) => {
-  console.log(item)
+const update = (item, cb) =>
   mongoose
-    .model('data-points')
+    .model('control-systems')
     .findOneAndUpdate({ _id: item._id }, item, { new: true })
     .exec((err, response) => cb(err, response))
-}
 
 export default {
   getAll,

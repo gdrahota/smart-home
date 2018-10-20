@@ -63,8 +63,9 @@
             model: true,
             children: [
               { icon: 'far fa-minus-square', text: 'Gebäude', to: { path: '/admin/facilities' } },
-              { icon: 'fa-sliders', text: 'Steuerelemente', to: { path: '/admin/controls' } },
-              { icon: 'fa-code', text: 'Endpunkte', to: { path: '/admin/data-points' } }
+              { icon: 'fa-code', text: 'Schnittstellensysteme', to: { path: '/admin/control-systems' } },
+              { icon: 'fa-code', text: 'Endpunkte', to: { path: '/admin/data-points' } },
+              { icon: 'fa-sliders', text: 'Steuerelemente', to: { path: '/admin/controls' } }
             ]
           }
         ]

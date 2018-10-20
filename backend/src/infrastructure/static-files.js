@@ -2,7 +2,7 @@ import serveStatic from 'serve-static'
 import connectHistoryApiFallback from 'connect-history-api-fallback'
 import path from 'path'
 
-export const serveStaticFiles = app => {
+export const serveStaticFiles = (app, cb) => {
   if (!(process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'development')) {
     // Static file middleware
     app.use('/', serveStatic(path.join(__dirname + '../../../../gui/dist/')))
@@ -15,4 +15,6 @@ export const serveStaticFiles = app => {
 
     app.use('/', serveStatic(path.join(__dirname + '../../../../gui/dist/')))
   }
+
+  cb()
 }

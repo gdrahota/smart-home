@@ -1,3 +1,4 @@
+import { io } from '../infrastructure/websocket'
 import { registerClientEndpoints } from './clients'
 import { registerFacilityEndpoints } from './facilities'
 import { registerFacilityAttributeEndpoints } from './facility-attributes'
@@ -5,9 +6,10 @@ import { registerFacilityAttributeValuesEndpoints } from './facility-attribute-v
 import { registerControlEndpoints } from './controls'
 import { registerDataPointEndpoints } from './data-points'
 import { registerControlDataPointEndpoints } from './control-data-points'
+import { registerControlSystemEndpoints } from './control-systems'
 import UserService from '../services/clients'
 
-export const registerEndpoints = (io, cb) => {
+export const registerEndpoints = cb => {
   io
     .on('connection', socket => {
         // register middleware for each new packet received
@@ -23,6 +25,7 @@ export const registerEndpoints = (io, cb) => {
         registerControlEndpoints(io, socket)
         registerDataPointEndpoints(io, socket)
         registerControlDataPointEndpoints(io, socket)
+        registerControlSystemEndpoints(io, socket)
       }
     )
     .on('disconnect', reason => {

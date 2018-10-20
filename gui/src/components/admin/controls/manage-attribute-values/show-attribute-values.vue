@@ -1,23 +1,19 @@
 <template>
-  <v-card-text>
-    <v-layout wrap row>
-      <v-flex xs1>
-        <div class="subheading">
-          <v-chip label>Tags:</v-chip>
-        </div>
-      </v-flex>
-      <v-flex xs11>
-        <v-chip
-          v-for="value of facilityAttributeValues"
-          :key="value._id"
-          close
-          @input="() => removeValue(value._id)"
-        >
-          {{ value.value }}
-        </v-chip>
-      </v-flex>
-    </v-layout>
-  </v-card-text>
+  <v-card>
+    <v-card-title>
+      <div class="body-1">Zugewiesene Tags:</div>
+    </v-card-title>
+    <v-card-text>
+      <v-chip
+        v-for="value of facilityAttributeValues"
+        :key="value._id"
+        close
+        @input="() => removeValue(value._id)"
+      >
+        {{ value.value }}
+      </v-chip>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>

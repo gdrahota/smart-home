@@ -2,11 +2,14 @@
   <dictionary name="guidodrahota">
     <words>
       <w>adresse</w>
+      <w>angeschlossene</w>
       <w>ankleide</w>
       <w>anlage</w>
+      <w>anschlüsse</w>
       <w>ausrichtung</w>
       <w>benennen</w>
       <w>bestätigung</w>
+      <w>bussysteme</w>
       <w>datenpunkte</w>
       <w>datentyp</w>
       <w>deaktivieren</w>
@@ -40,13 +43,17 @@
       <w>steuerelement</w>
       <w>steuerelemente</w>
       <w>steuerelements</w>
+      <w>steuerung</w>
       <w>straße</w>
+      <w>verfügbare</w>
       <w>verwendung</w>
       <w>vorne</w>
       <w>welche</w>
       <w>wohnzimmer</w>
       <w>zeichen</w>
       <w>zentrale</w>
+      <w>zugeordnete</w>
+      <w>zugewiesene</w>
     </words>
   </dictionary>
 </component>

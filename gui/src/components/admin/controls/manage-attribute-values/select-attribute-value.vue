@@ -66,7 +66,6 @@
           ...this.control,
           attributeValues: values
         }
-        console.log(changedControl)
         this.update(changedControl)
       }
     },

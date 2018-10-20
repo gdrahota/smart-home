@@ -78,6 +78,10 @@
       cancelAddFacility () {
         this.showAddNewDialog = false
       }
+    },
+
+    mounted () {
+      this.selectedFacility = null
     }
   }
 </script>

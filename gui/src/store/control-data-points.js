@@ -15,11 +15,9 @@ const SOCKET_GET_ALL_CONTROL_DATA_POINTS_RESPONSE = (state, response) => {
 }
 
 const upsertAction = (context, item) => {
-  console.log('upsertAction', item)
   socketInstance.emit('upsert_control_data_point', item)
 }
 const SOCKET_UPSERT_CONTROL_DATA_POINT_RESPONSE = (state, response) => {
-  console.log('SOCKET_UPSERT_CONTROL_DATA_POINTS_RESPONSE', response)
   let isNew = true
   const mapFnc = item => {
     if (item._id === response[0]._id) {
@@ -28,8 +26,6 @@ const SOCKET_UPSERT_CONTROL_DATA_POINT_RESPONSE = (state, response) => {
     }
     return item
   }
-
-  console.log('isNew', isNew)
 
   const items = state.items.map(mapFnc)
   if (isNew) {
@@ -59,14 +55,13 @@ const mutations = {
   SOCKET_REMOVE_CONTROL_DATA_POINT_RESPONSE
 }
 
+const getByControlAndEndPoint = state => (controlId, endPoint) => state.items.find(i => i.control === controlId && i.endPoint === endPoint)
+
 const getters = {
   isLoading: state => state.loading,
   get: state => state.items,
-  getByControlAndEndPoint: state => (controlId, endPoint) => {
-    const t = state.items.find(i => i.control === controlId && i.endPoint === endPoint)
-    console.log(controlId, endPoint, t)
-    return t
-  }
+  getUsage: state => dataPointId => state.items.filter(item => item.dataPoint === dataPointId),
+  getByControlAndEndPoint
 }
 
 export default {

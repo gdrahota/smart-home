@@ -10,16 +10,21 @@ import socketIoClient from 'socket.io-client'
 import vueSocketIO from 'vue-socket.io'
 import config from '../config/client'
 import Confirm from './components/general/confirm-dialog'
-import './filter/knx-data-type'
+import KnxAddress from './components/general/knx-address'
+import filters from './filter'
 
 import ('./assets/general-styles.css')
 
-localStorage.debug = '*'
+filters.register(Vue)
+
+localStorage.debug = '*##'
 
 export const socketInstance = socketIoClient(config.server.host + ':' + config.server.port)
+
 Vue.use(vueSocketIO, socketInstance, store)
 Vue.use(VueMomentJS, moment)
 Vue.component('confirm', Confirm)
+Vue.component('KnxAddress', KnxAddress)
 
 Vue.config.productionTip = false
 

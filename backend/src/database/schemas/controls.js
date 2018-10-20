@@ -1,5 +1,7 @@
 import mongoose from 'mongoose'
 
+export const controlStates = ['active', 'inactive']
+
 export const registerSchema = () => {
   const Schema = mongoose.Schema
 
@@ -27,7 +29,7 @@ export const registerSchema = () => {
     endPoints: [],
     attributeValues: [Schema.ObjectId],
     state: {
-      type: String,
+      type: controlStates,
       default: 'active'
     }
   }

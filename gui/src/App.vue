@@ -57,6 +57,8 @@
 
     created () {
       this.loadControls()
+      this.loadControlSystems()
+      this.loadControlSystemTypes()
       this.loadControlDataPoints()
       this.loadDataPoints()
       this.loadFacilities()
@@ -72,6 +74,8 @@
     methods: {
       ...mapActions({
         loadControls: 'controls/loadAction',
+        loadControlSystems: 'controlSystems/loadAction',
+        loadControlSystemTypes: 'controlSystems/loadTypesAction',
         loadControlDataPoints: 'controlDataPoints/loadAction',
         loadDataPoints: 'dataPoints/loadAction',
         loadFacilities: 'facilities/loadAction',

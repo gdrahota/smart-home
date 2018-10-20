@@ -1,6 +1,6 @@
 import DataPointsRepository from '../database/repository/data-points'
 
-const add = (facility, cb) => ControlsRepository.add(facility, cb)
+const add = (facility, cb) => DataPointsRepository.add(facility, cb)
 
 const getAll = cb => DataPointsRepository.getAll(cb)
 

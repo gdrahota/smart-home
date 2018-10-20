@@ -23,10 +23,10 @@ export const registerDataPointEndpoints = (io, socket) => {
     })
 
   const cbUpdate = control =>
-    DataPointService.update(control, (err, savedFacility) => {
+    DataPointService.update(control, (err, savedItem) => {
       err
         ? socket.emit('update_data_point_failed', err)
-        : io.emit('update_data_point_response', savedFacility)
+        : io.emit('update_data_point_response', savedItem)
     })
 
   socket

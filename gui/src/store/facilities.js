@@ -71,6 +71,7 @@ const mutations = {
 const getters = {
   isLoading: state => state.loading,
   get: state => state.items,
+  getById: state => id => state.items.find(f => f._id === id),
   getActive: state => state.items.filter(item => item.state === 'active'),
   selected: state => state.selected
 }
