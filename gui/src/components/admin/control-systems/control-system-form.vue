@@ -28,7 +28,7 @@
         @input="value => updateControlSystem('name', value)"
       ></v-text-field>
     </v-flex>
-    <v-flex xs5 class="pr-1">
+    <v-flex xs3 class="pr-1">
       <v-text-field
         v-model="description"
         :disabled="disabled"
@@ -37,6 +37,23 @@
       ></v-text-field>
     </v-flex>
     <v-flex xs2>
+      <v-text-field
+        v-model="host"
+        :disabled="disabled"
+        solo
+      ></v-text-field>
+    </v-flex>
+    <v-flex xs1>
+      <v-text-field
+        v-model="port"
+        :disabled="disabled"
+        type="number"
+        :min="1"
+        :max="65535"
+        solo
+      ></v-text-field>
+    </v-flex>
+    <v-flex xs1>
       <v-text-field
         v-model="numberOfControls"
         :disabled="true"
@@ -64,6 +81,18 @@
       name: {
         get () {
           return this.controlSystem.name
+        },
+        set () {}
+      },
+      host: {
+        get () {
+          return this.controlSystem.host
+        },
+        set () {}
+      },
+      port: {
+        get () {
+          return this.controlSystem.port
         },
         set () {}
       },
@@ -95,6 +124,7 @@
           ...this.controlSystem,
           [attrName]: value
         }
+        console.log(changed)
         this.update(changed)
       }
     },

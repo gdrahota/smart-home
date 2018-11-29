@@ -7,5 +7,6 @@ export const registerMongooseSchemas = cb => {
   require('./facility-attribute-values').registerSchema()
   require('./facility-attributes').registerSchema()
   require('./facilities').registerSchema()
+  require('./command-queue').registerSchema()
   cb()
 }

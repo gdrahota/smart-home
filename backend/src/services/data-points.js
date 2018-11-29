@@ -1,12 +1,12 @@
-import DataPointsRepository from '../database/repository/data-points'
+import Repository from '../repository/any-collection'
 
-const add = (facility, cb) => DataPointsRepository.add(facility, cb)
+const add = (facility, cb) => Repository('data-points').add(facility, cb)
 
-const getAll = cb => DataPointsRepository.getAll(cb)
+const getAll = cb => Repository('data-points').getAll(cb)
 
-const remove = (id, cb) => DataPointsRepository.remove(id, cb)
+const remove = (id, cb) => Repository('data-points').remove(id, cb)
 
-const update = (facility, cb) => DataPointsRepository.update(facility, cb)
+const update = (facility, cb) => Repository('data-points').update(facility, cb)
 
 export const DataPointService = {
   add,

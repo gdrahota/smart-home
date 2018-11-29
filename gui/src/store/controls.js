@@ -6,11 +6,7 @@ const state = {
   selected: null
 }
 
-const loadAction = context => {
-  context.commit('setLoading', true)
-  socketInstance.emit('get_all_controls')
-}
-const SOCKET_GET_ALL_CONTROLS_RESPONSE = (state, response) => {
+const SOCKET_CONTROLS_RESPONSE = (state, response) => {
   state.items = response[0]
   state.loading = false
 }
@@ -18,15 +14,27 @@ const SOCKET_GET_ALL_CONTROLS_RESPONSE = (state, response) => {
 const addAction = (context, item) => {
   socketInstance.emit('add_control', item)
 }
-const SOCKET_ADD_CONTROL_RESPONSE = (state, response) => {
-  state.items.push(response[0])
-  state.selected = response[0]
-}
 
 const updateAction = (context, item) => {
   socketInstance.emit('update_control', item)
 }
-const SOCKET_UPDATE_CONTROL_RESPONSE = (state, response) => {
+
+const removeAction = (context, itemId) => {
+  socketInstance.emit('remove_control', itemId)
+}
+
+const actions = {
+  addAction,
+  updateAction,
+  removeAction
+}
+
+const SOCKET_ADD_CONTROLS_RESPONSE = (state, response) => {
+  state.items.push(response[0])
+  state.selected = response[0]
+}
+
+const SOCKET_UPDATE_CONTROLS_RESPONSE = (state, response) => {
   const mapFnc = item => {
     return (item._id === response[0]._id)
       ? response[0]
@@ -36,10 +44,7 @@ const SOCKET_UPDATE_CONTROL_RESPONSE = (state, response) => {
   state.selected = response[0]
 }
 
-const removeAction = (context, itemId) => {
-  socketInstance.emit('remove_control', itemId)
-}
-const SOCKET_REMOVE_CONTROL_RESPONSE = (state, response) => {
+const SOCKET_REMOVE_CONTROLS_RESPONSE = (state, response) => {
   state.items = state.items.filter(i => i._id !== response[0])
   state.selected = null
 }
@@ -48,19 +53,12 @@ const selectMutation = (context, item) => {
   state.selected = item
 }
 
-const actions = {
-  loadAction,
-  addAction,
-  updateAction,
-  removeAction
-}
-
 const mutations = {
   setLoading: (state, status) => state.isLoading = status,
-  SOCKET_GET_ALL_CONTROLS_RESPONSE,
-  SOCKET_ADD_CONTROL_RESPONSE,
-  SOCKET_UPDATE_CONTROL_RESPONSE,
-  SOCKET_REMOVE_CONTROL_RESPONSE,
+  SOCKET_CONTROLS_RESPONSE,
+  SOCKET_ADD_CONTROLS_RESPONSE,
+  SOCKET_UPDATE_CONTROLS_RESPONSE,
+  SOCKET_REMOVE_CONTROLS_RESPONSE,
   selectMutation
 }
 

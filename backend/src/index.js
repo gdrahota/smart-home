@@ -7,6 +7,7 @@ import { registerMongooseSchemas } from './database/schemas'
 import { bindWebSocketToServer } from './infrastructure/websocket'
 import { serveStaticFiles } from './infrastructure/static-files'
 import { registerEndpoints } from './rest-api'
+import mongoose from 'mongoose'
 
 const options = {
   rejectUnauthorized: false,

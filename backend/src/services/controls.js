@@ -1,12 +1,12 @@
-import ControlsRepository from '../database/repository/controls'
+import Repository from '../repository/any-collection'
 
-const add = (facility, cb) => ControlsRepository.add(facility, cb)
+const add = (facility, cb) => Repository('controls').add(facility, cb)
 
-const getAll = cb => ControlsRepository.getAll(cb)
+const getAll = cb => Repository('controls').getAll(cb)
 
-const remove = (id, cb) => ControlsRepository.remove(id, cb)
+const remove = (id, cb) => Repository('controls').remove(id, cb)
 
-const update = (facility, cb) => ControlsRepository.update(facility, cb)
+const update = (facility, cb) => Repository('controls').update(facility, cb)
 
 export const ControlService = {
   add,

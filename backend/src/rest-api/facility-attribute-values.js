@@ -1,13 +1,6 @@
 import { FacilityAttributeValuesService } from '../services/facility-attribute-values'
 
 export const registerFacilityAttributeValuesEndpoints = (io, socket) => {
-  const cbGet = () =>
-    FacilityAttributeValuesService.getAll((err, items) => {
-      err
-        ? socket.emit('get_all_facility_attribute_values_failed', err)
-        : socket.emit('get_all_facility_attribute_values_response', items)
-    })
-
   const cbAdd = item =>
     FacilityAttributeValuesService.add(item, (err, savedItem) => {
       err
@@ -30,7 +23,6 @@ export const registerFacilityAttributeValuesEndpoints = (io, socket) => {
     })
 
   socket
-    .on('get_all_facility_attribute_values', cbGet)
     .on('add_facility_attribute_value', cbAdd)
     .on('remove_facility_attribute_value', cbRemove)
     .on('update_facility_attribute_value', cbUpdate)

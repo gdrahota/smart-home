@@ -1,4 +1,4 @@
-import ClientRepository from '../database/repository/clients'
+import ClientRepository from '../repository/clients'
 import LdapAuthService from '../services/ldap-auth-service'
 import config from '../../config/server'
 

@@ -1,13 +1,6 @@
 import { ControlService } from '../services/controls'
 
 export const registerControlEndpoints = (io, socket) => {
-  const cbGet = () =>
-    ControlService.getAll((err, items) => {
-      err
-        ? socket.emit('get_all_controls_failed', err)
-        : socket.emit('get_all_controls_response', items)
-    })
-
   const cbAdd = facility =>
     ControlService.add(facility, (err, item) => {
       err
@@ -30,7 +23,6 @@ export const registerControlEndpoints = (io, socket) => {
     })
 
   socket
-    .on('get_all_controls', cbGet)
     .on('add_control', cbAdd)
     .on('remove_control', cbRemove)
     .on('update_control', cbUpdate)

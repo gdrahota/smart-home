@@ -5,26 +5,34 @@ const state = {
   items: []
 }
 
-const loadAction = context => {
-  context.commit('setLoading', true)
-  socketInstance.emit('get_all_facility_attribute_values')
-}
-const SOCKET_GET_ALL_FACILITY_ATTRIBUTE_VALUES_RESPONSE = (state, response) => {
-  state.items = response[0]
-  state.loading = false
-}
-
 const addAction = (context, item) => {
   socketInstance.emit('add_facility_attribute_value', item)
-}
-const SOCKET_ADD_FACILITY_ATTRIBUTE_VALUE_RESPONSE = (state, response) => {
-  state.items.push(response[0])
 }
 
 const updateAction = (context, attribute) => {
   socketInstance.emit('update_facility_attribute_value', attribute)
 }
-const SOCKET_UPDATE_FACILITY_ATTRIBUTE_VALUE_RESPONSE = (state, response) => {
+
+const removeAction = (context, id) => {
+  socketInstance.emit('remove_facility_attribute_value', id)
+}
+
+const actions = {
+  addAction,
+  updateAction,
+  removeAction
+}
+
+const SOCKET_FACILITY_ATTRIBUTE_VALUES_RESPONSE = (state, response) => {
+  state.items = response[0]
+  state.loading = false
+}
+
+const SOCKET_ADD_FACILITY_ATTRIBUTE_VALUES_RESPONSE = (state, response) => {
+  state.items.push(response[0])
+}
+
+const SOCKET_UPDATE_FACILITY_ATTRIBUTE_VALUES_RESPONSE = (state, response) => {
   const mapFnc = item => {
     return (item._id === response[0]._id)
       ? response[0]
@@ -33,26 +41,16 @@ const SOCKET_UPDATE_FACILITY_ATTRIBUTE_VALUE_RESPONSE = (state, response) => {
   state.items = state.items.map(mapFnc)
 }
 
-const removeAction = (context, id) => {
-  socketInstance.emit('remove_facility_attribute_value', id)
-}
-const SOCKET_REMOVE_FACILITY_ATTRIBUTE_VALUE_RESPONSE = (state, response) => {
+const SOCKET_REMOVE_FACILITY_ATTRIBUTE_VALUES_RESPONSE = (state, response) => {
   state.items = state.items.filter(i => i._id !== response[0])
-}
-
-const actions = {
-  loadAction,
-  addAction,
-  updateAction,
-  removeAction
 }
 
 const mutations = {
   setLoading: (state, status) => state.isLoading = status,
-  SOCKET_GET_ALL_FACILITY_ATTRIBUTE_VALUES_RESPONSE,
-  SOCKET_ADD_FACILITY_ATTRIBUTE_VALUE_RESPONSE,
-  SOCKET_UPDATE_FACILITY_ATTRIBUTE_VALUE_RESPONSE,
-  SOCKET_REMOVE_FACILITY_ATTRIBUTE_VALUE_RESPONSE
+  SOCKET_FACILITY_ATTRIBUTE_VALUES_RESPONSE,
+  SOCKET_ADD_FACILITY_ATTRIBUTE_VALUES_RESPONSE,
+  SOCKET_UPDATE_FACILITY_ATTRIBUTE_VALUES_RESPONSE,
+  SOCKET_REMOVE_FACILITY_ATTRIBUTE_VALUES_RESPONSE
 }
 
 const getters = {

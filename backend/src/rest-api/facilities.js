@@ -1,13 +1,6 @@
 import { FacilityService } from '../services/facilities'
 
 export const registerFacilityEndpoints = (io, socket) => {
-  const cbGet = () =>
-    FacilityService.getAll((err, items) => {
-      err
-        ? socket.emit('get_all_facilities_failed', err)
-        : socket.emit('get_all_facilities_response', items)
-    })
-
   const cbAdd = facility =>
     FacilityService.add(facility, (err, item) => {
       err
@@ -37,7 +30,6 @@ export const registerFacilityEndpoints = (io, socket) => {
     })
 
   socket
-    .on('get_all_facilities', cbGet)
     .on('add_facility', cbAdd)
     .on('remove_facility', cbRemove)
     .on('set_facility_inactive', cbSetInactive)

@@ -8,8 +8,10 @@
         <v-flex xs1></v-flex>
         <v-flex xs2>Bus-Typ</v-flex>
         <v-flex xs2>Name</v-flex>
-        <v-flex xs5>Beschreibung</v-flex>
-        <v-flex xs2>Anzahl Steuerelemente</v-flex>
+        <v-flex xs3>Beschreibung</v-flex>
+        <v-flex xs2>Host-Name / IP-Adresse</v-flex>
+        <v-flex xs1>Port</v-flex>
+        <v-flex xs1>Steuerelemente</v-flex>
       </v-layout>
 
       <control-system-form
