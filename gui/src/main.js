@@ -19,9 +19,9 @@ filters.register(Vue)
 
 localStorage.debug = '*'
 
-export const socketInstance = socketIoClient(config.server.host + ':' + config.server.port)
+export const socket = socketIoClient(config.server.host + ':' + config.server.port)
 
-Vue.use(vueSocketIO, socketInstance, store)
+Vue.use(vueSocketIO, socket, store)
 Vue.use(VueMomentJS, moment)
 Vue.component('confirm', Confirm)
 Vue.component('KnxAddress', KnxAddress)

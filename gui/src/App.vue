@@ -55,20 +55,10 @@
       MenuBar
     },
 
-    created () {
-      this.login()
-    },
-
     data: () => ({
       dialog: false,
       drawer: null
     }),
-
-    methods: {
-      ...mapActions({
-        login: 'client/loginAction',
-      })
-    },
 
     props: {
       source: String

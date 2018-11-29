@@ -80,8 +80,9 @@ export const registerClientEndpoints = (io, socket) => {
 
   const cbLogin = credentials =>
     ClientService.login(credentials, socket.id, (err, clientAndRoles) => {
+      console.log('login result', err, clientAndRoles)
       if (err) {
-        socket.emit('login_failed')
+        socket.emit('login_failed', err)
       } else {
         socket.emit('login_response', clientAndRoles)
         // Join private channel
@@ -112,7 +113,7 @@ export const registerClientEndpoints = (io, socket) => {
     )
 
   socket
-    .on('login', sendDataToClient)
+    .on('login', cbLogin)
     .on('reLogin', cbReLogin)
     .on('logout', cbLogout)
 }

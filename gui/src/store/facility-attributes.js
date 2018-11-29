@@ -1,4 +1,4 @@
-import { socketInstance } from '../main'
+import { socket } from '../main'
 
 const state = {
   loading: true,
@@ -6,15 +6,15 @@ const state = {
 }
 
 const addAction = (context, item) => {
-  socketInstance.emit('add_facility_attribute', item)
+  socket.emit('add_facility_attribute', item)
 }
 
 const updateAction = (context, attribute) => {
-  socketInstance.emit('update_facility_attribute', attribute)
+  socket.emit('update_facility_attribute', attribute)
 }
 
 const removeAction = (context, id) => {
-  socketInstance.emit('remove_facility_attribute', id)
+  socket.emit('remove_facility_attribute', id)
 }
 
 const actions = {

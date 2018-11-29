@@ -31,52 +31,22 @@ export const mapLdapGroupsToAppRoles = (appRolesToLdapRoles, userGroups) => {
 const login = (credentials, socketId, cb) => {
   const { username, password } = credentials
   const uuid = require('uuid/v4')
-  let environment = 'production'
 
-  try {
-    environment = process.env.NODE_ENV
-  } catch (e) {
-  }
+  // local auth
+  const user = registeredUsers.find(regUser => regUser.accountName === username)
 
-  if (environment !== 'production') {
-    // local auth
-    const user = registeredUsers.find(regUser => regUser.accountName === username)
+  if (user) {
+    const expires = new Date()
+    expires.setHours(expires.getHours() + 4)
 
-    if (user) {
-      const expires = new Date()
-      expires.setHours(expires.getHours() + 4)
-
-      ClientRepository.add(uuid(), user, socketId, expires)
-        .then(
-          client => cb(null, { client, roles: mapLdapGroupsToAppRoles(AppRolesToLdapRoles, user.groups) }),
-          err => cb(err)
-        )
-        .catch()
-    } else {
-      cb('UNKNOWN_USER_OR_WRONG_PASSWORD')
-    }
-  } else {
-    // LDAP auth
-    LdapAuthService.authenticate(username, password)
+    ClientRepository.add(uuid(), user, socketId, expires)
       .then(
-        user => {
-          console.log('LDAP -> ALL DONE SUCCESSFULLY', user)
-
-          const expires = new Date()
-          expires.setHours(expires.getHours() + 4)
-
-          ClientRepository.add(uuid(), user, socketId, expires)
-            .then(
-              client => cb(null, { client, roles: mapLdapGroupsToAppRoles(AppRolesToLdapRoles, client.user.groups) }),
-              err => cb(err)
-            )
-        },
-        err => {
-          console.log('UNKNOWN_USER_OR_WRONG_PASSWORD', err)
-          cb('UNKNOWN_USER_OR_WRONG_PASSWORD')
-        }
+        client => cb(null, { client }),
+        err => cb(err)
       )
       .catch()
+  } else {
+    cb('UNKNOWN_USER_OR_WRONG_PASSWORD')
   }
 }
 

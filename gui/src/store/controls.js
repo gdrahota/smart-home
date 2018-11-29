@@ -1,4 +1,4 @@
-import { socketInstance } from '../main'
+import { socket } from '../main'
 
 const state = {
   loading: true,
@@ -12,15 +12,15 @@ const SOCKET_CONTROLS_RESPONSE = (state, response) => {
 }
 
 const addAction = (context, item) => {
-  socketInstance.emit('add_control', item)
+  socket.emit('add_control', item)
 }
 
 const updateAction = (context, item) => {
-  socketInstance.emit('update_control', item)
+  socket.emit('update_control', item)
 }
 
 const removeAction = (context, itemId) => {
-  socketInstance.emit('remove_control', itemId)
+  socket.emit('remove_control', itemId)
 }
 
 const actions = {

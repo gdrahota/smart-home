@@ -1,4 +1,4 @@
-import { socketInstance } from '../main'
+import { socket } from '../main'
 
 const state = {
   loading: true,
@@ -17,11 +17,11 @@ const SOCKET_CONTROL_SYSTEM_TYPES_RESPONSE = (state, response) => {
 }
 
 const addAction = (context, item) => {
-  socketInstance.emit('add_control_system', item)
+  socket.emit('add_control_system', item)
 }
 
 const updateAction = (context, item) => {
-  socketInstance.emit('update_control_system', item)
+  socket.emit('update_control_system', item)
 }
 
 const SOCKET_ADD_CONTROL_SYSTEMS_RESPONSE = (state, response) => {
