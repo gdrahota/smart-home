@@ -7,7 +7,6 @@ import { registerMongooseSchemas } from './database/schemas'
 import { bindWebSocketToServer } from './infrastructure/websocket'
 import { serveStaticFiles } from './infrastructure/static-files'
 import { registerEndpoints } from './rest-api'
-import mongoose from 'mongoose'
 
 const options = {
   rejectUnauthorized: false,
@@ -30,7 +29,7 @@ async.series([
       console.log('=> ERROR during server startup:')
       console.log(err)
       console.log('========= SERVER STARTUP STOPPED ========')
-      process.exit(0)
+      process.exit(1)
     } else {
       console.log('== SERVER STARTUP SUCCESSFULLY :) <<<')
       console.log('')

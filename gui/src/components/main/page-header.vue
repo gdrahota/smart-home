@@ -18,7 +18,7 @@
       getBreadcrumbs () {
         return this.$route.matched.map(r => {
           return {
-            to: r.path,
+            to: r.path.length > 0 ? r.path: '/',
             title: r.meta.title,
             disabled: r.meta.hasNoContent
           }

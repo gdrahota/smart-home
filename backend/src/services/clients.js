@@ -50,21 +50,21 @@ const login = (credentials, socketId, cb) => {
   }
 }
 
-const reLogin = (socket, clientId, cb) => {
+const reLogin = (socketId, clientId, cb) => {
   const expires = new Date()
   expires.setHours(expires.getHours() + 4)
 
-  ClientRepository.relogin(socket.id, clientId, expires, (err, client) => {
+  ClientRepository.relogin(socketId, clientId, expires, (err, client) => {
     if (err || !client) {
       cb('error during logout')
     } else {
-      cb(null, { client, roles: mapLdapGroupsToAppRoles(AppRolesToLdapRoles, client.user.groups) })
+      cb(null, { client })
     }
   })
 }
 
-const logOut = (clientId, cb) =>
-  ClientRepository.logOut(clientId, (err, client) => cb(err, client))
+const logOut = clientId =>
+  ClientRepository.logOut(clientId)
 
 const logOutExpired = (actualDate, cb) => {
   ClientRepository.logOutExpired(actualDate, err => cb(err))

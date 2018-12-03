@@ -7,6 +7,7 @@ import { registerControlEndpoints } from './controls'
 import { registerDataPointEndpoints } from './data-points'
 import { registerControlDataPointEndpoints } from './control-data-points'
 import { registerControlSystemEndpoints } from './control-systems'
+import { registerCommandQueueEndpoints } from './command-queue'
 import UserService from '../services/clients'
 
 export const registerEndpoints = cb => {
@@ -26,6 +27,7 @@ export const registerEndpoints = cb => {
         registerDataPointEndpoints(io, socket)
         registerControlDataPointEndpoints(io, socket)
         registerControlSystemEndpoints(io, socket)
+        registerCommandQueueEndpoints(io, socket)
       }
     )
     .on('disconnect', reason => {

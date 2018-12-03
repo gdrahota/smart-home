@@ -35,12 +35,16 @@ const relogin = (socketId, clientId, expires, cb) => {
     .exec((err, client) => cb(err, client))
 }
 
-const logOut = (clientId, cb) => {
+const logOut = clientId => {
   const query = { clientId: clientId }
 
   mongoose.model('client')
     .deleteOne(query)
-    .exec((err, client) => cb(err, client))
+    .exec(err => {
+      if (err) {
+        console.error('repository.client.logout', err)
+      }
+    })
 }
 
 const logOutExpired = (actualDate, cb) => {

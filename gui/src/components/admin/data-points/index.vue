@@ -39,7 +39,7 @@
             @searchInDescription="value => { searchInDescription = value }"
             @searchForDataType="value => { searchForDataType = value }"
             @searchInUpperRange="value => { searchInUpperRange = value }"
-            @searchInUMiddleRange="value => { searchInUMiddleRange = value }"
+            @searchInMiddleRange="value => { searchInMiddleRange = value }"
           />
         </v-card-text>
       </v-card-text>
@@ -107,13 +107,13 @@
         searchInDescription: '',
         searchForDataType: null,
         searchInUpperRange: null,
-        searchInUMiddleRange: null,
+        searchInMiddleRange: null,
         selectedControlSystemId: null,
         disabled: true,
         showAddForm: false,
         pagination: {
           rowsPerPage: -1,
-          sortBy: 'address'
+          sortBy: 'description'
         }
       }
     },
@@ -126,17 +126,25 @@
         const byDescription = row => filter(row['description'], search)
         const byDataType = row => this.searchForDataType ? filter(row['dataType'], this.searchForDataType) : true
         const byAddressRange = row => {
-          if (this.searchInUpperRange === null && this.searchInUMiddleRange === null) {
+          const parts = row.address.toString().split('/')
+
+          if (parts.length !== 3) {
             return true
           }
 
-          let min = this.searchInUpperRange ? this.searchInUpperRange * 2048 : 0
-          let max = this.searchInUpperRange ? this.searchInUpperRange * 2048 + 2047 : 0
+          if (this.searchInUpperRange) {
+            if (parts[0] !== this.searchInUpperRange) {
+              return false
+            }
+          }
 
-          min = this.searchInUMiddleRange ? min + this.searchInUMiddleRange * 32 : min
-          max = this.searchInUMiddleRange ? max + this.searchInUMiddleRange * 32 + 31 : max
+          if (this.searchInMiddleRange) {
+            if (parts[1] !== this.searchInMiddleRange) {
+              return false
+            }
+          }
 
-          return row.address >= min && row.address <= max
+          return true
         }
 
         return items

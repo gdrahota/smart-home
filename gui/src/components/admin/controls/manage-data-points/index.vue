@@ -1,6 +1,8 @@
 <template>
+  <!--<pre>{{currentComponent}}</pre>-->
   <component
-    v-bind:is="currentComponent"
+    v-if="control"
+    :is="currentComponent"
     :control="control"
   />
 </template>
@@ -12,23 +14,34 @@
 
   export default {
     components: {
-      KnxTpLightSwitch
+      KnxTpLightSwitch,
+      KnxTpLightDimmer
     },
 
     computed: {
       ...mapGetters({
-        control: 'controls/selected',
         dataPoints: 'dataPoints/get'
       }),
       currentComponent () {
+        console.log('???', this.control)
         switch (this.control.controlType) {
           case 'lightDimmer':
+            console.log('lightDimmer')
             return KnxTpLightDimmer
           case 'lightSwitch':
+            console.log('lightSwitch')
             return KnxTpLightSwitch
           default:
+            console.log('default')
             return KnxTpLightSwitch
         }
+      }
+    },
+
+    props: {
+      control: {
+        type: Object,
+        default: null
       }
     }
   }

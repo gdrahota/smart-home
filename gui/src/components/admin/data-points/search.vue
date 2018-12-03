@@ -73,14 +73,16 @@
       search (value) {
         this.$emit('searchInDescription', value)
       },
-      dataType(value){
+      dataType (value) {
         this.$emit('searchForDataType', value)
       },
-      upper(value) {
+      upper (value) {
+        value = value ? value.toString() : null
         this.$emit('searchInUpperRange', value)
       },
-      middle(value) {
-        this.$emit('searchInUMiddleRange', value)
+      middle (value) {
+        value = value ? value.toString() : null
+        this.$emit('searchInMiddleRange', value)
       }
     }
   }

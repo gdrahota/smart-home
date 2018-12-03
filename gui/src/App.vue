@@ -31,7 +31,7 @@
       <v-btn icon>
         <v-icon>fa-calendar</v-icon>
       </v-btn>
-      <v-btn icon>
+      <v-btn icon @click="logout" :disabled="!isLoggedIn">
         <v-icon>fa-sign-out</v-icon>
       </v-btn>
     </v-toolbar>
@@ -45,7 +45,8 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapGetters } from 'vuex'
+  import { EventBus } from './event-bus'
   import PageHeader from './components/main/page-header'
   import MenuBar from './components/menu-bar'
 
@@ -55,10 +56,26 @@
       MenuBar
     },
 
+    computed: {
+      ...mapGetters({
+        isLoggedIn: 'client/userIsLoggedIn'
+      })
+    },
+
+    created () {
+      EventBus.$emit('reLogin')
+    },
+
     data: () => ({
       dialog: false,
       drawer: null
     }),
+
+    methods: {
+      logout () {
+        EventBus.$emit('logout')
+      }
+    },
 
     props: {
       source: String

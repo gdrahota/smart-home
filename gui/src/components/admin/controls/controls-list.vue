@@ -13,7 +13,6 @@
     <template slot="item" slot-scope="data">
       <v-list-tile-content>{{ data.item.name }}</v-list-tile-content>
     </template>
-
     <template
       slot="selection"
       slot-scope="data"
@@ -26,33 +25,32 @@
         </v-list-tile-title>
       </v-list-tile-content>
     </template>
-
   </v-select>
 </template>
 
 <script>
-  import { mapGetters, mapMutations } from 'vuex'
+  import { mapGetters } from 'vuex'
 
   export default {
     computed: {
       ...mapGetters({
-        controls: 'controls/get',
-        selected: 'controls/selected'
+        controls: 'controls/get'
       }),
       control: {
         get () {
-          return this.selected
+          return this.selectedControl
         },
         set (value) {
-          this.select(value)
+          this.$emit('select', value)
         }
       }
     },
 
-    methods: {
-      ...mapMutations({
-        select: 'controls/selectMutation'
-      })
+    props: {
+      selectedControl: {
+        type: Object,
+        default: null
+      }
     }
   }
 </script>

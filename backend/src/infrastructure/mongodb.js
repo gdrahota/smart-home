@@ -13,23 +13,37 @@ oplog.on('insert', doc => {
   const nsParts = doc.ns.split('.')
   const collection = nsParts[1]
 
-  mongoose.model(collection).findOne(doc.o).exec((err, data) => {
-    io.emit('add_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
-  })
+  try {
+    mongoose.model(collection).findOne(doc.o).exec((err, data) => {
+      if (io) {
+        io.emit('add_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
+      }
+    })
+  }
+  catch (e) {
+  }
 })
 
 oplog.on('update', doc => {
   const nsParts = doc.ns.split('.')
   const collection = nsParts[1]
-  mongoose.model(collection).findOne(doc.o2).exec((err, data) => {
-    io.emit('update_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
-  })
+  try {
+    mongoose.model(collection).findOne(doc.o2).exec((err, data) => {
+      if (io) {
+        io.emit('update_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
+      }
+    })
+  }
+  catch (e) {
+  }
 })
 
 oplog.on('delete', doc => {
   const nsParts = doc.ns.split('.')
   const collection = nsParts[1]
-  io.emit('remove_' + collection.replace(/-/g, '_').toLowerCase() + '_response', doc.o._id)
+  if (io) {
+    io.emit('remove_' + collection.replace(/-/g, '_').toLowerCase() + '_response', doc.o._id)
+  }
 })
 
 const connect = cb => {

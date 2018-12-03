@@ -2,8 +2,7 @@ import { socket } from '../main'
 
 const state = {
   loading: true,
-  items: [],
-  selected: null
+  items: []
 }
 
 const SOCKET_CONTROLS_RESPONSE = (state, response) => {
@@ -49,17 +48,12 @@ const SOCKET_REMOVE_CONTROLS_RESPONSE = (state, response) => {
   state.selected = null
 }
 
-const selectMutation = (context, item) => {
-  state.selected = item
-}
-
 const mutations = {
   setLoading: (state, status) => state.isLoading = status,
   SOCKET_CONTROLS_RESPONSE,
   SOCKET_ADD_CONTROLS_RESPONSE,
   SOCKET_UPDATE_CONTROLS_RESPONSE,
-  SOCKET_REMOVE_CONTROLS_RESPONSE,
-  selectMutation
+  SOCKET_REMOVE_CONTROLS_RESPONSE
 }
 
 const getters = {
@@ -68,6 +62,7 @@ const getters = {
   getById: state => id => state.items.find(item => item._id === id),
   getActive: state => state.items.filter(item => item.state === 'active'),
   getByControlSystemId: state => id => state.items.filter(item => item.controlSystem === id),
+  getByAttributeValue: state => valueId => state.items.filter(item => item.attributeValues.indexOf(valueId) !== -1),
   selected: state => state.selected
 }
 

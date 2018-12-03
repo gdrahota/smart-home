@@ -9,7 +9,7 @@ export const registerSchema = () => {
       required: true
     },
     address: {
-      type: Number,
+      type: String,
       required: true
     },
     description: {
@@ -19,6 +19,10 @@ export const registerSchema = () => {
     dataType: {
       type: Number,
       required: true
+    },
+    value: {
+      type: Schema.Types.Mixed,
+      required: false
     }
   }
 

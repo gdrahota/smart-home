@@ -8,7 +8,7 @@
     item-value="value"
     clearable
     :return-object="false"
-  ></v-select>
+  />
 </template>
 
 <script>
@@ -17,7 +17,6 @@
   export default {
     computed: {
       ...mapGetters({
-        control: 'controls/selected',
         dataPoints: 'dataPoints/get',
         controlDataPointByControlAndEndPoint: 'controlDataPoints/getByControlAndEndPoint'
       }),
@@ -42,10 +41,10 @@
         },
         set (newValue) {
           if (!newValue) {
-              this.remove({
-                control: this.control._id,
-                endPoint: this.endPoint
-              })
+            this.remove({
+              control: this.control._id,
+              endPoint: this.endPoint
+            })
           } else {
             const controlDataPoint = {
               control: this.control._id,
@@ -80,6 +79,10 @@
       },
       dataType: {
         type: Number,
+        required: true
+      },
+      control: {
+        type: Object,
         required: true
       }
     }

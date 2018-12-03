@@ -54,19 +54,22 @@
       }),
       upper: {
         get () {
-          return Math.floor(parseInt(this.address) / 2048)
+          const parts = this.address.toString().split('/')
+          return parseInt(parts[0])
         },
         set () {}
       },
       middle: {
         get () {
-          return Math.floor((parseInt(this.address) - this.upper * 2048) / 256)
+          const parts = this.address.toString().split('/')
+          return parts.length >= 2 ? parseInt(parts[1]) : 31
         },
         set () {}
       },
       lower: {
         get () {
-          return parseInt(this.address) - this.upper * 2048 - this.middle * 256
+          const parts = this.address.toString().split('/')
+          return parts.length === 3 ? parseInt(parts[2]) : 255
         },
         set () {}
       }
@@ -89,28 +92,28 @@
         let response
         switch (attrName) {
           case 'upper':
-            response = value * 2048 + this.middle * 256 + this.lower
+            response = value.toString() + '/' + this.middle + '/' + this.lower
             break
           case 'middle':
-            response = this.upper * 2048 + value * 256 + this.lower
+            response = this.upper + '/' + value.toString() + '/' + this.lower
             break
           case 'lower':
-            response = this.upper * 2048 + this.middle * 256 + value
+            response = this.upper + '/' + this.middle + '/' + value.toString()
             break
         }
 
-        if (!this.isAddressAlreadyUsed(this.controlSystem, response)) {
-          this.isFreeAddress = true
-          this.$emit('setValue', response)
-        } else {
-          this.isFreeAddress = false
-        }
+        //if (!this.isAddressAlreadyUsed(this.controlSystem, response)) {
+        this.isFreeAddress = true
+        this.$emit('setValue', response)
+        //} else {
+        //  this.isFreeAddress = false
+        //}
       }
     },
 
     props: {
       address: {
-        type: Number,
+        type: String,
         default: 1
       },
       disabled: {

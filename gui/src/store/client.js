@@ -8,12 +8,25 @@ const state = {
 }
 
 const loginAction = (context, credential) => {
-  console.log('loginAction', credential)
   socket.emit('login', credential)
 }
 
+const reLoginAction = () => {
+  const clientId = localStorage.getItem('clientId')
+  if (clientId) {
+    socket.emit('reLogin', clientId)
+  }
+}
+
+const logoutAction = context => {
+  socket.emit('logout', context.getters.getClientId)
+  context.commit('logoutMutation')
+}
+
 const actions = {
-  loginAction
+  loginAction,
+  reLoginAction,
+  logoutAction
 }
 
 const setRequestedRouteBeforeLogin = (state, routeObj) => {
@@ -27,17 +40,32 @@ const SOCKET_LOGIN_FAILED = (state, err) => {
 const SOCKET_LOGIN_RESPONSE = (state, response) => {
   state.client = response[0].client
   state.loggedIn = true
+  localStorage.setItem('clientId', response[0].client.clientId)
+}
+
+const logoutMutation = state => {
+  state.client = null
+  state.loggedIn = false
+  state.error = null
 }
 
 const mutations = {
   setRequestedRouteBeforeLogin,
   SOCKET_LOGIN_RESPONSE,
-  SOCKET_LOGIN_FAILED
+  SOCKET_LOGIN_FAILED,
+  logoutMutation
+}
+
+const getClientId = state => {
+  if (state.client) {
+    return state.client.clientId
+  }
 }
 
 const getters = {
   userIsLoggedIn: state => state.loggedIn,
   getError: state => state.error,
+  getClientId
 }
 
 export default {

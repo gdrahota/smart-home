@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Store from '../store'
 import Router from 'vue-router'
 import Login from '../components/login'
 import Controls from '../components/admin/controls'
@@ -7,20 +8,12 @@ import DataPoints from '../components/admin/data-points'
 import Facilities from '../components/admin/facilities'
 import Home from '../views/Home.vue'
 import RouterContainer from '../components/router-container'
-import Store from '../store'
+import Control from '../components/control'
 
 Vue.use(Router)
 
 const router = new Router({
   routes: [
-    {
-      path: '/login',
-      component: Login,
-      name: 'login',
-      meta: {
-        title: 'Anmeldung'
-      }
-    },
     {
       path: '/',
       component: RouterContainer,
@@ -28,6 +21,22 @@ const router = new Router({
         title: 'Home'
       },
       children: [
+        {
+          path: 'login',
+          component: Login,
+          name: 'login',
+          meta: {
+            title: 'Anmeldung'
+          }
+        },
+        {
+          path: 'control',
+          component: Control,
+          name: 'control',
+          meta: {
+            title: 'Steuerung'
+          }
+        },
         {
           path: 'admin',
           component: RouterContainer,
@@ -94,15 +103,11 @@ Store.subscribe((mutation, state) => {
     const lastRoute = state.client.requestedRouteBeforeLogin
 
     if (lastRoute && state.client.requestedRouteBeforeLogin.path !== 'login') {
-      router.push(lastRoute.fullPath)
-      Store.commit('client/setRequestedRouteBeforeLogin')
+      router.replace(lastRoute.fullPath)
+      Store.commit('client/setRequestedRouteBeforeLogin', null)
     } else {
       router.push('/')
     }
-  }
-
-  if (mutation.type === 'client/logoutUser') {
-    router.push('/login')
   }
 })
 

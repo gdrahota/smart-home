@@ -1,5 +1,6 @@
 import ClientService from '../services/clients'
 import { ControlDataPointService } from '../services/control-data-points'
+import { CommandQueueService } from '../services/command-queue'
 import { ControlService } from '../services/controls'
 import { ControlSystemService } from '../services/control-systems'
 import { DataPointService } from '../services/data-points'
@@ -75,12 +76,19 @@ export const registerClientEndpoints = (io, socket) => {
           cb()
         })
       },
+      cb => {
+        CommandQueueService.getAll((err, items) => {
+          err
+            ? socket.emit('command_queue_failed', err)
+            : socket.emit('command_queue_response', items)
+          cb()
+        })
+      },
     ])
   }
 
   const cbLogin = credentials =>
     ClientService.login(credentials, socket.id, (err, clientAndRoles) => {
-      console.log('login result', err, clientAndRoles)
       if (err) {
         socket.emit('login_failed', err)
       } else {
@@ -94,7 +102,7 @@ export const registerClientEndpoints = (io, socket) => {
     })
 
   const cbReLogin = clientId =>
-    ClientService.reLogin(socket, clientId, (err, clientAndRoles) => {
+    ClientService.reLogin(socket.id, clientId, (err, clientAndRoles) => {
       if (err || !clientAndRoles) {
         socket.emit('login_failed')
       } else {
@@ -108,9 +116,7 @@ export const registerClientEndpoints = (io, socket) => {
     })
 
   const cbLogout = clientId =>
-    ClientService.logOut(
-      clientId, () => socket.to(clientId).emit('logout')
-    )
+    ClientService.logOut(clientId)
 
   socket
     .on('login', cbLogin)

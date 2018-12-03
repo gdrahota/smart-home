@@ -63,7 +63,8 @@
               { icon: 'fa-add', text: 'Endpunkte', to: { path: '/admin/data-points' } },
               { icon: 'fa-add', text: 'Steuerelemente', to: { path: '/admin/controls' } }
             ]
-          }
+          },
+          { icon: 'fa-home', text: 'Steuerung', to: { path: '/control' } },
         ]
       }
     }

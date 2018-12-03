@@ -60,6 +60,7 @@ const isAddressAlreadyUsed =
 const getters = {
   isLoading: state => state.loading,
   get: state => state.items,
+  getById: state => id => state.items.find(item => item._id === id),
   getByControlSystemId: state => id => state.items.filter(item => item.controlSystem === id),
   isAddressAlreadyUsed
 }

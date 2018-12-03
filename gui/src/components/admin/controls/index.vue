@@ -1,32 +1,37 @@
 <template>
   <v-layout wrap row>
     <v-flex xs4>
-      <controls-list/>
+      <controls-list
+        :selectedControl="selectedControl"
+        @select="value => selectControl(value)"
+      />
     </v-flex>
     <v-flex xs8 class="mb-3">
       <add-control-form
-        v-if="!selected"
+        v-if="!selectedControl"
         :showDialog="showAddNewDialog"
         @add="control => addControl(control)"
         @cancel="() => cancelAddFacility()"
         class="pt-4"
       />
       <confirm
-        v-if="selected"
+        v-if="selectedControl"
         title="Steuerelement Löschen"
         description="Dieses Steuerelement löschen?"
         :small="true"
         :fab="true"
-        @agree="() => remove(selected._id)"
+        @agree="() => remove(selectedControl._id)"
         class="pt-4"
       />
     </v-flex>
 
-    <v-flex xs6 class="pr-2" v-if="selected">
-      <manage-data-points/>
+    <v-flex xs6 class="pr-2" v-if="selectedControl">
+      <manage-data-points
+        :control="selectedControl"
+      />
     </v-flex>
 
-    <v-flex xs6 v-if="selected">
+    <v-flex xs6 v-if="selectedControl">
       <show-facility-attribute-values/>
       <manage-attribute-values/>
     </v-flex>
@@ -52,14 +57,14 @@
 
     computed: {
       ...mapGetters({
-        controls: 'controls/get',
-        selected: 'controls/selected'
+        controls: 'controls/get'
       })
     },
 
     data () {
       return {
-        showAddNewDialog: false
+        showAddNewDialog: false,
+        selectedControl: null
       }
     },
 
@@ -67,9 +72,6 @@
       ...mapActions({
         add: 'controls/addAction',
         remove: 'controls/removeAction'
-      }),
-      ...mapMutations({
-        selectControl: 'controls/selectMutation'
       }),
       removeValue (valueId) {
         console.log('removeValue', valueId)
@@ -79,11 +81,10 @@
           ...control,
           attributeValues: []
         })
+      },
+      selectControl (control) {
+        this.selectedControl = control
       }
-    },
-
-    mounted () {
-      this.selectControl(null)
     }
   }
 </script>

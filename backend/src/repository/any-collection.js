@@ -41,12 +41,20 @@ const upsert = collection => (item, cb) => {
     .exec(err => cb(err))
 }
 
+const find = collection => (searchObj, cb) => {
+  mongoose
+    .model(collection)
+    .find(searchObj)
+    .exec((err, items) => cb(err, items))
+}
+
 export default collection => {
   return {
     getAll: cb => getAll(collection)(cb),
     upsert: (item, cb) => upsert(collection)(item, cb),
     add: (item, cb) => add(collection)(item, cb),
     remove: (id, cb) => remove(collection)(id, cb),
-    update: (item, cb) => update(collection)(item, cb)
+    update: (item, cb) => update(collection)(item, cb),
+    find: (searchObj, cb) => find(collection)(searchObj, cb)
   }
 }
