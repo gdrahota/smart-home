@@ -4,18 +4,18 @@ export const registerControlDataPointEndpoints = (io, socket) => {
   const cbUpsert = control =>
     ControlDataPointService.upsert(control, err => {
       if (err) {
-        socket.emit('upsert_control_data_point_failed', err)
+        socket.emit('upsert_control_data_points_failed', err)
       }
     })
 
-  const cbRemove = id =>
-    ControlDataPointService.remove(id, err => {
+  const cbRemoveControlDataPoint = ({control, endPoint}) =>
+    ControlDataPointService.removeControlDataPoint(control, endPoint, err => {
       if (err) {
-        socket.emit('remove_control_data_point_failed', err)
+        socket.emit('remove_control_data_points_failed', err)
       }
     })
 
   socket
     .on('upsert_control_data_point', cbUpsert)
-    .on('remove_control_data_point', cbRemove)
+    .on('remove_control_data_point', cbRemoveControlDataPoint)
 }

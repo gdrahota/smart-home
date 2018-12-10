@@ -19,7 +19,7 @@ const SOCKET_COMMAND_QUEUE_RESPONSE = (state, response) => {
 }
 
 const SOCKET_ADD_COMMAND_QUEUE_RESPONSE = (state, response) => {
-  state.items = [...state.items, response[0]]
+  state.items.push(response[0])
 }
 
 const SOCKET_UPDATE_COMMAND_QUEUE_RESPONSE = (state, response) => {

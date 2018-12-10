@@ -17,7 +17,7 @@ import ('./assets/general-styles.css')
 
 filters.register(Vue)
 
-localStorage.debug = '*XX'
+localStorage.debug = '*xx'
 
 export const socket = socketIoClient(config.server.host + ':' + config.server.port)
 

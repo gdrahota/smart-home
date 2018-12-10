@@ -2,43 +2,37 @@
   <v-layout wrap row>
     <v-flex xs4>
       <v-text-field
+        label="KNX 1"
         v-model="upper"
         type="Number"
         :min="0"
         :max="31"
-        :disabled="disabled"
         @input="val => setValue('upper', val)"
         :class="{ 'pr-1': true, error: !isFreeAddress }"
-        solo
-        flat
         hide-details
       ></v-text-field>
     </v-flex>
     <v-flex xs4>
       <v-text-field
+        label="KNX 2"
         v-model="middle"
         type="Number"
         :min="0"
         :max="7"
-        :disabled="disabled"
         @input="val => setValue('middle', val)"
         :class="{ 'pr-1': true, error: !isFreeAddress }"
-        solo
-        flat
         hide-details
       ></v-text-field>
     </v-flex>
     <v-flex xs4>
       <v-text-field
+        label="KNX 3"
         v-model="lower"
         type="Number"
         :min="0"
         :max="255"
-        :disabled="disabled"
         :class="{ error: !isFreeAddress }"
         @input="val => setValue('lower', val)"
-        solo
-        flat
         hide-details
       ></v-text-field>
     </v-flex>
@@ -115,10 +109,6 @@
       address: {
         type: String,
         default: 1
-      },
-      disabled: {
-        type: Boolean,
-        default: true
       },
       controlSystem: {
         type: String,

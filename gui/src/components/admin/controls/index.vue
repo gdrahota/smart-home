@@ -1,10 +1,7 @@
 <template>
   <v-layout wrap row>
     <v-flex xs4>
-      <controls-list
-        :selectedControl="selectedControl"
-        @select="value => selectControl(value)"
-      />
+      <controls-list/>
     </v-flex>
     <v-flex xs8 class="mb-3">
       <add-control-form
@@ -25,15 +22,8 @@
       />
     </v-flex>
 
-    <v-flex xs6 class="pr-2" v-if="selectedControl">
-      <manage-data-points
-        :control="selectedControl"
-      />
-    </v-flex>
-
-    <v-flex xs6 v-if="selectedControl">
-      <show-facility-attribute-values/>
-      <manage-attribute-values/>
+    <v-flex xs12 v-if="selectedControl">
+      <manage-data-points/>
     </v-flex>
   </v-layout>
 </template>
@@ -42,29 +32,25 @@
   import { mapActions, mapGetters, mapMutations } from 'vuex'
   import AddControlForm from './add-control-form'
   import ControlsList from './controls-list'
-  import ManageAttributeValues from './manage-attribute-values'
-  import ShowFacilityAttributeValues from './manage-attribute-values/show-attribute-values'
   import ManageDataPoints from './manage-data-points/index'
 
   export default {
     components: {
       AddControlForm,
       ControlsList,
-      ManageAttributeValues,
-      ManageDataPoints,
-      ShowFacilityAttributeValues
+      ManageDataPoints
     },
 
     computed: {
       ...mapGetters({
-        controls: 'controls/get'
+        controls: 'controls/get',
+        selectedControl: 'controls/getSelected'
       })
     },
 
     data () {
       return {
-        showAddNewDialog: false,
-        selectedControl: null
+        showAddNewDialog: false
       }
     },
 
@@ -81,9 +67,6 @@
           ...control,
           attributeValues: []
         })
-      },
-      selectControl (control) {
-        this.selectedControl = control
       }
     }
   }

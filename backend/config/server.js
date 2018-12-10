@@ -4,7 +4,6 @@ const config = {
   test: {
     server: {
       host: 'localhost',
-      urlPrefix: '/',
       port: 3000
     },
     mongoDb: {
@@ -12,19 +11,26 @@ const config = {
       options: {
         useNewUrlParser: true
       }
+    },
+    oplog: {
+      url: 'mongodb://localhost:27017',
+      collection: 'local/oplog.$main'
     }
   },
 
   development: {
     server: {
-      host: 'localhost',
-      urlPrefix: '/noc',
+      host: '192.168.0.39',
       port: 3000
     },
     mongoDb: {
       url: 'mongodb://localhost:27017/smart-home',
       options: {
         useNewUrlParser: true
+      },
+      oplog: {
+        url: 'mongodb://localhost:27017/local',
+        collection: 'oplog.$main'
       }
     }
   },
@@ -32,7 +38,6 @@ const config = {
   production: {
     server: {
       host: 'localhost',
-      urlPrefix: '/noc',
       port: 3000
     },
     mongoDb: {
@@ -40,6 +45,10 @@ const config = {
       options: {
         useNewUrlParser: true
       }
+    },
+    oplog: {
+      url: 'mongodb://localhost:27017',
+      collection: 'local/oplog.$main'
     }
   }
 };

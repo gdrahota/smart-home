@@ -29,28 +29,33 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapMutations } from 'vuex'
 
   export default {
     computed: {
       ...mapGetters({
-        controls: 'controls/get'
+        controls: 'controls/get',
+        getSelectedControl: 'controls/getSelected'
       }),
       control: {
         get () {
-          return this.selectedControl
+          return this.getSelectedControl
         },
         set (value) {
-          this.$emit('select', value)
+          if (value) {
+            this.selectControl(value._id)
+          } else {
+            this.selectControl(null)
+
+          }
         }
       }
     },
 
-    props: {
-      selectedControl: {
-        type: Object,
-        default: null
-      }
+    methods: {
+      ...mapMutations({
+        selectControl: 'controls/selectControl'
+      })
     }
   }
 </script>

@@ -1,4 +1,5 @@
 import { socket } from '../main'
+import { sortByAddress } from '../sorters'
 
 const state = {
   loading: true,
@@ -55,13 +56,23 @@ const mutations = {
 const isAddressAlreadyUsed =
   state =>
     (controlSystemId, address) =>
-      !!state.items.find(item => item.controlSystem === controlSystemId && item.address === address)
+      !!state
+        .items
+        .find(item => item.controlSystem === controlSystemId && item.address === address)
+
+const getByControlSystemId =
+  state =>
+    id =>
+      state
+        .items
+        .filter(item => item.controlSystem === id)
+        .sort(sortByAddress)
 
 const getters = {
   isLoading: state => state.loading,
   get: state => state.items,
   getById: state => id => state.items.find(item => item._id === id),
-  getByControlSystemId: state => id => state.items.filter(item => item.controlSystem === id),
+  getByControlSystemId,
   isAddressAlreadyUsed
 }
 

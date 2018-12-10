@@ -1,6 +1,6 @@
 import express from 'express'
 import async from 'async'
-import https from 'https'
+import http from 'http'
 import fs from 'fs'
 import MongoDb from './infrastructure/mongodb'
 import { registerMongooseSchemas } from './database/schemas'
@@ -8,14 +8,14 @@ import { bindWebSocketToServer } from './infrastructure/websocket'
 import { serveStaticFiles } from './infrastructure/static-files'
 import { registerEndpoints } from './rest-api'
 
+const app = express()
+const server = http.createServer(app)
+
 const options = {
   rejectUnauthorized: false,
   key: fs.readFileSync('./config/cert/server.key'),
   cert: fs.readFileSync('./config/cert/server.crt')
 }
-
-const app = express()
-const server = https.createServer(options, app)
 
 async.series([
     cb1 => MongoDb.connect(err => cb1(err)),

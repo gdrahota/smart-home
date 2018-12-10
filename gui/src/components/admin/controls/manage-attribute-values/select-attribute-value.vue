@@ -40,8 +40,7 @@
   export default {
     computed: {
       ...mapGetters({
-        attributeValuesByFacilityAttributeId: 'facilityAttributeValues/getByFacilityAttributeId',
-        control: 'controls/selected'
+        attributeValuesByFacilityAttributeId: 'facilityAttributeValues/getByFacilityAttributeId'
       }),
       availableAttributeValues () {
         const currentValues = this.control.attributeValues
@@ -72,6 +71,10 @@
 
     props: {
       attribute: {
+        type: Object,
+        required: true
+      },
+      control: {
         type: Object,
         required: true
       }

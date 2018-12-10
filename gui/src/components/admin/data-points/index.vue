@@ -33,43 +33,13 @@
           </v-btn>
         </div>
       </v-card-title>
-      <v-card-text>
-        <v-card-text v-if="selectedControlSystemId">
-          <search
-            @searchInDescription="value => { searchInDescription = value }"
-            @searchForDataType="value => { searchForDataType = value }"
-            @searchInUpperRange="value => { searchInUpperRange = value }"
-            @searchInMiddleRange="value => { searchInMiddleRange = value }"
-          />
-        </v-card-text>
-      </v-card-text>
+
+      <data-point-table :controlSystemId="selectedControlSystemId"/>
+
     </v-card>
 
     <v-card>
       <v-card-text v-if="selectedControlSystemId">
-        <v-layout wrap row class="body-2">
-          <v-flex xs2>Gruppenadresse</v-flex>
-          <v-flex xs3>Beschreibung</v-flex>
-          <v-flex xs3>Datentyp</v-flex>
-          <v-flex xs4>Verwendung</v-flex>
-        </v-layout>
-
-        <v-data-iterator
-          v-if="selectedControlSystemId"
-          :items="dataPoints(selectedControlSystemId)"
-          :pagination.sync="pagination"
-          :custom-filter="filterDataPoints"
-          :search="searchInDescription"
-          hide-actions
-        >
-          <template slot="item" slot-scope="props">
-            <data-point-form
-              :item="props.item"
-              :disabled="disabled"
-              :controlSystem="selectedControlSystemId"
-            />
-          </template>
-        </v-data-iterator>
 
         <add-data-point-form
           v-if="showAddForm"
@@ -84,15 +54,13 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  import DataPointForm from './data-point-form'
   import AddDataPointForm from './add-data-point-form'
-  import Search from './search'
+  import DataPointTable from './data-point-table'
 
   export default {
     components: {
       AddDataPointForm,
-      DataPointForm,
-      Search
+      DataPointTable,
     },
 
     computed: {
@@ -104,17 +72,9 @@
 
     data () {
       return {
-        searchInDescription: '',
-        searchForDataType: null,
-        searchInUpperRange: null,
-        searchInMiddleRange: null,
-        selectedControlSystemId: null,
         disabled: true,
         showAddForm: false,
-        pagination: {
-          rowsPerPage: -1,
-          sortBy: 'description'
-        }
+        selectedControlSystemId: null
       }
     },
 

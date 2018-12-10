@@ -2,7 +2,8 @@ import { socket } from '../main'
 
 const state = {
   loading: true,
-  items: []
+  items: [],
+  selected: null
 }
 
 const SOCKET_CONTROLS_RESPONSE = (state, response) => {
@@ -28,6 +29,10 @@ const actions = {
   removeAction
 }
 
+const selectControl = (state, controlId) => {
+  state.selected = controlId
+}
+
 const SOCKET_ADD_CONTROLS_RESPONSE = (state, response) => {
   state.items.push(response[0])
   state.selected = response[0]
@@ -40,7 +45,7 @@ const SOCKET_UPDATE_CONTROLS_RESPONSE = (state, response) => {
       : item
   }
   state.items = state.items.map(mapFnc)
-  state.selected = response[0]
+  state.selected = response[0]._id
 }
 
 const SOCKET_REMOVE_CONTROLS_RESPONSE = (state, response) => {
@@ -50,6 +55,7 @@ const SOCKET_REMOVE_CONTROLS_RESPONSE = (state, response) => {
 
 const mutations = {
   setLoading: (state, status) => state.isLoading = status,
+  selectControl,
   SOCKET_CONTROLS_RESPONSE,
   SOCKET_ADD_CONTROLS_RESPONSE,
   SOCKET_UPDATE_CONTROLS_RESPONSE,
@@ -63,7 +69,11 @@ const getters = {
   getActive: state => state.items.filter(item => item.state === 'active'),
   getByControlSystemId: state => id => state.items.filter(item => item.controlSystem === id),
   getByAttributeValue: state => valueId => state.items.filter(item => item.attributeValues.indexOf(valueId) !== -1),
-  selected: state => state.selected
+  getSelected: state => {
+    if (state.selected) {
+      return state.items.find(control => control._id === state.selected)
+    }
+  }
 }
 
 export default {

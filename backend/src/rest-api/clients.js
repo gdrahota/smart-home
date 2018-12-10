@@ -11,6 +11,7 @@ import async from 'async'
 
 export const registerClientEndpoints = (io, socket) => {
   const sendDataToClient = () => {
+    console.log('logged in')
     async.series([
       cb => {
         ControlDataPointService.getAll((err, items) => {
@@ -89,6 +90,7 @@ export const registerClientEndpoints = (io, socket) => {
 
   const cbLogin = credentials =>
     ClientService.login(credentials, socket.id, (err, clientAndRoles) => {
+      console.log('login', credentials)
       if (err) {
         socket.emit('login_failed', err)
       } else {

@@ -1,39 +1,36 @@
 <template>
-  <v-layout row wrap class="mb-1">
-    <v-flex xs2 class="pr-1">
+  <v-layout row wrap class="mt-2">
+    <v-flex xs2 class="pr-2">
       <knx-address
-        :address="address"
-        :disabled="disabled"
+        :address="data.address"
         :controlSystem="controlSystem"
         @setValue="event => updateAttribute('address', event)"
       />
     </v-flex>
-    <v-flex xs3 class="pr-1">
-      <v-text-field
-        v-model="description"
-        solo
-        flat
-        hide-details
-        class="elevation-1"
-        @input="event => updateAttribute('description', event)"
-        :disabled="disabled"
-      ></v-text-field>
-    </v-flex>
-    <v-flex xs3 class="pr-1">
+    <v-flex xs3 class="pr-2">
       <v-select
-        v-model="dataType"
+        v-model="data.dataType"
         :items="dataTypes"
         item-text="label"
         item-value="value"
-        solo
-        flat
-        hide-details
-        class="elevation-1"
+        label="KNX-Datenpunkttyp (DPT)"
         @input="event => updateAttribute('dataType', event)"
-        :disabled="disabled"
       ></v-select>
     </v-flex>
-    <v-flex xs4>
+    <v-flex xs6 class="pr-2">
+      <v-text-field
+        v-model="data.description"
+        label="Beschreibung"
+        @input="event => updateAttribute('description', event)"
+      ></v-text-field>
+    </v-flex>
+    <v-flex xs1>
+      <v-btn icon fab small @click="save">
+        <v-icon color="primary" small>fa-save</v-icon>
+      </v-btn>
+    </v-flex>
+
+    <v-flex xs12>
       <div v-for="used of usedIn" :key="used.key" class="used-in-control elevation-1" :dimmed="disabled">
         <span>{{ used.label }}</span>
         <v-chip v-for="value of used.facilityAttributeValues" :key="value">{{ value }}</v-chip>
@@ -95,8 +92,13 @@
       }
     },
 
+    created () {
+      this.data = { ...this.item }
+    },
+
     data () {
       return {
+        data: {},
         dataTypes: Array.from(Array(20).keys()).map(i => {
           return {
             label: knxDataTypeFilter(i + 1),
@@ -111,7 +113,10 @@
         update: 'dataPoints/updateAction'
       }),
       updateAttribute (attrName, newValue) {
-        this.update({ ...this.item, [attrName]: newValue })
+        this.data = { ...this.data, [attrName]: newValue }
+      },
+      save () {
+        this.update(this.data)
       }
     },
 

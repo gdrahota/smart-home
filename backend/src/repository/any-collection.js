@@ -21,7 +21,9 @@ const update = collection => (item, cb) => {
   mongoose
     .model(collection)
     .update({ _id: item._id }, item)
-    .exec(err => cb(err))
+    .exec(err => {
+      cb(err)
+    })
 }
 
 const upsert = collection => (item, cb) => {
@@ -48,6 +50,12 @@ const find = collection => (searchObj, cb) => {
     .exec((err, items) => cb(err, items))
 }
 
+const removeControlDataPoint = collection => (control, endPoint, cb) =>
+  mongoose
+    .model(collection)
+    .remove({ control, endPoint })
+    .exec(err => cb(err))
+
 export default collection => {
   return {
     getAll: cb => getAll(collection)(cb),
@@ -55,6 +63,7 @@ export default collection => {
     add: (item, cb) => add(collection)(item, cb),
     remove: (id, cb) => remove(collection)(id, cb),
     update: (item, cb) => update(collection)(item, cb),
-    find: (searchObj, cb) => find(collection)(searchObj, cb)
+    find: (searchObj, cb) => find(collection)(searchObj, cb),
+    removeControlDataPoint: (control, endPoint, cb) => removeControlDataPoint(collection)(control, endPoint, cb)
   }
 }

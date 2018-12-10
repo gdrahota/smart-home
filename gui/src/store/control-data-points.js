@@ -10,6 +10,7 @@ const upsertAction = (context, item) => {
 }
 
 const removeAction = (context, item) => {
+  console.log(upsertAction, item)
   socket.emit('remove_control_data_point', item)
 }
 
@@ -18,6 +19,7 @@ const actions = {
   removeAction
 }
 
+// mutations
 const SOCKET_CONTROL_DATA_POINTS_RESPONSE = (state, response) => {
   state.items = response[0]
   state.loading = false
@@ -36,12 +38,12 @@ const SOCKET_UPDATE_CONTROL_DATA_POINTS_RESPONSE = (state, response) => {
 }
 
 const SOCKET_ADD_CONTROL_DATA_POINTS_RESPONSE = (state, response) => {
-  state.items = [...state.items, response[0]]
+  state.items.push(response[0])
   state.selected = response[0]
 }
 
 const SOCKET_REMOVE_CONTROL_DATA_POINTS_RESPONSE = (state, response) => {
-  state.items = state.items.filter(i => (i.control === response[0].control && i.endPoint === response[0].endPoint) === false)
+  state.items = state.items.filter(i => i._id !== response[0])
 }
 
 const mutations = {

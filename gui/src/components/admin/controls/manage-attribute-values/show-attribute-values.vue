@@ -22,22 +22,11 @@
   export default {
     computed: {
       ...mapGetters({
-        selected: 'controls/selected',
         facilityAttributeValuesById: 'facilityAttributeValues/getById'
       }),
-      selectedControl: {
-        get () {
-          return this.selected
-        },
-        set (value) {
-        }
-      },
       facilityAttributeValues () {
-        if (!this.selected) {
-          return []
-        }
         return this
-          .selected
+          .control
           .attributeValues
           .map(attributeValueId => this.facilityAttributeValuesById(attributeValueId))
       }
@@ -48,9 +37,16 @@
         update: 'controls/updateAction'
       }),
       removeValue (id) {
-        const values = this.selected.attributeValues.filter(valueId => valueId !== id)
-        const control = { ...this.selected, attributeValues: values }
+        const values = this.control.attributeValues.filter(valueId => valueId !== id)
+        const control = { ...this.control, attributeValues: values }
+        console.log(control)
         this.update(control)
+      }
+    },
+
+    props: {
+      control: {
+        type: Object
       }
     }
   }
