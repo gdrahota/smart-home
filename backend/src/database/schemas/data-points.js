@@ -17,7 +17,7 @@ export const registerSchema = () => {
       default: ''
     },
     dataType: {
-      type: Number,
+      type: String,
       required: true
     },
     value: {

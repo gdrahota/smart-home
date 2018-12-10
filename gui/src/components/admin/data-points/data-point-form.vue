@@ -10,7 +10,7 @@
     <v-flex xs3 class="pr-2">
       <v-select
         v-model="data.dataType"
-        :items="dataTypes"
+        :items="dataPointTypes"
         item-text="label"
         item-value="value"
         label="KNX-Datenpunkttyp (DPT)"
@@ -49,7 +49,8 @@
         usage: 'controlDataPoints/getUsage',
         getControlById: 'controls/getById',
         getFacilityById: 'facilities/getById',
-        facilityAttributeValues: 'facilityAttributeValues/getById'
+        facilityAttributeValues: 'facilityAttributeValues/getById',
+        dataPointTypes: 'dataPoints/dataPointTypes'
       }),
       address: {
         get () {
@@ -98,13 +99,7 @@
 
     data () {
       return {
-        data: {},
-        dataTypes: Array.from(Array(20).keys()).map(i => {
-          return {
-            label: knxDataTypeFilter(i + 1),
-            value: i + 1
-          }
-        })
+        data: {}
       }
     },
 

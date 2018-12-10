@@ -28,6 +28,7 @@
           </td>
           <td>{{ props.item.address }}</td>
           <td>{{ props.item.dataType }}</td>
+          <td>{{ props.item.value }}</td>
           <td>{{ props.item.description }}</td>
         </tr>
       </template>
@@ -71,6 +72,7 @@
           { text: '', value: '_id', sortable: false },
           { text: 'Gruppenadresse', value: 'address' },
           { text: 'Datenpunkttyp (DPT)', value: 'dataType' },
+          { text: 'Aktueller Wert', value: 'value' },
           { text: 'Beschreibung', value: 'description' },
         ]
       }

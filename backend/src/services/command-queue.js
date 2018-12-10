@@ -9,7 +9,7 @@ const remove = (id, cb) => Repository(collection).remove(id, cb)
 const upsert = (item, cb) => {
   const command = {
     targetAddress: item.targetAddress,
-    dataType: '1',
+    dataType: item.dataType,
     payload: item.value
   }
 

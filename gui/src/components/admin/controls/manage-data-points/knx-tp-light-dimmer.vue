@@ -37,17 +37,17 @@
         controlEndPoints: [
           {
             label: 'Gruppenadresse des Schaltbefehls',
-            dataType: 1,
+            dataType: '1.001',
             endPoint: 'switch'
           },
           {
             label: 'Gruppenadresse, über welche die Bestätigung gesendet wird',
-            dataType: 1,
+            dataType: '1.001',
             endPoint: 'response'
           },
           {
             label: 'Gruppenadresse, zum Dimmen',
-            dataType: 5,
+            dataType: '5.001',
             endPoint: 'dim'
           }
         ]

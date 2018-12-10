@@ -3,6 +3,7 @@
     <words>
       <w>abmeldung</w>
       <w>adresse</w>
+      <w>aktueller</w>
       <w>angeschlossen</w>
       <w>angeschlossene</w>
       <w>ankleide</w>
@@ -14,6 +15,7 @@
       <w>ausrichtung</w>
       <w>benennen</w>
       <w>bestätigung</w>
+      <w>binärdaten</w>
       <w>bussysteme</w>
       <w>datenpunkte</w>
       <w>datenpunkttyp</w>
@@ -25,10 +27,13 @@
       <w>eigenschaften</w>
       <w>einstellungen</w>
       <w>elektro</w>
+      <w>elektroenergie</w>
       <w>endpunkte</w>
+      <w>entsperrt</w>
       <w>erfolgt</w>
       <w>esszimmer</w>
       <w>etage</w>
+      <w>falsch</w>
       <w>fenster</w>
       <w>flur</w>
       <w>franka</w>
@@ -43,6 +48,7 @@
       <w>kommt</w>
       <w>küche</w>
       <w>lichtschalter</w>
+      <w>montag</w>
       <w>namespaced</w>
       <w>neues</w>
       <w>oplog</w>
@@ -51,20 +57,24 @@
       <w>schaltbefehls</w>
       <w>schließen</w>
       <w>seitlich</w>
+      <w>sonntag</w>
       <w>steuerelement</w>
       <w>steuerelemente</w>
       <w>steuerelements</w>
       <w>steuerung</w>
       <w>straße</w>
+      <w>szenennummer</w>
       <w>verfügbare</w>
       <w>verwendung</w>
       <w>vorne</w>
       <w>welche</w>
+      <w>wert</w>
       <w>wohnzimmer</w>
       <w>zeichen</w>
       <w>zentrale</w>
       <w>zugeordnete</w>
       <w>zugewiesene</w>
+      <w>zählerimpluse</w>
     </words>
   </dictionary>
 </component>

@@ -42,8 +42,8 @@ export const registerEndpoints = cb => {
     })
 
   const oplog = MongoOplog(config.mongoDb.oplog.url, { coll: config.mongoDb.oplog.collection })
-  oplog.tail(err => {
-    console.log(err, 'oplog started')
+  oplog.tail(() => {
+    console.log('oplog started')
   })
 
   oplog.on('op', data => {
@@ -51,7 +51,6 @@ export const registerEndpoints = cb => {
   })
 
   oplog.on('insert', doc => {
-    console.log('col insert', doc)
     const nsParts = doc.ns.split('.')
     const collection = nsParts[1]
 
@@ -67,7 +66,6 @@ export const registerEndpoints = cb => {
   })
 
   oplog.on('update', doc => {
-    console.log('col update', doc)
     const nsParts = doc.ns.split('.')
     const collection = nsParts[1]
     try {
@@ -84,7 +82,6 @@ export const registerEndpoints = cb => {
   })
 
   oplog.on('delete', doc => {
-    console.log('col delete', doc)
     const nsParts = doc.ns.split('.')
     const collection = nsParts[1]
     if (io) {

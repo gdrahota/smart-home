@@ -34,7 +34,11 @@ const SOCKET_UPDATE_COMMAND_QUEUE_RESPONSE = (state, response) => {
 }
 
 const SOCKET_REMOVE_COMMAND_QUEUE_RESPONSE = (state, id) => {
-  state.items = state.items.filter(item => item._id !== id[0])
+  console.log('SOCKET_REMOVE_COMMAND_QUEUE_RESPONSE', id)
+  state.items = state.items.filter(item => {
+    console.log(item._id, id[0])
+    return item._id !== id[0]
+  })
 }
 
 const mutations = {
