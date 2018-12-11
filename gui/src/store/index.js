@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import client from './client'
-import commandQueue from './command-queue'
+import commands from './commands'
 import controls from './controls'
 import controlDataPoints from './control-data-points'
 import controlSystems from './control-systems'
@@ -16,7 +16,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   modules: {
     client,
-    commandQueue,
+    commands,
     controls,
     controlDataPoints,
     controlSystems,

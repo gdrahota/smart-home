@@ -10,15 +10,14 @@
       slot="activator"
       outline
       color="red"
-      class="elevation-2"
       :small="small"
       :fab="fab"
       :disabled="disabled"
       :medium="medium"
       :large="large"
     >
-      <v-icon left>clear</v-icon>
-      <span>{{ label }}&nbsp;&nbsp;</span>
+      <span>{{ label }}</span>
+      <v-icon right small>{{ icon }}</v-icon>
     </v-btn>
 
     <v-btn
@@ -38,16 +37,8 @@
 
     <div id="delete-dialog">
       <v-card>
-
-        <v-card-title
-          class="headline"
-          primary-title
-        >
-          {{title}}
-        </v-card-title>
-
+        <v-card-title class="headline" primary-title>{{title}}</v-card-title>
         <v-card-text v-if="description" class="subheading">{{description}}</v-card-text>
-
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
@@ -113,7 +104,7 @@
       },
       icon: {
         type: String,
-        default: 'fa-trash'
+        default: 'fa-trash-o'
       },
       disabled: {
         type: Boolean,

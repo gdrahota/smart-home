@@ -73,6 +73,7 @@ const SOCKET_DATA_POINTS_RESPONSE = (state, response) => {
 }
 
 const SOCKET_ADD_DATA_POINTS_RESPONSE = (state, response) => {
+  console.log('SOCKET_ADD_DATA_POINTS_RESPONSE', response[0])
   state.items.push(response[0])
 }
 const SOCKET_UPDATE_DATA_POINTS_RESPONSE = (state, response) => {

@@ -1,4 +1,3 @@
-import MongoDb from '../infrastructure/mongodb'
 import mongoose from 'mongoose'
 
 export const getControlSystemConfig = cb =>

@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin/node /usr/local/bin/yarn add knx
+  /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin/node /usr/local/bin/yarn remove knx-listener
 
 PATH: 
   /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin:/Users/guidodrahota/Desktop/mongodb/bin:/Users/guidodrahota/Downloads/apache-maven-3.5.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -55,6 +55,8 @@ npm manifest:
   		"connect-history-api-fallback": "^1.5.0",
   		"cron": "^1.3.0",
   		"express": "^4.16.3",
+  		"knx": "^2.3.1",
+  		"knx-datapoints": "^1.1.1",
   		"moment-timezone": "^0.5.21",
   		"mongo-oplog": "^2.1.4",
   		"mongoose": "^5.2.2",
@@ -633,6 +635,10 @@ Lockfile:
     version "2.5.94"
     resolved "https://registry.yarnpkg.com/@mdi/font/-/font-2.5.94.tgz#c05415b294243962046c398c8ba0b3a2311cf690"
   
+  "@types/node@^6.0.48":
+    version "6.14.2"
+    resolved "https://registry.yarnpkg.com/@types/node/-/node-6.14.2.tgz#40b3dbb1221c7d66802cbcc32fe3b85e54569c77"
+  
   abab@^1.0.4:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -1072,6 +1078,16 @@ Lockfile:
     version "1.11.0"
     resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
   
+  binary-parser@1.1.5:
+    version "1.1.5"
+    resolved "https://registry.yarnpkg.com/binary-parser/-/binary-parser-1.1.5.tgz#7224d61a4e2fa7b5aede69fe4f0ea6a0902b79e8"
+  
+  binary-protocol@0.0.0:
+    version "0.0.0"
+    resolved "https://registry.yarnpkg.com/binary-protocol/-/binary-protocol-0.0.0.tgz#654e2d6c207c1d2eeaa65d5d6a2b3eba59aed36e"
+    dependencies:
+      bluebird "~2.2.2"
+  
   bl@^1.2.2:
     version "1.2.2"
     resolved "https://registry.yarnpkg.com/bl/-/bl-1.2.2.tgz#a160911717103c07410cef63ef51b397c025af9c"
@@ -1086,6 +1102,10 @@ Lockfile:
   bluebird@3.5.0:
     version "3.5.0"
     resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
+  
+  bluebird@~2.2.2:
+    version "2.2.2"
+    resolved "http://registry.npmjs.org/bluebird/-/bluebird-2.2.2.tgz#f1bf05abc887cf9a703886237c28610a43b1f114"
   
   body-parser@1.18.2:
     version "1.18.2"
@@ -1239,6 +1259,10 @@ Lockfile:
     version "1.2.1"
     resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
   
+  camelcase@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
+  
   camelcase@^4.0.0, camelcase@^4.1.0:
     version "4.1.0"
     resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
@@ -1268,7 +1292,7 @@ Lockfile:
       align-text "^0.1.3"
       lazy-cache "^1.0.3"
   
-  chalk@^1.1.3:
+  chalk@1.1.3, chalk@^1.1.3:
     version "1.1.3"
     resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
     dependencies:
@@ -1351,6 +1375,14 @@ Lockfile:
       center-align "^0.1.1"
       right-align "^0.1.1"
       wordwrap "0.0.2"
+  
+  cliui@^3.2.0:
+    version "3.2.0"
+    resolved "https://registry.yarnpkg.com/cliui/-/cliui-3.2.0.tgz#120601537a916d29940f934da3b48d585a39213d"
+    dependencies:
+      string-width "^1.0.1"
+      strip-ansi "^3.0.1"
+      wrap-ansi "^2.0.0"
   
   cliui@^4.0.0:
     version "4.1.0"
@@ -2521,6 +2553,10 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
   
+  ipaddr.js@1.2.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.2.0.tgz#8aba49c9192799585bdd643e0ccb50e8ae777ba4"
+  
   ipaddr.js@1.6.0:
     version "1.6.0"
     resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.6.0.tgz#e3fa357b773da619f26e95f049d055c72796f86b"
@@ -3231,6 +3267,29 @@ Lockfile:
     version "6.0.2"
     resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   
+  knx-datapoints@^1.1.1:
+    version "1.1.1"
+    resolved "https://registry.yarnpkg.com/knx-datapoints/-/knx-datapoints-1.1.1.tgz#88b6f9ed1f2e48a4568134f15a503ab7cc1bf1e9"
+  
+  knx-listener@^0.0.7:
+    version "0.0.7"
+    resolved "https://registry.yarnpkg.com/knx-listener/-/knx-listener-0.0.7.tgz#80900559dc35c0de2fce35ed5b40c83ffd853f93"
+    dependencies:
+      chalk "1.1.3"
+      tslib "^1.4.0"
+      yargs "6.6.0"
+  
+  knx@^2.3.1:
+    version "2.3.1"
+    resolved "https://registry.yarnpkg.com/knx/-/knx-2.3.1.tgz#2524a05b5a84ec2603dbd6ef5ddb9166be2f3f97"
+    dependencies:
+      "@types/node" "^6.0.48"
+      binary-parser "1.1.5"
+      binary-protocol "0.0.0"
+      ipaddr.js "1.2.0"
+      log-driver "1.2.7"
+      machina "^2.0.0-1"
+  
   latest-version@^3.0.0:
     version "3.1.0"
     resolved "https://registry.yarnpkg.com/latest-version/-/latest-version-3.1.0.tgz#a205383fea322b33b5ae3b18abee0dc2f356ee15"
@@ -3313,9 +3372,17 @@ Lockfile:
     version "4.7.0"
     resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   
+  lodash@3.x:
+    version "3.10.1"
+    resolved "http://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+  
   lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
     version "4.17.10"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+  
+  log-driver@1.2.7:
+    version "1.2.7"
+    resolved "https://registry.yarnpkg.com/log-driver/-/log-driver-1.2.7.tgz#63b95021f0702fedfa2c9bb0a24e7797d71871d8"
   
   longest@^1.0.1:
     version "1.0.1"
@@ -3337,6 +3404,12 @@ Lockfile:
     dependencies:
       pseudomap "^1.0.2"
       yallist "^2.1.2"
+  
+  machina@^2.0.0-1:
+    version "2.0.2"
+    resolved "http://registry.npmjs.org/machina/-/machina-2.0.2.tgz#aa17a51293abb02313da4e6120f234d3eadbf650"
+    dependencies:
+      lodash "3.x"
   
   make-dir@^1.0.0:
     version "1.3.0"
@@ -3826,6 +3899,12 @@ Lockfile:
   os-homedir@^1.0.0:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
+  
+  os-locale@^1.4.0:
+    version "1.4.0"
+    resolved "http://registry.npmjs.org/os-locale/-/os-locale-1.4.0.tgz#20f9f17ae29ed345e8bde583b13d2009803c14d9"
+    dependencies:
+      lcid "^1.0.0"
   
   os-locale@^2.0.0:
     version "2.1.0"
@@ -4775,7 +4854,7 @@ Lockfile:
       astral-regex "^1.0.0"
       strip-ansi "^4.0.0"
   
-  string-width@^1.0.1:
+  string-width@^1.0.1, string-width@^1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
     dependencies:
@@ -5006,6 +5085,10 @@ Lockfile:
   trim-right@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
+  
+  tslib@^1.4.0:
+    version "1.9.3"
+    resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   
   tunnel-agent@^0.6.0:
     version "0.6.0"
@@ -5244,6 +5327,10 @@ Lockfile:
       tr46 "^1.0.1"
       webidl-conversions "^4.0.2"
   
+  which-module@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/which-module/-/which-module-1.0.0.tgz#bba63ca861948994ff307736089e3b96026c2a4f"
+  
   which-module@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/which-module/-/which-module-2.0.0.tgz#d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a"
@@ -5346,11 +5433,35 @@ Lockfile:
     version "3.0.2"
     resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.0.2.tgz#8452b4bb7e83c7c188d8041c1a837c773d6d8bb9"
   
+  yargs-parser@^4.2.0:
+    version "4.2.1"
+    resolved "http://registry.npmjs.org/yargs-parser/-/yargs-parser-4.2.1.tgz#29cceac0dc4f03c6c87b4a9f217dd18c9f74871c"
+    dependencies:
+      camelcase "^3.0.0"
+  
   yargs-parser@^9.0.2:
     version "9.0.2"
     resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-9.0.2.tgz#9ccf6a43460fe4ed40a9bb68f48d43b8a68cc077"
     dependencies:
       camelcase "^4.1.0"
+  
+  yargs@6.6.0:
+    version "6.6.0"
+    resolved "http://registry.npmjs.org/yargs/-/yargs-6.6.0.tgz#782ec21ef403345f830a808ca3d513af56065208"
+    dependencies:
+      camelcase "^3.0.0"
+      cliui "^3.2.0"
+      decamelize "^1.1.1"
+      get-caller-file "^1.0.1"
+      os-locale "^1.4.0"
+      read-pkg-up "^1.0.1"
+      require-directory "^2.1.1"
+      require-main-filename "^1.0.1"
+      set-blocking "^2.0.0"
+      string-width "^1.0.2"
+      which-module "^1.0.0"
+      y18n "^3.2.1"
+      yargs-parser "^4.2.0"
   
   yargs@^11.0.0:
     version "11.1.0"

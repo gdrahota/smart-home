@@ -17,6 +17,7 @@
 </template>
 
 <script>
+  import { sortByValue } from '../../../../sorters'
   import { mapActions, mapGetters } from 'vuex'
 
   export default {
@@ -29,6 +30,7 @@
           .control
           .attributeValues
           .map(attributeValueId => this.facilityAttributeValuesById(attributeValueId))
+          .sort(sortByValue)
       }
     },
 

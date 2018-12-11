@@ -53,11 +53,11 @@
         },
         set (value) {
           const command = {
-            targetAddress: this.dataPoint.address,
-            dataType: this.dataPoint.dataType,
+            control: this.control._id,
+            endPoint: 'switch',
             value
           }
-          this.upsert(command)
+          this.sendCommand(command)
         }
       },
       getColor () {
@@ -70,7 +70,7 @@
 
     methods: {
       ...mapActions({
-        upsert: 'commandQueue/upsertAction'
+        sendCommand: 'commands/sendCommandAction'
       })
     },
 

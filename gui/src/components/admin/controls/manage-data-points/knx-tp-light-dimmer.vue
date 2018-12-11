@@ -1,20 +1,14 @@
 <template>
-  <!--<pre>{{control}}</pre>-->
-  <v-card>
-    <v-card-title>
-      <div class="headline">Lichtschalter (An/Aus)</div>
-    </v-card-title>
-    <v-card-text fifty>
-      <knx-data-point
-        v-for="controlEndPoint of controlEndPoints"
-        :label="controlEndPoint.label"
-        :dataType="controlEndPoint.dataType"
-        :endPoint="controlEndPoint.endPoint"
-        :control="control"
-        :key="control._id + controlEndPoint.endPoint"
-      />
-    </v-card-text>
-  </v-card>
+  <v-card-text fifty>
+    <knx-data-point
+      v-for="controlEndPoint of controlEndPoints"
+      :label="controlEndPoint.label"
+      :dataType="controlEndPoint.dataType"
+      :endPoint="controlEndPoint.endPoint"
+      :control="control"
+      :key="control._id + controlEndPoint.endPoint"
+    />
+  </v-card-text>
 </template>
 
 <script>

@@ -1,6 +1,7 @@
 <template>
   <v-dialog v-model="show" width="800">
     <v-btn
+      :disabled="disabled"
       slot="activator"
       fab
       small
@@ -23,7 +24,7 @@
                 item-text="name"
                 item-value="_id"
                 label="Anlage"
-              />
+              ></v-select>
             </v-flex>
 
             <v-flex xs5 class="pr-2">
@@ -33,7 +34,7 @@
                 item-text="label"
                 item-value="type"
                 label="Art des Steuerelements"
-              />
+              ></v-select>
             </v-flex>
             <v-flex xs3 class="pr-2">
               <v-text-field
@@ -102,7 +103,7 @@
         controlTypes: [
           { label: 'Licht (an/aus)', type: 'lightSwitch' },
           { label: 'Licht (dimmbar)', type: 'lightDimmer' },
-          { label: 'Rollladen', type: 'blinds' }
+          { label: 'Rollladen', type: 'shutter' }
         ]
       }
     },
@@ -126,6 +127,13 @@
         this.name = ''
         this.description = ''
         this.show = false
+      }
+    },
+
+    props: {
+      disabled: {
+        type: Boolean,
+        default: false
       }
     }
   }

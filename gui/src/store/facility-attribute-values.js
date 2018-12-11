@@ -1,4 +1,5 @@
 import { socket } from '../main'
+import {sortByValue} from '../sorters'
 
 const state = {
   loading: true,
@@ -55,10 +56,10 @@ const mutations = {
 
 const getters = {
   isLoading: state => state.loading,
-  get: state => state.items,
+  get: state => state.items.sort(sortByValue),
   getById: state => id => state.items.find(i => i._id === id),
-  getByFacilityId: state => id => state.items.filter(i => i.facilityId === id),
-  getByFacilityAttributeId: state => id => state.items.filter(i => i.facilityAttributeId === id)
+  getByFacilityId: state => id => state.items.filter(i => i.facilityId === id).sort(sortByValue),
+  getByFacilityAttributeId: state => id => state.items.filter(i => i.facilityAttributeId === id).sort(sortByValue)
 }
 
 export default {

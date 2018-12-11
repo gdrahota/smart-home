@@ -1,23 +1,14 @@
 <template>
   <v-layout wrap row>
-    <v-flex xs4>
+    <v-flex xs6 class="pr-2">
       <controls-list/>
     </v-flex>
-    <v-flex xs8 class="mb-3">
+    <v-flex xs6 class="mb-4">
       <add-control-form
-        v-if="!selectedControl"
+        :disabled="!!selectedControl"
         :showDialog="showAddNewDialog"
         @add="control => addControl(control)"
         @cancel="() => cancelAddFacility()"
-        class="pt-4"
-      />
-      <confirm
-        v-if="selectedControl"
-        title="Steuerelement Löschen"
-        description="Dieses Steuerelement löschen?"
-        :small="true"
-        :fab="true"
-        @agree="() => remove(selectedControl._id)"
         class="pt-4"
       />
     </v-flex>
@@ -56,8 +47,7 @@
 
     methods: {
       ...mapActions({
-        add: 'controls/addAction',
-        remove: 'controls/removeAction'
+        add: 'controls/addAction'
       }),
       removeValue (valueId) {
         console.log('removeValue', valueId)

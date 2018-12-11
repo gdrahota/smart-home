@@ -20,14 +20,14 @@
           outline
           color="grey"
         >
+          <span class="black--text">{{ attributeValue.value }}</span>
           <v-icon
             color="green darken-2"
-            left
+            right
             @click="() => addToControl(attributeValue._id)"
             class="clickable"
           >fa-plus-circle
           </v-icon>
-          <span class="black--text">{{ attributeValue.value }}</span>
         </v-chip>
       </v-flex>
     </v-layout>

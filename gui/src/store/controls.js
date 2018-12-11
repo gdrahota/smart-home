@@ -1,3 +1,4 @@
+import { sortByName } from './../sorters'
 import { socket } from '../main'
 
 const state = {
@@ -62,13 +63,49 @@ const mutations = {
   SOCKET_REMOVE_CONTROLS_RESPONSE
 }
 
+const getActive =
+  state =>
+    state
+      .items
+      .filter(item => item.state === 'active')
+      .sort(sortByName)
+
+const getByControlSystemId =
+  state =>
+    id =>
+      state
+        .items
+        .filter(item => item.controlSystem === id)
+        .sort(sortByName)
+
+const getByAttributeValue =
+  state =>
+    valueId =>
+      state
+        .items
+        .filter(item => item.attributeValues.indexOf(valueId) !== -1)
+        .sort(sortByName)
+
+const getById =
+  state =>
+    id =>
+      state
+        .items
+        .find(item => item._id === id)
+
+const get =
+  state =>
+    state
+      .items
+      .sort(sortByName)
+
 const getters = {
   isLoading: state => state.loading,
-  get: state => state.items,
-  getById: state => id => state.items.find(item => item._id === id),
-  getActive: state => state.items.filter(item => item.state === 'active'),
-  getByControlSystemId: state => id => state.items.filter(item => item.controlSystem === id),
-  getByAttributeValue: state => valueId => state.items.filter(item => item.attributeValues.indexOf(valueId) !== -1),
+  get,
+  getById,
+  getActive,
+  getByControlSystemId,
+  getByAttributeValue,
   getSelected: state => {
     if (state.selected) {
       return state.items.find(control => control._id === state.selected)

@@ -78,7 +78,7 @@
         required: true
       },
       dataType: {
-        type: Number,
+        type: String,
         required: true
       },
       control: {

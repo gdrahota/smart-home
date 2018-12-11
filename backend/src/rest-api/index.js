@@ -9,7 +9,7 @@ import { registerControlEndpoints } from './controls'
 import { registerDataPointEndpoints } from './data-points'
 import { registerControlDataPointEndpoints } from './control-data-points'
 import { registerControlSystemEndpoints } from './control-systems'
-import { registerCommandQueueEndpoints } from './command-queue'
+import { registerCommands } from './commands'
 import UserService from '../services/clients'
 import config from '../../config/server'
 
@@ -30,7 +30,7 @@ export const registerEndpoints = cb => {
         registerDataPointEndpoints(io, socket)
         registerControlDataPointEndpoints(io, socket)
         registerControlSystemEndpoints(io, socket)
-        registerCommandQueueEndpoints(io, socket)
+        registerCommands(io, socket)
       }
     )
     .on('disconnect', reason => {
@@ -42,12 +42,9 @@ export const registerEndpoints = cb => {
     })
 
   const oplog = MongoOplog(config.mongoDb.oplog.url, { coll: config.mongoDb.oplog.collection })
+
   oplog.tail(() => {
     console.log('oplog started')
-  })
-
-  oplog.on('op', data => {
-    //console.log('op', data);
   })
 
   oplog.on('insert', doc => {
@@ -88,6 +85,5 @@ export const registerEndpoints = cb => {
       io.emit('remove_' + collection.replace(/-/g, '_').toLowerCase() + '_response', doc.o._id)
     }
   })
-
   cb()
 }

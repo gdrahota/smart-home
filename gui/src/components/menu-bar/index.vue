@@ -56,7 +56,7 @@
           {
             icon: 'fa-angle-left', 'icon-alt': 'fa-angle-right',
             text: 'Einstellungen',
-            model: true,
+            model: false,
             children: [
               { icon: 'fa-add', text: 'Gebäude', to: { path: '/admin/facilities' } },
               { icon: 'fa-add', text: 'Schnittstellensysteme', to: { path: '/admin/control-systems' } },

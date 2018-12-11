@@ -3,16 +3,6 @@
     <v-card class="mb-3">
       <v-card-title>
         <div class="subheading">
-          <v-btn
-            @click.stop="disabled = !disabled"
-            class="float-left"
-            :style="{ left: '-10px', top: '5px' }"
-            icon
-            :disabled="!selectedControlSystemId"
-          >
-            <v-icon v-if="disabled">fa-lock</v-icon>
-            <v-icon v-else>fa-unlock</v-icon>
-          </v-btn>
           <v-select
             :items="controlSystems"
             v-model="selectedControlSystemId"
@@ -24,10 +14,9 @@
           ></v-select>
           <v-btn
             v-if="selectedControlSystemId"
-            fab
-            small
-            @click="showAddForm = true"
+            @click="addDataPointToCurrentControlSystem"
             class="elevation-2"
+            fab small
           >
             <v-icon small color="green darken-1">fa-plus</v-icon>
           </v-btn>
@@ -82,35 +71,14 @@
       ...mapActions({
         add: 'dataPoints/addAction'
       }),
-      filterDataPoints (items, search, filter) {
-        const byDescription = row => filter(row['description'], search)
-        const byDataType = row => this.searchForDataType ? filter(row['dataType'], this.searchForDataType) : true
-        const byAddressRange = row => {
-          const parts = row.address.toString().split('/')
-
-          if (parts.length !== 3) {
-            return true
-          }
-
-          if (this.searchInUpperRange) {
-            if (parts[0] !== this.searchInUpperRange) {
-              return false
-            }
-          }
-
-          if (this.searchInMiddleRange) {
-            if (parts[1] !== this.searchInMiddleRange) {
-              return false
-            }
-          }
-
-          return true
+      addDataPointToCurrentControlSystem () {
+        const newDataPoint = {
+          address: '0/0/0',
+          description: '',
+          controlSystem: this.selectedControlSystemId,
+          dataType: '1.001'
         }
-
-        return items
-          .filter(byDescription)
-          .filter(byDataType)
-          .filter(byAddressRange)
+        this.add(newDataPoint)
       }
     }
   }

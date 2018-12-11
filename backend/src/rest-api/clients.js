@@ -77,14 +77,6 @@ export const registerClientEndpoints = (io, socket) => {
           cb()
         })
       },
-      cb => {
-        CommandQueueService.getAll((err, items) => {
-          err
-            ? socket.emit('command_queue_failed', err)
-            : socket.emit('command_queue_response', items)
-          cb()
-        })
-      },
     ])
   }
 

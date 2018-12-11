@@ -13,6 +13,7 @@ export const bindWebSocketToServer = (server, cb) => {
 
   conn = server.listen(
     config.server.port,
+    '0.0.0.0',
     err => {
       if (err) {
         console.log('WebSocket connection error:', err)

@@ -1,22 +1,22 @@
 import { DataPointService } from '../services/data-points'
 
 export const registerDataPointEndpoints = (io, socket) => {
-  const cbAdd = facility =>
-    DataPointService.add(facility, (err, item) => {
+  const cbAdd = item =>
+    DataPointService.add(item, err => {
       if (err) {
         socket.emit('add_data_point_failed', err)
       }
     })
 
   const cbRemove = id =>
-    DataPointService.remove(id, (err, items) => {
+    DataPointService.remove(id, err => {
       if (err) {
         socket.emit('remove_data_point_failed', err)
       }
     })
 
   const cbUpdate = control =>
-    DataPointService.update(control, (err, savedItem) => {
+    DataPointService.update(control, err => {
       if (err) {
         socket.emit('update_data_point_failed', err)
       }

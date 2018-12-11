@@ -1,7 +1,14 @@
 <template>
   <v-layout row wrap>
     <v-flex xs6 class="pr-3">
-      <v-card>
+      <v-card tile>
+        <v-text-field
+          v-model="controlName"
+          label="Name des Steuerelements"
+          class="ml-3 mr-3 pt-5"
+          flat
+        >
+        </v-text-field>
         <component
           v-if="control"
           :is="currentComponent"
@@ -19,7 +26,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
   import KnxTpLightSwitch from './knx-tp-light-switch'
   import KnxTpLightDimmer from './knx-tp-light-dimmer'
   import ManageAttributeValues from '../manage-attribute-values'
@@ -38,20 +45,30 @@
         dataPoints: 'dataPoints/get',
         control: 'controls/getSelected'
       }),
+      controlName: {
+        get () {
+          return this.control.name
+        },
+        set (name) {
+          this.update({ ...this.control, name })
+        }
+      },
       currentComponent () {
-        console.log('???', this.control)
         switch (this.control.controlType) {
           case 'lightDimmer':
-            console.log('lightDimmer')
             return KnxTpLightDimmer
           case 'lightSwitch':
-            console.log('lightSwitch')
             return KnxTpLightSwitch
           default:
-            console.log('default')
             return KnxTpLightSwitch
         }
       }
+    },
+
+    methods: {
+      ...mapActions({
+        update: 'controls/updateAction'
+      })
     }
   }
 </script>

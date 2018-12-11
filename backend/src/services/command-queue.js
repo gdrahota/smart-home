@@ -1,39 +1,53 @@
+import async from 'async'
 import Repository from '../repository/any-collection'
 
 const collection = 'command-queue'
 
-const getAll = cb => Repository(collection).getAll(cb)
+const sendCommand = (payload, cb) => {
+  async.waterfall(
+    [
+      cb1 => {
+        // get the control data point
+        const query = { control: payload.control, endPoint: payload.endPoint }
 
-const remove = (id, cb) => Repository(collection).remove(id, cb)
+        const cb = (err, items) => {
+          if (items.length === 1) {
+            cb1(null, items[0])
+          } else {
+            cb1('CONTROL_DATA_POINT_NOT_FOUND', query)
+          }
+        }
 
-const upsert = (item, cb) => {
-  const command = {
-    targetAddress: item.targetAddress,
-    dataType: item.dataType,
-    payload: item.value
-  }
+        Repository('control-data-points').find(query, cb)
+      },
+      (controlDataPoint, cb1) => {
+        // get the data point
+        const query = { _id: controlDataPoint.dataPoint }
 
-  const searchCommand = { targetAddress: item.targetAddress }
+        const cb = (err, items) => {
+          items.length === 1
+            ? cb1(null, items[0])
+            : cb1('DATA_POINT_NOT_FOUND', query)
+        }
 
-  Repository(collection).find(searchCommand, (err, items) => {
-    if (err) {
-      cb(err)
-    } else {
-      if (items.length === 0) {
-        Repository(collection).add(command, err => { cb(err) })
-      } else {
-        command._id = items[0]._id
-        Repository(collection).update(command, err => { cb(err) })
+        Repository('data-points').find(query, cb)
+      },
+      (dataPoint, cb1) => {
+        // construct and save command
+        const command = {
+          targetAddress: dataPoint.address,
+          dataType: dataPoint.dataType,
+          payload: payload.value
+        }
+
+        console.log(command)
+        Repository(collection).upsertCommand(command, cb1)
       }
-    }
-  })
+    ],
+    err => cb(err)
+  )
 }
 
-const find = (searchObj, cb) => Repository(collection).find(searchObj, cb)
-
 export const CommandQueueService = {
-  getAll,
-  remove,
-  upsert,
-  find
+  sendCommand
 }
