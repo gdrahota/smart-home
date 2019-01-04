@@ -21,11 +21,14 @@ export const registerClientEndpoints = (io, socket) => {
 
     await getValues('control_data_points', ControlDataPointService)
     await getValues('control_systems', ControlSystemService)
+    await getValues('control_system_types', ControlSystemService)
     await getValues('data_points', DataPointService)
     await getValues('controls', ControlService)
     await getValues('facility_attribute_values', FacilityAttributeValuesService)
     await getValues('facility_attributes', FacilityAttributesService)
     await getValues('facilities', FacilityService)
+
+    socket.emit('control_system_types_response', ControlSystemService.getTypes())
   }
 
   const cbLogin = async credentials => {

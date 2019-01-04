@@ -7,7 +7,7 @@ const getAll = cb => Repository('control-systems').getAll(cb)
 
 const update = (facility, cb) => Repository('control-systems').update(facility, cb)
 
-const getTypes = cb => cb(null, controlSystemTypes)
+const getTypes = () => controlSystemTypes
 
 export const ControlSystemService = {
   add,
