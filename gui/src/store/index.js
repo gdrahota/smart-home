@@ -6,10 +6,11 @@ import commands from './commands'
 import controls from './controls'
 import controlDataPoints from './control-data-points'
 import controlSystems from './control-systems'
+import dataPoints from './data-points'
 import facilities from './facilities'
 import facilityAttributes from './facility-attributes'
 import facilityAttributeValues from './facility-attribute-values'
-import dataPoints from './data-points'
+import knxEvents from './knx-events'
 
 Vue.use(Vuex)
 
@@ -23,6 +24,7 @@ export default new Vuex.Store({
     dataPoints,
     facilities,
     facilityAttributes,
-    facilityAttributeValues
+    facilityAttributeValues,
+    knxEvents
   }
 })

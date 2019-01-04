@@ -1,9 +1,11 @@
 import { ValuesFromKnxService } from '../services/values-from-knx'
+import { KnxEventService } from '../services/knx-events'
 
 let config
 
 const saveEventToDb = (evt, src, dest, value) => {
-  console.log("event: %s, src: %j, dest: %j, value: %j", evt, src, dest, value)
+  //console.log("event: %s, src: %j, dest: %j, value: %j", evt, src, dest, value)
+  console.log('=> ', evt, src, dest, value)
   if (['event'].indexOf(evt) !== -1) {
     const valueFromKnx = {
       controlSystem: config._id,
@@ -13,9 +15,21 @@ const saveEventToDb = (evt, src, dest, value) => {
     }
 
     const upsertQuery = { address: dest }
-    ValuesFromKnxService.upsert(valueFromKnx, upsertQuery, () => {}).then().catch()
-    console.log('=> ', evt, dest, value)
+    ValuesFromKnxService.upsert(valueFromKnx, upsertQuery, () => {})
   }
+
+  const knxEvent = {
+    controlSystem: config._id,
+    address: dest,
+    rawValue: value,
+    eventType: evt,
+    timestamp: Date()
+  }
+
+  KnxEventService
+    .add(knxEvent)
+    .then()
+    .catch()
 }
 
 export let connection
@@ -52,10 +66,10 @@ export const connectToKnx = async serverConfig => {
         },
 
         // get notified for all KNX events:
-        event: saveEventToDb,
-        GroupValue_Response: saveEventToDb,
-        GroupValue_Write: saveEventToDb,
-        GroupValue_Read: saveEventToDb
+        event: (evt, src, dest, value) => saveEventToDb(evt, src, dest, value),
+        //GroupValue_Response: (src, dest, value) => saveEventToDb('response', src, dest, value),
+        //GroupValue_Write: (src, dest, value) => saveEventToDb('write', src, dest, value),
+        //GroupValue_Read: (src, dest) => saveEventToDb('read', src, dest, null),
       },
       // get notified on connection errors
       err: connStatus => {
