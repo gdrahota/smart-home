@@ -10,24 +10,6 @@ const SOCKET_KNX_EVENTS_RESPONSE = (state, response) => {
   state.loading = false
 }
 
-const addAction = (context, item) => {
-  socket.emit('add_control', item)
-}
-
-const updateAction = (context, item) => {
-  socket.emit('update_control', item)
-}
-
-const removeAction = (context, itemId) => {
-  socket.emit('remove_control', itemId)
-}
-
-const actions = {
-  addAction,
-  updateAction,
-  removeAction
-}
-
 const SOCKET_ADD_KNX_EVENTS_RESPONSE = (state, response) => {
   state.items.push(response[0])
 }
@@ -66,7 +48,6 @@ const getters = {
 export default {
   namespaced: true,
   state,
-  actions,
   mutations,
   getters
 }
