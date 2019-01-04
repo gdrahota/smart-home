@@ -1,19 +1,15 @@
 import Repository from '../repository/any-collection'
 
-const add = (facility, cb) => Repository('data-points').add(facility, cb)
+const collection = 'data-points'
 
-const getAll = cb => Repository('data-points').getAll(cb)
+const getAll = () => Repository(collection).getAll()
 
-const find = (searchObj, cb) => Repository('data-points').find(searchObj, cb)
+const find = searchObj => Repository(collection).find(searchObj)
+const findOne = searchObj => Repository(collection).findOne(searchObj)
 
-const findOne = (searchObj, cb) => Repository('data-points').findOne(searchObj).lean().exec((err, data) => {
-  console.log('#', err, data)
-  cb(err, data)
-})
-
-const remove = (id, cb) => Repository('data-points').remove(id, cb)
-
-const update = (id, cb) => Repository('data-points').update(id, cb)
+const add = item => Repository(collection).add(item)
+const update = item => Repository(collection).update(item)
+const remove = id => Repository(collection).remove(id)
 
 export const DataPointService = {
   add,

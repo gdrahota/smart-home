@@ -10,8 +10,8 @@ const addAction = (context, item) => {
   socket.emit('add_facility', item)
 }
 
-const setInactiveAction = (context, id) => {
-  socket.emit('set_facility_inactive', id)
+const removeAction = (context, id) => {
+  socket.emit('remove_facility', id)
 }
 
 const updateFacilityAction = (context, facility) => {
@@ -20,8 +20,8 @@ const updateFacilityAction = (context, facility) => {
 
 const actions = {
   addAction,
-  setInactiveAction,
-  updateFacilityAction
+  updateFacilityAction,
+  removeAction,
 }
 
 const SOCKET_FACILITIES_RESPONSE = (state, response) => {
@@ -42,6 +42,9 @@ const SOCKET_UPDATE_FACILITIES_RESPONSE = (state, response) => {
   state.items = state.items.map(mapFnc)
   state.selected = response[0]
 }
+const SOCKET_REMOVE_FACILITIES_RESPONSE = (state, response) => {
+  state.items = state.items.filter(f => f._id !== response[0])
+}
 
 const selectMutation = (context, item) => {
   state.selected = item
@@ -52,6 +55,7 @@ const mutations = {
   SOCKET_FACILITIES_RESPONSE,
   SOCKET_ADD_FACILITIES_RESPONSE,
   SOCKET_UPDATE_FACILITIES_RESPONSE,
+  SOCKET_REMOVE_FACILITIES_RESPONSE,
   selectMutation
 }
 

@@ -2,20 +2,17 @@
   <v-card>
     <v-card-title>
       <span>{{ control.name }}</span>
-      <v-icon v-if="dataPoint" class="float-right" :color="getColor">fa-circle</v-icon>
+      <v-icon v-if="getValue" class="float-right" :color="getColor">fa-circle</v-icon>
     </v-card-title>
     <v-card-text>
       <v-switch
-        v-if="dataPoint"
         color="orange"
-        v-model="value"
+        v-model="setValue"
         hide-details
-        :label="value ? 'an' : 'aus'"
+        :label="setValue ? 'an' : 'aus'"
         ripple
       />
-      <div v-else>
-        <i>Dieses Control ist noch nicht angeschlossen!</i>
-      </div>
+      <div class="mt-3 caption grey--text float-right">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}</div>
     </v-card-text>
   </v-card>
 </template>
@@ -30,26 +27,9 @@
         getControlDataPoint: 'controlDataPoints/getByControlAndEndPoint',
         getDataPoint: 'dataPoints/getById'
       }),
-      controlDataPoint () {
-        const controlDataPoint = this.getControlDataPoint(this.control._id, 'switch')
-        if (controlDataPoint) {
-          return controlDataPoint
-        }
-      },
-      dataPoint () {
-        if (this.controlDataPoint) {
-          return this.getDataPoint(this.controlDataPoint.dataPoint)
-        }
-      },
-      value: {
+      setValue: {
         get () {
-          if (!this.dataPoint) {
-            return false
-          }
-          if (this.dataPoint.value) {
-            return this.dataPoint.value
-          }
-          return false
+          return this.control.values
         },
         set (value) {
           const command = {
@@ -60,8 +40,11 @@
           this.sendCommand(command)
         }
       },
+      getValue () {
+        return this.control.values
+      },
       getColor () {
-        if (this.value === true) {
+        if (this.getValue === true) {
           return 'yellow'
         }
         return '#888'
@@ -89,7 +72,7 @@
   }
 
   .v-card {
-    height: 130px;
+    height: 140px;
   }
 
   .v-card__title {

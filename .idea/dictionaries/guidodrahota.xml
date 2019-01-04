@@ -21,6 +21,7 @@
       <w>datenpunkttyp</w>
       <w>datentyp</w>
       <w>deaktivieren</w>
+      <w>dimmbar</w>
       <w>dimmen</w>
       <w>dorfstr</w>
       <w>eigenschaft</w>
@@ -43,10 +44,13 @@
       <w>gruppenadresse</w>
       <w>gruppenadressen</w>
       <w>gäste</w>
+      <w>heizzustand</w>
       <w>hinten</w>
       <w>hinterlegt</w>
+      <w>istwert</w>
       <w>kommt</w>
       <w>küche</w>
+      <w>licht</w>
       <w>lichtschalter</w>
       <w>montag</w>
       <w>namespaced</w>
@@ -54,9 +58,15 @@
       <w>oplog</w>
       <w>postleitzahl</w>
       <w>raum</w>
+      <w>raumtemperatursteuerung</w>
+      <w>rollladen</w>
+      <w>rückmeldung</w>
       <w>schaltbefehls</w>
       <w>schließen</w>
       <w>seitlich</w>
+      <w>setzen</w>
+      <w>soll</w>
+      <w>sollwert</w>
       <w>sonntag</w>
       <w>steuerelement</w>
       <w>steuerelemente</w>
@@ -64,6 +74,7 @@
       <w>steuerung</w>
       <w>straße</w>
       <w>szenennummer</w>
+      <w>temperatur</w>
       <w>upsert</w>
       <w>verfügbare</w>
       <w>verwendung</w>

@@ -1,4 +1,4 @@
-export const registerMongooseSchemas = cb => {
+export const registerMongooseSchemas = () => {
   require('./client').registerSchema()
   require('./controls').registerSchema()
   require('./control-system').registerSchema()
@@ -8,5 +8,5 @@ export const registerMongooseSchemas = cb => {
   require('./facility-attributes').registerSchema()
   require('./facilities').registerSchema()
   require('./command-queue').registerSchema()
-  cb()
+  require('./values-from-knx').registerSchema()
 }

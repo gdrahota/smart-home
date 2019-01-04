@@ -2,17 +2,9 @@
   <v-card>
     <v-card-title>
       <span>{{ control.name }}</span>
-      <v-icon class="float-right" :color="getColor">fa-circle</v-icon>
     </v-card-title>
     <v-card-text>
-      <v-slider
-        inverse-label
-        v-model="currentValue"
-        step="10"
-        :label="currentValue + ' %'"
-        color="orange"
-        hide-details
-      />
+      <v-chip label class="mt-2">Ist: {{ tempCurrentValue | number(1) }} °C / Soll: {{ tempTargetValue | number(1) }} °C</v-chip>
       <div class="mt-3 caption grey--text float-right">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}</div>
     </v-card-text>
   </v-card>
@@ -26,27 +18,27 @@
       ...mapGetters({
         commands: 'commandQueue/get'
       }),
-      currentValue: {
+      tempCurrentValue () {
+        return (this.control.values && this.control.values.current) ? this.control.values.current : 0
+      },
+      tempTargetValue () {
+        return (this.control.values && this.control.values.target) ? this.control.values.target : 0
+      },
+      value: {
         get () {
-          if (this.control.values) {
-            return Math.round(this.control.values)
+          if (this.control.values && this.control.values.current) {
+            return this.control.values.current
           }
           return 0
         },
         set (value) {
           const command = {
             control: this.control._id,
-            endPoint: 'dim',
+            endPoint: 'temp-target-value',
             value
           }
           this.sendCommand(command)
         }
-      },
-      getColor () {
-        if (this.currentValue && this.currentValue > 0) {
-          return 'yellow'
-        }
-        return '#888'
       }
     },
 

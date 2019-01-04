@@ -26,11 +26,18 @@ export const registerSchema = () => {
       type: String,
       required: true
     },
-    endPoints: [],
     attributeValues: [Schema.ObjectId],
     state: {
       type: controlStates,
       default: 'active'
+    },
+    values: {
+      type: Schema.Types.Mixed,
+      required: false
+    },
+    valueUpdated: {
+      type: Date,
+      required: false
     }
   }
 

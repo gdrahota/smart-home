@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin/node /usr/local/bin/yarn remove knx-listener
+  /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin/node /usr/local/bin/yarn remove oracledb
 
 PATH: 
-  /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin:/Users/guidodrahota/Desktop/mongodb/bin:/Users/guidodrahota/Downloads/apache-maven-3.5.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin:/Users/guidodrahota/Desktop/apache-maven-3.6.0/bin:/Users/guidodrahota/Desktop/mongodb/bin:/Users/guidodrahota/Downloads/apache-maven-3.5.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   1.5.1
@@ -26,12 +26,6 @@ npm manifest:
   		"cs": "NODE_ENV=development NO_DEPRECATION=tedious nodemon src/control-systems/index.js --exec babel-node",
   		"build": "NODE_ENV=production babel src -d dist",
   		"lint": "eslint src",
-  		"oracle:init": "docker create -v /u01/app/oracle --name oracle-volume sath89/oracle-xe-11g",
-  		"oracle:start": "docker run --name noc_oracle -d -p 9000:8080 -p 1521:1521 --volumes-from oracle-volume sath89/oracle-xe-11g",
-  		"mssql:init": "docker create -v /var/opt/mssql --name mssql-volume microsoft/mssql-server-linux:2017-latest",
-  		"mssql:start": "docker run --name noc_mssql -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Test@123' -p 1433:1433 --volumes-from mssql-volume -d microsoft/mssql-server-linux:2017-latest",
-  		"mysql:init": "docker create -v /var/lib/mysql --name mysql-volume mysql:5.5.61",
-  		"mysql:start": "docker run --name noc_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 --volumes-from mysql-volume -d mysql:5.5.61",
   		"jest": "node node_modules/.bin/jest --runInBand --no-cache --watch",
   		"jest:clearcache": "node node_modules/.bin/jest --clearCache"
   	},
@@ -60,9 +54,6 @@ npm manifest:
   		"moment-timezone": "^0.5.21",
   		"mongo-oplog": "^2.1.4",
   		"mongoose": "^5.2.2",
-  		"mssql": "^4.1.0",
-  		"mysql": "^2.16.0",
-  		"oracledb": "^2.3.0",
   		"serve-static": "^1.13.2",
   		"socket.io": "^2.1.1",
   		"uuid": "^3.3.2"

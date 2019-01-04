@@ -41,9 +41,10 @@ const SOCKET_ADD_CONTROLS_RESPONSE = (state, response) => {
 
 const SOCKET_UPDATE_CONTROLS_RESPONSE = (state, response) => {
   const mapFnc = item => {
-    return (item._id === response[0]._id)
-      ? response[0]
-      : item
+    if (item._id === response[0]._id) {
+      return response[0]
+    }
+    return item
   }
   state.items = state.items.map(mapFnc)
   state.selected = response[0]._id
@@ -63,41 +64,34 @@ const mutations = {
   SOCKET_REMOVE_CONTROLS_RESPONSE
 }
 
-const getActive =
-  state =>
-    state
-      .items
-      .filter(item => item.state === 'active')
-      .sort(sortByName)
+const getActive = state =>
+  state
+    .items
+    .filter(item => item.state === 'active')
+    .sort(sortByName)
 
-const getByControlSystemId =
-  state =>
-    id =>
-      state
-        .items
-        .filter(item => item.controlSystem === id)
-        .sort(sortByName)
+const getByControlSystemId = state => id =>
+  state
+    .items
+    .filter(item => item.controlSystem === id)
+    .sort(sortByName)
 
-const getByAttributeValue =
-  state =>
-    valueId =>
-      state
-        .items
-        .filter(item => item.attributeValues.indexOf(valueId) !== -1)
-        .sort(sortByName)
+const getByAttributeValue = state => valueId =>
+  state
+    .items
+    .filter(item => item.attributeValues.indexOf(valueId) !== -1)
+    .sort(sortByName)
 
-const getById =
-  state =>
-    id =>
-      state
-        .items
-        .find(item => item._id === id)
+const getById = state => id => state.items.find(item => item._id === id)
 
-const get =
-  state =>
-    state
-      .items
-      .sort(sortByName)
+const get = state => state.items.sort(sortByName)
+
+const getSelectedControl = state => {
+  if (state.selected) {
+    return getById(state)(state.selected)
+  }
+  return null
+}
 
 const getters = {
   isLoading: state => state.loading,
@@ -106,11 +100,8 @@ const getters = {
   getActive,
   getByControlSystemId,
   getByAttributeValue,
-  getSelected: state => {
-    if (state.selected) {
-      return state.items.find(control => control._id === state.selected)
-    }
-  }
+  getSelectedControlId: state => state.selected,
+  getSelectedControl
 }
 
 export default {

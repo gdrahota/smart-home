@@ -1,16 +1,17 @@
 import Repository from '../repository/any-collection'
 
-const add = (facility, cb) => Repository('controls').add(facility, cb)
+const collection = 'controls'
 
-const getAll = cb => Repository('controls').getAll(cb)
-
-const remove = (id, cb) => Repository('controls').remove(id, cb)
-
-const update = (facility, cb) => Repository('controls').update(facility, cb)
+const add = item => Repository(collection).add(item)
+const getAll = () => Repository(collection).getAll()
+const findOne = searchObj => Repository(collection).findOne(searchObj)
+const update = item => Repository(collection).update(item)
+const remove = id => Repository(collection).remove(id)
 
 export const ControlService = {
   add,
   getAll,
+  findOne,
   remove,
   update
 }

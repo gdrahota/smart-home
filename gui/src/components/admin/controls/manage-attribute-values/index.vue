@@ -28,7 +28,7 @@
 
     computed: {
       ...mapGetters({
-        control: 'controls/getSelected',
+        control: 'controls/getSelectedControl',
         attributesByFacilityId: 'facilityAttributes/getByFacilityId',
         attributeValuesByFacilityAttributeId: 'facilityAttributes/getByFacilityAttributeId',
       }),

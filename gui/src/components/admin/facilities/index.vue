@@ -16,7 +16,7 @@
         description="Löschen XXX"
         :small="true"
         :fab="true"
-        @agree="() => setInactive(selected._id)"
+        @agree="() => removeFacility(selected._id)"
         v-if="selectedFacility"
       />
     </v-flex>
@@ -65,7 +65,7 @@
     methods: {
       ...mapActions({
         add: 'facilities/addAction',
-        setInactive: 'facilities/setInactiveAction',
+        remove: 'facilities/removeAction',
       }),
 
       ...mapMutations({
@@ -77,6 +77,9 @@
       },
       cancelAddFacility () {
         this.showAddNewDialog = false
+      },
+      removeFacility (facilityId) {
+        this.remove(facilityId)
       }
     },
 

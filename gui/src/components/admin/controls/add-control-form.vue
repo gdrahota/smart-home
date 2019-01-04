@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="show" width="800">
     <v-btn
-      :disabled="disabled"
+      v-if="!disabled"
       slot="activator"
       fab
       small
@@ -103,7 +103,8 @@
         controlTypes: [
           { label: 'Licht (an/aus)', type: 'lightSwitch' },
           { label: 'Licht (dimmbar)', type: 'lightDimmer' },
-          { label: 'Rollladen', type: 'shutter' }
+          { label: 'Rollladen', type: 'shutter' },
+          { label: 'Raumtemperatursteuerung', type: 'rtc' }
         ]
       }
     },

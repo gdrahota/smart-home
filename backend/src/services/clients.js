@@ -1,5 +1,4 @@
 import ClientRepository from '../repository/clients'
-import LdapAuthService from '../services/ldap-auth-service'
 import config from '../../config/server'
 
 const AppRolesToLdapRoles = config.appRolesToLdapRoles
@@ -28,52 +27,41 @@ export const mapLdapGroupsToAppRoles = (appRolesToLdapRoles, userGroups) => {
   return userRights
 }
 
-const login = (credentials, socketId, cb) => {
-  const { username, password } = credentials
-  const uuid = require('uuid/v4')
+const login = async (credentials, socketId) => {
+  try {
+    const { username, password } = credentials
+    const uuid = require('uuid/v4')
 
-  // local auth
-  const user = registeredUsers.find(regUser => regUser.accountName === username)
+    // local auth
+    const user = registeredUsers.find(regUser => regUser.accountName === username)
 
-  if (user) {
-    const expires = new Date()
-    expires.setHours(expires.getHours() + 4)
+    if (user) {
+      const expires = new Date()
+      expires.setHours(expires.getHours() + 4)
 
-    ClientRepository.add(uuid(), user, socketId, expires)
-      .then(
-        client => cb(null, { client }),
-        err => cb(err)
-      )
-      .catch()
-  } else {
-    cb('UNKNOWN_USER_OR_WRONG_PASSWORD')
+      return ClientRepository.add(uuid(), user, socketId, expires)
+    }
+  }
+  catch (err) {
+    return 'UNKNOWN_USER_OR_WRONG_PASSWORD'
   }
 }
 
-const reLogin = (socketId, clientId, cb) => {
+const reLogin = async (socketId, clientId) => {
   const expires = new Date()
   expires.setHours(expires.getHours() + 4)
 
-  ClientRepository.relogin(socketId, clientId, expires, (err, client) => {
-    if (err || !client) {
-      cb('error during logout')
-    } else {
-      cb(null, { client })
-    }
-  })
+  return ClientRepository.relogin(socketId, clientId, expires)
 }
 
-const logOut = clientId =>
-  ClientRepository.logOut(clientId)
+const logOut = async clientId => ClientRepository.logOut(clientId)
 
-const logOutExpired = (actualDate, cb) => {
-  ClientRepository.logOutExpired(actualDate, err => cb(err))
-}
+const logOutExpired = (actualDate, cb) => ClientRepository.logOutExpired(actualDate, err => cb(err))
 
 const updateExpirationDate = socketId => {
   const expires = new Date()
   expires.setHours(expires.getHours() + 4)
-  ClientRepository.updateExpirationDate(socketId, expires)
+  return ClientRepository.updateExpirationDate(socketId, expires)
 }
 
 export default {

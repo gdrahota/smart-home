@@ -2,22 +2,18 @@
   <v-card>
     <v-card-title>
       <span>{{ control.name }}</span>
-      <v-icon v-if="dataPoint" class="float-right" :color="getColor">fa-circle</v-icon>
+      <v-icon v-if="position" class="float-right" :color="getColor">fa-circle</v-icon>
     </v-card-title>
     <v-card-text>
-      <template v-if="dataPoint">
-        <v-slider
-          inverse-label
-          v-model="value"
-          step="10"
-          :label="value + ' %'"
-          color="orange"
-          hide-details
-        />
-      </template>
-      <div v-else>
-        <i>Dieses Control ist noch nicht angeschlossen!</i>
-      </div>
+      <v-slider
+        inverse-label
+        v-model="position"
+        step="10"
+        :label="position + ' %'"
+        color="orange"
+        hide-details
+      />
+      <div class="mt-3 caption grey--text float-right">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}</div>
     </v-card-text>
   </v-card>
 </template>
@@ -28,39 +24,26 @@
   export default {
     computed: {
       ...mapGetters({
-        commands: 'commandQueue/get',
-        getControlDataPoint: 'controlDataPoints/getByControlAndEndPoint',
-        getDataPoint: 'dataPoints/getById'
+        commands: 'commandQueue/get'
       }),
-      controlDataPoint () {
-        const controlDataPoint = this.getControlDataPoint(this.control._id, 'dim')
-        if (controlDataPoint) {
-          return controlDataPoint
-        }
-      },
-      dataPoint () {
-        if (this.controlDataPoint) {
-          return this.getDataPoint(this.controlDataPoint.dataPoint)
-        }
-      },
-      value: {
+      position: {
         get () {
-          if (this.dataPoint && this.dataPoint.value) {
-            return this.dataPoint.value
+          if (this.control.values) {
+            return Math.round(this.control.values)
           }
           return 0
         },
         set (value) {
           const command = {
             control: this.control._id,
-            endPoint: 'dim',
+            endPoint: 'shutter-position-set',
             value
           }
           this.sendCommand(command)
         }
       },
       getColor () {
-        if (this.value && this.value > 0) {
+        if (this.position && this.position > 0) {
           return 'yellow'
         }
         return '#888'
@@ -88,7 +71,7 @@
   }
 
   .v-card {
-    height: 130px;
+    height: 140px;
   }
 
   .v-card__title {

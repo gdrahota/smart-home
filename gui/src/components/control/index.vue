@@ -4,9 +4,7 @@
       <v-card-text>
         <v-layout>
           <v-flex class="pr-2" lg3 sm6 xs12>
-            <select-facilities
-              @setFacility="value => setFacility(value)"
-            />
+            <select-facilities @setFacility="value => setFacility(value)"/>
           </v-flex>
         </v-layout>
 

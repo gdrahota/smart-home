@@ -23,6 +23,10 @@ export const registerSchema = () => {
     value: {
       type: Schema.Types.Mixed,
       required: false
+    },
+    valueUpdated: {
+      type: Date,
+      required: false
     }
   }
 

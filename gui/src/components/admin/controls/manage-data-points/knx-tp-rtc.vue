@@ -30,24 +30,19 @@
       return {
         controlEndPoints: [
           {
-            label: 'Schaltbefehls An / Aus',
+            label: 'Gruppenadresse, Heizzustand (Ein/Aus)',
             dataType: '1.001',
-            endPoint: 'switch'
+            endPoint: 'switch-response'
           },
           {
-            label: 'An / Aus, Bestätigung',
-            dataType: '1.001',
-            endPoint: 'response'
+            label: 'Gruppenadresse, Temperatur Sollwert',
+            dataType: '9.001',
+            endPoint: 'temp-target-value'
           },
           {
-            label: 'Dimmen',
-            dataType: '5.001',
-            endPoint: 'dim'
-          },
-          {
-            label: 'Dimmen, Bestätigung',
-            dataType: '5.001',
-            endPoint: 'dim-response'
+            label: 'Gruppenadresse, Temperatur Istwert',
+            dataType: '9.001',
+            endPoint: 'temp-current-value'
           }
         ]
       }

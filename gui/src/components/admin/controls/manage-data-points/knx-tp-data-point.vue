@@ -23,7 +23,7 @@
       list () {
         const mapData = dp => {
           return {
-            label: dp.address + ' :: ' + dp.description,
+            label: dp.address + ' : ' + dp.description,
             value: dp._id
           }
         }
@@ -40,18 +40,22 @@
           return null
         },
         set (newValue) {
-          if (!newValue) {
-            this.remove({
+          console.log('set', newValue)
+          if (newValue === undefined) {
+            const payload = {
               control: this.control._id,
               endPoint: this.endPoint
-            })
+            }
+            console.log('remove', payload)
+            this.remove(payload)
           } else {
-            const controlDataPoint = {
+            const payload = {
               control: this.control._id,
               endPoint: this.endPoint,
               dataPoint: newValue
             }
-            this.upsert(controlDataPoint)
+            console.log('upsert', payload)
+            this.upsert(payload)
           }
         }
       }

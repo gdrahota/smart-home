@@ -1,37 +1,35 @@
 import { FacilityService } from '../services/facilities'
 
 export const registerFacilityEndpoints = (io, socket) => {
-  const cbAdd = facility =>
-    FacilityService.add(facility, (err, item) => {
-      err
-        ? socket.emit('add_facility_failed', err)
-        : io.emit('add_facility_response', item)
-    })
+  const cbAdd = async facility => {
+    try {
+      await FacilityService.add(facility)
+    }
+    catch (err) {
+      socket.emit('add_facility_failed', err)
+    }
+  }
 
-  const cbRemove = id =>
-    FacilityService.remove(id, (err, items) => {
-      err
-        ? socket.emit('remove_facility_failed', err)
-        : io.emit('remove_facility_response', items)
-    })
+  const cbRemove = async id => {
+    try {
+      await FacilityService.remove(id)
+    }
+    catch (err) {
+      socket.emit('remove_facility_failed', err)
+    }
+  }
 
-  const cbSetInactive = id =>
-    FacilityService.setInactive(id, err => {
-      err
-        ? socket.emit('set_facility_inactive_failed', id)
-        : io.emit('set_facility_inactive_response', id)
-    })
-
-  const cbUpdate = facility =>
-    FacilityService.update(facility, (err, savedFacility) => {
-      err
-        ? socket.emit('update_facility_failed', facility)
-        : io.emit('update_facility_response', savedFacility)
-    })
+  const cbUpdate = async facility => {
+    try {
+      await FacilityService.update(facility)
+    }
+    catch (err) {
+      socket.emit('update_facility_failed', facility)
+    }
+  }
 
   socket
     .on('add_facility', cbAdd)
     .on('remove_facility', cbRemove)
-    .on('set_facility_inactive', cbSetInactive)
     .on('update_facility', cbUpdate)
 }

@@ -1,26 +1,31 @@
 import { ControlService } from '../services/controls'
 
 export const registerControlEndpoints = (io, socket) => {
-  const cbAdd = facility =>
-    ControlService.add(facility, err => {
-      if (err) {
-        socket.emit('add_control_failed', err)
-      }
-    })
+  const cbAdd = async facility => {
+    try {
+      await ControlService.add(facility)
+    }
+    catch (err) {
+      socket.emit('add_control_failed', err)
+    }
+  }
 
-  const cbRemove = id =>
-    ControlService.remove(id, err => {
-      if (err) {
-        socket.emit('remove_control_failed', err)
-      }
-    })
+  const cbRemove = async id => {
+    try {
+      await ControlService.remove(id)
+    }
+    catch (err) {
+      socket.emit('remove_control_failed', err)
+    }
+  }
 
-  const cbUpdate = control => {
-    ControlService.update(control, err => {
-      if (err) {
-        socket.emit('update_control_failed', err)
-      }
-    })
+  const cbUpdate = async control => {
+    try {
+      await ControlService.update(control)
+    }
+    catch (err) {
+      socket.emit('update_control_failed', err)
+    }
   }
 
   socket

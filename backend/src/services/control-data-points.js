@@ -1,14 +1,16 @@
 import Repository from '../repository/any-collection'
 
-const getAll = cb => Repository('control-data-points').getAll(cb)
+const collection = 'control-data-points'
 
-const remove = (id, cb) => Repository('control-data-points').remove(id, cb)
-const removeControlDataPoint = (control, endPoint, cb) => Repository('control-data-points').removeControlDataPoint(control, endPoint, cb)
-
-const upsert = (item, cb) => Repository('control-data-points').upsert(item, cb)
+const getAll = () => Repository(collection).getAll()
+const findOne = searchObj => Repository(collection).findOne(searchObj)
+const remove = id => Repository(collection).remove(id)
+const removeControlDataPoint = (control, endPoint) => Repository(collection).removeControlDataPoint(control, endPoint)
+const upsert = item => Repository(collection).upsert(item, { control: item.control, endPoint: item.endPoint })
 
 export const ControlDataPointService = {
   getAll,
+  findOne,
   remove,
   upsert,
   removeControlDataPoint

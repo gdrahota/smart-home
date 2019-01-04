@@ -21,6 +21,7 @@ const state = {
     { value: '7.006', label: '7.006: 0....65535 min' },
     { value: '7.007', label: '7.007: 0...65535 h' },
     { value: '7.011', label: '7.011: 0...65535 mm' },
+    { value: '7.012', label: '7.012: 0...65535 mA' },
     { value: '7.013', label: '7.013: 0...65535 lux' },
     { value: '8.001', label: '8.001: -32768...32767' },
     { value: '8.002', label: '8.002: -32768...32767 ms' },
@@ -114,7 +115,7 @@ const getByControlSystemId =
 
 const getters = {
   isLoading: state => state.loading,
-  get: state => state.items,
+  get: state => state.items.sort(sortByAddress),
   getById: state => id => state.items.find(item => item._id === id),
   getByControlSystemId,
   isAddressAlreadyUsed,

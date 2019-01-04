@@ -27,10 +27,12 @@
 
 <script>
   import { mapGetters, mapActions } from 'vuex'
-  import KnxTpLightSwitch from './knx-tp-light-switch'
-  import KnxTpLightDimmer from './knx-tp-light-dimmer'
   import ManageAttributeValues from '../manage-attribute-values'
   import ShowFacilityAttributeValues from '../manage-attribute-values/show-attribute-values'
+  import KnxTpLightSwitch from './knx-tp-light-switch'
+  import KnxTpLightDimmer from './knx-tp-light-dimmer'
+  import KnxTpShutter from './knx-tp-shutter'
+  import RoomTemperaturControl from './knx-tp-rtc'
 
   export default {
     components: {
@@ -38,12 +40,14 @@
       ShowFacilityAttributeValues,
       KnxTpLightSwitch,
       KnxTpLightDimmer,
+      KnxTpShutter,
+      RoomTemperaturControl,
     },
 
     computed: {
       ...mapGetters({
         dataPoints: 'dataPoints/get',
-        control: 'controls/getSelected'
+        control: 'controls/getSelectedControl'
       }),
       controlName: {
         get () {
@@ -59,6 +63,10 @@
             return KnxTpLightDimmer
           case 'lightSwitch':
             return KnxTpLightSwitch
+          case 'shutter':
+            return KnxTpShutter
+          case 'rtc':
+            return RoomTemperaturControl
           default:
             return KnxTpLightSwitch
         }

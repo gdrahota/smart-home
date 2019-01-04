@@ -30,24 +30,19 @@
       return {
         controlEndPoints: [
           {
-            label: 'Schaltbefehls An / Aus',
+            label: 'Gruppenadresse des Schaltbefehls',
             dataType: '1.001',
-            endPoint: 'switch'
+            endPoint: 'switch-response'
           },
           {
-            label: 'An / Aus, Bestätigung',
-            dataType: '1.001',
-            endPoint: 'response'
-          },
-          {
-            label: 'Dimmen',
+            label: 'Position setzen',
             dataType: '5.001',
-            endPoint: 'dim'
+            endPoint: 'shutter-position-set'
           },
           {
-            label: 'Dimmen, Bestätigung',
+            label: 'Rückmeldung position',
             dataType: '5.001',
-            endPoint: 'dim-response'
+            endPoint: 'shutter-position-response'
           }
         ]
       }

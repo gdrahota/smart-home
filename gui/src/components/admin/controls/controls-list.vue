@@ -1,15 +1,15 @@
 <template>
   <v-select
-    :items="controls"
     v-model="control"
+    :items="controlOptions"
+    item-text="text"
+    item-value="value"
     label="Steuerelement auswählen..."
     class="pt-4 pr-2 pb-2"
-    box-
     clearable
     hide-details
     solo
     append-outer-icon-="fa-trash-o"
-    append-outer-icon--cb="test"
   >
     <template slot="append">
       <confirm
@@ -29,7 +29,7 @@
         <v-icon>{{ getIcon(data.item.controlType) }}</v-icon>
       </v-list-tile-avatar>
       <v-list-tile-content>
-        <v-list-tile-title v-text="data.item.name"></v-list-tile-title>
+        <v-list-tile-title v-text="data.item.text"></v-list-tile-title>
       </v-list-tile-content>
     </template>
 
@@ -42,7 +42,7 @@
         <v-list-tile-title>
           <div fiftyPercent float-left>
             <v-icon>{{ getIcon(data.item.controlType) }}</v-icon>
-            <span class="pl-3">{{ data.item.name }}</span>
+            <span class="pl-3">{{ data.item.text }}</span>
           </div>
           <div fiftyPercent float-left text-right class="body-1">{{ data.item.technology }} - {{ data.item.controlType }}</div>
         </v-list-tile-title>
@@ -52,25 +52,30 @@
 </template>
 
 <script>
-  import { mapGetters, mapMutations, mapActions } from 'vuex'
+  import { mapActions, mapGetters, mapMutations } from 'vuex'
 
   export default {
     computed: {
       ...mapGetters({
         controls: 'controls/get',
-        getSelectedControl: 'controls/getSelected'
+        getSelectedControlId: 'controls/getSelectedControlId'
       }),
+      controlOptions () {
+        return this.controls.map(c => {
+          return {
+            text: c.name,
+            value: c._id,
+            controlType: c.controlType,
+            technology: c.technology
+          }
+        })
+      },
       control: {
         get () {
-          return this.getSelectedControl
+          return this.getSelectedControlId
         },
-        set (value) {
-          if (value) {
-            this.selectControl(value._id)
-          } else {
-            this.selectControl(null)
-
-          }
+        set (controlId) {
+          this.selectControl(controlId)
         }
       }
     },
@@ -82,7 +87,6 @@
       ...mapMutations({
         selectControl: 'controls/selectControl'
       }),
-      test () {},
       getIcon (controlType) {
         switch (controlType) {
           case 'lightSwitch':
@@ -90,7 +94,7 @@
             return 'fa-lightbulb-o'
           case 'shutter':
             return 'fa-bars'
-          default         :
+          default:
             return 'fa-minus'
         }
       }

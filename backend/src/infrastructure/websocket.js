@@ -4,25 +4,27 @@ import config from '../../config/server'
 let conn
 export let io
 
-export const bindWebSocketToServer = (server, cb) => {
-  io = require('socket.io')(server);
+export const bindWebSocketToServer = async server => {
+  return new Promise((resolve, reject) => {
+    io = require('socket.io')(server)
 
-  io.on('connect', () => {
-    console.log('client has been connected', )
-  })
+    io.on('connect', () => {
+      console.log('client has been connected')
+    })
 
-  conn = server.listen(
-    config.server.port,
-    '0.0.0.0',
-    err => {
-      if (err) {
-        console.log('WebSocket connection error:', err)
-      } else {
-        console.log('>>> SERVER LISTENS ON PORT ' + config.server.port + ' bind to ip address ' + config.server.host)
+    conn = server.listen(
+      config.server.port,
+      err => {
+        if (err) {
+          console.log('server NOT listening!', err)
+          reject(err)
+        } else {
+          console.log('server listens on port ' + config.server.port + ' bind to ip address ' + config.server.host)
+          resolve(conn)
+        }
       }
-      cb(err)
-    }
-  )
+    )
+  })
 }
 
-export const closeConnection = cb => conn.close(err => cb(err))
+export const closeConnection = async () => conn.close()

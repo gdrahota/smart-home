@@ -1,83 +1,65 @@
 import mongoose from 'mongoose'
 
-const getAll = collection => cb =>
-  mongoose
-    .model(collection)
-    .find()
-    .exec(cb)
+const getAll = collection => () => mongoose.model(collection).find()
 
-const add = collection => (item, cb) =>
+const add = collection => item =>
   mongoose
     .model(collection)(item)
-    .save(cb)
+    .save()
 
-const remove = collection => (id, cb) =>
+const remove = collection => _id =>
   mongoose
     .model(collection)
-    .remove({ _id: id })
-    .exec(cb)
+    .remove({ _id })
 
-const update = collection => (item, cb) => {
+const update = collection => item =>
   mongoose
     .model(collection)
     .update({ _id: item._id }, item)
-    .exec(cb)
-}
 
-const upsertCommand = collection => (item, cb) => {
+const upsertCommand = collection => item => {
   const query = { targetAddress: item.targetAddress }
   const options = { upsert: true }
 
-  mongoose
+  return mongoose
     .model(collection)
-    .findOneAndUpdate(query, item, options, cb)
+    .findOneAndUpdate(query, item, options)
 }
 
-const upsert = collection => (item, cb) => {
-  const QUERY = {
-    control: item.control,
-    endPoint: item.endPoint
-  }
-
+const upsert = collection => (item, query) => {
   const OPTIONS = {
     'new': true,
-    upsert: true
+    upsert: true,
+    setDefaultsOnInsert: true,
   }
 
-  mongoose
+  return mongoose
     .model(collection)
-    .findOneAndUpdate(QUERY, item, OPTIONS, cb)
+    .findOneAndUpdate(query, item, OPTIONS)
 }
 
-const find = collection => (searchObj, cb) => {
+const find = collection => searchObj =>
   mongoose
     .model(collection)
     .find(searchObj)
-    .exec(cb)
-}
 
-const findOne = collection => (searchObj, cb) => {
-  mongoose
-    .model(collection)
-    .findOne(searchObj, cb)
-}
+const findOne = collection => searchObj => mongoose.model(collection).findOne(searchObj)
 
-const removeControlDataPoint = collection => (control, endPoint, cb) =>
+const removeControlDataPoint = collection => (control, endPoint) =>
   mongoose
     .model(collection)
     .remove({ control, endPoint })
-    .exec(cb)
 
 export default collection => {
   return {
     getAll: cb => getAll(collection)(cb),
-    upsert: (item, cb) => upsert(collection)(item, cb),
-    upsertCommand: (item, cb) => upsertCommand(collection)(item, cb),
-    add: (item, cb) => add(collection)(item, cb),
-    remove: (id, cb) => remove(collection)(id, cb),
-    update: (item, cb) => update(collection)(item, cb),
-    find: (searchObj, cb) => find(collection)(searchObj, cb),
-    findOne: (searchObj, cb) => findOne(collection)(searchObj, cb),
-    removeControlDataPoint: (control, endPoint, cb) => removeControlDataPoint(collection)(control, endPoint, cb)
+    upsert: (item, query) => upsert(collection)(item, query),
+    upsertCommand: item => upsertCommand(collection)(item),
+    add: item => add(collection)(item),
+    remove: id => remove(collection)(id),
+    update: item => update(collection)(item),
+    find: searchObj => find(collection)(searchObj),
+    findOne: searchObj => findOne(collection)(searchObj),
+    removeControlDataPoint: (control, endPoint) => removeControlDataPoint(collection)(control, endPoint)
   }
 }

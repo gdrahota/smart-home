@@ -1,80 +1,33 @@
 import mongoose from 'mongoose'
 
 const add = (clientId, user, socketId, expires) => {
-  const client = {
-    clientId, user, socketId, expires
-  }
-
-  return new Promise((resolve, reject) => {
-    const Client = mongoose.model('client')
-    new Client(client)
-      .save()
-      .then(
-        storedClient => resolve(storedClient),
-        err => reject(err)
-      )
-      .catch(err => reject(err))
-  })
+  const client = { clientId, user, socketId, expires }
+  return new mongoose.model('client')(client).save()
 }
 
-const relogin = (socketId, clientId, expires, cb) => {
+const relogin = (socketId, clientId, expires) => {
   const query = { clientId: clientId }
-  const update = {
-    $addToSet: {
-      socketId: socketId
-    },
-    $set: {
-      expires: expires
-    }
-  }
+  const update = { $addToSet: { socketId: socketId }, $set: { expires: expires } }
   const options = { upsert: false, new: true }
 
-  mongoose.model('client')
-    .findOneAndUpdate(query, update, options)
-    .lean()
-    .exec((err, client) => cb(err, client))
+  return mongoose.model('client').findOneAndUpdate(query, update, options)
 }
 
 const logOut = clientId => {
   const query = { clientId: clientId }
-
-  mongoose.model('client')
-    .deleteOne(query)
-    .exec(err => {
-      if (err) {
-        console.error('repository.client.logout', err)
-      }
-    })
+  return mongoose.model('client').deleteOne(query)
 }
 
-const logOutExpired = (actualDate, cb) => {
-  const query = {
-    expires: {
-      $lte: new Date(actualDate)
-    }
-  }
-
-  mongoose.model('client')
-    .remove(query)
-    .exec((err, payload) => cb(err, payload))
+const logOutExpired = actualDate => {
+  const query = { expires: { $lte: new Date(actualDate) } }
+  return mongoose.model('client').remove(query)
 }
 
-const updateExpirationDate = (socketId, expires) =>
-  new Promise((resolve, reject) => {
-    const query = { socketId: socketId }
-    const update = {
-      $set: {
-        expires: expires
-      }
-    }
-
-    mongoose.model('client')
-      .findOneAndUpdate(query, update)
-      .then(
-        client => resolve(client),
-        err => reject(err)
-      )
-  })
+const updateExpirationDate = (socketId, expires) => {
+  const query = { socketId: socketId }
+  const update = { $set: { expires: expires } }
+  return mongoose.model('client').findOneAndUpdate(query, update)
+}
 
 export default {
   add,
