@@ -1,6 +1,5 @@
 import express from 'express'
 import http from 'http'
-import fs from 'fs'
 import MongoDb from './infrastructure/mongodb'
 import { registerMongooseSchemas } from './database/schemas'
 import { bindWebSocketToServer } from './infrastructure/websocket'
@@ -11,11 +10,13 @@ import { connectToOplog, handleOplog } from './rest-api/oplog'
 const app = express()
 const server = http.createServer(app)
 
+/*
 const options = {
   rejectUnauthorized: false,
   key: fs.readFileSync('./config/cert/server.key'),
   cert: fs.readFileSync('./config/cert/server.crt')
 }
+*/
 
 const start = async () => {
   try {
