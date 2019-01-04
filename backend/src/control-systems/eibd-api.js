@@ -3,12 +3,13 @@ import { ValuesFromKnxService } from '../services/values-from-knx'
 export const connectToKnx = async serverConfig =>
   new Promise((resolve, reject) => {
     const knx = require('knx')
+    console.log('serverConfig', serverConfig)
     const connection = new knx.Connection({
       debug: false,
       // ip address and port of the KNX router or interface
       ipAddr: serverConfig.host, ipPort: serverConfig.port,
       // the KNX physical address we'd like to use
-      physAddr: '1.1.210',
+      physAddr: '1.0.201',
       // set the log level for messsages printed on the console. This can be 'error', 'warn', 'info' (default), 'debug', or 'trace'.
       loglevel: 'info',
       // do not automatically connect, but use connection.Connect() to establish connection

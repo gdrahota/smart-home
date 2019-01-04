@@ -31,10 +31,10 @@ export const handleOplog = (oplog, knxConnection) => {
             await removeCommand(doc.o._id)
 
             // in case the device doesn't offer to send a feedback on a different address, then this helps a lot :)
-            await setTimeout(() => {}, 500)
-            knxConnection.read(command.targetAddress, (src, responseValue) => {
-              console.log('feedback requested', src, responseValue)
-            })
+            //await new Promise(resolve => setTimeout(resolve, 500))
+            //knxConnection.read(command.targetAddress, (src, responseValue) => {
+            //  console.log('feedback requested', src, responseValue)
+            //})
           }
           catch (err) {
             console.log('=> ', new Date().getMilliseconds(), ' command NOT handed over to bus', err)
