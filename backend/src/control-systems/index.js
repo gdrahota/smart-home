@@ -12,9 +12,9 @@ const start = async () => {
     await MongoDb.connect()
     registerMongooseSchemas()
     const serverConfig = await getControlSystemConfig()
-    const knxConnection = await connectToKnx(serverConfig)
+    await connectToKnx(serverConfig)
     const oplog = await connectToOplog(config)
-    handleOplog(oplog, knxConnection)
+    handleOplog(oplog)
 
     console.log('== SERVER STARTUP SUCCESSFULLY :) <<<')
     console.log('')

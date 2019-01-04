@@ -1,10 +1,32 @@
 import { ValuesFromKnxService } from '../services/values-from-knx'
 
-export const connectToKnx = async serverConfig =>
+let config
+
+const saveEventToDb = (evt, src, dest, value) => {
+  console.log("event: %s, src: %j, dest: %j, value: %j", evt, src, dest, value)
+  if (['event'].indexOf(evt) !== -1) {
+    const valueFromKnx = {
+      controlSystem: config._id,
+      address: dest,
+      rawValue: value,
+      timestamp: Date()
+    }
+
+    const upsertQuery = { address: dest }
+    ValuesFromKnxService.upsert(valueFromKnx, upsertQuery, () => {}).then().catch()
+    console.log('=> ', evt, dest, value)
+  }
+}
+
+export let connection
+
+export const connectToKnx = async serverConfig => {
+  config = serverConfig
+
   new Promise((resolve, reject) => {
     const knx = require('knx')
-    console.log('serverConfig', serverConfig)
-    const connection = new knx.Connection({
+
+    connection = new knx.Connection({
       debug: false,
       // ip address and port of the KNX router or interface
       ipAddr: serverConfig.host, ipPort: serverConfig.port,
@@ -20,7 +42,7 @@ export const connectToKnx = async serverConfig =>
       minimumDelay: 10,
       // enable this option to suppress the acknowledge flag with outgoing L_Data.req requests. LoxOne needs this
       suppress_ack_ldatareq: false,
-      manualConnect: false,
+      manualConnect: true,
       //define your event handlers here:
       handlers: {
         // wait for connection establishment before sending anything!
@@ -28,20 +50,12 @@ export const connectToKnx = async serverConfig =>
           console.log('connected to knx')
           resolve(connection)
         },
-        // get notified for all KNX events:
-        event: (evt, src, dest, value) => {
-          //console.log("event: %s, src: %j, dest: %j, value: %j", evt, src, dest, value)
-          const valueFromKnx = {
-            controlSystem: serverConfig._id,
-            address: dest,
-            rawValue: value,
-            timestamp: Date()
-          }
 
-          const upsertQuery = { address: dest }
-          ValuesFromKnxService.upsert(valueFromKnx, upsertQuery, () => {}).then().catch()
-          console.log('=> event', dest, value)
-        }
+        // get notified for all KNX events:
+        event: saveEventToDb,
+        GroupValue_Response: saveEventToDb,
+        GroupValue_Write: saveEventToDb,
+        GroupValue_Read: saveEventToDb
       },
       // get notified on connection errors
       err: connStatus => {
@@ -49,5 +63,7 @@ export const connectToKnx = async serverConfig =>
         reject(connStatus)
       }
     })
-  })
 
+    connection.Connect()
+  })
+}

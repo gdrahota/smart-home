@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin/node /usr/local/bin/yarn remove oracledb
+  /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin/node /usr/local/bin/yarn
 
 PATH: 
   /Users/guidodrahota/.nvm/versions/node/v8.9.1/bin:/Users/guidodrahota/Desktop/apache-maven-3.6.0/bin:/Users/guidodrahota/Desktop/mongodb/bin:/Users/guidodrahota/Downloads/apache-maven-3.5.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -21,7 +21,6 @@ npm manifest:
   	"author": "Guido Drahota und Robert Enk",
   	"private": true,
   	"scripts": {
-  		"db": "ulimit -n 3072 && mongod  --master --dbpath ../../workload-balancer/temp",
   		"dev": "NODE_ENV=development NO_DEPRECATION=tedious nodemon src/index.js --exec babel-node",
   		"cs": "NODE_ENV=development NO_DEPRECATION=tedious nodemon src/control-systems/index.js --exec babel-node",
   		"build": "NODE_ENV=production babel src -d dist",
