@@ -9,6 +9,7 @@ import Facilities from '../components/admin/facilities'
 import Home from '../views/Home.vue'
 import RouterContainer from '../components/router-container'
 import Control from '../components/control'
+import KnxMonitor from '../components/utils/knx-monitor'
 
 Vue.use(Router)
 
@@ -36,6 +37,15 @@ const router = new Router({
           meta: {
             requiresAuth: true,
             title: 'Steuerung'
+          }
+        },
+        {
+          path: 'knx-monitor',
+          component: KnxMonitor,
+          name: 'knx-monitor',
+          meta: {
+            requiresAuth: true,
+            title: 'KNX-Monitor 2'
           }
         },
         {
