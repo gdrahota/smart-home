@@ -2,7 +2,8 @@ import mongoose from 'mongoose'
 
 const add = (clientId, user, socketId, expires) => {
   const client = { clientId, user, socketId, expires }
-  return new mongoose.model('client')(client).save()
+  const collection = mongoose.model('client')
+  return new collection(client).save()
 }
 
 const relogin = (socketId, clientId, expires) => {

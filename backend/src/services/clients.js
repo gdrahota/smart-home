@@ -6,8 +6,8 @@ const AppRolesToLdapRoles = config.appRolesToLdapRoles
 const registeredUsers = [
   {
     accountName: 'robert',
-    mail: 'robert.enk@db-training.de',
-    groups: ['EnterList', 'GenericListUser', 'EnterListAddList']
+    mail: 'robert@taster.de',
+    groups: []
   }
 ]
 
@@ -39,10 +39,13 @@ const login = async (credentials, socketId) => {
       const expires = new Date()
       expires.setHours(expires.getHours() + 4)
 
-      return ClientRepository.add(uuid(), user, socketId, expires)
+      console.log(uuid(), user, socketId, expires)
+      return await ClientRepository.add(uuid(), user, socketId, expires)
     }
   }
   catch (err) {
+    console.log(err)
+
     return 'UNKNOWN_USER_OR_WRONG_PASSWORD'
   }
 }

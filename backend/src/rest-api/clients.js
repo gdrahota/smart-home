@@ -31,10 +31,15 @@ export const registerClientEndpoints = (io, socket) => {
   const cbLogin = async credentials => {
     try {
       const client = await ClientService.login(credentials, socket.id)
-      const clientAndRoles = { client }
-      socket.emit('login_response', clientAndRoles)
-      socket.join(clientAndRoles.client.clientId)
-      await sendDataToClient()
+
+      if (client === 'UNKNOWN_USER_OR_WRONG_PASSWORD') {
+        socket.emit('login_failed', client)
+      } else {
+        const clientAndRoles = { client }
+        socket.emit('login_response', clientAndRoles)
+        socket.join(clientAndRoles.client.clientId)
+        await sendDataToClient()
+      }
     }
     catch (err) {
       socket.emit('login_failed', err)
