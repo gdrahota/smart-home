@@ -24,7 +24,7 @@ export const registerSchema = () => {
     },
     port: {
       type: Number,
-      default: 3761
+      default: 3671
     }
   }
 
