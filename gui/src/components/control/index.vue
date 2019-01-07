@@ -4,13 +4,16 @@
       <v-card-text>
         <v-layout>
           <v-flex class="pr-2" lg3 sm6 xs12>
-            <select-facilities @setFacility="value => setFacility(value)"/>
+            <span v-if="facilities.length === 0">
+              <i>Sie haben noch keine Gebäude registriert.</i>
+            </span>
+            <select-facilities v-else-if="facilities.length > 1"/>
           </v-flex>
         </v-layout>
 
-        <template v-if="facility">
+        <template v-if="selectedFacility">
           <select-attribute-value
-            v-for="attribute of attributes(facility._id)"
+            v-for="attribute of attributes(selectedFacility._id)"
             :key="attribute._id"
             :attribute="attribute"
             :attributeValue="attributeValue"
@@ -33,7 +36,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapMutations } from 'vuex'
   import SelectFacilities from './select-facility'
   import SelectAttributeValue from './select-attribute-value'
   import Control from './control'
@@ -47,24 +50,39 @@
 
     computed: {
       ...mapGetters({
+        facilities: 'facilities/get',
+        selectedFacility: 'facilities/getSelected',
         attributes: 'facilityAttributes/getByFacilityId',
         controls: 'controls/getByAttributeValue'
       })
     },
 
+    created () {
+      if (this.facilities.length === 1) {
+        this.selectFacility(this.facilities[0])
+      }
+    },
+
     data () {
       return {
-        facility: null,
         attributeValue: null
       }
     },
 
     methods: {
-      setFacility (value) {
-        this.facility = value
-      },
+      ...mapMutations({
+        selectFacility: 'facilities/selectMutation'
+      }),
       setAttributeValue (value) {
         this.attributeValue = value
+      }
+    },
+
+    watch: {
+      facilities (facilities) {
+        if (facilities.length === 1) {
+          this.selectFacility(facilities[0])
+        }
       }
     }
   }

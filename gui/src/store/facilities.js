@@ -64,7 +64,7 @@ const getters = {
   get: state => state.items,
   getById: state => id => state.items.find(f => f._id === id),
   getActive: state => state.items.filter(item => item.state === 'active'),
-  selected: state => state.selected
+  getSelected: state => state.selected
 }
 
 export default {

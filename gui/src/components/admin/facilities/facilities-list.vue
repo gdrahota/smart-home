@@ -28,7 +28,7 @@
     computed: {
       ...mapGetters({
         facilities: 'facilities/getActive',
-        selected: 'facilities/selected'
+        selected: 'facilities/getSelected'
       }),
       facility: {
         get () {
