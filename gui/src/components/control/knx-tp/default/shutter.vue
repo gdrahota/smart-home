@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <control-header
-      left-icon="fa-lightbulb-o"
+      left-icon="fa-bars"
       :label="control.name"
       right-icon="fa-circle"
       :color="getColor"
