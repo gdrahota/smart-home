@@ -20,7 +20,7 @@
         :fab-="true"
         label="Löschen"
         class="pt-0 pl-3"
-        @agree="() => remove(control._id)"
+        @agree="() => remove(control)"
       />
     </template>
 

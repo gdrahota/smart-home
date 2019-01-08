@@ -36,7 +36,7 @@ const selectControl = (state, controlId) => {
 
 const SOCKET_ADD_CONTROLS_RESPONSE = (state, response) => {
   state.items.push(response[0])
-  state.selected = response[0]
+  state.selected = response[0]._id
 }
 
 const SOCKET_UPDATE_CONTROLS_RESPONSE = (state, response) => {
