@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height id="login">
     <v-layout align-center justify-center>
-      <v-flex xs4>
+      <v-flex lg4 xs12>
         <v-card class="elevation-12 pt-5 pr-4 pb-5 pl-4" id="card-login">
           <v-card-title class="title">Anmelden bei Smart Home (lokal)</v-card-title>
           <v-alert color="error" :value="error" transition="scale-transition">{{ error }}</v-alert>
@@ -24,14 +24,14 @@
               />
               <v-card-actions>
                 <v-layout row wrap class="pl-2 pr-2">
-                  <v-flex xs6>
+                  <v-flex lg6 hidden-xs-only>
                     <div class=".body-1 grey--text text--darken-1">Abmeldung erfolgt automatisch nach 12 Stunden oder durch Schließen des
                       Browsers.
                     </div>
                   </v-flex>
-                  <v-flex xs2></v-flex>
-                  <v-flex xs4 class="text-xs-right">
-                    <v-btn large color="primary" type="submit">Anmelden</v-btn>
+                  <v-flex xs2 hidden-xs-only></v-flex>
+                  <v-flex md4 xs12 class="text-xs-right">
+                    <v-btn large color="primary" type="submit" block>Anmelden</v-btn>
                   </v-flex>
                 </v-layout>
               </v-card-actions>

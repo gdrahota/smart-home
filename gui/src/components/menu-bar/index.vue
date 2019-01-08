@@ -65,7 +65,7 @@
             ]
           },
           { icon: 'fa-home', text: 'Steuerung', to: { path: '/control' } },
-          { icon: 'fa-home', text: 'KNX-Monitor', to: { path: '/knx-monitor' } },
+          { icon: 'fa-tv', text: 'KNX-Monitor', to: { path: '/knx-monitor' } },
         ]
       }
     }

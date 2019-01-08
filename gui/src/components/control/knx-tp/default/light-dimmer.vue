@@ -1,9 +1,11 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span>{{ control.name }}</span>
-      <v-icon class="float-right" :color="getColor">fa-circle</v-icon>
-    </v-card-title>
+    <control-header
+      left-icon="fa-lightbulb-o"
+      :label="control.name"
+      right-icon="fa-circle"
+      :color="getColor"
+    />
     <v-card-text>
       <v-slider
         inverse-label
@@ -13,15 +15,21 @@
         color="orange"
         hide-details
       />
-      <div class="mt-3 caption grey--text float-right">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}</div>
+      <div class="mt-3 caption grey--text float-right hidden-xs-only">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}
+      </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
+  import ControlHeader from '../control-header'
 
   export default {
+    components: {
+      ControlHeader,
+    },
+
     computed: {
       ...mapGetters({
         commands: 'commandQueue/get'

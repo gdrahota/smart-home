@@ -1,19 +1,27 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span>{{ control.name }}</span>
-    </v-card-title>
+    <control-header
+      left-icon="fa-thermometer-half"
+      :label="control.name"
+      right-icon="fa-circle"
+      :color="'yellow'"
+    />
     <v-card-text>
       <v-chip label class="mt-2">Ist: {{ tempCurrentValue | number(1) }} °C / Soll: {{ tempTargetValue | number(1) }} °C</v-chip>
-      <div class="mt-3 caption grey--text float-right">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}</div>
+      <div class="mt-3 caption grey--text float-right hidden-xs-only">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}</div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
+  import ControlHeader from '../control-header'
 
   export default {
+    components: {
+      ControlHeader,
+    },
+
     computed: {
       ...mapGetters({
         commands: 'commandQueue/get'
@@ -58,27 +66,7 @@
 </script>
 
 <style scoped>
-  table {
-    border: 1px solid green;
-  }
-
   .v-card {
     height: 140px;
-  }
-
-  .v-card__title {
-    background-color: darkseagreen;
-    padding-right: 5px;
-    color: white;
-    font-weight: 800;
-    height: 40px;
-  }
-
-  .v-card__title > span {
-    width: calc(100% - 25px);
-  }
-
-  .v-card__title > i {
-    float: right;
   }
 </style>

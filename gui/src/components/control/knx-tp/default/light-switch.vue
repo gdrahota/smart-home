@@ -1,9 +1,11 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span>{{ control.name }}</span>
-      <v-icon v-if="getValue" class="float-right" :color="getColor">fa-circle</v-icon>
-    </v-card-title>
+    <control-header
+      left-icon="fa-lightbulb-o"
+      :label="control.name"
+      right-icon="fa-circle"
+      :color="getColor"
+    />
     <v-card-text>
       <v-switch
         color="orange"
@@ -12,15 +14,22 @@
         :label="setValue ? 'an' : 'aus'"
         ripple
       />
-      <div class="mt-3 caption grey--text float-right">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}</div>
+      <div class="mt-3 caption grey--text float-right hidden-xs-only">
+        {{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}
+      </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
+  import ControlHeader from '../control-header'
 
   export default {
+    components: {
+      ControlHeader,
+    },
+
     computed: {
       ...mapGetters({
         commands: 'commandQueue/get',
@@ -67,27 +76,7 @@
 </script>
 
 <style scoped>
-  table {
-    border: 1px solid green;
-  }
-
   .v-card {
     height: 140px;
-  }
-
-  .v-card__title {
-    background-color: darkseagreen;
-    padding-right: 5px;
-    color: white;
-    font-weight: 800;
-    height: 40px;
-  }
-
-  .v-card__title > span {
-    width: calc(100% - 25px);
-  }
-
-  .v-card__title > i {
-    float: right;
   }
 </style>

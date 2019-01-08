@@ -26,7 +26,8 @@
       <v-flex
         v-for="control of controls(attributeValue)"
         :key="control._id"
-        class="pr-2 pb-2"
+        class="pb-2"
+        :class="{ 'pr-0': $vuetify.breakpoint.xsOnly, 'pr-2': !$vuetify.breakpoint.xsOnly }"
         lg2 md3 sm6 xs12
       >
         <control :control="control"/>
