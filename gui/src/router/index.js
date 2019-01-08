@@ -40,13 +40,22 @@ const router = new Router({
           }
         },
         {
-          path: 'tools/knx-monitor',
-          component: KnxMonitor,
-          name: 'knx-monitor',
+          path: 'tools',
+          component: RouterContainer,
           meta: {
             requiresAuth: true,
-            title: 'KNX-Monitor 2'
-          }
+            title: 'Werkzeug',
+            hasNoContent: true,
+          },
+          children: [
+            {
+              path: 'knx-monitor',
+              component: KnxMonitor,
+              meta: {
+                title: 'KNX-Monitor'
+              }
+            },
+          ]
         },
         {
           path: 'admin',
