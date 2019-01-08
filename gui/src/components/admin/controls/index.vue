@@ -4,8 +4,8 @@
       <controls-list/>
     </v-flex>
     <v-flex xs6 class="mb-4">
-        <!--:disabled="getSelectedControlId !== null"-->
       <add-control-form
+        :disabled="!!getSelectedControlId"
         @add="control => addControl(control)"
         @cancel="() => cancelAddFacility()"
         class="pt-4"

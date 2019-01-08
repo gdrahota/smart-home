@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa8a30f-911b-4abf-958a-204308acb4c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gui/src/components/control/knx-tp/control-header.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/control/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/control/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-dimmer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-dimmer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-switch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-switch.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/shutter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/shutter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/login/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/controls/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/controls/index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +33,11 @@
           <entry key="gitignore" value="5" />
           <entry key="html" value="5" />
           <entry key="ico" value="1" />
-          <entry key="js" value="941" />
+          <entry key="js" value="943" />
           <entry key="json" value="24" />
           <entry key="log" value="1" />
           <entry key="ts" value="17" />
-          <entry key="vue" value="427" />
+          <entry key="vue" value="431" />
           <entry key="xml" value="2" />
           <entry key="yaml" value="3" />
         </counts>
@@ -56,10 +48,10 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="24" />
-          <entry key="JavaScript" value="941" />
+          <entry key="JavaScript" value="943" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="TypeScript" value="17" />
-          <entry key="Vue.js" value="427" />
+          <entry key="Vue.js" value="431" />
           <entry key="XML" value="2" />
           <entry key="YAML" value="3" />
         </counts>
@@ -70,11 +62,11 @@
           <entry key="css" value="151" />
           <entry key="gitignore" value="27" />
           <entry key="html" value="14" />
-          <entry key="js" value="35852" />
+          <entry key="js" value="35856" />
           <entry key="json" value="63" />
           <entry key="log" value="1" />
-          <entry key="txt" value="1102" />
-          <entry key="vue" value="41735" />
+          <entry key="txt" value="1249" />
+          <entry key="vue" value="41745" />
           <entry key="yaml" value="26" />
         </counts>
       </usages-collector>
@@ -83,9 +75,9 @@
           <entry key="CSS" value="151" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="63" />
-          <entry key="JavaScript" value="35852" />
-          <entry key="PLAIN_TEXT" value="1131" />
-          <entry key="Vue.js" value="41735" />
+          <entry key="JavaScript" value="35856" />
+          <entry key="PLAIN_TEXT" value="1278" />
+          <entry key="Vue.js" value="41745" />
           <entry key="YAML" value="26" />
         </counts>
       </usages-collector>
@@ -99,37 +91,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/default/shutter.vue">
+        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="114">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
               <folding>
-                <element signature="e#547#592#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-switch.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" selection-start-line="28" selection-end-line="32" />
-              <folding>
-                <element signature="e#536#581#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-dimmer.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="32" selection-start-line="28" selection-end-line="32" />
-              <folding>
-                <element signature="e#562#607#0" expanded="true" />
+                <element signature="e#465#510#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,7 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>value</find>
       <find>_getDptInfo</find>
       <find>'data-points'</find>
       <find>updateExpirationDate</find>
@@ -169,6 +145,7 @@
       <find>facility</find>
       <find>selectFacility</find>
       <find>facilities/selected</find>
+      <find>remove</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -193,7 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/src/services/control-data-points.js" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/controls/add-control-form.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/knx-tp-shutter.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/knx-tp-data-point.vue" />
@@ -201,8 +177,6 @@
         <option value="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/index.vue" />
         <option value="$PROJECT_DIR$/backend/src/rest-api/facilities.js" />
         <option value="$PROJECT_DIR$/backend/src/infrastructure/websocket.js" />
-        <option value="$PROJECT_DIR$/gui/src/store/controls.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/controls/index.vue" />
         <option value="$PROJECT_DIR$/backend/src/rest-api/handleKnxIncommingValue.js" />
         <option value="$PROJECT_DIR$/docker/db.yaml" />
         <option value="$PROJECT_DIR$/backend/dist/services/clients.js" />
@@ -238,12 +212,15 @@
         <option value="$PROJECT_DIR$/gui/src/components/login/index.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/index.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" />
-        <option value="$PROJECT_DIR$/gui/src/main.js" />
         <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/control-header.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-switch.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-dimmer.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/shutter.vue" />
+        <option value="$PROJECT_DIR$/gui/src/store/controls.js" />
+        <option value="$PROJECT_DIR$/gui/src/main.js" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/controls/controls-list.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/controls/index.vue" />
       </list>
     </option>
   </component>
@@ -325,7 +302,7 @@
               <item name="gui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
@@ -333,26 +310,15 @@
               <item name="gui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="knx-tp" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="controls" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="knx-tp" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="menu-bar" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -365,7 +331,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546960117335" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546962268987" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -440,7 +406,7 @@
       <workItem from="1546597015638" duration="18320000" />
       <workItem from="1546863713370" duration="1383000" />
       <workItem from="1546866601028" duration="15000" />
-      <workItem from="1546875205805" duration="12336000" />
+      <workItem from="1546875205805" duration="13298000" />
     </task>
     <task id="LOCAL-00001" summary="vuex installed">
       <created>1538378435025</created>
@@ -638,17 +604,38 @@
       <option name="project" value="LOCAL" />
       <updated>1546947208739</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="default knx controls refactored: header extracted">
+      <created>1546960197572</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1546960197572</updated>
+    </task>
+    <task id="LOCAL-00030" summary="default knx shutter control: icon changed">
+      <created>1546962110231</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1546962110231</updated>
+    </task>
+    <task id="LOCAL-00031" summary="bug fixed: remove control from system">
+      <created>1546962143445</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1546962143445</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340427000" />
+    <option name="totallyTimeSpent" value="341389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49430895" visible="true" weight="0.22051597" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49430895" visible="true" weight="0.22051597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -693,9 +680,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="server rest api created, communication via web socket added, manage facilities enhanced" />
-    <MESSAGE value="manage facilities enhanced, manage controls started" />
-    <MESSAGE value="manage controls started to implement" />
     <MESSAGE value="manage controls refactored" />
     <MESSAGE value="manage controls enhanced" />
     <MESSAGE value="manage data points enhanced" />
@@ -718,26 +702,12 @@
     <MESSAGE value="automatic selection of facility in case there is only one facility registered implemented" />
     <MESSAGE value="knx monitor enhanced" />
     <MESSAGE value="knx monitor view enhanced" />
-    <option name="LAST_COMMIT_MESSAGE" value="knx monitor view enhanced" />
+    <MESSAGE value="default knx controls refactored: header extracted" />
+    <MESSAGE value="default knx shutter control: icon changed" />
+    <MESSAGE value="bug fixed: remove control from system" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed: remove control from system" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/node_modules/knx/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/node_modules/knx/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/node_modules/knx/src/Connection.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4693" />
@@ -799,13 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="1" selection-end-line="113" />
         </state>
       </provider>
     </entry>
@@ -1032,13 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/control-header.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -1078,10 +1034,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/default/shutter.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        <state relative-caret-position="51">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding>
             <element signature="e#547#592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/controls-list.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/add-control-form.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#465#510#0" expanded="true" />
           </folding>
         </state>
       </provider>
