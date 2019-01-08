@@ -26,7 +26,14 @@
             <span v-else-if="props.item.eventType === 'GroupValue_Response'">Bestätigung</span>
             <span v-else>{{props.item.eventType }}</span>
           </td>
-          <td class="text-xs-left" style="width: 70%">{{ props.item.rawValue }}</td>
+          <td class="text-xs-left" style="width: 70%">
+            <v-chip
+              v-for="pv of props.item.possibleValues"
+            >
+              {{ pv.dpt }}: {{ pv.value }} {{ pv.unit }}
+            </v-chip>
+            <!--{{ props.item.rawValue }}-->
+          </td>
         </template>
       </v-data-table>
     </v-flex>

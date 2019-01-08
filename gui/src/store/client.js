@@ -14,7 +14,6 @@ const loginAction = (context, credential) => {
 const reLoginAction = () => {
   const clientId = localStorage.getItem('clientId')
   if (clientId) {
-    console.log('--- clientId', clientId)
     socket.emit('reLogin', clientId)
   }
 }

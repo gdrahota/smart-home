@@ -13,6 +13,7 @@
       <w>anschlüsse</w>
       <w>anschrift</w>
       <w>ausrichtung</w>
+      <w>befehl</w>
       <w>benennen</w>
       <w>bestätigung</w>
       <w>binärdaten</w>
@@ -27,6 +28,8 @@
       <w>eigenschaft</w>
       <w>eigenschaften</w>
       <w>einstellungen</w>
+      <w>eintrag</w>
+      <w>einträge</w>
       <w>elektro</w>
       <w>elektroenergie</w>
       <w>endpunkte</w>
@@ -50,6 +53,7 @@
       <w>istwert</w>
       <w>kommt</w>
       <w>küche</w>
+      <w>leseanforderung</w>
       <w>licht</w>
       <w>lichtschalter</w>
       <w>montag</w>
@@ -75,6 +79,7 @@
       <w>steuerung</w>
       <w>straße</w>
       <w>szenennummer</w>
+      <w>telegrammtyp</w>
       <w>temperatur</w>
       <w>upsert</w>
       <w>verfügbare</w>

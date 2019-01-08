@@ -8,7 +8,7 @@ const config = {
       base: '/'
     },
     server: {
-      host: 'http://192.168.0.39',
+      host: 'http://192.168.43.90',
       port: '3000'
     }
   },

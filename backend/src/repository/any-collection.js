@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const getAll = collection => () => mongoose.model(collection).find()
+const getAll = collection => () => mongoose.model(collection).find().lean()
 
 const add = collection => item =>
   mongoose
