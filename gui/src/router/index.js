@@ -40,7 +40,7 @@ const router = new Router({
           }
         },
         {
-          path: 'knx-monitor',
+          path: 'tools/knx-monitor',
           component: KnxMonitor,
           name: 'knx-monitor',
           meta: {
