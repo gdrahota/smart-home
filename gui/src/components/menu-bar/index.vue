@@ -80,7 +80,7 @@
             text: 'Werkzeug',
             model: false,
             children: [
-              { icon: 'fa-tv', text: 'KNX-Monitor', to: { path: '/tools/knx-monitor' } },
+              { icon: 'fa-add', text: 'KNX-Monitor', to: { path: '/tools/knx-monitor' } },
             ]
           },
           { icon: 'fa-dot-circle-o', text: 'Steuerung', to: { path: '/control' } },
