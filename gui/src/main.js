@@ -19,7 +19,7 @@ filters.register(Vue)
 
 localStorage.debug = '*##'
 
-export const socket = socketIoClient(config.server.host + ':' + config.server.port)
+export const socket = socketIoClient(location.hostname + ':' + config.server.port)
 
 Vue.use(vueSocketIO, socket, store)
 Vue.use(VueMomentJS, moment)
