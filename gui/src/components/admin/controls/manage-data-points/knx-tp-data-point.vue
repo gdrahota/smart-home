@@ -1,5 +1,5 @@
 <template>
-  <v-select
+  <v-combobox
     v-model="value"
     :items="list"
     :label="label"
@@ -7,12 +7,12 @@
     item-text="label"
     item-value="value"
     clearable
-    :return-object="false"
   />
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
+  import { sortByLabel } from '../../../../sorters'
 
   export default {
     computed: {
@@ -30,23 +30,21 @@
         return this.dataPoints
           .filter(dp => dp.dataType === this.dataType)
           .map(mapData)
+          .sort(sortByLabel)
       },
       value: {
         get () {
           const controlDataPoint = this.controlDataPointByControlAndEndPoint(this.control._id, this.endPoint)
           if (controlDataPoint) {
-            return controlDataPoint.dataPoint
+            return this.list.find(dp => dp.value === controlDataPoint.dataPoint)
           }
-          return null
         },
         set (newValue) {
-          console.log('set', newValue)
           if (newValue === undefined) {
             const payload = {
               control: this.control._id,
               endPoint: this.endPoint
             }
-            console.log('remove', payload)
             this.remove(payload)
           } else {
             const payload = {
@@ -54,7 +52,6 @@
               endPoint: this.endPoint,
               dataPoint: newValue
             }
-            console.log('upsert', payload)
             this.upsert(payload)
           }
         }

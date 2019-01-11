@@ -19,14 +19,14 @@
 
     <v-flex xs6>
       <v-card tile>
-        <manage-attribute-values/>
+        <!--<manage-attribute-values/>-->
       </v-card>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-  import { mapGetters, mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   import ManageAttributeValues from '../manage-attribute-values'
   import ShowFacilityAttributeValues from '../manage-attribute-values/show-attribute-values'
   import KnxTpLightSwitch from './knx-tp-light-switch'
@@ -51,7 +51,9 @@
       }),
       controlName: {
         get () {
-          return this.control.name
+          if (this.control) {
+            return this.control.name
+          }
         },
         set (name) {
           this.update({ ...this.control, name })
