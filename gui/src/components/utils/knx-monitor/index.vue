@@ -28,7 +28,8 @@
           </td>
           <td class="text-xs-left" style="width: 70%">
             <v-chip
-              v-for="pv of props.item.possibleValues"
+              v-for="(pv, idx) of props.item.possibleValues"
+              :key="'pv' + idx"
             >
               {{ pv.dpt }}: {{ pv.value }} {{ pv.unit }}
             </v-chip>
@@ -56,7 +57,7 @@
         pagination: {
           rowsPerPage: 15,
           sortBy: 'timestamp',
-          descending: false,
+          descending: true,
         },
         headers: [
           { text: 'Zeitpunkt', value: 'timestamp' },
