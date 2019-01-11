@@ -4,11 +4,12 @@
       left-icon="fa-thermometer-half"
       :label="control.name"
       right-icon="fa-circle"
-      :color="'yellow'"
+      :color="getColor"
     />
     <v-card-text>
       <v-chip label class="mt-2">Ist: {{ tempCurrentValue | number(1) }} °C / Soll: {{ tempTargetValue | number(1) }} °C</v-chip>
-      <div class="mt-3 caption grey--text float-right hidden-xs-only">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}</div>
+      <div class="mt-3 caption grey--text float-right hidden-xs-only">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}
+      </div>
     </v-card-text>
   </v-card>
 </template>
@@ -46,6 +47,17 @@
             value
           }
           this.sendCommand(command)
+        }
+      },
+      getColor () {
+        console.log(this.control)
+        if (this.control.values) {
+          if (this.control.values.state) {
+            return 'orange'
+          }
+          if (this.control.values.stateRelavive && this.control.values.stateRelavive > 0) {
+            return 'orange'
+          }
         }
       }
     },

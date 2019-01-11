@@ -1,18 +1,19 @@
 <template>
   <v-layout wrap raw>
-    <v-flex xs4 sm2 lg1 class="pr-3">
+    <v-flex xs12 sm3 lg2 class="pr-3">
       <v-chip label out-line class="full-width">{{ attribute.name }}:</v-chip>
     </v-flex>
-    <v-flex xs8 sm10 lg11>
-      <v-chip
+    <v-flex xs12 sm9 lg10>
+      <v-btn
         v-for="item of values(attribute._id)"
         :key="item._id"
         :color="getTextColor(item._id)"
         outline
         label
         @click="select(item._id)"
+        small
       >{{ item.value }}
-      </v-chip>
+      </v-btn>
     </v-flex>
   </v-layout>
 </template>

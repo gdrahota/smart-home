@@ -1,8 +1,8 @@
 <template>
   <v-card-title>
-    <v-icon class="header-icon" color="yellow">{{ leftIcon }}</v-icon>
+    <v-icon class="header-icon" color="white">{{ leftIcon }}</v-icon>
     <span class="header-label">{{ label }}</span>
-    <v-icon v-if="color" class="header-indicator float-right" :color="color">{{ rightIcon }}</v-icon>
+    <v-icon class="header-indicator float-right" :color="color">{{ rightIcon }}</v-icon>
   </v-card-title>
 </template>
 
@@ -23,7 +23,7 @@
       },
       color: {
         type: String,
-        default: ''
+        default: 'grey'
       }
     }
   }

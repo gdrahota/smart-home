@@ -47,7 +47,7 @@ const SOCKET_UPDATE_CONTROLS_RESPONSE = (state, response) => {
     return item
   }
   state.items = state.items.map(mapFnc)
-  state.selected = response[0]._id
+  //state.selected = response[0]._id
 }
 
 const SOCKET_REMOVE_CONTROLS_RESPONSE = (state, response) => {

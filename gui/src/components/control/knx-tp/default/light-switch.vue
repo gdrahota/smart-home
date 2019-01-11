@@ -10,8 +10,8 @@
       <v-switch
         color="orange"
         v-model="setValue"
-        hide-details
         :label="setValue ? 'an' : 'aus'"
+        hide-details
         ripple
       />
       <div class="mt-3 caption grey--text float-right hidden-xs-only">

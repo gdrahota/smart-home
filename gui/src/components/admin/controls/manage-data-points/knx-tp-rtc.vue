@@ -35,6 +35,11 @@
             endPoint: 'switch-response'
           },
           {
+            label: 'Gruppenadresse, Heizzustand (in %)',
+            dataType: '5.001',
+            endPoint: 'pusher-response'
+          },
+          {
             label: 'Gruppenadresse, Temperatur Sollwert',
             dataType: '9.001',
             endPoint: 'temp-target-value'

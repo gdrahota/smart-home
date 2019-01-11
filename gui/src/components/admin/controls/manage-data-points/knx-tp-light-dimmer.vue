@@ -35,11 +35,6 @@
             endPoint: 'switch'
           },
           {
-            label: 'An / Aus, Bestätigung',
-            dataType: '1.001',
-            endPoint: 'response'
-          },
-          {
             label: 'Dimmen',
             dataType: '5.001',
             endPoint: 'dim'
