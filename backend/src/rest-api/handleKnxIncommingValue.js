@@ -5,7 +5,6 @@ import { DataPointService } from '../services/data-points'
 import { ValuesFromKnxService } from '../services/values-from-knx'
 
 const handleControlValue = async (control, endPoint, value, address) => {
-  //console.log(control.name, address, endPoint, value)
   const controlData = { ...control, valueUpdated: new Date() }
   switch (control.controlType) {
     case 'lightSwitch':
@@ -13,6 +12,7 @@ const handleControlValue = async (control, endPoint, value, address) => {
       break
     case 'lightDimmer':
       if (['dim', 'dim-response'].indexOf(endPoint) !== -1) {
+        console.log(control, value)
         controlData.values = value
       }
       break
@@ -29,6 +29,9 @@ const handleControlValue = async (control, endPoint, value, address) => {
         case 'switch-response':
           controlData.values.state = value
           break
+        case 'pusher-response':
+          controlData.values.stateRelavive = value
+          break
         case 'temp-target-value':
           controlData.values.target = value
           break
@@ -40,7 +43,7 @@ const handleControlValue = async (control, endPoint, value, address) => {
     default:
   }
 
-  console.log(endPoint, address, endPoint, value, controlData.values)
+  //console.log(endPoint, address, endPoint, value, controlData.values)
   await ControlService.update(controlData)
 }
 
@@ -76,6 +79,8 @@ export const handleKnxValue = async doc => {
           await handleControlValue(control, controlDataPoint.endPoint, update.value, valueFromKnx.address)
         }
       }
+    } else {
+      console.log('no data point found for address', valueFromKnx.address)
     }
   }
   catch (err) {

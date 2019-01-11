@@ -25,8 +25,8 @@ const start = async () => {
     serveStaticFiles()
     await bindWebSocketToServer(server)
     registerEndpoints()
-    const oplog = await connectToOplog()
-    handleOplog(oplog)
+    await connectToOplog()
+    handleOplog()
 
     console.log('== SERVER STARTUP SUCCESSFULLY :) <<<')
     console.log('')
