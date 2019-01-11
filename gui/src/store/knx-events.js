@@ -1,5 +1,3 @@
-import { socket } from '../main'
-
 const state = {
   loading: true,
   items: []
