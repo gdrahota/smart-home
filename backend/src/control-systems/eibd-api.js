@@ -1,23 +1,28 @@
-import { ValuesFromKnxService } from '../services/values-from-knx'
 import { KnxEventService } from '../services/knx-events'
+import { ValuesFromKnxService } from '../services/values-from-knx'
 
 let config
 
 const saveEventToDb = (evt, src, dest, value) => {
   //console.log("event: %s, src: %j, dest: %j, value: %j", evt, src, dest, value)
   console.log('=> ', evt, src, dest, value)
-  if (['event'].indexOf(evt) !== -1) {
-    const valueFromKnx = {
-      controlSystem: config._id,
-      address: dest,
-      rawValue: value,
-      timestamp: Date()
-    }
 
-    const upsertQuery = { address: dest }
-    ValuesFromKnxService.upsert(valueFromKnx, upsertQuery, () => {})
+  // upsert doc in 'values-from-knx'
+  const valueFromKnx = {
+    controlSystem: config._id,
+    address: dest,
+    rawValue: value,
+    timestamp: Date()
   }
 
+  const upsertQuery = { address: dest }
+
+  ValuesFromKnxService
+    .upsert(valueFromKnx, upsertQuery)
+    .then()
+    .catch()
+
+  // insert into 'knx-events'
   const knxEvent = {
     controlSystem: config._id,
     address: dest,

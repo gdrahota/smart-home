@@ -4,14 +4,16 @@ import mongoose from 'mongoose'
 import { io } from '../infrastructure/websocket'
 import { handleKnxValue } from './handleKnxIncommingValue'
 
+export let oplog
+
 export const connectToOplog = async () => {
   return new Promise((resolve, reject) => {
-    const oplog = MongoOplog(config.mongoDb.oplog.url, { coll: config.mongoDb.oplog.collection })
+    oplog = MongoOplog(config.mongoDb.oplog.url, { coll: config.mongoDb.oplog.collection })
 
     oplog.tail().then(
       () => {
         console.log('connected to oplog')
-        resolve(oplog)
+        resolve()
       },
       err => {
         console.log('connection to oplog FAILED')
@@ -21,12 +23,16 @@ export const connectToOplog = async () => {
   })
 }
 
-export const handleOplog = oplog => {
+export const handleOplog = () => {
   oplog.on('insert', doc => {
     const nsParts = doc.ns.split('.')
     const collection = nsParts[1]
 
     try {
+      if (collection === 'values-from-knx') {
+        handleKnxValue(doc).then()
+      }
+
       mongoose.model(collection).findOne(doc.o).exec((err, data) => {
         if (io) {
           io.emit('add_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
@@ -37,28 +43,26 @@ export const handleOplog = oplog => {
     }
   })
 
-  oplog.on('update', doc => {
+  oplog.on('update', async doc => {
     const nsParts = doc.ns.split('.')
     const collection = nsParts[1]
 
-    switch (collection) {
-      case 'values-from-knx':
-        handleKnxValue(doc).then()
-        break
-      default: {
-        try {
-          mongoose
-            .model(collection)
-            .findOne(doc.o2)
-            .exec((err, data) => {
-              if (!err && data && io) {
-                io.emit('update_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
-              }
-            })
-        }
-        catch (e) {
-          console.log(e)
-        }
+    if (collection === 'values-from-knx') {
+      const valueFromKnx = await mongoose.model(collection).findOne(doc.o2)
+      handleKnxValue(doc).then()
+    } else {
+      try {
+        mongoose
+          .model(collection)
+          .findOne(doc.o2)
+          .exec((err, data) => {
+            if (!err && data && io) {
+              io.emit('update_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
+            }
+          })
+      }
+      catch (e) {
+        console.log(e)
       }
     }
   })
