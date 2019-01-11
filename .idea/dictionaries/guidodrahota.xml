@@ -44,6 +44,7 @@
       <w>funktion</w>
       <w>gebäude</w>
       <w>gesendet</w>
+      <w>geöffnet</w>
       <w>gruppenadresse</w>
       <w>gruppenadressen</w>
       <w>gäste</w>
@@ -52,6 +53,8 @@
       <w>hinterlegt</w>
       <w>istwert</w>
       <w>kommt</w>
+      <w>kontakt</w>
+      <w>kontakts</w>
       <w>küche</w>
       <w>leseanforderung</w>
       <w>licht</w>
@@ -59,6 +62,7 @@
       <w>montag</w>
       <w>namespaced</w>
       <w>neues</w>
+      <w>offen</w>
       <w>oplog</w>
       <w>postleitzahl</w>
       <w>raum</w>
@@ -93,7 +97,9 @@
       <w>zentrale</w>
       <w>zugeordnete</w>
       <w>zugewiesene</w>
+      <w>zustand</w>
       <w>zählerimpluse</w>
+      <w>öffnen</w>
     </words>
   </dictionary>
 </component>

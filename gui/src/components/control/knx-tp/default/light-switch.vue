@@ -4,7 +4,7 @@
       left-icon="fa-lightbulb-o"
       :label="control.name"
       right-icon="fa-circle"
-      :color="getColor"
+      :right-icon-color="getColor"
     />
     <v-card-text>
       <v-switch

@@ -4,7 +4,7 @@
       left-icon="fa-bars"
       :label="control.name"
       right-icon="fa-circle"
-      :color="getColor"
+      :right-icon-color="getColor"
     />
     <v-card-text>
       <v-slider
@@ -12,10 +12,13 @@
         v-model="position"
         step="10"
         :label="position + ' %'"
-        color="orange"
+        :color="isWindowOpen ? 'red' : 'grey'"
         hide-details
       />
-      <div class="mt-3 caption grey--text float-right hidden-xs-only">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}</div>
+      <span id="important-message" v-if="isWindowOpen">Fenster ist geöffnet</span>
+      <div class="mt-3 caption grey--text hidden-xs-only float-right">
+        {{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}
+      </div>
     </v-card-text>
   </v-card>
 </template>
@@ -35,8 +38,8 @@
       }),
       position: {
         get () {
-          if (this.control.values) {
-            return Math.round(this.control.values)
+          if (this.control.values && this.control.values.current) {
+            return Math.round(this.control.values.current)
           }
           return 0
         },
@@ -54,6 +57,9 @@
           return 'yellow'
         }
         return '#888'
+      },
+      isWindowOpen () {
+        return this.control.values && this.control.values.windowState
       }
     },
 
@@ -73,27 +79,12 @@
 </script>
 
 <style scoped>
-  table {
-    border: 1px solid green;
-  }
-
   .v-card {
     height: 140px;
   }
 
-  .v-card__title {
-    background-color: darkseagreen;
-    padding-right: 5px;
-    color: white;
-    font-weight: 800;
-    height: 40px;
-  }
-
-  .v-card__title > span {
-    width: calc(100% - 25px);
-  }
-
-  .v-card__title > i {
-    float: right;
+  #important-message {
+    position: absolute;
+    top: 50px;
   }
 </style>

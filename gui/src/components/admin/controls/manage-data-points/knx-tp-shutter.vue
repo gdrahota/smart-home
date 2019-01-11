@@ -43,6 +43,11 @@
             label: 'Rückmeldung position',
             dataType: '5.001',
             endPoint: 'shutter-position-response'
+          },
+          {
+            label: 'Zustand des Reed-Kontakts',
+            dataType: '1.009',
+            endPoint: 'window-state-response'
           }
         ]
       }

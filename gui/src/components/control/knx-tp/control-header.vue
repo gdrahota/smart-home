@@ -1,8 +1,8 @@
 <template>
   <v-card-title>
-    <v-icon class="header-icon" color="white">{{ leftIcon }}</v-icon>
+    <v-icon class="header-icon" :color="leftIconColor">{{ leftIcon }}</v-icon>
     <span class="header-label">{{ label }}</span>
-    <v-icon class="header-indicator float-right" :color="color">{{ rightIcon }}</v-icon>
+    <v-icon class="header-indicator float-right" :color="rightIconColor">{{ rightIcon }}</v-icon>
   </v-card-title>
 </template>
 
@@ -13,6 +13,10 @@
         type: String,
         default: ''
       },
+      leftIconColor: {
+        type: String,
+        default: 'white'
+      },
       label: {
         type: String,
         default: ''
@@ -21,7 +25,7 @@
         type: String,
         default: ''
       },
-      color: {
+      rightIconColor: {
         type: String,
         default: 'grey'
       }
@@ -31,7 +35,7 @@
 
 <style scoped>
   .v-card__title {
-    background-color: darkseagreen;
+    background-color: #969595;
     padding-right: 5px;
     padding-left: 5px;
     color: white;
@@ -51,8 +55,14 @@
 
   .header-label {
     float: left;
+    font-size: 16px;
+    padding-left: 5px;
     position: relative;
+    top: 4px;
     width: calc(100% - 60px);
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
   }
 
   .header-indicator {

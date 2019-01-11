@@ -19,7 +19,7 @@
 
     <v-flex xs6>
       <v-card tile>
-        <!--<manage-attribute-values/>-->
+        <manage-attribute-values/>
       </v-card>
     </v-flex>
   </v-layout>

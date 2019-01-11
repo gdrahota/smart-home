@@ -4,7 +4,7 @@
       left-icon="fa-lightbulb-o"
       :label="control.name"
       right-icon="fa-circle"
-      :color="getColor"
+      :right-icon-color="getColor"
     />
     <v-card-text>
       <v-slider
@@ -74,27 +74,7 @@
 </script>
 
 <style scoped>
-  table {
-    border: 1px solid green;
-  }
-
   .v-card {
     height: 140px;
-  }
-
-  .v-card__title {
-    background-color: darkseagreen;
-    padding-right: 5px;
-    color: white;
-    font-weight: 800;
-    height: 40px;
-  }
-
-  .v-card__title > span {
-    width: calc(100% - 25px);
-  }
-
-  .v-card__title > i {
-    float: right;
   }
 </style>

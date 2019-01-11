@@ -8,6 +8,7 @@ const state = {
     { value: '1.001', label: '1.001: Ein / Aus' },
     { value: '1.002', label: '1.002: Wahr / Falsch' },
     { value: '1.003', label: '1.003: Entsperrt / Gesperrt' },
+    { value: '1.009', label: '1.009: Öffnen/Schließen' },
     { value: '5.001', label: '5.001: 0...100 %' },
     { value: '5.003', label: '5.003: 0...360 °' },
     { value: '5.004', label: '5.004: 0...255' },

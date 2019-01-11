@@ -20,7 +20,6 @@ const config = {
 
   development: {
     server: {
-      host: '192.168.43.90',
       port: 3000
     },
     mongoDb: {

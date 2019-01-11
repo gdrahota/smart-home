@@ -4,7 +4,7 @@
       left-icon="fa-thermometer-half"
       :label="control.name"
       right-icon="fa-circle"
-      :color="getColor"
+      :right-icon-color="getColor"
     />
     <v-card-text>
       <v-chip label class="mt-2">Ist: {{ tempCurrentValue | number(1) }} °C / Soll: {{ tempTargetValue | number(1) }} °C</v-chip>

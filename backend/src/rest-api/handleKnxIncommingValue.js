@@ -12,13 +12,22 @@ const handleControlValue = async (control, endPoint, value, address) => {
       break
     case 'lightDimmer':
       if (['dim', 'dim-response'].indexOf(endPoint) !== -1) {
-        console.log(control, value)
         controlData.values = value
       }
       break
     case 'shutter':
-      if (['shutter-position-set', 'shutter-position-response'].indexOf(endPoint) !== -1) {
-        controlData.values = value
+      if (!controlData.values) {
+        controlData.values = {}
+      }
+      switch (endPoint) {
+        case 'shutter-position-set':
+        case 'shutter-position-response':
+          controlData.values.current = value
+          break
+        case 'window-state-response':
+          controlData.values.windowState = value
+          break
+        default:
       }
       break
     case 'rtc':
