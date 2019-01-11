@@ -50,7 +50,7 @@
             const payload = {
               control: this.control._id,
               endPoint: this.endPoint,
-              dataPoint: newValue
+              dataPoint: newValue.value
             }
             this.upsert(payload)
           }
