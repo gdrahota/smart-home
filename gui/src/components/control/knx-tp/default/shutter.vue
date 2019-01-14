@@ -7,21 +7,32 @@
       :right-icon-color="getColor"
     />
     <v-card-text>
+      <div class="pl-1 pr-1 caption grey--text hidden-xs-only">
+        <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
+        <control-endpoint-values :control="control" :endPoints="endPoints" class="float-right"/>
+      </div>
+      <br/>
       <v-slider
         inverse-label
         v-model="setValue"
         step="10"
         :label="setValue + ' %'"
-        :color="isWindowOpen ? 'red' : 'grey'"
+        :color="isWindowOpen ? 'rgb(193, 1, 1)' : 'grey'"
         hide-details
+        class="pt-0 mt-0"
       />
-      <span id="important-message" v-if="isWindowOpen">Fenster ist geöffnet</span>
-      <div class="mt-3 caption grey--text hidden-xs-only">
-        <span class="float-left control-values">
-          <control-endpoint-values :control="control" :endPoints="endPoints"/>
-        </span>
-        <span class="float-right" v-if="updatedAt">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-      </div>
+      <v-chip
+        :value="isWindowOpen === true"
+        color="rgb(193, 1, 1)"
+        label
+        class="full-width"
+        outline
+      >
+        <v-avatar>
+          <v-icon small>fa-exclamation</v-icon>
+        </v-avatar>
+        Fenster offen
+      </v-chip>
     </v-card-text>
   </v-card>
 </template>
@@ -73,7 +84,10 @@
         }
       },
       isWindowOpen () {
-        return this.control.values && this.control.values.windowState
+        return this.control.values &&
+          this.control.values['window-state-response'] &&
+          this.control.values['window-state-response'].value &&
+          this.control.values['window-state-response'].value === true
       }
     },
 
@@ -81,7 +95,8 @@
       return {
         endPoints: [
           { type: 'shutter-position-set', label: 'Fahrbefehl' },
-          { type: 'shutter-position-response', label: 'Bestätigung' }
+          { type: 'shutter-position-response', label: 'Bestätigung' },
+          { type: 'window-state-response', label: 'Fersterkontakt' }
         ]
       }
     },
@@ -100,20 +115,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .v-card {
-    height: 140px;
-  }
-
-  #important-message {
-    position: absolute;
-    top: 50px;
-  }
-
-  .control-values {
-    position: absolute;
-    top: 100px;
-    left: 0px;
-  }
-</style>

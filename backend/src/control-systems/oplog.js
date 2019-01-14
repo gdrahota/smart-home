@@ -42,6 +42,8 @@ export const handleOplog = oplog => {
           }
         }
 
+        console.log(command, doc)
+
         if (command) {
           console.log(command.commandType + ' to bus', command.targetAddress, 'DPT' + command.dataType, command.payload + ' =>')
           if (command.commandType === 'writeValue') {

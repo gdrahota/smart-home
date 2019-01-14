@@ -13,6 +13,7 @@ const sendCommand = async payload => {
       const dataPoint = await Repository('data-points').findOne(query)
 
       const command = {
+        commandType: payload.commandType,
         targetAddress: dataPoint.address,
         dataType: dataPoint.dataType,
         payload: payload.value

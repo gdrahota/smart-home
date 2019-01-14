@@ -6,16 +6,40 @@
       right-icon="fa-circle"
       :right-icon-color="getColor"
     />
+
     <v-card-text>
-      <v-chip label class="mt-2">Ist: {{ currentTemperature.value | number(1) }} °C / Soll: {{ targetTemperature.value | number(1)
-        }} °C
-      </v-chip>
-      <div class="mt-3 caption grey--text hidden-xs-only">
-        <span class="float-left control-values">
-          <control-endpoint-values :control="control" :endPoints="endPoints"/>
-        </span>
-        <span class="float-right" v-if="updatedAt">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
+      <div class="pl-1 pr-1 pb-2 caption grey--text hidden-xs-only">
+        <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
+        <control-endpoint-values :control="control" :endPoints="endPoints" class="float-right"/>
       </div>
+      <br/>
+      <v-layout row wrap>
+        <v-flex xs6>
+          <v-text-field
+            label="Ist"
+            v-model="currentTemperature.value"
+            readonly
+            suffix="°C"
+            type="number"
+            class="pr-1"
+            box
+            disabled
+          />
+        </v-flex>
+        <v-flex xs6>
+          <v-text-field
+            label="Soll"
+            v-model="setTargetTemperature"
+            suffix="°C"
+            :min="15"
+            :max="24"
+            :step="0.5"
+            type="number"
+            class="pl-1"
+            box
+          />
+        </v-flex>
+      </v-layout>
     </v-card-text>
   </v-card>
 </template>
@@ -43,14 +67,17 @@
         },
         set () {}
       },
-      targetTemperature: {
-        get () {
-          const valueObj = this.control.values['temp-target-value']
+      targetTemperature () {
+        const valueObj = this.control.values['temp-target-value']
 
-          if (valueObj !== null && valueObj !== undefined) {
-            return valueObj
-          }
-          return {}
+        if (valueObj !== null && valueObj !== undefined) {
+          return valueObj
+        }
+        return {}
+      },
+      setTargetTemperature: {
+        get () {
+          return this.targetTemperature.value
         },
         set (value) {
           const command = {
@@ -58,6 +85,7 @@
             endPoint: 'temp-target-value',
             value
           }
+          console.log(command)
           this.sendCommand(command)
         }
       },
@@ -102,15 +130,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .v-card {
-    height: 140px;
-  }
-
-  .control-values {
-    position: absolute;
-    top: 100px;
-    left: 0px;
-  }
-</style>

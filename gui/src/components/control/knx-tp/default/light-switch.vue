@@ -7,19 +7,19 @@
       :right-icon-color="getColor"
     />
     <v-card-text>
+      <div class="pl-2 pr-2 pb-0 caption grey--text hidden-xs-only">
+        <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
+        <control-endpoint-values :control="control" :endPoints="endPoints" class="float-right"/>
+      </div>
+      <br/>
       <v-switch
         color="orange"
         v-model="setValue"
         :label="setValue ? 'an' : 'aus'"
         hide-details
         ripple
+        class="pt-0 mt-1 pl-5"
       />
-      <div class="mt-3 caption grey--text hidden-xs-only">
-        <span class="float-left control-values">
-          <control-endpoint-values :control="control" :endPoints="endPoints"/>
-        </span>
-        <span class="float-right" v-if="updatedAt">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-      </div>
     </v-card-text>
   </v-card>
 </template>
@@ -92,15 +92,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .v-card {
-    height: 140px;
-  }
-
-  .control-values {
-    position: absolute;
-    top: 100px;
-    left: 0px;
-  }
-</style>

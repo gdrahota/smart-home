@@ -7,6 +7,11 @@
       :right-icon-color="getColor"
     />
     <v-card-text>
+      <div class="pl-1 pr-1 caption grey--text hidden-xs-only">
+        <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
+        <control-endpoint-values :control="control" :endPoints="endPoints" class="float-right"/>
+      </div>
+      <br/>
       <v-slider
         inverse-label
         v-model="setValue"
@@ -14,13 +19,8 @@
         :label="setValue + ' %'"
         color="orange"
         hide-details
+        class="pt-0 mt-0"
       />
-      <div class="mt-3 caption grey--text hidden-xs-only">
-        <span class="float-left control-values">
-          <control-endpoint-values :control="control" :endPoints="endPoints"/>
-        </span>
-        <span class="float-right" v-if="updatedAt">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-      </div>
     </v-card-text>
   </v-card>
 </template>
@@ -93,15 +93,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .v-card {
-    height: 140px;
-  }
-
-  .control-values {
-    position: absolute;
-    top: 100px;
-    left: 0px;
-  }
-</style>

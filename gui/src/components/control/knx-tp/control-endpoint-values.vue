@@ -1,10 +1,6 @@
 <template>
-  <v-dialog
-    :width="800"
-  >
-    <v-btn slot="activator" small fab flat>
-      <v-icon small color="info">fa-info</v-icon>
-    </v-btn>
+  <v-dialog :width="800">
+    <v-icon slot="activator" small color="info">fa-info</v-icon>
     <v-card>
       <v-card-text>
         <table class="table full-width">
@@ -26,8 +22,13 @@
             <td align="right">{{ getValue(endPoint.type) }}</td>
             <td>{{ getTimestamp(endPoint.type) }}</td>
             <td>
-              <v-btn icon small>
-                <v-icon small>fa-info</v-icon>
+              <v-btn
+                v-if="getAddress(endPoint.type)"
+                @click="requestValue(endPoint.type)"
+                icon
+                small
+              >
+                <v-icon small color="info">fa-refresh</v-icon>
               </v-btn>
             </td>
           </tr>
@@ -39,7 +40,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
 
   export default {
     computed: {
@@ -50,6 +51,9 @@
     },
 
     methods: {
+      ...mapActions({
+        sendCommand: 'commands/sendCommandAction'
+      }),
       getDataPoint (type) {
         const controlDataPoint = this.getByControlAndEndPoint(this.control._id, type)
         if (controlDataPoint) {
@@ -74,6 +78,14 @@
         if (values !== undefined && values !== null) {
           return this.$moment(values.timestamp).format('DD.MM.YY / HH:mm:ss')
         }
+      },
+      requestValue (type) {
+        const command = {
+          commandType: 'readValue',
+          control: this.control._id,
+          endPoint: type
+        }
+        this.sendCommand(command)
       }
     },
 
