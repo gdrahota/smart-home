@@ -9,37 +9,44 @@
     <v-card-text>
       <v-slider
         inverse-label
-        v-model="currentValue"
+        v-model="setValue"
         step="10"
-        :label="currentValue + ' %'"
+        :label="setValue + ' %'"
         color="orange"
         hide-details
       />
-      <div class="mt-3 caption grey--text float-right hidden-xs-only">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}
+      <div class="mt-3 caption grey--text hidden-xs-only">
+        <span class="float-left control-values">
+          <control-endpoint-values :control="control" :endPoints="endPoints"/>
+        </span>
+        <span class="float-right" v-if="updatedAt">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import { mapActions } from 'vuex'
   import ControlHeader from '../control-header'
+  import ControlEndpointValues from '../control-endpoint-values'
 
   export default {
     components: {
       ControlHeader,
+      ControlEndpointValues,
     },
 
     computed: {
-      ...mapGetters({
-        commands: 'commandQueue/get'
-      }),
-      currentValue: {
+      getCurrentValueObj () {
+        const valueObj = this.control.values['dim-response'] ? this.control.values['dim-response'] : this.control.values['dim']
+        if (valueObj !== null && valueObj !== undefined) {
+          return valueObj
+        }
+        return {}
+      },
+      setValue: {
         get () {
-          if (this.control.values) {
-            return Math.round(this.control.values)
-          }
-          return 0
+          return Math.round(this.getCurrentValueObj.value)
         },
         set (value) {
           const command = {
@@ -51,10 +58,24 @@
         }
       },
       getColor () {
-        if (this.currentValue && this.currentValue > 0) {
+        if (this.getCurrentValueObj.value && this.getCurrentValueObj.value > 0) {
           return 'yellow'
         }
         return '#888'
+      },
+      updatedAt () {
+        if (this.getCurrentValueObj) {
+          return this.getCurrentValueObj.timestamp
+        }
+      }
+    },
+
+    data () {
+      return {
+        endPoints: [
+          { type: 'dim', label: 'Dimmbefehl' },
+          { type: 'dim-response', label: 'Bestätigung' }
+        ]
       }
     },
 
@@ -76,5 +97,11 @@
 <style scoped>
   .v-card {
     height: 140px;
+  }
+
+  .control-values {
+    position: absolute;
+    top: 100px;
+    left: 0px;
   }
 </style>

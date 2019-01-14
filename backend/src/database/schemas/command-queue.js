@@ -1,9 +1,16 @@
 import mongoose from 'mongoose'
 
+export const CommandType = ['readValue', 'writeValue']
+
 export const registerSchema = () => {
   const Schema = mongoose.Schema
 
   const typeDefinition = {
+    commandType: {
+      type: String,
+      enum: CommandType,
+      default: 'writeValue'
+    },
     targetAddress: {
       type: String,
       required: true
@@ -14,7 +21,7 @@ export const registerSchema = () => {
     },
     payload: {
       type: Schema.Types.Mixed,
-      required: true
+      required: false
     }
   }
 

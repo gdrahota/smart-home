@@ -43,8 +43,12 @@ export const handleOplog = oplog => {
         }
 
         if (command) {
-          console.log('=> ', new Date().getMilliseconds(), 'send to bus', command.targetAddress, 'DPT' + command.dataType, command.payload)
-          connection.write(command.targetAddress, command.payload, 'DPT' + command.dataType, cbRemoveCommandAndAskForFeedback())
+          console.log(command.commandType + ' to bus', command.targetAddress, 'DPT' + command.dataType, command.payload + ' =>')
+          if (command.commandType === 'writeValue') {
+            connection.write(command.targetAddress, command.payload, 'DPT' + command.dataType, cbRemoveCommandAndAskForFeedback)
+          } else {
+            await cbRemoveCommandAndAskForFeedback()
+          }
         }
       }
       catch (err) {

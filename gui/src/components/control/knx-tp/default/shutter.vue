@@ -9,39 +9,48 @@
     <v-card-text>
       <v-slider
         inverse-label
-        v-model="position"
+        v-model="setValue"
         step="10"
-        :label="position + ' %'"
+        :label="setValue + ' %'"
         :color="isWindowOpen ? 'red' : 'grey'"
         hide-details
       />
       <span id="important-message" v-if="isWindowOpen">Fenster ist geöffnet</span>
-      <div class="mt-3 caption grey--text hidden-xs-only float-right">
-        {{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}
+      <div class="mt-3 caption grey--text hidden-xs-only">
+        <span class="float-left control-values">
+          <control-endpoint-values :control="control" :endPoints="endPoints"/>
+        </span>
+        <span class="float-right" v-if="updatedAt">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import { mapActions } from 'vuex'
   import ControlHeader from '../control-header'
+  import ControlEndpointValues from '../control-endpoint-values'
 
   export default {
     components: {
       ControlHeader,
+      ControlEndpointValues,
     },
 
     computed: {
-      ...mapGetters({
-        commands: 'commandQueue/get'
-      }),
-      position: {
+      getCurrentValueObj () {
+        const valueObj = this.control.values['shutter-position-response']
+          ? this.control.values['shutter-position-response']
+          : this.control.values['shutter-position-set']
+
+        if (valueObj !== null && valueObj !== undefined) {
+          return valueObj
+        }
+        return { value: 0 }
+      },
+      setValue: {
         get () {
-          if (this.control.values && this.control.values.current) {
-            return Math.round(this.control.values.current)
-          }
-          return 0
+          return Math.round(this.getCurrentValueObj.value)
         },
         set (value) {
           const command = {
@@ -53,13 +62,27 @@
         }
       },
       getColor () {
-        if (this.position && this.position > 0) {
+        if (this.getCurrentValueObj.value && this.getCurrentValueObj.value > 0) {
           return 'yellow'
         }
         return '#888'
       },
+      updatedAt () {
+        if (this.getCurrentValueObj) {
+          return this.getCurrentValueObj.timestamp
+        }
+      },
       isWindowOpen () {
         return this.control.values && this.control.values.windowState
+      }
+    },
+
+    data () {
+      return {
+        endPoints: [
+          { type: 'shutter-position-set', label: 'Fahrbefehl' },
+          { type: 'shutter-position-response', label: 'Bestätigung' }
+        ]
       }
     },
 
@@ -86,5 +109,11 @@
   #important-message {
     position: absolute;
     top: 50px;
+  }
+
+  .control-values {
+    position: absolute;
+    top: 100px;
+    left: 0px;
   }
 </style>

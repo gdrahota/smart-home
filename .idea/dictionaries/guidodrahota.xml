@@ -1,8 +1,10 @@
 <component name="ProjectDictionaryState">
   <dictionary name="guidodrahota">
     <words>
+      <w>abfragen</w>
       <w>abmeldung</w>
       <w>adresse</w>
+      <w>aktuelle</w>
       <w>aktueller</w>
       <w>angeschlossen</w>
       <w>angeschlossene</w>
@@ -23,6 +25,7 @@
       <w>datentyp</w>
       <w>deaktivieren</w>
       <w>dimmbar</w>
+      <w>dimmbefehl</w>
       <w>dimmen</w>
       <w>dorfstr</w>
       <w>eigenschaft</w>
@@ -37,6 +40,7 @@
       <w>erfolgt</w>
       <w>esszimmer</w>
       <w>etage</w>
+      <w>fahrbefehl</w>
       <w>falsch</w>
       <w>fenster</w>
       <w>flur</w>
@@ -52,6 +56,7 @@
       <w>hinten</w>
       <w>hinterlegt</w>
       <w>istwert</w>
+      <w>kommando</w>
       <w>kommt</w>
       <w>kontakt</w>
       <w>kontakts</w>
@@ -70,6 +75,8 @@
       <w>registriert</w>
       <w>rollladen</w>
       <w>rückmeldung</w>
+      <w>schaltadresse</w>
+      <w>schaltbefehl</w>
       <w>schaltbefehls</w>
       <w>schließen</w>
       <w>seitlich</w>
@@ -92,8 +99,10 @@
       <w>welche</w>
       <w>werkzeug</w>
       <w>wert</w>
+      <w>werte</w>
       <w>wohnzimmer</w>
       <w>zeichen</w>
+      <w>zeitstempel</w>
       <w>zentrale</w>
       <w>zugeordnete</w>
       <w>zugewiesene</w>

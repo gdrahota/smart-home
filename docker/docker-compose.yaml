@@ -10,4 +10,4 @@ services:
     - ./data/db:/data/db
     ports:
     - 27017:27017
-    command: mongod --smallfiles --master # --logpath=/dev/null # --quiet
+    command: mongod --smallfiles --master --logpath=/dev/null # --quiet

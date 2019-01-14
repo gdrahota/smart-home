@@ -7,38 +7,50 @@
       :right-icon-color="getColor"
     />
     <v-card-text>
-      <v-chip label class="mt-2">Ist: {{ tempCurrentValue | number(1) }} °C / Soll: {{ tempTargetValue | number(1) }} °C</v-chip>
-      <div class="mt-3 caption grey--text float-right hidden-xs-only">{{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}
+      <v-chip label class="mt-2">Ist: {{ currentTemperature.value | number(1) }} °C / Soll: {{ targetTemperature.value | number(1)
+        }} °C
+      </v-chip>
+      <div class="mt-3 caption grey--text hidden-xs-only">
+        <span class="float-left control-values">
+          <control-endpoint-values :control="control" :endPoints="endPoints"/>
+        </span>
+        <span class="float-right" v-if="updatedAt">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import { mapActions } from 'vuex'
   import ControlHeader from '../control-header'
+  import ControlEndpointValues from '../control-endpoint-values'
 
   export default {
     components: {
       ControlHeader,
+      ControlEndpointValues,
     },
 
     computed: {
-      ...mapGetters({
-        commands: 'commandQueue/get'
-      }),
-      tempCurrentValue () {
-        return (this.control.values && this.control.values.current) ? this.control.values.current : 0
-      },
-      tempTargetValue () {
-        return (this.control.values && this.control.values.target) ? this.control.values.target : 0
-      },
-      value: {
+      currentTemperature: {
         get () {
-          if (this.control.values && this.control.values.current) {
-            return this.control.values.current
+          const valueObj = this.control.values['temp-current-value']
+
+          if (valueObj !== null && valueObj !== undefined) {
+            return valueObj
           }
-          return 0
+          return {}
+        },
+        set () {}
+      },
+      targetTemperature: {
+        get () {
+          const valueObj = this.control.values['temp-target-value']
+
+          if (valueObj !== null && valueObj !== undefined) {
+            return valueObj
+          }
+          return {}
         },
         set (value) {
           const command = {
@@ -49,16 +61,30 @@
           this.sendCommand(command)
         }
       },
+      updatedAt () {
+        return this.currentTemperature.timestamp
+      },
       getColor () {
-        console.log(this.control)
-        if (this.control.values) {
-          if (this.control.values.state) {
-            return 'orange'
-          }
-          if (this.control.values.stateRelavive && this.control.values.stateRelavive > 0) {
+        const valueObj = this.control.values['switch-response']
+          ? this.control.values['switch-response']
+          : this.control.values['pusher-response']
+
+        if (valueObj !== undefined && valueObj !== null) {
+          if (valueObj.value === true || valueObj.value > 0) {
             return 'orange'
           }
         }
+      }
+    },
+
+    data () {
+      return {
+        endPoints: [
+          { type: 'temp-current-value', label: 'Ist-Temperatur' },
+          { type: 'temp-target-value', label: 'Soll-Temperatur' },
+          { type: 'switch-response', label: 'Bestätigung (Ein/Aus)' },
+          { type: 'pusher-response', label: 'Bestätigung (0..100 %)' }
+        ]
       }
     },
 
@@ -80,5 +106,11 @@
 <style scoped>
   .v-card {
     height: 140px;
+  }
+
+  .control-values {
+    position: absolute;
+    top: 100px;
+    left: 0px;
   }
 </style>

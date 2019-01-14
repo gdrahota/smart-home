@@ -5,51 +5,10 @@ import { DataPointService } from '../services/data-points'
 import { ValuesFromKnxService } from '../services/values-from-knx'
 
 const handleControlValue = async (control, endPoint, value, address) => {
-  const controlData = { ...control, valueUpdated: new Date() }
-  switch (control.controlType) {
-    case 'lightSwitch':
-      controlData.values = value
-      break
-    case 'lightDimmer':
-      if (['dim', 'dim-response'].indexOf(endPoint) !== -1) {
-        controlData.values = value
-      }
-      break
-    case 'shutter':
-      if (!controlData.values) {
-        controlData.values = {}
-      }
-      switch (endPoint) {
-        case 'shutter-position-set':
-        case 'shutter-position-response':
-          controlData.values.current = value
-          break
-        case 'window-state-response':
-          controlData.values.windowState = value
-          break
-        default:
-      }
-      break
-    case 'rtc':
-      if (!controlData.values) {
-        controlData.values = {}
-      }
-      switch (endPoint) {
-        case 'switch-response':
-          controlData.values.state = value
-          break
-        case 'pusher-response':
-          controlData.values.stateRelavive = value
-          break
-        case 'temp-target-value':
-          controlData.values.target = value
-          break
-        case 'temp-current-value':
-          controlData.values.current = value
-          break
-      }
-      break
-    default:
+  const controlData = { ...control, values: control.values ? control.values : {} }
+  controlData.values[endPoint] = {
+    value,
+    timestamp: new Date()
   }
 
   //console.log(endPoint, address, endPoint, value, controlData.values)

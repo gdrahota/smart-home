@@ -14,31 +14,38 @@
         hide-details
         ripple
       />
-      <div class="mt-3 caption grey--text float-right hidden-xs-only">
-        {{ $moment(control.valueUpdated).format('DD.MM.YY / HH:mm:ss') }}
+      <div class="mt-3 caption grey--text hidden-xs-only">
+        <span class="float-left control-values">
+          <control-endpoint-values :control="control" :endPoints="endPoints"/>
+        </span>
+        <span class="float-right" v-if="updatedAt">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import { mapActions } from 'vuex'
   import ControlHeader from '../control-header'
+  import ControlEndpointValues from '../control-endpoint-values'
 
   export default {
     components: {
       ControlHeader,
+      ControlEndpointValues,
     },
 
     computed: {
-      ...mapGetters({
-        commands: 'commandQueue/get',
-        getControlDataPoint: 'controlDataPoints/getByControlAndEndPoint',
-        getDataPoint: 'dataPoints/getById'
-      }),
+      getCurrentValueObj () {
+        const valueObj = this.control.values['response'] ? this.control.values['response'] : this.control.values['switch']
+        if (valueObj !== null && valueObj !== undefined) {
+          return valueObj
+        }
+        return {}
+      },
       setValue: {
         get () {
-          return this.control.values
+          return this.getCurrentValueObj.value
         },
         set (value) {
           const command = {
@@ -49,14 +56,25 @@
           this.sendCommand(command)
         }
       },
-      getValue () {
-        return this.control.values
-      },
       getColor () {
-        if (this.getValue === true) {
+        if (this.getCurrentValueObj.value === true) {
           return 'yellow'
         }
         return '#888'
+      },
+      updatedAt () {
+        if (this.getCurrentValueObj) {
+          return this.getCurrentValueObj.timestamp
+        }
+      }
+    },
+
+    data () {
+      return {
+        endPoints: [
+          { type: 'switch', label: 'Schaltbefehl' },
+          { type: 'response', label: 'Bestätigung' }
+        ]
       }
     },
 
@@ -78,5 +96,11 @@
 <style scoped>
   .v-card {
     height: 140px;
+  }
+
+  .control-values {
+    position: absolute;
+    top: 100px;
+    left: 0px;
   }
 </style>
