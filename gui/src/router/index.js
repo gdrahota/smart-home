@@ -10,6 +10,7 @@ import Home from '../views/Home.vue'
 import RouterContainer from '../components/router-container'
 import Control from '../components/control'
 import KnxMonitor from '../components/utils/knx-monitor'
+import Schedules from '../components/admin/schedules'
 
 Vue.use(Router)
 
@@ -93,7 +94,14 @@ const router = new Router({
               meta: {
                 title: 'Endpunkte verwalten'
               }
-            }
+            },
+            {
+              path: 'schedules',
+              component: Schedules,
+              meta: {
+                title: 'Zeitsteuerung'
+              }
+            },
           ]
         }
       ]

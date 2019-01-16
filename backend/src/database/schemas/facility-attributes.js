@@ -14,7 +14,7 @@ export const registerSchema = () => {
         type: String,
         required: true
       }
-    }, { collection: 'facility-attributes' }
+    }, { collection: 'facility-attributes', timestamps: {} }
   )
 
   try {

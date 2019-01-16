@@ -11,6 +11,8 @@ import facilities from './facilities'
 import facilityAttributes from './facility-attributes'
 import facilityAttributeValues from './facility-attribute-values'
 import knxEvents from './knx-events'
+import schedules from './schedules'
+
 
 Vue.use(Vuex)
 
@@ -25,6 +27,7 @@ export default new Vuex.Store({
     facilities,
     facilityAttributes,
     facilityAttributeValues,
-    knxEvents
+    knxEvents,
+    schedules
   }
 })

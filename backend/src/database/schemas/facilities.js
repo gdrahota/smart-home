@@ -24,7 +24,7 @@ export const registerSchema = () => {
       type: String,
       default: 'active'
     }
-  }, { collection: 'facilities' })
+  }, { collection: 'facilities', timestamps: {} })
 
   // prevent overwriting an existing model during unit testing
   try {

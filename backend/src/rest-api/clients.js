@@ -7,6 +7,8 @@ import { FacilityAttributeValuesService } from '../services/facility-attribute-v
 import { FacilityAttributesService } from '../services/facility-attributes'
 import { FacilityService } from '../services/facilities'
 import { KnxEventService } from '../services/knx-events'
+import { ValuesFromKnxService } from '../services/values-from-knx'
+import { ScheduleService } from '../services/schedules'
 
 export const registerClientEndpoints = (io, socket) => {
   const sendDataToClient = async () => {
@@ -29,6 +31,8 @@ export const registerClientEndpoints = (io, socket) => {
     await getValues('facility_attributes', FacilityAttributesService)
     await getValues('facilities', FacilityService)
     await getValues('knx_events', KnxEventService)
+    await getValues('schedules', ScheduleService)
+    await getValues('values_from_knx_service', ValuesFromKnxService)
 
     socket.emit('control_system_types_response', ControlSystemService.getTypes())
   }

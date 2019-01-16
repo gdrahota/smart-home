@@ -32,7 +32,7 @@ export const registerSchema = () => {
       type: mongoose.Schema.Types.Date,
       required: true
     }
-  }, { collection: 'client' })
+  }, { collection: 'client', timestamps: {} })
 
   // prevent overwriting an existing model during unit testing
   try {

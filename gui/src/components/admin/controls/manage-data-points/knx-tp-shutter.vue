@@ -30,11 +30,6 @@
       return {
         controlEndPoints: [
           {
-            label: 'Gruppenadresse des Schaltbefehls',
-            dataType: '1.001',
-            endPoint: 'switch-response'
-          },
-          {
             label: 'Position setzen',
             dataType: '5.001',
             endPoint: 'shutter-position-set'

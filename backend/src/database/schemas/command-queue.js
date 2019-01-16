@@ -25,7 +25,7 @@ export const registerSchema = () => {
     }
   }
 
-  const options = { collection: 'command-queue' }
+  const options = { collection: 'command-queue', timestamps: {} }
 
   const ControlSchema = new Schema(typeDefinition, options)
 

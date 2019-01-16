@@ -18,7 +18,7 @@ export const registerSchema = () => {
     }
   }
 
-  const options = { collection: 'control-data-points' }
+  const options = { collection: 'control-data-points', timestamps: {} }
 
   const ControlSchema = new Schema(typeDefinition, options)
 

@@ -28,7 +28,7 @@ export const registerSchema = () => {
     }
   }
 
-  const options = { collection: 'control-systems' }
+  const options = { collection: 'control-systems', timestamps: {} }
 
   const ControlSchema = new Schema(typeDefinition, options)
 

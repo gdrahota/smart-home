@@ -4,7 +4,49 @@ import { socket } from '../main'
 const state = {
   loading: true,
   items: [],
-  selected: null
+  selected: null,
+  definitions: [
+    {
+      name: 'shutter',
+      label: 'Rollladen',
+      icon: 'fa-bars',
+      endPoints: [
+        { endPoint: 'shutter-position-set', label: 'Fahrbefehl', dpt: '5.001', dataType: '5.001' },
+        { endPoint: 'shutter-position-response', label: 'Bestätigung', dpt: '5.001', dataType: '5.001' },
+        { endPoint: 'window-state-response', label: 'Fersterkontakt', dpt: '1.009' }
+      ]
+    },
+    {
+      name: 'lightSwitch',
+      label: 'Lichtschalter',
+      icon: 'fa-lightbulb-o',
+      endPoints: [
+        { endPoint: 'switch', label: 'Schaltbefehl', dpt: '1.001' },
+        { endPoint: 'response', label: 'Bestätigung', dpt: '1.001' },
+      ]
+    },
+    {
+      name: 'lightDimmer',
+      label: 'Lichtdimmer',
+      icon: 'fa-lightbulb-o',
+      endPoints: [
+        { endPoint: 'switch', label: 'Schaltbefehl', dpt: '1.001' },
+        { endPoint: 'dim', label: 'Dimmen', dpt: '5.001' },
+        { endPoint: 'dim-response', label: 'Rückmeldung', dpt: '5.001' },
+      ]
+    },
+    {
+      name: 'rtc',
+      label: 'Heizungssteuerung',
+      icon: 'fa-thermometer-half',
+      endPoints: [
+        { endPoint: 'temp-current-value', label: 'Ist-Temperatur', dtp: '9.001' },
+        { endPoint: 'temp-target-value', label: 'Soll-Temperatur', dtp: '9.001' },
+        { endPoint: 'switch-response', label: 'Bestätigung (Ein/Aus)', dtp: '1.009' },
+        { endPoint: 'pusher-response', label: 'Bestätigung (0..100 %)', dtp: '5.001' },
+      ]
+    }
+  ],
 }
 
 const SOCKET_CONTROLS_RESPONSE = (state, response) => {
@@ -93,6 +135,9 @@ const getSelectedControl = state => {
   return null
 }
 
+const getDefinitions = state => state.definitions
+const getDefinitionByName = state => name => state.definitions.find(d => d.name === name)
+
 const getters = {
   isLoading: state => state.loading,
   get,
@@ -101,7 +146,9 @@ const getters = {
   getByControlSystemId,
   getByAttributeValue,
   getSelectedControlId: state => state.selected,
-  getSelectedControl
+  getSelectedControl,
+  getDefinitions,
+  getDefinitionByName,
 }
 
 export default {

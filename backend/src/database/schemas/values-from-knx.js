@@ -22,7 +22,7 @@ export const registerSchema = () => {
     },
   }
 
-  const options = { collection: 'values-from-knx' }
+  const options = { collection: 'values-from-knx', timestamps: {} }
 
   const ValuesFromKnxSchema = new Schema(typeDefinition, options)
 

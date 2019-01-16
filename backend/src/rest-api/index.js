@@ -8,6 +8,7 @@ import { registerDataPointEndpoints } from './data-points'
 import { registerControlDataPointEndpoints } from './control-data-points'
 import { registerControlSystemEndpoints } from './control-systems'
 import { registerCommands } from './commands'
+import { registerScheduleEndpoints } from './schedules'
 import UserService from '../services/clients'
 
 export const registerEndpoints = () => {
@@ -28,6 +29,7 @@ export const registerEndpoints = () => {
       registerControlDataPointEndpoints(io, socket)
       registerControlSystemEndpoints(io, socket)
       registerCommands(io, socket)
+      registerScheduleEndpoints(io, socket)
     })
     .on('disconnect', reason => {
       if (reason === 'io server disconnect') {

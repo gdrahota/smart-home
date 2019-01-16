@@ -28,6 +28,7 @@ export const registerSchema = () => {
 
   const options = {
     collection: 'knx-events',
+    timestamps: {},
     capped: { size: 1000000, max: 10000, autoIndexId: true }
   }
 
