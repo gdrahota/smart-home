@@ -2,33 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa8a30f-911b-4abf-958a-204308acb4c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/database/schemas/schedules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/rest-api/schedules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/services/schedules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/list-schedules.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/store/schedules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/slider.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/guidodrahota.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/guidodrahota.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/command-queue.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/command-queue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/control-data-points.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/control-data-points.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/control-system.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/control-system.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/controls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/data-points.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/data-points.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/facilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/facilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-values.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/facility-attribute-values.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/facility-attributes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/facility-attributes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/knx-events.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/knx-events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/values-from-knx.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/values-from-knx.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/rest-api/clients.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/rest-api/clients.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/rest-api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/rest-api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/knx-tp-shutter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/knx-tp-shutter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/schedules.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/schedules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/schedules/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/schedules/list-schedules.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/list-schedules.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/store/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/controls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/store/schedules.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/schedules.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,14 +23,14 @@
     <session id="-1795504917">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="27" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.0" value="5" />
-          <entry key="project.open.time.1" value="16" />
+          <entry key="project.open.time.1" value="17" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="29" />
+          <entry key="project.opened" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,11 +42,11 @@
           <entry key="gitignore" value="5" />
           <entry key="html" value="5" />
           <entry key="ico" value="1" />
-          <entry key="js" value="1055" />
+          <entry key="js" value="1056" />
           <entry key="json" value="24" />
           <entry key="log" value="1" />
           <entry key="ts" value="17" />
-          <entry key="vue" value="535" />
+          <entry key="vue" value="541" />
           <entry key="xml" value="2" />
           <entry key="yaml" value="4" />
         </counts>
@@ -74,11 +57,11 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="24" />
-          <entry key="JavaScript" value="1055" />
+          <entry key="JavaScript" value="1056" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="TypeScript" value="17" />
-          <entry key="Vue.js" value="535" />
+          <entry key="Vue.js" value="541" />
           <entry key="XML" value="2" />
           <entry key="YAML" value="4" />
         </counts>
@@ -90,11 +73,11 @@
           <entry key="css" value="151" />
           <entry key="gitignore" value="27" />
           <entry key="html" value="14" />
-          <entry key="js" value="38456" />
+          <entry key="js" value="38721" />
           <entry key="json" value="63" />
           <entry key="log" value="1" />
-          <entry key="txt" value="2047" />
-          <entry key="vue" value="50161" />
+          <entry key="txt" value="2086" />
+          <entry key="vue" value="53546" />
           <entry key="yaml" value="26" />
         </counts>
       </usages-collector>
@@ -103,10 +86,10 @@
           <entry key="CSS" value="151" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="63" />
-          <entry key="JavaScript" value="38456" />
+          <entry key="JavaScript" value="38721" />
           <entry key="Markdown" value="13" />
-          <entry key="PLAIN_TEXT" value="2076" />
-          <entry key="Vue.js" value="50161" />
+          <entry key="PLAIN_TEXT" value="2115" />
+          <entry key="Vue.js" value="53546" />
           <entry key="YAML" value="26" />
         </counts>
       </usages-collector>
@@ -121,28 +104,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/schedules.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="984">
-              <caret line="150" column="21" selection-start-line="150" selection-start-column="2" selection-end-line="150" selection-end-column="21" />
+            <state relative-caret-position="289">
+              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -150,11 +115,53 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/src/store/schedules.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="867">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/list-schedules.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="30" column="83" selection-start-line="30" selection-start-column="83" selection-end-line="30" selection-end-column="83" />
+            <state relative-caret-position="237">
+              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <folding>
+                <element signature="e#585#618#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="611">
+              <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
+              <folding>
+                <element signature="e#3760#3807#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/slider.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -163,8 +170,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_ead</find>
-      <find>evt</find>
       <find>CONTROLS</find>
       <find>192.168.0.39</find>
       <find>server.host</find>
@@ -176,7 +181,6 @@
       <find>.text</find>
       <find>saveEventToDb</find>
       <find>name</find>
-      <find>.name</find>
       <find>facilityId</find>
       <find>upsert_control_data_point</find>
       <find>darkseagreen</find>
@@ -193,6 +197,9 @@
       <find>important-message</find>
       <find>values-from-knx</find>
       <find>ValuesFromKnxService</find>
+      <find>getControlName</find>
+      <find>schedules/selectSchedule</find>
+      <find>.name</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -217,11 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/config/server.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/knx-tp-data-point.vue" />
-        <option value="$PROJECT_DIR$/gui/src/store/data-points.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/control-header.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/index.vue" />
         <option value="$PROJECT_DIR$/gui/config/client.js" />
         <option value="$PROJECT_DIR$/Readme.MD" />
         <option value="$PROJECT_DIR$/docker/docker-compose.yaml" />
@@ -261,13 +263,18 @@
         <option value="$PROJECT_DIR$/backend/src/rest-api/schedules.js" />
         <option value="$PROJECT_DIR$/backend/src/rest-api/index.js" />
         <option value="$PROJECT_DIR$/backend/src/rest-api/clients.js" />
-        <option value="$PROJECT_DIR$/gui/src/store/schedules.js" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/select-schedule.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/index.vue" />
-        <option value="$PROJECT_DIR$/backend/src/database/schemas/schedules.js" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/knx-tp-shutter.vue" />
+        <option value="$PROJECT_DIR$/gui/src/store/schedules.js" />
+        <option value="$PROJECT_DIR$/backend/src/database/schemas/schedules.js" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/index.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value.vue" />
         <option value="$PROJECT_DIR$/gui/src/store/controls.js" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/list-schedules.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/index.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/slider.vue" />
       </list>
     </option>
   </component>
@@ -293,9 +300,9 @@
       <path value="$PROJECT_DIR$/gui/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="2063" />
-    <option name="height" value="1440" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -316,9 +323,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -359,7 +363,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="controls" type="462c0819:PsiDirectoryNode" />
+              <item name="schedules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
@@ -368,42 +372,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="controls" type="462c0819:PsiDirectoryNode" />
-              <item name="manage-data-points" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="knx-tp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="knx-tp" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="schedules" type="462c0819:PsiDirectoryNode" />
+              <item name="edit-schedule" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
@@ -416,13 +386,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547668395941" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547764658181" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -436,19 +409,19 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gui/src/components/control/knx-tp/default" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value" />
+      <recent name="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule" />
       <recent name="$PROJECT_DIR$/backend/src" />
       <recent name="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points" />
       <recent name="$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/knx-tp-light-switch" />
-      <recent name="$PROJECT_DIR$/backend/src/database/schemas" />
-      <recent name="$PROJECT_DIR$/gui/src/components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gui/src/components/control/knx-tp/default" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -501,14 +474,8 @@
       <workItem from="1547121575285" duration="38394000" />
       <workItem from="1547545767460" duration="1363000" />
       <workItem from="1547627226934" duration="1374000" />
-      <workItem from="1547651148261" duration="11979000" />
-    </task>
-    <task id="LOCAL-00002" summary="server rest api created, communication via web socket added, manage facilities enhanced">
-      <created>1539554666549</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1539554666549</updated>
+      <workItem from="1547651148261" duration="24995000" />
+      <workItem from="1547764139950" duration="490000" />
     </task>
     <task id="LOCAL-00003" summary="server rest api created, communication via web socket added, manage facilities enhanced">
       <created>1539554722160</created>
@@ -846,17 +813,24 @@
       <option name="project" value="LOCAL" />
       <updated>1547493571734</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="new feature: time controlled commands">
+      <created>1547668450783</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1547668450783</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="397313000" />
+    <option name="totallyTimeSpent" value="410819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49430895" visible="true" weight="0.20577395" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49430895" visible="true" weight="0.20884521" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -901,7 +875,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="very simple knx monitor added, needs to be enhanced" />
     <MESSAGE value="automatic selection of facility in case there is only one facility registered implemented" />
     <MESSAGE value="knx monitor enhanced" />
     <MESSAGE value="knx monitor view enhanced" />
@@ -926,30 +899,10 @@
     <MESSAGE value="frontend: hostname config removed" />
     <MESSAGE value="frontend: all controls refactored&#10;backend: database schema of control changed" />
     <MESSAGE value="frontend: all controls slightly redesigned" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend: all controls slightly redesigned" />
+    <MESSAGE value="new feature: time controlled commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="new feature: time controlled commands" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/src/services/command-queue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-dimmer.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/control-endpoint-values.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1010,9 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1034,9 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1051,9 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1089,9 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,9 +1047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1155,13 +1093,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/rest-api/facilities.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1181,9 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1198,23 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/store/schedules.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="70" column="10" lean-forward="true" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1243,9 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#351#384#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1270,16 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="125" column="6" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
-          <folding>
-            <element signature="e#1183#1216#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/control/control.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
@@ -1290,27 +1189,78 @@
     <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/index.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/schedules.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="209">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="91" column="91" selection-start-line="91" selection-start-column="91" selection-end-line="91" selection-end-column="91" />
+          <folding>
+            <element signature="e#1110#1157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/schedules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="150" column="21" selection-start-line="150" selection-start-column="2" selection-end-line="150" selection-end-column="21" />
+        <state relative-caret-position="289">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/list-schedules.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="30" column="83" selection-start-line="30" selection-start-column="83" selection-end-line="30" selection-end-column="83" />
+        <state relative-caret-position="237">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="e#585#618#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
+          <folding>
+            <element signature="e#3760#3807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/slider.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>

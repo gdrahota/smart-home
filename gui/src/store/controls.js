@@ -11,9 +11,34 @@ const state = {
       label: 'Rollladen',
       icon: 'fa-bars',
       endPoints: [
-        { endPoint: 'shutter-position-set', label: 'Fahrbefehl', dpt: '5.001', dataType: '5.001' },
-        { endPoint: 'shutter-position-response', label: 'Bestätigung', dpt: '5.001', dataType: '5.001' },
-        { endPoint: 'window-state-response', label: 'Fersterkontakt', dpt: '1.009' }
+        {
+          endPoint: 'shutter-position-set',
+          label: 'Fahre an Position',
+          dpt: '5.001',
+          dataType: '5.001',
+          controlType: 'slider',
+          min: 0,
+          max: 100,
+          step: 10
+        },
+        {
+          endPoint: 'shutter-position-response',
+          label: 'Bestätigung',
+          dpt: '5.001',
+          dataType: '5.001',
+          controlType: 'slider',
+          min: 0,
+          max: 100,
+          step: 10
+        },
+        {
+          endPoint: 'window-state-response',
+          label: 'Fersterkontakt',
+          dpt: '1.009',
+          controlType: 'switch',
+          trueLabel: 'Ab',
+          falseLabel: 'Auf'
+        }
       ]
     },
     {
@@ -72,8 +97,8 @@ const actions = {
   removeAction
 }
 
-const selectControl = (state, controlId) => {
-  state.selected = controlId
+const selectSchedule = (state, item) => {
+  state.selected = item
 }
 
 const SOCKET_ADD_CONTROLS_RESPONSE = (state, response) => {
@@ -99,7 +124,7 @@ const SOCKET_REMOVE_CONTROLS_RESPONSE = (state, response) => {
 
 const mutations = {
   setLoading: (state, status) => state.isLoading = status,
-  selectControl,
+  selectSchedule,
   SOCKET_CONTROLS_RESPONSE,
   SOCKET_ADD_CONTROLS_RESPONSE,
   SOCKET_UPDATE_CONTROLS_RESPONSE,

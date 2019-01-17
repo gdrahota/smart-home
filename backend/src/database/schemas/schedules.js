@@ -8,7 +8,7 @@ export const registerSchema = () => {
       type: Schema.ObjectId,
       required: true
     },
-    dataType: {
+    endpoint: {
       type: String,
       required: true
     },
@@ -45,25 +45,13 @@ export const registerSchema = () => {
     },
     allowedTimeFrame: {
       from: {
-        hours: {
-          type: Number,
-          default: 0
-        },
-        minutes: {
-          type: Number,
-          default: 0
-        }
+        type: String,
+        default: '00:00'
       },
       till: {
-        hours: {
-          type: Number,
-          default: 23
-        },
-        minutes: {
-          type: Number,
-          default: 59
-        }
-      },
+        type: String,
+        default: '23:59'
+      }
     },
     commands: {
       type: CommandSchema,

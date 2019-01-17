@@ -7,12 +7,25 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
+
   import ListSchedules from './list-schedules'
 
   export default {
     components: {
-      ListSchedules
+      ListSchedules,
     },
 
+    computed: {
+      ...mapGetters({
+        selected: 'schedules/getSelected',
+      }),
+      showEditScheduleDialog: {
+        get () {
+          return this.selected !== null ? true : false
+        },
+        set () {}
+      }
+    }
   }
 </script>

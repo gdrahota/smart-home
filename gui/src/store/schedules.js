@@ -44,13 +44,13 @@ const SOCKET_UPDATE_SCHEDULES_RESPONSE = (state, response) => {
       : item
   }
   state.items = state.items.map(mapFnc)
-  state.selected = response[0]
 }
+
 const SOCKET_REMOVE_SCHEDULES_RESPONSE = (state, response) => {
   state.items = state.items.filter(f => f._id !== response[0])
 }
 
-const select = (context, item) => {
+const select = (state, item) => {
   state.selected = item
 }
 
