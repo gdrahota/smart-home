@@ -19,6 +19,8 @@ const sendCommand = async payload => {
         payload: payload.value
       }
 
+      console.log('sendCommand', command)
+
       await Repository(collection).upsertCommand(command)
     }
   }

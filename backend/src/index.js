@@ -6,6 +6,7 @@ import { bindWebSocketToServer } from './infrastructure/websocket'
 import { serveStaticFiles } from './infrastructure/static-files'
 import { registerEndpoints } from './rest-api'
 import { connectToOplog, handleOplog } from './rest-api/oplog'
+import { startCronJob } from './cron'
 
 const app = express()
 const server = http.createServer(app)
@@ -27,6 +28,7 @@ const start = async () => {
     registerEndpoints()
     await connectToOplog()
     handleOplog()
+    startCronJob()
 
     console.log('== SERVER STARTUP SUCCESSFULLY :) <<<')
     console.log('')

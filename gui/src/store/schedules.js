@@ -4,6 +4,7 @@ const state = {
   loading: true,
   items: [],
   timeTypes: [
+    { value: 'fixed', text: 'Feste Zeit' },
     { value: 'sunrise', text: 'Sonnenaufgang' },
     { value: 'sunset', text: 'Sonnenuntergang' },
   ],

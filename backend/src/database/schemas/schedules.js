@@ -39,6 +39,10 @@ export const registerSchema = () => {
       type: Object,
       required: true
     },
+    timeFixed: {
+      type: String,
+      required: false
+    },
     timeOffset: {
       type: Number,
       default: 0

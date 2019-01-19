@@ -7,8 +7,8 @@
       ></v-switch>
     </td>
     <td>{{ schedule.name }}</td>
-    <td dim-if-inactive><span>{{ getTimeTypeAndOffset(schedule) }} Min.</span></td>
-    <td dim-if-inactive><span>{{ getFormattedTimeFrame }} Uhr</span></td>
+    <td dim-if-inactive><span>{{ getTimeTypeAndOffset(schedule) }}</span></td>
+    <td dim-if-inactive><span v-if="schedule.time !== 'fixed'">{{ getFormattedTimeFrame }} Uhr</span></td>
     <td dim-if-inactive><span>{{ getWeekDays }}</span></td>
     <td dim-if-inactive><span>{{ schedule.excludeDays.join(', ') }}</span></td>
     <td colspan="3" dim-if-inactive>
@@ -121,9 +121,15 @@
 
         if (timeType) {
           const parts = []
-          parts.push(timeType.text)
-          parts.push(schedule.timeOffset < 0 ? '-' : '+')
-          parts.push(schedule.timeOffset)
+
+          if (timeType.value === 'fixed') {
+            parts.push(schedule.timeFixed + ' Uhr')
+          } else {
+            parts.push(timeType.text)
+            parts.push(schedule.timeOffset < 0 ? '-' : '+')
+            parts.push(schedule.timeOffset)
+            parts.push('Min.')
+          }
           return parts.join(' ')
         }
       },

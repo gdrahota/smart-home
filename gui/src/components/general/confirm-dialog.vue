@@ -8,19 +8,16 @@
     <v-btn
       v-if="label"
       slot="activator"
-      class="elevation-2"
       :color="color"
       :dark="dark"
       :disabled="disabled"
-      :fab="fab"
-      :icon="!fab"
       :large="large"
       :medium="medium"
       :outline="outline"
       :small="small"
     >
+      <v-icon left :small="small">{{ icon }}</v-icon>
       <span>{{ label }}</span>
-      <v-icon right :small="small">{{ icon }}</v-icon>
     </v-btn>
 
     <v-btn

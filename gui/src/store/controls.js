@@ -163,7 +163,7 @@ const actions = {
   removeAction
 }
 
-const selectSchedule = (state, item) => {
+const selectControl = (state, item) => {
   state.selected = item
 }
 
@@ -189,7 +189,7 @@ const SOCKET_REMOVE_CONTROLS_RESPONSE = (state, response) => {
 
 const mutations = {
   setLoading: (state, status) => state.isLoading = status,
-  selectSchedule,
+  selectControl,
   SOCKET_CONTROLS_RESPONSE,
   SOCKET_ADD_CONTROLS_RESPONSE,
   SOCKET_UPDATE_CONTROLS_RESPONSE,

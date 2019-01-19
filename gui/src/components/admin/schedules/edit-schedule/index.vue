@@ -56,7 +56,7 @@
             </v-flex>
             <v-flex xs4 right></v-flex>
 
-            <v-flex xs4 left>
+            <v-flex xs2 left>
               <v-select
                 :items="timeTypes"
                 v-model="schedule.time"
@@ -65,8 +65,16 @@
                 label="Zeitpunkt"
               ></v-select>
             </v-flex>
+            <v-flex xs2 left v-if="schedule.time === 'fixed'">
+              <v-text-field
+                v-model="schedule.timeFixed"
+                label="Zeit"
+                type="time"
+              ></v-text-field>
+            </v-flex>
             <v-flex offset-xs1 xs2 left>
               <v-text-field
+                v-if="schedule.time !== 'fixed'"
                 v-model="schedule.timeOffset"
                 label="Verschiebung"
                 :min="-180"
@@ -76,14 +84,14 @@
                 suffix="Min."
               ></v-text-field>
             </v-flex>
-            <v-flex offset-xs1 xs1 left>
+            <v-flex offset-xs1 xs1 left v-if="schedule.time !== 'fixed'">
               <v-text-field
                 v-model="schedule.allowedTimeFrame.from"
                 label="Von"
                 type="time"
               ></v-text-field>
             </v-flex>
-            <v-flex xs1 left>
+            <v-flex xs1 left v-if="schedule.time !== 'fixed'">
               <v-text-field
                 v-model="schedule.allowedTimeFrame.till"
                 label="Bis"

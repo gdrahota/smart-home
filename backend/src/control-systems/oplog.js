@@ -43,8 +43,6 @@ export const handleOplog = oplog => {
           }
         }
 
-        //console.log(command, doc)
-
         if (command) {
           console.log('=> ',moment(new Date()).format('HH:mm:ss'), command.commandType + ' to bus', command.targetAddress, 'DPT' + command.dataType)
 
