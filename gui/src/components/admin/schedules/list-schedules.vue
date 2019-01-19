@@ -18,7 +18,11 @@
     </tr>
     </thead>
     <tbody>
-    <show-schedule v-for="schedule of schedules" :schedule="schedule"/>
+    <show-schedule
+      v-for="schedule of schedules"
+      :schedule="schedule"
+      :key="'schedule' + schedule._id"
+    />
     </tbody>
     <tfoot>
     <tr>
