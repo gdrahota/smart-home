@@ -1,36 +1,44 @@
 <template>
-  <tr>
-    <td :rowspan="getLinesPerSchedule">
-      <v-icon small v-if="schedule.state === 'active'" color="green">fa-check</v-icon>
-      <v-icon small v-else-if="schedule.state === 'inactive'" color="grey">fa-remove</v-icon>
-      <v-icon small v-else color="grey">fa-trash</v-icon>
+  <tr class="schedule" :class="{ inactive: !active }">
+    <td class="pl-1">
+      <v-switch
+        v-model="active"
+        color="success"
+      ></v-switch>
     </td>
-    <td :rowspan="getLinesPerSchedule">{{ schedule.name }}</td>
-    <td :rowspan="getLinesPerSchedule">{{ getTimeTypeAndOffset(schedule) }} Min.</td>
-    <td :rowspan="getLinesPerSchedule">{{ getFormattedTimeFrame }} Uhr</td>
-    <td :rowspan="getLinesPerSchedule">{{ getWeekDays }}</td>
-    <td :rowspan="getLinesPerSchedule">{{ schedule.excludeDays.join(', ') }}</td>
-    <template v-for="command of schedule.commands">
-      <td>{{ getControlName(command.control) }}</td>
-      <td>{{ getCommandName(command) }}</td>
-      <td>{{ command.value }}</td>
-    </template>
-    <td :rowspan="getLinesPerSchedule" align="right">
+    <td>{{ schedule.name }}</td>
+    <td dim-if-inactive><span>{{ getTimeTypeAndOffset(schedule) }} Min.</span></td>
+    <td dim-if-inactive><span>{{ getFormattedTimeFrame }} Uhr</span></td>
+    <td dim-if-inactive><span>{{ getWeekDays }}</span></td>
+    <td dim-if-inactive><span>{{ schedule.excludeDays.join(', ') }}</span></td>
+    <td colspan="3" dim-if-inactive>
+      <table class="table full-width">
+        <tbody>
+        <tr v-for="command of schedule.commands">
+          <td>{{ getControlName(command.control) }}</td>
+          <td>{{ getCommandName(command) }}</td>
+          <td align="right">{{ command.value }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+    <td align="right" class="actions">
       <edit-schedule :scheduleToEdit="schedule"/>
-      <v-btn icon>
-        <v-icon small color="red">fa-times</v-icon>
-      </v-btn>
+      <confirm
+        :title="'Diese Zeitsteuerung löschen'"
+        @agree="() => remove(schedule._id)"
+      ></confirm>
     </td>
   </tr>
 </template>
 
 <script>
-  import { mapGetters, mapMutations } from 'vuex'
+  import { mapActions, mapGetters, mapMutations } from 'vuex'
   import EditSchedule from './edit-schedule'
 
   export default {
     components: {
-      EditSchedule
+      EditSchedule,
     },
 
     computed: {
@@ -41,31 +49,38 @@
         timeType: 'schedules/getTimeTypeAndOffset',
         getDefinitionByName: 'controls/getDefinitionByName',
       }),
-      getLinesPerSchedule () {
-        const commands = this.schedule.commands.filter(i => i.control)
-        return commands.length === 0 ? 1 : commands.length
+      active: {
+        get () {
+          return this.schedule.active
+        },
+        set (newState) {
+          this.save({ ...this.schedule, active: newState })
+        }
       },
       getWeekDays () {
-        return this.schedule.weekDays.map(day => {
-          switch (day) {
-            case 1:
-              return 'Mo'
-            case 2:
-              return 'Di'
-            case 3:
-              return 'Mi'
-            case 4:
-              return 'Do'
-            case 5:
-              return 'Fr'
-            case 6:
-              return 'Sa'
-            case 7:
-              return 'So'
-            default:
-              return day
-          }
-        }).join(', ')
+        return this
+          .schedule.weekDays
+          .sort()
+          .map(day => {
+            switch (day) {
+              case 1:
+                return 'Mo'
+              case 2:
+                return 'Di'
+              case 3:
+                return 'Mi'
+              case 4:
+                return 'Do'
+              case 5:
+                return 'Fr'
+              case 6:
+                return 'Sa'
+              case 7:
+                return 'So'
+              default:
+                return day
+            }
+          }).join(', ')
       },
       getFormattedTimeFrame () {
         const timeFrame = this.schedule.allowedTimeFrame
@@ -74,8 +89,12 @@
     },
 
     methods: {
+      ...mapActions({
+        save: 'schedules/updateAction',
+        remove: 'schedules/removeAction',
+      }),
       ...mapMutations({
-        selectSchedule: 'schedules/select'
+        selectSchedule: 'schedules/select',
       }),
       getControlName (controlId) {
         const control = this.getControlById(controlId)
@@ -118,3 +137,35 @@
     }
   }
 </script>
+
+<style scoped>
+  .inactive > td[dim-if-inactive] > * {
+    opacity: 0.5;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  tr.schedule:first-child > td {
+    border-top: 2px solid #ddd;
+  }
+
+  tr.schedule > td {
+    padding-top: 22px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr.schedule > td:first-child {
+    padding-top: 0px;
+  }
+
+  tr.schedule > td:last-child {
+    padding-top: 10px;
+  }
+
+  tr.schedule > td.actions {
+    position: relative;
+    padding-top: 13px;
+  }
+</style>

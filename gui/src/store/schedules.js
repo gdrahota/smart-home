@@ -18,8 +18,8 @@ const removeAction = (context, id) => {
   socket.emit('remove_schedule', id)
 }
 
-const updateAction = (context, facility) => {
-  socket.emit('update_schedule', facility)
+const updateAction = (context, item) => {
+  socket.emit('update_schedule', item)
 }
 
 const actions = {

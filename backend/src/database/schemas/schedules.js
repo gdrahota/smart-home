@@ -54,12 +54,12 @@ export const registerSchema = () => {
       }
     },
     commands: {
-      type: CommandSchema,
+      type: [CommandSchema],
       default: () => []
     },
-    state: {
-      type: String,
-      default: 'active'
+    active: {
+      type: Boolean,
+      default: true
     }
   }
 

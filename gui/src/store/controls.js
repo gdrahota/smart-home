@@ -19,7 +19,9 @@ const state = {
           controlType: 'slider',
           min: 0,
           max: 100,
-          step: 10
+          step: 10,
+          defaultValue: 0,
+          unit: '%'
         },
         {
           endPoint: 'shutter-position-response',
@@ -29,7 +31,9 @@ const state = {
           controlType: 'slider',
           min: 0,
           max: 100,
-          step: 10
+          step: 10,
+          defaultValue: 0,
+          unit: '%'
         },
         {
           endPoint: 'window-state-response',
@@ -37,7 +41,8 @@ const state = {
           dpt: '1.009',
           controlType: 'switch',
           trueLabel: 'Ab',
-          falseLabel: 'Auf'
+          falseLabel: 'Auf',
+          defaultValue: false,
         }
       ]
     },
@@ -46,8 +51,21 @@ const state = {
       label: 'Lichtschalter',
       icon: 'fa-lightbulb-o',
       endPoints: [
-        { endPoint: 'switch', label: 'Schaltbefehl', dpt: '1.001' },
-        { endPoint: 'response', label: 'Bestätigung', dpt: '1.001' },
+        {
+          endPoint: 'switch',
+          label: 'Schaltbefehl',
+          dpt: '1.001',
+          controlType: 'switch',
+          trueLabel: 'An',
+          falseLabel: 'Aus',
+          defaultValue: false,
+        },
+        {
+          endPoint: 'response',
+          label: 'Bestätigung',
+          dpt: '1.001',
+          controlType: 'readOnly',
+        },
       ]
     },
     {
@@ -55,9 +73,32 @@ const state = {
       label: 'Lichtdimmer',
       icon: 'fa-lightbulb-o',
       endPoints: [
-        { endPoint: 'switch', label: 'Schaltbefehl', dpt: '1.001' },
-        { endPoint: 'dim', label: 'Dimmen', dpt: '5.001' },
-        { endPoint: 'dim-response', label: 'Rückmeldung', dpt: '5.001' },
+        {
+          endPoint: 'switch',
+          label: 'Schaltbefehl',
+          dpt: '1.001',
+          controlType: 'switch',
+          trueLabel: 'An',
+          falseLabel: 'Aus',
+          defaultValue: false,
+        },
+        {
+          endPoint: 'dim',
+          label: 'Dimmen',
+          dpt: '5.001',
+          controlType: 'slider',
+          min: 0,
+          max: 100,
+          step: 10,
+          defaultValue: 0,
+          unit: '%'
+        },
+        {
+          endPoint: 'dim-response',
+          label: 'Rückmeldung',
+          dpt: '5.001',
+          controlType: 'readOnly',
+        },
       ]
     },
     {
@@ -65,10 +106,35 @@ const state = {
       label: 'Heizungssteuerung',
       icon: 'fa-thermometer-half',
       endPoints: [
-        { endPoint: 'temp-current-value', label: 'Ist-Temperatur', dtp: '9.001' },
-        { endPoint: 'temp-target-value', label: 'Soll-Temperatur', dtp: '9.001' },
-        { endPoint: 'switch-response', label: 'Bestätigung (Ein/Aus)', dtp: '1.009' },
-        { endPoint: 'pusher-response', label: 'Bestätigung (0..100 %)', dtp: '5.001' },
+        {
+          endPoint: 'temp-current-value',
+          label: 'Ist-Temperatur',
+          dtp: '9.001',
+          controlType: 'readOnly',
+        },
+        {
+          endPoint: 'temp-target-value',
+          label: 'Soll-Temperatur',
+          dtp: '9.001',
+          controlType: 'slider',
+          min: 10,
+          max: 23,
+          step: 0.5,
+          defaultValue: 20,
+          unit: '°C'
+        },
+        {
+          endPoint: 'switch-response',
+          label: 'Bestätigung (Ein/Aus)',
+          dtp: '1.009',
+          controlType: 'readOnly',
+        },
+        {
+          endPoint: 'pusher-response',
+          label: 'Bestätigung (0..100 %)',
+          dtp: '5.001',
+          controlType: 'readOnly',
+        },
       ]
     }
   ],
@@ -114,7 +180,6 @@ const SOCKET_UPDATE_CONTROLS_RESPONSE = (state, response) => {
     return item
   }
   state.items = state.items.map(mapFnc)
-  //state.selected = response[0]._id
 }
 
 const SOCKET_REMOVE_CONTROLS_RESPONSE = (state, response) => {

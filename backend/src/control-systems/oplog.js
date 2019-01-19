@@ -1,6 +1,7 @@
 import MongoOplog from "mongo-oplog"
 import { getCommand, removeCommand } from './data-access'
 import { connection } from './eibd-api'
+import moment from 'moment'
 
 export const connectToOplog = config =>
   new Promise((resolve, reject) => {
@@ -42,10 +43,11 @@ export const handleOplog = oplog => {
           }
         }
 
-        console.log(command, doc)
+        //console.log(command, doc)
 
         if (command) {
-          console.log(command.commandType + ' to bus', command.targetAddress, 'DPT' + command.dataType, command.payload + ' =>')
+          console.log('=> ',moment(new Date()).format('HH:mm:ss'), command.commandType + ' to bus', command.targetAddress, 'DPT' + command.dataType)
+
           if (command.commandType === 'writeValue') {
             connection.write(command.targetAddress, command.payload, 'DPT' + command.dataType, cbRemoveCommandAndAskForFeedback)
           } else {

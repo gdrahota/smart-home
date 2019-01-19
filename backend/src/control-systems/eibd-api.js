@@ -1,11 +1,13 @@
 import { KnxEventService } from '../services/knx-events'
 import { ValuesFromKnxService } from '../services/values-from-knx'
+import moment from 'moment'
+
 
 let config
 
 const saveEventToDb = (evt, src, dest, value) => {
   //console.log("event: %s, src: %j, dest: %j, value: %j", evt, src, dest, value)
-  console.log('=> ', evt, src, dest, value)
+  console.log('<= ', moment().format('HH:mm:ss'),  evt, src, dest, value)
 
   // upsert doc in 'values-from-knx'
   const valueFromKnx = {

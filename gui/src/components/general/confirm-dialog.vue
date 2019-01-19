@@ -8,31 +8,36 @@
     <v-btn
       v-if="label"
       slot="activator"
-      outline
-      color="red"
-      :small="small"
-      :fab="fab"
+      class="elevation-2"
+      :color="color"
+      :dark="dark"
       :disabled="disabled"
-      :medium="medium"
+      :fab="fab"
+      :icon="!fab"
       :large="large"
+      :medium="medium"
+      :outline="outline"
+      :small="small"
     >
       <span>{{ label }}</span>
-      <v-icon right small>{{ icon }}</v-icon>
+      <v-icon right :small="small">{{ icon }}</v-icon>
     </v-btn>
 
     <v-btn
       v-else
       slot="activator"
-      fab
       class="elevation-2"
+      :color="color"
+      :dark="dark"
       :disabled="disabled"
+      :fab="fab"
+      :icon="!fab"
       :large="large"
       :medium="medium"
+      :outline="outline"
       :small="small"
-      :icon="!fab"
-      :flat="!fab"
     >
-      <v-icon :small="small" color="red">{{ icon }}</v-icon>
+      <v-icon :small="small">{{ icon }}</v-icon>
     </v-btn>
 
     <div id="delete-dialog">
@@ -88,7 +93,7 @@
       },
       small: {
         type: Boolean,
-        required: true
+        default: true
       },
       medium: {
         type: Boolean,
@@ -102,9 +107,21 @@
         type: Boolean,
         default: false
       },
+      dark: {
+        type: Boolean,
+        default: true
+      },
       icon: {
         type: String,
-        default: 'fa-trash-o'
+        default: 'fa-times'
+      },
+      color: {
+        type: String,
+        default: 'red'
+      },
+      outline: {
+        type: Boolean,
+        default: true
       },
       disabled: {
         type: Boolean,
