@@ -13,17 +13,15 @@ const solarTimes = () => {
 
 export const startCronJob = () => {
   const cron = require('node-cron')
-  cron.schedule('*/5 * * * * *', async () => {
+  cron.schedule('* * * * *', async () => {
     const now = new Date()
     const SolarTimes = solarTimes()
 
     const jobs = await getSchedules()
 
     console.log(' ')
-    console.log(moment(now).weekday())
 
     jobs.forEach(async job => {
-
         // if today is not a valid day for this job then skip it1
         if (job.weekDays.indexOf(moment(now).weekday()) === -1) {
           return
@@ -62,6 +60,7 @@ export const startCronJob = () => {
           )
         }
 
+        // check, if it's time now to execute the job commands
         if (time.format('HH:mm:ss').toString() === moment(now).format('HH:mm:ss')) {
           console.log('executing job:', job)
 
@@ -75,7 +74,6 @@ export const startCronJob = () => {
 
               try {
                 await CommandQueueService.sendCommand(endpointCommand)
-                console.log('executing command:', endpointCommand)
               }
               catch (e) {
                 console.error(e)
