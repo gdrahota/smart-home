@@ -8,11 +8,11 @@ export const connectToOplog = config =>
     const oplog = MongoOplog(config.mongoDb.oplog.url, { coll: config.mongoDb.oplog.collection })
     oplog.tail().then(
       () => {
-        console.log('= oplog started                                          =')
+        console.log('| oplog started')
         resolve(oplog)
       }
     ).catch(err => {
-      console.error('= CANNOT connect to oplog!', err)
+      console.error('| CANNOT connect to oplog!', err)
       reject(err)
     })
   })
