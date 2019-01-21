@@ -52,7 +52,7 @@ const removeControlDataPoint = collection => (control, endPoint) =>
 
 export default collection => {
   return {
-    getAll: cb => getAll(collection)(cb),
+    getAll: () => getAll(collection)(),
     upsert: (item, query) => upsert(collection)(item, query),
     upsertCommand: item => upsertCommand(collection)(item),
     add: item => add(collection)(item),

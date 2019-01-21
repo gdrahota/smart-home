@@ -7,6 +7,7 @@ import { serveStaticFiles } from './infrastructure/static-files'
 import { registerEndpoints } from './rest-api'
 import { connectToOplog, handleOplog } from './rest-api/oplog'
 import { startCronJob } from './cron'
+import { startKnxAdapters } from './infrastructure/spawn-process-per-knx-control-system'
 
 const app = express()
 const server = http.createServer(app)
@@ -29,6 +30,9 @@ const start = async () => {
     await connectToOplog()
     handleOplog()
     startCronJob()
+    const subProcesses = await startKnxAdapters()
+
+    console.log('starting', subProcesses.length, 'knx adapter(s)...')
 
     console.log('== SERVER STARTUP SUCCESSFULLY :) <<<')
     console.log('')

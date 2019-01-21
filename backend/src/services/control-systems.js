@@ -3,7 +3,7 @@ import Repository from '../repository/any-collection'
 
 const add = (facility, cb) => Repository('control-systems').add(facility, cb)
 
-const getAll = cb => Repository('control-systems').getAll(cb)
+const getAll = () => Repository('control-systems').getAll()
 
 const update = (facility, cb) => Repository('control-systems').update(facility, cb)
 

@@ -8,11 +8,11 @@ export const connectToOplog = config =>
     const oplog = MongoOplog(config.mongoDb.oplog.url, { coll: config.mongoDb.oplog.collection })
     oplog.tail().then(
       () => {
-        console.log('oplog started')
+        console.log('= oplog started                                          =')
         resolve(oplog)
       }
     ).catch(err => {
-      console.error('CANNOT connect to oplog!', err)
+      console.error('= CANNOT connect to oplog!', err)
       reject(err)
     })
   })
@@ -44,7 +44,8 @@ export const handleOplog = oplog => {
         }
 
         if (command) {
-          console.log('=> ',moment(new Date()).format('HH:mm:ss'), command.commandType + ' to bus', command.targetAddress, 'DPT' + command.dataType)
+          console.log('=> ', moment(new Date()).format('HH:mm:ss'), command.commandType + ' to bus', command.targetAddress,
+            'DPT' + command.dataType)
 
           if (command.commandType === 'writeValue') {
             connection.write(command.targetAddress, command.payload, 'DPT' + command.dataType, cbRemoveCommandAndAskForFeedback)
