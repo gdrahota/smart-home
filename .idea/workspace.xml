@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa8a30f-911b-4abf-958a-204308acb4c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/infrastructure/spawn-process-per-knx-control-system.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/control-systems/data-access.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/control-systems/data-access.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/control-systems/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/control-systems/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/control-systems/oplog.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/control-systems/oplog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/repository/any-collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/repository/any-collection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/control-systems.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/control-systems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/cert/create-cert/server.csr.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/cert/create-cert/server.csr.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/cert/server.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/cert/server.csr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/cert/server.key" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,12 +32,13 @@
         <counts>
           <entry key="MD" value="1" />
           <entry key="browserslistrc" value="3" />
+          <entry key="cnf" value="1" />
           <entry key="css" value="7" />
           <entry key="env" value="1" />
           <entry key="gitignore" value="6" />
           <entry key="html" value="5" />
           <entry key="ico" value="1" />
-          <entry key="js" value="1104" />
+          <entry key="js" value="1106" />
           <entry key="json" value="24" />
           <entry key="log" value="1" />
           <entry key="ts" value="17" />
@@ -55,9 +53,9 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="24" />
-          <entry key="JavaScript" value="1104" />
+          <entry key="JavaScript" value="1106" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="PLAIN_TEXT" value="12" />
           <entry key="TypeScript" value="17" />
           <entry key="Vue.js" value="585" />
           <entry key="XML" value="2" />
@@ -68,13 +66,14 @@
         <counts>
           <entry key="MD" value="13" />
           <entry key="browserslistrc" value="1" />
+          <entry key="cnf" value="76" />
           <entry key="css" value="151" />
           <entry key="gitignore" value="37" />
           <entry key="html" value="14" />
-          <entry key="js" value="42491" />
+          <entry key="js" value="42512" />
           <entry key="json" value="63" />
           <entry key="log" value="1" />
-          <entry key="txt" value="2525" />
+          <entry key="txt" value="2685" />
           <entry key="vue" value="59328" />
           <entry key="yaml" value="26" />
         </counts>
@@ -84,9 +83,9 @@
           <entry key="CSS" value="151" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="63" />
-          <entry key="JavaScript" value="42491" />
+          <entry key="JavaScript" value="42512" />
           <entry key="Markdown" value="13" />
-          <entry key="PLAIN_TEXT" value="2564" />
+          <entry key="PLAIN_TEXT" value="2800" />
           <entry key="Vue.js" value="59328" />
           <entry key="YAML" value="26" />
         </counts>
@@ -101,35 +100,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/control-systems/oplog.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/src/index.js">
+        <entry file="file://$PROJECT_DIR$/backend/config/cert/create-cert/server.csr.cnf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/infrastructure/spawn-process-per-knx-control-system.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/control-systems/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -192,7 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/shutter.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/index.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-switch.vue" />
         <option value="$PROJECT_DIR$/gui/src/router/index.js" />
@@ -240,9 +226,10 @@
         <option value="$PROJECT_DIR$/backend/src/repository/any-collection.js" />
         <option value="$PROJECT_DIR$/backend/src/infrastructure/spawn-process-per-knx-control-system.js" />
         <option value="$PROJECT_DIR$/backend/src/control-systems/data-access.js" />
-        <option value="$PROJECT_DIR$/backend/src/control-systems/oplog.js" />
         <option value="$PROJECT_DIR$/backend/src/control-systems/index.js" />
         <option value="$PROJECT_DIR$/backend/src/index.js" />
+        <option value="$PROJECT_DIR$/backend/src/control-systems/oplog.js" />
+        <option value="$PROJECT_DIR$/backend/config/cert/create-cert/server.csr.cnf" />
       </list>
     </option>
   </component>
@@ -308,21 +295,22 @@
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="control-systems" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="cert" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="cert" type="462c0819:PsiDirectoryNode" />
+              <item name="create-cert" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -336,7 +324,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548099618715" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548101547124" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -418,21 +406,7 @@
       <workItem from="1547651148261" duration="24995000" />
       <workItem from="1547764139950" duration="1648000" />
       <workItem from="1547809842049" duration="27625000" />
-      <workItem from="1548078569664" duration="6982000" />
-    </task>
-    <task id="LOCAL-00014" summary="docker file for mongodb added">
-      <created>1546603225527</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1546603225527</updated>
-    </task>
-    <task id="LOCAL-00015" summary="client login fixed">
-      <created>1546603246269</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1546603246269</updated>
+      <workItem from="1548078569664" duration="7600000" />
     </task>
     <task id="LOCAL-00016" summary="bug fixed: control-system-types are being transmitted to client after login">
       <created>1546604619862</created>
@@ -763,11 +737,25 @@
       <option name="project" value="LOCAL" />
       <updated>1548094359516</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="for every control system (knx node) a dedicated node process will be started automatically on startup">
+      <created>1548099772086</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1548099772086</updated>
+    </task>
+    <task id="LOCAL-00064" summary="log messages changed a bit">
+      <created>1548101326083</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1548101326083</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="446584000" />
+    <option name="totallyTimeSpent" value="447202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -792,7 +780,7 @@
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32939914" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32878152" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32983193" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4963145" visible="true" weight="0.21566524" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4963145" visible="true" weight="0.5311159" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.32958034" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.32983193" />
@@ -818,8 +806,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="menu item changed" />
-    <MESSAGE value="menu icon changed" />
     <MESSAGE value="pusher / blinds control implemented in backend" />
     <MESSAGE value="knx monitor view: default sorting changed" />
     <MESSAGE value="bug fixed in backend: log knx events" />
@@ -843,16 +829,11 @@
     <MESSAGE value="bug fixed: schedule commands" />
     <MESSAGE value="frontend: rtc control: latest response values are being evaluated" />
     <MESSAGE value=".gitignore in project root enhanced" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore in project root enhanced" />
+    <MESSAGE value="for every control system (knx node) a dedicated node process will be started automatically on startup" />
+    <MESSAGE value="log messages changed a bit" />
+    <option name="LAST_COMMIT_MESSAGE" value="log messages changed a bit" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/data-points.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="61" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/control-system.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -1185,13 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/data-access.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/infrastructure/spawn-process-per-knx-control-system.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1199,22 +1173,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/index.js">
+    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/data-access.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/oplog.js">
+    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1226,6 +1197,23 @@
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/oplog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/cert/create-cert/server.csr.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
