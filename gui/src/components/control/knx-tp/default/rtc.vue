@@ -45,6 +45,7 @@
 </template>
 
 <script>
+  import moment from 'moment'
   import { mapActions } from 'vuex'
   import ControlHeader from '../control-header'
   import ControlEndpointValues from '../control-endpoint-values'
@@ -85,7 +86,6 @@
             endPoint: 'temp-target-value',
             value
           }
-          console.log(command)
           this.sendCommand(command)
         }
       },
@@ -93,9 +93,17 @@
         return this.currentTemperature.timestamp
       },
       getColor () {
-        const valueObj = this.control.values['switch-response']
-          ? this.control.values['switch-response']
-          : this.control.values['pusher-response']
+        const absValueDateTime = this.control.values['switch-response']
+        const relValueDateTime = this.control.values['pusher-response']
+
+        let valueObj
+
+        if (absValueDateTime && relValueDateTime) {
+          valueObj = moment(relValueDateTime.timestamp).isAfter(absValueDateTime.timestamp) ? relValueDateTime : absValueDateTime
+        } else {
+          valueObj = relValueDateTime ? relValueDateTime : absValueDateTime
+        }
+
 
         if (valueObj !== undefined && valueObj !== null) {
           if (valueObj.value === true || valueObj.value > 0) {
