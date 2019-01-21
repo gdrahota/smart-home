@@ -56,12 +56,13 @@ export const startCronJob = () => {
             moment().format('HH:mm:ss') + ':',
             timeFrameStarts.format('HH:mm') + ' <= ',
             time.format('HH:mm').toString() + ' >= ',
-            timeFrameEnds.format('HH:mm')
+            timeFrameEnds.format('HH:mm'),
+            job.name
           )
         }
 
         // check, if it's time now to execute the job commands
-        if (time.format('HH:mm:ss').toString() === moment(now).format('HH:mm:ss')) {
+        if (time.format('HH:mm').toString() === moment(now).format('HH:mm')) {
           console.log('executing job:', job)
 
           job.commands.forEach(async command => {
