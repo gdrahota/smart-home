@@ -1,4 +1,4 @@
-import { sortByName } from './../sorters'
+import { sortByControlTypeAndByName } from './../sorters'
 import { socket } from '../main'
 
 const state = {
@@ -200,23 +200,23 @@ const getActive = state =>
   state
     .items
     .filter(item => item.state === 'active')
-    .sort(sortByName)
+    .sort(sortByControlTypeAndByName)
 
 const getByControlSystemId = state => id =>
   state
     .items
     .filter(item => item.controlSystem === id)
-    .sort(sortByName)
+    .sort(sortByControlTypeAndByName)
 
 const getByAttributeValue = state => valueId =>
   state
     .items
     .filter(item => item.attributeValues.indexOf(valueId) !== -1)
-    .sort(sortByName)
+    .sort(sortByControlTypeAndByName)
 
 const getById = state => id => state.items.find(item => item._id === id)
 
-const get = state => state.items.sort(sortByName)
+const get = state => state.items.sort(sortByControlTypeAndByName)
 
 const getSelectedControl = state => {
   if (state.selected) {
