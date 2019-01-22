@@ -36,6 +36,7 @@
 		"knx-datapoints": "^1.1.1",
 		"moment": "^2.23.0",
 		"moment-timezone": "^0.5.21",
+		"mongo-bcryptjs-user": "^2.0.5",
 		"mongo-oplog": "^2.1.4",
 		"mongoose": "^5.2.2",
 		"node-cron": "^2.0.3",
