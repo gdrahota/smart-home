@@ -985,6 +985,18 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bcryptjs-user@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/bcryptjs-user/-/bcryptjs-user-2.0.5.tgz#bd36bd3a3f50c4a0f6835d8d72db7832c8823ce8"
+  integrity sha1-vTa9Oj9QxKD2g12Nctt4MsiCPOg=
+  dependencies:
+    bcryptjs "~2.4.0"
+
+bcryptjs@~2.4.0:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
+  integrity sha1-mrVie5PmBiH/fNrF2pczAn3x0Ms=
+
 better-assert@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/better-assert/-/better-assert-1.0.2.tgz#40866b9e1b9e0b55b481894311e68faffaebc522"
@@ -3444,6 +3456,13 @@ moment-timezone@^0.5.21, moment-timezone@^0.5.x:
 moment@^2.23.0:
   version "2.23.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
+
+mongo-bcryptjs-user@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/mongo-bcryptjs-user/-/mongo-bcryptjs-user-2.0.5.tgz#2a1279231979d415417c04c7d2ef6ec0150c65cb"
+  integrity sha1-KhJ5Ixl51BVBfATH0u9uwBUMZcs=
+  dependencies:
+    bcryptjs-user "2.0.5"
 
 mongo-oplog@^2.1.4:
   version "2.1.4"
