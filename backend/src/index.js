@@ -8,6 +8,7 @@ import { registerEndpoints } from './rest-api'
 import { connectToOplog, handleOplog } from './rest-api/oplog'
 import { startCronJob } from './cron'
 import { startKnxAdapters } from './infrastructure/spawn-process-per-knx-control-system'
+import { loadDefaultDocs } from './database/import-default-docs'
 
 const app = express()
 const server = http.createServer(app)
@@ -24,6 +25,7 @@ const start = async () => {
   try {
     await MongoDb.connect()
     registerMongooseSchemas()
+    loadDefaultDocs()
     serveStaticFiles()
     await bindWebSocketToServer(server)
     registerEndpoints()
