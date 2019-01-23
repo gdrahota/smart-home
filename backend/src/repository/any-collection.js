@@ -1,6 +1,10 @@
 import mongoose from 'mongoose'
 
-const getAll = collection => () => mongoose.model(collection).find().lean()
+const getAll = collection => () =>
+  mongoose
+    .model(collection)
+    .find()
+    .lean()
 
 const add = collection => item =>
   mongoose
@@ -42,8 +46,13 @@ const find = collection => searchObj =>
   mongoose
     .model(collection)
     .find(searchObj)
+    .lean()
 
-const findOne = collection => searchObj => mongoose.model(collection).findOne(searchObj)
+// do NOT add a trailing .lean() here !
+const findOne = collection => searchObj =>
+  mongoose
+    .model(collection)
+    .findOne(searchObj)
 
 const removeControlDataPoint = collection => (control, endPoint) =>
   mongoose
