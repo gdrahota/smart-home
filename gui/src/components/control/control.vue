@@ -4,6 +4,7 @@
     <knx-default-light-dimmer :control="control" v-if="control.controlType === 'lightDimmer'"/>
     <knx-default-shutter :control="control" v-if="control.controlType === 'shutter'"/>
     <knx-default-rtc :control="control" v-if="control.controlType === 'rtc'"/>
+    <knx-default-short-text :control="control" v-if="control.controlType === '14CharTextDisplay'"/>
   </div>
 </template>
 
@@ -12,13 +13,15 @@
   import knxDefaultLightDimmer from './knx-tp/default/light-dimmer'
   import knxDefaultShutter from './knx-tp/default/shutter'
   import knxDefaultRtc from './knx-tp/default/rtc'
+  import knxDefaultShortText from './knx-tp/default/short-text-display'
 
   export default {
     components: {
       knxDefaultLightSwitch,
       knxDefaultLightDimmer,
       knxDefaultShutter,
-      knxDefaultRtc
+      knxDefaultRtc,
+      knxDefaultShortText,
     },
 
     props: {

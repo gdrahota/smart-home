@@ -81,13 +81,22 @@
   export default {
     computed: {
       ...mapGetters({
-        facilities: 'facilities/getActive'
+        facilities: 'facilities/getActive',
+        controlTypeDefinitions: 'controls/getDefinitions'
       }),
       items () {
         return this.facilities.map(i => {
           return {
             _id: i._id,
             name: i.address.postCode + ' ' + i.address.city + ', ' + i.address.street
+          }
+        })
+      },
+      controlTypes () {
+        return this.controlTypeDefinitions.map(def => {
+          return {
+            label: def.label,
+            type: def.name,
           }
         })
       }
@@ -99,13 +108,7 @@
         facilityId: null,
         controlType: null,
         name: '',
-        description: '',
-        controlTypes: [
-          { label: 'Licht (an/aus)', type: 'lightSwitch' },
-          { label: 'Licht (dimmbar)', type: 'lightDimmer' },
-          { label: 'Rollladen', type: 'shutter' },
-          { label: 'Raumtemperatursteuerung', type: 'rtc' }
-        ]
+        description: ''
       }
     },
 

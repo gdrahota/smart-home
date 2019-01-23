@@ -136,6 +136,19 @@ const state = {
           controlType: 'readOnly',
         },
       ]
+    },
+    {
+      name: '14CharTextDisplay',
+      label: '14 Zeichen-Anzeige',
+      icon: 'fa-text',
+      endPoints: [
+        {
+          endPoint: 'set-text',
+          label: 'Text senden',
+          dtp: '16.000',
+          controlType: 'text-field',
+        },
+      ]
     }
   ],
 }

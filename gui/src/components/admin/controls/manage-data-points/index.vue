@@ -33,6 +33,7 @@
   import KnxTpLightDimmer from './knx-tp-light-dimmer'
   import KnxTpShutter from './knx-tp-shutter'
   import RoomTemperaturControl from './knx-tp-rtc'
+  import KnxTpShortCharTextDisplay from './knx-tp-14CharTextDisplay'
 
   export default {
     components: {
@@ -42,6 +43,7 @@
       KnxTpLightDimmer,
       KnxTpShutter,
       RoomTemperaturControl,
+      KnxTpShortCharTextDisplay,
     },
 
     computed: {
@@ -69,6 +71,8 @@
             return KnxTpShutter
           case 'rtc':
             return RoomTemperaturControl
+          case '14CharTextDisplay':
+            return KnxTpShortCharTextDisplay
           default:
             return KnxTpLightSwitch
         }
