@@ -15,7 +15,7 @@ const solarTimes = () => {
 export const startCronJob = () => {
   const cron = require('node-cron')
 
-  cron.schedule('*/20 * * * *', async () => {
+  cron.schedule('*/10 * * * *', async () => {
     await getWeatherDataJob()
   })
 
