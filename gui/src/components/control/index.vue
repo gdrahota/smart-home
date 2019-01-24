@@ -23,8 +23,9 @@
       </v-card-text>
     </v-card>
     <v-layout wrap row class="mt-3" v-if="attributeValue">
+        <!--v-for="control of controls(attributeValue).sort((a, b) => a.name.localeCompare(b.name))"-->
       <v-flex
-        v-for="control of controls(attributeValue)"
+        v-for="control of controls"
         :key="control._id"
         class="pb-3"
         :class="{ 'pr-0': $vuetify.breakpoint.xsOnly, 'pr-3': !$vuetify.breakpoint.xsOnly }"
@@ -41,6 +42,7 @@
   import SelectFacilities from './select-facility'
   import SelectAttributeValue from './select-attribute-value'
   import Control from './control'
+  import { sortByName } from '../../sorters'
 
   export default {
     components: {
@@ -54,8 +56,13 @@
         facilities: 'facilities/get',
         selectedFacility: 'facilities/getSelected',
         attributes: 'facilityAttributes/getByFacilityId',
-        controls: 'controls/getByAttributeValue'
-      })
+        getControlsByAttributeValue: 'controls/getByAttributeValue'
+      }),
+      controls() {
+        return this
+          .getControlsByAttributeValue(this.attributeValue)
+          .sort(sortByName)
+      },
     },
 
     created () {
@@ -76,6 +83,9 @@
       }),
       setAttributeValue (value) {
         this.attributeValue = value
+      },
+      sortByControlName () {
+        return sortByName
       }
     },
 
