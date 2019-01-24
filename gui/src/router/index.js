@@ -11,6 +11,8 @@ import RouterContainer from '../components/router-container'
 import Control from '../components/control'
 import KnxMonitor from '../components/utils/knx-monitor'
 import Schedules from '../components/admin/schedules'
+import ExternalDataSources from '../components/admin/external-data-sources'
+import OpenWeatherMap from '../components/admin/external-data-sources/open-weather-map'
 
 Vue.use(Router)
 
@@ -101,6 +103,22 @@ const router = new Router({
               meta: {
                 title: 'Zeitsteuerung'
               }
+            },
+            {
+              path: 'external-data-sources',
+              component: ExternalDataSources,
+              meta: {
+                title: 'Externe Datenquellen'
+              },
+              children: [
+                {
+                  path: 'open-weather-map/:id/:name',
+                  component: OpenWeatherMap,
+                  meta: {
+                    title: 'OpenWeatherMap'
+                  }
+                }
+              ]
             },
           ]
         }

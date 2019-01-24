@@ -124,7 +124,6 @@
           ...this.controlSystem,
           [attrName]: value
         }
-        console.log(changed)
         this.update(changed)
       }
     },

@@ -7,6 +7,7 @@ import controls from './controls'
 import controlDataPoints from './control-data-points'
 import controlSystems from './control-systems'
 import dataPoints from './data-points'
+import externalDataSources from './external-data-sources'
 import facilities from './facilities'
 import facilityAttributes from './facility-attributes'
 import facilityAttributeValues from './facility-attribute-values'
@@ -24,6 +25,7 @@ export default new Vuex.Store({
     controlDataPoints,
     controlSystems,
     dataPoints,
+    externalDataSources,
     facilities,
     facilityAttributes,
     facilityAttributeValues,

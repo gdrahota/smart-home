@@ -41,7 +41,6 @@
       removeValue (id) {
         const values = this.control.attributeValues.filter(valueId => valueId !== id)
         const control = { ...this.control, attributeValues: values }
-        console.log(control)
         this.update(control)
       }
     },

@@ -69,12 +69,12 @@
             text: 'Einstellungen',
             model: false,
             children: [
-              { icon: '' +
-                  'fa-add', text: 'Gebäude', to: { path: '/admin/facilities' } },
+              { icon: 'fa-add', text: 'Gebäude', to: { path: '/admin/facilities' } },
               { icon: 'fa-add', text: 'Schnittstellensysteme', to: { path: '/admin/control-systems' } },
               { icon: 'fa-add', text: 'Endpunkte', to: { path: '/admin/data-points' } },
               { icon: 'fa-add', text: 'Steuerelemente', to: { path: '/admin/controls' } },
               { icon: 'fa-add', text: 'Zeitsteuerung', to: { path: '/admin/schedules' } },
+              { icon: 'fa-add', text: 'Externe Datenquellen', to: { path: '/admin/external-data-sources' } },
             ]
           },
           {

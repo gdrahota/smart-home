@@ -5,6 +5,7 @@ export const registerMongooseSchemas = () => {
   require('./control-system').registerSchema()
   require('./control-data-points').registerSchema()
   require('./data-points').registerSchema()
+  require('./external-data-sources').registerSchema()
   require('./facility-attribute-values').registerSchema()
   require('./facility-attributes').registerSchema()
   require('./facilities').registerSchema()

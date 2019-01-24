@@ -9,7 +9,7 @@
     <v-card-text>
       <div class="pl-1 pr-1 caption grey--text hidden-xs-only">
         <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-        <control-endpoint-values :control="control" :endPoints="endPoints" class="float-right"/>
+        <control-endpoint-values :control="control" class="float-right"/>
       </div>
       <br/>
       <v-slider
@@ -88,16 +88,6 @@
           this.control.values['window-state-response'] &&
           this.control.values['window-state-response'].value &&
           this.control.values['window-state-response'].value === true
-      }
-    },
-
-    data () {
-      return {
-        endPoints: [
-          { type: 'shutter-position-set', label: 'Fahrbefehl' },
-          { type: 'shutter-position-response', label: 'Bestätigung' },
-          { type: 'window-state-response', label: 'Fersterkontakt' }
-        ]
       }
     },
 

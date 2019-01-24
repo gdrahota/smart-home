@@ -9,7 +9,7 @@
     <v-card-text>
       <div class="pl-2 pr-2 pb-0 caption grey--text hidden-xs-only">
         <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-        <control-endpoint-values :control="control" :endPoints="endPoints" class="float-right"/>
+        <control-endpoint-values :control="control" class="float-right"/>
       </div>
       <br/>
       <v-text-field
@@ -18,7 +18,7 @@
         hide-details
         ripple
         class="pt-0 mt-1"
-      />
+      ></v-text-field>
     </v-card-text>
   </v-card>
 </template>
@@ -36,7 +36,7 @@
 
     computed: {
       getCurrentValueObj () {
-        const valueObj = this.control.values['set-text']
+        const valueObj = this.control.values ? this.control.values['set-text'] : null
         if (valueObj !== null && valueObj !== undefined) {
           return valueObj
         }
@@ -56,7 +56,7 @@
         }
       },
       getColor () {
-        if (this.getCurrentValueObj.value !== '') {
+        if (this.getCurrentValueObj.timestamp) {
           return 'yellow'
         }
         return '#888'
@@ -65,15 +65,6 @@
         if (this.getCurrentValueObj) {
           return this.getCurrentValueObj.timestamp
         }
-      }
-    },
-
-    data () {
-      return {
-        endPoints: [
-          { type: 'switch', label: 'Schaltbefehl' },
-          { type: 'response', label: 'Bestätigung' }
-        ]
       }
     },
 

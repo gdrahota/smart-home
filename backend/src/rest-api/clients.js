@@ -1,14 +1,15 @@
 import ClientService from '../services/clients'
 import { ControlDataPointService } from '../services/control-data-points'
 import { ControlSystemService } from '../services/control-systems'
-import { DataPointService } from '../services/data-points'
 import { ControlService } from '../services/controls'
+import { DataPointService } from '../services/data-points'
+import { ExternalDataSourceService } from '../services/external-data-sources'
 import { FacilityAttributeValuesService } from '../services/facility-attribute-values'
 import { FacilityAttributesService } from '../services/facility-attributes'
 import { FacilityService } from '../services/facilities'
 import { KnxEventService } from '../services/knx-events'
-import { ValuesFromKnxService } from '../services/values-from-knx'
 import { ScheduleService } from '../services/schedules'
+import { ValuesFromKnxService } from '../services/values-from-knx'
 
 export const registerClientEndpoints = (io, socket) => {
   const sendDataToClient = async () => {
@@ -25,8 +26,9 @@ export const registerClientEndpoints = (io, socket) => {
     await getValues('control_data_points', ControlDataPointService)
     await getValues('control_systems', ControlSystemService)
     await getValues('control_system_types', ControlSystemService)
-    await getValues('data_points', DataPointService)
     await getValues('controls', ControlService)
+    await getValues('data_points', DataPointService)
+    await getValues('external_data_sources', ExternalDataSourceService)
     await getValues('facility_attribute_values', FacilityAttributeValuesService)
     await getValues('facility_attributes', FacilityAttributesService)
     await getValues('facilities', FacilityService)

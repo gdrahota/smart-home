@@ -17,14 +17,14 @@
           <tbody>
           <tr v-for="(endPoint, idx) of endPoints" :key="'row' + idx">
             <td>{{ endPoint.label }}</td>
-            <td>{{ endPoint.type }}</td>
-            <td>{{ getAddress(endPoint.type) || ' -/-/-' }}</td>
-            <td align="right">{{ getValue(endPoint.type) }}</td>
-            <td>{{ getTimestamp(endPoint.type) }}</td>
+            <td>{{ endPoint.endPoint }}</td>
+            <td>{{ getAddress(endPoint.endPoint) || ' -/-/-' }}</td>
+            <td align="right">{{ getValue(endPoint.endPoint) }}</td>
+            <td>{{ getTimestamp(endPoint.endPoint) }}</td>
             <td>
               <v-btn
-                v-if="getAddress(endPoint.type)"
-                @click="requestValue(endPoint.type)"
+                v-if="getAddress(endPoint.endPoint)"
+                @click="requestValue(endPoint.endPoint)"
                 icon
                 small
               >
@@ -47,7 +47,16 @@
       ...mapGetters({
         getByControlAndEndPoint: 'controlDataPoints/getByControlAndEndPoint',
         getDataPointById: 'dataPoints/getById',
-      })
+        getControlDefinition: 'controls/getDefinitionByName',
+      }),
+      controlDefinition () {
+        return this.getControlDefinition(this.control.controlType)
+      },
+      endPoints () {
+        if (this.controlDefinition) {
+          return this.controlDefinition.endPoints
+        }
+      },
     },
 
     methods: {
@@ -94,10 +103,6 @@
         type: Object,
         required: true
       },
-      endPoints: {
-        type: Array,
-        required: true
-      }
     }
   }
 </script>

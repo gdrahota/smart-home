@@ -1,13 +1,14 @@
 import { io } from '../infrastructure/websocket'
 import { registerClientEndpoints } from './clients'
+import { registerCommands } from './commands'
+import { registerControlDataPointEndpoints } from './control-data-points'
+import { registerControlEndpoints } from './controls'
+import { registerControlSystemEndpoints } from './control-systems'
+import { registerDataPointEndpoints } from './data-points'
+import { registerExternalDataSourcesEndpoints } from './external-data-sources'
 import { registerFacilityEndpoints } from './facilities'
 import { registerFacilityAttributeEndpoints } from './facility-attributes'
 import { registerFacilityAttributeValuesEndpoints } from './facility-attribute-values'
-import { registerControlEndpoints } from './controls'
-import { registerDataPointEndpoints } from './data-points'
-import { registerControlDataPointEndpoints } from './control-data-points'
-import { registerControlSystemEndpoints } from './control-systems'
-import { registerCommands } from './commands'
 import { registerScheduleEndpoints } from './schedules'
 import UserService from '../services/clients'
 
@@ -21,14 +22,15 @@ export const registerEndpoints = () => {
       })
 
       registerClientEndpoints(io, socket)
+      registerCommands(io, socket)
+      registerControlEndpoints(io, socket)
+      registerControlDataPointEndpoints(io, socket)
+      registerControlSystemEndpoints(io, socket)
+      registerDataPointEndpoints(io, socket)
+      registerExternalDataSourcesEndpoints(io, socket)
       registerFacilityEndpoints(io, socket)
       registerFacilityAttributeEndpoints(io, socket)
       registerFacilityAttributeValuesEndpoints(io, socket)
-      registerControlEndpoints(io, socket)
-      registerDataPointEndpoints(io, socket)
-      registerControlDataPointEndpoints(io, socket)
-      registerControlSystemEndpoints(io, socket)
-      registerCommands(io, socket)
       registerScheduleEndpoints(io, socket)
     })
     .on('disconnect', reason => {

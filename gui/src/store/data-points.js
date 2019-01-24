@@ -77,6 +77,7 @@ const SOCKET_DATA_POINTS_RESPONSE = (state, response) => {
 const SOCKET_ADD_DATA_POINTS_RESPONSE = (state, response) => {
   state.items.push(response[0])
 }
+
 const SOCKET_UPDATE_DATA_POINTS_RESPONSE = (state, response) => {
   const mapFnc = item => {
     return (item._id === response[0]._id)
@@ -86,8 +87,9 @@ const SOCKET_UPDATE_DATA_POINTS_RESPONSE = (state, response) => {
   state.items = state.items.map(mapFnc)
   state.selected = response[0]
 }
+
 const SOCKET_REMOVE_DATA_POINTS_RESPONSE = (state, response) => {
-  state.items.push(response[0])
+  state.items = state.item.filter(i => i._id !== response[0])
 }
 
 const mutations = {

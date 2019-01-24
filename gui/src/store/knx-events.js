@@ -25,7 +25,6 @@ const SOCKET_UPDATE_KNX_EVENTS_RESPONSE = (state, response) => {
 
 const SOCKET_REMOVE_KNX_EVENTS_RESPONSE = (state, response) => {
   state.items = state.items.filter(i => i._id !== response[0])
-  state.selected = null
 }
 
 const mutations = {

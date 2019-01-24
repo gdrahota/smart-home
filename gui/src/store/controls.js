@@ -229,6 +229,8 @@ const getByAttributeValue = state => valueId =>
 
 const getById = state => id => state.items.find(item => item._id === id)
 
+const getByControlType = state => controlType => state.items.filter(item => item.controlType === controlType)
+
 const get = state => state.items.sort(sortByControlTypeAndByName)
 
 const getSelectedControl = state => {
@@ -247,6 +249,7 @@ const getters = {
   getById,
   getActive,
   getByControlSystemId,
+  getByControlType,
   getByAttributeValue,
   getSelectedControlId: state => state.selected,
   getSelectedControl,

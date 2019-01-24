@@ -10,7 +10,7 @@
     <v-card-text>
       <div class="pl-1 pr-1 pb-2 caption grey--text hidden-xs-only">
         <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-        <control-endpoint-values :control="control" :endPoints="endPoints" class="float-right"/>
+        <control-endpoint-values :control="control" class="float-right"/>
       </div>
       <br/>
       <v-layout row wrap>
@@ -110,17 +110,6 @@
             return 'orange'
           }
         }
-      }
-    },
-
-    data () {
-      return {
-        endPoints: [
-          { type: 'temp-current-value', label: 'Ist-Temperatur' },
-          { type: 'temp-target-value', label: 'Soll-Temperatur' },
-          { type: 'switch-response', label: 'Bestätigung (Ein/Aus)' },
-          { type: 'pusher-response', label: 'Bestätigung (0..100 %)' }
-        ]
       }
     },
 

@@ -1,6 +1,7 @@
+import moment from 'moment'
 import { ScheduleService } from '../services/schedules'
 import { CommandQueueService } from '../services/command-queue'
-import moment from 'moment'
+import { getWeatherDataJob } from './jobs/openWether'
 
 const getSchedules = async () => {
   return await ScheduleService.find({ active: true })
@@ -13,6 +14,11 @@ const solarTimes = () => {
 
 export const startCronJob = () => {
   const cron = require('node-cron')
+
+  cron.schedule('*/20 * * * *', async () => {
+    await getWeatherDataJob()
+  })
+
   cron.schedule('* * * * *', async () => {
     const now = new Date()
     const SolarTimes = solarTimes()

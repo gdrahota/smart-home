@@ -1,22 +1,8 @@
 import mongoose from 'mongoose'
+import {CommandSchema} from './command'
 
 export const registerSchema = () => {
   const Schema = mongoose.Schema
-
-  const CommandSchema = new Schema({
-    control: {
-      type: Schema.ObjectId,
-      required: true
-    },
-    endpoint: {
-      type: String,
-      required: true
-    },
-    value: {
-      type: Schema.Types.Mixed,
-      required: true
-    }
-  })
 
   const typeDefinition = {
     name: {
@@ -64,7 +50,7 @@ export const registerSchema = () => {
     active: {
       type: Boolean,
       default: true
-    }
+    },
   }
 
   const options = { collection: 'schedules', timestamps: {} }

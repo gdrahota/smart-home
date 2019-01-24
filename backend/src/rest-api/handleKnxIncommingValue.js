@@ -11,7 +11,6 @@ const handleControlValue = async (control, endPoint, value, address) => {
     timestamp: new Date()
   }
 
-  //console.log(endPoint, address, endPoint, value, controlData.values)
   await ControlService.update(controlData)
 }
 
@@ -38,17 +37,20 @@ export const handleKnxValue = async doc => {
 
       let query = { dataPoint: dataPoint._id }
 
-      const controlDataPoint = await ControlDataPointService.findOne(query)
+      const controlDataPoints = await ControlDataPointService.find(query)
 
-      if (controlDataPoint) {
-        query = { _id: controlDataPoint.control }
-        const control = await ControlService.findOne(query).lean()
-        if (control) {
-          await handleControlValue(control, controlDataPoint.endPoint, update.value, valueFromKnx.address)
-        }
+      if (controlDataPoints) {
+        controlDataPoints.forEach(async controlDataPoint => {
+          query = { _id: controlDataPoint.control }
+          const control = await
+            ControlService.findOne(query).lean()
+          if (control) {
+            await handleControlValue(control, controlDataPoint.endPoint, update.value, valueFromKnx.address)
+          }
+        })
+      } else {
+        console.log('=> No data point registered with this address', valueFromKnx)
       }
-    } else {
-      console.log('no data point found for address', valueFromKnx.address)
     }
   }
   catch (err) {

@@ -8,22 +8,22 @@ export const registerSchema = () => {
     address: {
       postCode: {
         type: String,
-        required: true
+        required: true,
       },
       city: {
         type: String,
-        required: true
+        required: true,
       },
       street: {
         type: String,
-        required: true
-      }
+        required: true,
+      },
     },
     attributes: [FacilityAttributeSchema],
     state: {
       type: String,
       default: 'active'
-    }
+    },
   }, { collection: 'facilities', timestamps: {} })
 
   // prevent overwriting an existing model during unit testing

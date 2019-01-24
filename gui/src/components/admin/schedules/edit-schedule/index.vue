@@ -242,7 +242,6 @@
         this.schedule.commands.splice(idx, 1)
       },
       save () {
-        console.log('save or add', this.schedule)
         if (this.schedule._id) {
           this.saveSchedule(this.schedule)
         } else {

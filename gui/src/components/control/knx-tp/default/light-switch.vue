@@ -9,7 +9,7 @@
     <v-card-text>
       <div class="pl-2 pr-2 pb-0 caption grey--text hidden-xs-only">
         <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-        <control-endpoint-values :control="control" :endPoints="endPoints" class="float-right"/>
+        <control-endpoint-values :control="control" class="float-right"/>
       </div>
       <br/>
       <v-switch
@@ -66,15 +66,6 @@
         if (this.getCurrentValueObj) {
           return this.getCurrentValueObj.timestamp
         }
-      }
-    },
-
-    data () {
-      return {
-        endPoints: [
-          { type: 'switch', label: 'Schaltbefehl' },
-          { type: 'response', label: 'Bestätigung' }
-        ]
       }
     },
 
