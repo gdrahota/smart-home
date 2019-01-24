@@ -140,7 +140,7 @@ const state = {
     {
       name: '14CharTextDisplay',
       label: '14 Zeichen-Anzeige',
-      icon: 'fa-text',
+      icon: 'fa-text-width',
       endPoints: [
         {
           endPoint: 'set-text',
