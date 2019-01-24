@@ -27,10 +27,13 @@
 
       <template slot="item" slot-scope="data">
         <v-list-tile-avatar>
-          <v-icon>{{ getIcon(data.item.controlType) }}</v-icon>
+          <v-icon small>{{ getIcon(data.item.controlType) }}</v-icon>
         </v-list-tile-avatar>
         <v-list-tile-content>
-          <v-list-tile-title v-text="data.item.text"></v-list-tile-title>
+          <v-list-tile-title>
+            <span class="left">{{ data.item.text }}</span>
+            <span class="right">{{ data.item.textType }}</span>
+          </v-list-tile-title>
         </v-list-tile-content>
       </template>
 
@@ -42,7 +45,7 @@
         <v-list-tile-content full-width>
           <v-list-tile-title>
             <div fiftyPercent float-left>
-              <v-icon>{{ getIcon(data.item.controlType) }}</v-icon>
+              <v-icon small>{{ getIcon(data.item.controlType) }}</v-icon>
               <span class="pl-3">{{ data.item.text }}</span>
             </div>
             <div fiftyPercent float-left text-right class="body-1">{{ data.item.technology }} - {{ data.item.controlType }}</div>
@@ -60,12 +63,15 @@
     computed: {
       ...mapGetters({
         controls: 'controls/get',
-        getSelectedControl: 'controls/getSelectedControl'
+        getSelectedControl: 'controls/getSelectedControl',
+        getControlDefinition: 'controls/getDefinitionByName',
       }),
       controlOptions () {
         return this.controls.map(c => {
+          const def = this.getControlDefinition(c.controlType)
           return {
             text: c.name,
+            textType: def.label,
             value: c._id,
             controlType: c.controlType,
             technology: c.technology
@@ -102,18 +108,9 @@
         selectControl: 'controls/selectControl'
       }),
       getIcon (controlType) {
-        switch (controlType) {
-          case 'lightSwitch':
-          case 'lightDimmer':
-            return 'fa-lightbulb-o'
-          case 'shutter':
-            return 'fa-bars'
-          case 'rtc':
-            return 'fa-thermometer-half'
-          default:
-            return 'fa-minus'
-        }
-      }
+        const def = this.getControlDefinition(controlType)
+        return def.icon
+      },
     }
   }
 </script>
