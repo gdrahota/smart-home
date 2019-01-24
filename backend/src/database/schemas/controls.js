@@ -33,11 +33,11 @@ export const registerSchema = () => {
     },
     values: {
       type: Schema.Types.Mixed,
-      default: () => {}
+      default: {},
     }
   }
 
-  const options = { collection: 'controls', timestamps: {} }
+  const options = { collection: 'controls', minimize: false, timestamps: {} }
 
   const ControlSchema = new Schema(typeDefinition, options)
 
