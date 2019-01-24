@@ -4,7 +4,7 @@ import { ControlDataPointService } from '../services/control-data-points'
 import { DataPointService } from '../services/data-points'
 import { ValuesFromKnxService } from '../services/values-from-knx'
 
-const handleControlValue = async (control, endPoint, value, address) => {
+const handleControlValue = async (control, endPoint, value) => {
   const controlData = { ...control, values: control.values ? control.values : {} }
   controlData.values[endPoint] = {
     value,
@@ -42,10 +42,10 @@ export const handleKnxValue = async doc => {
       if (controlDataPoints) {
         controlDataPoints.forEach(async controlDataPoint => {
           query = { _id: controlDataPoint.control }
-          const control = await
-            ControlService.findOne(query).lean()
+          const control = await ControlService.findOne(query).lean()
+
           if (control) {
-            await handleControlValue(control, controlDataPoint.endPoint, update.value, valueFromKnx.address)
+            await handleControlValue(control, controlDataPoint.endPoint, update.value)
           }
         })
       } else {
