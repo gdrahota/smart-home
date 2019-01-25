@@ -149,7 +149,26 @@ const state = {
           controlType: 'text-field',
         },
       ]
-    }
+    },
+    {
+      name: 'dayNightSwitch',
+      label: 'Tag-/Nachtumschaltung',
+      icon: 'fa-toggle-on',
+      endPoints: [
+        {
+          endPoint: 'set-day',
+          label: 'Jetzt ist Tag',
+          dtp: '1.001',
+          controlType: 'switch',
+        },
+        {
+          endPoint: 'set-night',
+          label: 'Jetzt ist Nacht',
+          dtp: '1.001',
+          controlType: 'switch',
+        },
+      ]
+    },
   ],
 }
 

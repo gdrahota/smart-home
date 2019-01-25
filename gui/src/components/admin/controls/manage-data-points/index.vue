@@ -34,10 +34,12 @@
   import KnxTpShutter from './knx-tp-shutter'
   import RoomTemperaturControl from './knx-tp-rtc'
   import KnxTpShortCharTextDisplay from './knx-tp-14CharTextDisplay'
+  import KnxTpDayNightSwitch from './knx-tp-day-night-switch'
 
   export default {
     components: {
       ManageAttributeValues,
+      KnxTpDayNightSwitch,
       ShowFacilityAttributeValues,
       KnxTpLightSwitch,
       KnxTpLightDimmer,
@@ -73,6 +75,8 @@
             return RoomTemperaturControl
           case '14CharTextDisplay':
             return KnxTpShortCharTextDisplay
+          case 'dayNightSwitch':
+            return KnxTpDayNightSwitch
           default:
             return KnxTpLightSwitch
         }

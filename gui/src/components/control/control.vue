@@ -5,6 +5,7 @@
     <knx-default-shutter :control="control" v-if="control.controlType === 'shutter'"/>
     <knx-default-rtc :control="control" v-if="control.controlType === 'rtc'"/>
     <knx-default-short-text :control="control" v-if="control.controlType === '14CharTextDisplay'"/>
+    <knx-default-day-night-switch :control="control" v-if="control.controlType === 'dayNightSwitch'"/>
   </div>
 </template>
 
@@ -14,9 +15,11 @@
   import knxDefaultShutter from './knx-tp/default/shutter'
   import knxDefaultRtc from './knx-tp/default/rtc'
   import knxDefaultShortText from './knx-tp/default/short-text-display'
+  import knxDefaultDayNightSwitch from './knx-tp/default/day-night-switch'
 
   export default {
     components: {
+      knxDefaultDayNightSwitch,
       knxDefaultLightSwitch,
       knxDefaultLightDimmer,
       knxDefaultShutter,
