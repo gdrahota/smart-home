@@ -40,6 +40,8 @@ export const handleOplog = () => {
       })
     }
     catch (e) {
+      console.log('insert error', doc)
+      console.log(e)
     }
   })
 
@@ -62,6 +64,7 @@ export const handleOplog = () => {
           })
       }
       catch (e) {
+        console.log('update error', doc)
         console.log(e)
       }
     }
