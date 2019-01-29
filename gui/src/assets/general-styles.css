@@ -1,9 +1,11 @@
 .float-right, [float-right] {
 	float: right !important;
+	clear: none;
 }
 
 .float-left, [float-left] {
 	float: left !important;
+	clear: none;
 }
 
 .block {

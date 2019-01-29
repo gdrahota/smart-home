@@ -40,7 +40,7 @@
     <div id="delete-dialog">
       <v-card>
         <v-card-title class="headline" primary-title>{{title}}</v-card-title>
-        <v-card-text v-if="description" class="subheading">{{description}}</v-card-text>
+        <v-card-text v-if="description" class="subheading" v-html="description"></v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
@@ -114,7 +114,7 @@
       },
       color: {
         type: String,
-        default: 'red'
+        default: 'red darken-2'
       },
       outline: {
         type: Boolean,

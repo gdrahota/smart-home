@@ -8,10 +8,9 @@
         <v-flex xs1></v-flex>
         <v-flex xs2>Bus-Typ</v-flex>
         <v-flex xs2>Name</v-flex>
-        <v-flex xs3>Beschreibung</v-flex>
         <v-flex xs2>Host-Name / IP-Adresse</v-flex>
         <v-flex xs1>Port</v-flex>
-        <v-flex xs1>Steuerelemente</v-flex>
+        <v-flex xs4>Kommentar</v-flex>
       </v-layout>
 
       <control-system-form
@@ -19,6 +18,8 @@
         :controlSystem="controlSystem"
         :key="controlSystem._id"
       />
+
+      <control-system-form/>
 
     </v-card-text>
   </v-card>
@@ -48,7 +49,7 @@
       ...mapActions({
         add: 'controlSystems/addAction',
         update: 'controlSystems/updateAction'
-      })
+      }),
     }
   }
 </script>

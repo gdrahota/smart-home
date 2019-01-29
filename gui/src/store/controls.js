@@ -234,12 +234,6 @@ const getActive = state =>
     .filter(item => item.state === 'active')
     .sort(sortByControlTypeAndByName)
 
-const getByControlSystemId = state => id =>
-  state
-    .items
-    .filter(item => item.controlSystem === id)
-    .sort(sortByControlTypeAndByName)
-
 const getByAttributeValue = state => valueId =>
   state
     .items
@@ -267,7 +261,6 @@ const getters = {
   get,
   getById,
   getActive,
-  getByControlSystemId,
   getByControlType,
   getByAttributeValue,
   getSelectedControlId: state => state.selected,

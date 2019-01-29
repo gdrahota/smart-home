@@ -24,6 +24,10 @@ const updateAction = (context, item) => {
   socket.emit('update_control_system', item)
 }
 
+const removeAction = (context, id) => {
+  socket.emit('remove_control_system', id)
+}
+
 const SOCKET_ADD_CONTROL_SYSTEMS_RESPONSE = (state, response) => {
   state.items = [...state.items, response[0]]
   state.selected = response[0]
@@ -39,13 +43,18 @@ const SOCKET_UPDATE_CONTROL_SYSTEMS_RESPONSE = (state, response) => {
   state.selected = response[0]
 }
 
+const SOCKET_REMOVE_CONTROL_SYSTEMS_RESPONSE = (state, response) => {
+  state.items = state.items.filter(item => item._id !== response[0])
+}
+
 const selectMutation = (context, item) => {
   state.selected = item
 }
 
 const actions = {
   addAction,
-  updateAction
+  updateAction,
+  removeAction,
 }
 
 const mutations = {
@@ -53,8 +62,9 @@ const mutations = {
   SOCKET_CONTROL_SYSTEMS_RESPONSE,
   SOCKET_ADD_CONTROL_SYSTEMS_RESPONSE,
   SOCKET_UPDATE_CONTROL_SYSTEMS_RESPONSE,
+  SOCKET_REMOVE_CONTROL_SYSTEMS_RESPONSE,
   SOCKET_CONTROL_SYSTEM_TYPES_RESPONSE,
-  selectMutation
+  selectMutation,
 }
 
 const getters = {
@@ -63,7 +73,7 @@ const getters = {
   getById: state => id => state.items.find(item => item._id === id),
   getActive: state => state.items.filter(item => item.state === 'active'),
   selected: state => state.selected,
-  getTypes: state => state.types
+  getTypes: state => state.types,
 }
 
 export default {
@@ -71,5 +81,5 @@ export default {
   state,
   actions,
   mutations,
-  getters
+  getters,
 }

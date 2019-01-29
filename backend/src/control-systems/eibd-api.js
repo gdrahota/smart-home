@@ -2,12 +2,11 @@ import { KnxEventService } from '../services/knx-events'
 import { ValuesFromKnxService } from '../services/values-from-knx'
 import moment from 'moment'
 
-
 let config
 
 const saveEventToDb = (evt, src, dest, value) => {
   //console.log("event: %s, src: %j, dest: %j, value: %j", evt, src, dest, value)
-  console.log('<= ', moment().format('HH:mm:ss'),  evt, src, dest, value)
+  console.log('<= ', moment().format('HH:mm:ss'), evt, src, dest, value)
 
   // upsert doc in 'values-from-knx'
   const valueFromKnx = {
@@ -44,13 +43,16 @@ export let connection
 export const connectToKnx = async serverConfig => {
   config = serverConfig
 
+  const sanitizeHostAddress = address => {
+    return address.split('.').map(item => parseInt(item)).join('.')
+  }
+
   new Promise((resolve, reject) => {
     const knx = require('knx')
-
     connection = new knx.Connection({
       debug: false,
       // ip address and port of the KNX router or interface
-      ipAddr: serverConfig.host, ipPort: serverConfig.port,
+      ipAddr: sanitizeHostAddress(serverConfig.host), ipPort: serverConfig.port,
       // the KNX physical address we'd like to use
       physAddr: '1.0.201',
       // set the log level for messsages printed on the console. This can be 'error', 'warn', 'info' (default), 'debug', or 'trace'.

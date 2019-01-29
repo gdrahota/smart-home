@@ -19,6 +19,15 @@ export const registerControlSystemEndpoints = (io, socket) => {
     }
   }
 
+  const cbRemove = async control => {
+    try {
+      await ControlSystemService.remove(control)
+    }
+    catch (err) {
+      socket.emit('remove_control_system_failed', err)
+    }
+  }
+
   const cbGetTypes = async () => {
     try {
       ControlSystemService.getTypes((err, types) => socket.emit('get_control_system_types_response', types))
@@ -31,5 +40,6 @@ export const registerControlSystemEndpoints = (io, socket) => {
   socket
     .on('add_control_system', cbAdd)
     .on('update_control_system', cbUpdate)
+    .on('remove_control_system', cbRemove)
     .on('get_control_system_types', cbGetTypes)
 }
