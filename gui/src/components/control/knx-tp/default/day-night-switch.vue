@@ -15,6 +15,7 @@
         color="yellow"
         v-model="setValue"
         :label="setValue ? 'Tag' : 'Nacht'"
+        :color="getColor"
         hide-details
         ripple
         class="pt-0 mt-1 pl-5"
@@ -69,9 +70,9 @@
       },
       getColor () {
         if (this.getCurrentValueObj.value === true) {
-          return 'yellow'
+          return 'green lighten-1'
         }
-        return 'blue'
+        return 'black'
       },
       updatedAt () {
         if (this.getCurrentValueObj) {
