@@ -2,6 +2,7 @@
   <v-card>
     <control-header
       left-icon="fa-bars"
+      :left-icon-color="getColor"
       :label="control.name"
       right-icon="fa-circle"
       :right-icon-color="getColor"
