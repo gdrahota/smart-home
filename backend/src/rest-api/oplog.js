@@ -40,8 +40,12 @@ export const handleOplog = () => {
       })
     }
     catch (e) {
-      console.log('insert error', doc)
-      console.log(e)
+      if (e.name !== 'MissingSchemaError') {
+        console.log(' ')
+        console.log('insert error', doc)
+        console.log(e)
+        console.log(' ')
+      }
     }
   })
 
@@ -64,8 +68,12 @@ export const handleOplog = () => {
           })
       }
       catch (e) {
-        console.log('update error', doc)
-        console.log(e)
+        if (e.name !== 'MissingSchemaError') {
+          console.log(' ')
+          console.log('update error', doc)
+          console.log(e)
+          console.log(' ')
+        }
       }
     }
   })
