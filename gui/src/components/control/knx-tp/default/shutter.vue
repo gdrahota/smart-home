@@ -4,29 +4,27 @@
       left-icon="fa-bars"
       :left-icon-color="getColor"
       :label="control.name"
-      right-icon="fa-circle"
-      :right-icon-color="getColor"
+      :control="control"
     />
     <v-card-text>
-      <div class="pl-1 pr-1 caption grey--text hidden-xs-only">
-        <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-        <control-endpoint-values :control="control" class="float-right"/>
+      <div class="mt-0 pt-0 pr-1 caption grey--text hidden-xs-only">
+        <span v-if="updatedAt" class="float-right">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
       <br/>
-      <v-slider
-        inverse-label
+      <v-select
         v-model="setValue"
-        step="10"
-        :label="setValue + ' %'"
-        :color="isWindowOpen ? 'rgb(193, 1, 1)' : 'grey'"
+        :items="options"
+        item-text="text"
+        item-value="value"
+        label="Position"
         hide-details
-        class="pt-0 mt-0"
+        box
       />
       <v-chip
         :value="isWindowOpen === true"
         color="rgb(193, 1, 1)"
         label
-        class="full-width"
+        class="full-width ml-0 mt-2"
         outline
       >
         <v-avatar>
@@ -41,12 +39,10 @@
 <script>
   import { mapActions } from 'vuex'
   import ControlHeader from '../control-header'
-  import ControlEndpointValues from '../control-endpoint-values'
 
   export default {
     components: {
       ControlHeader,
-      ControlEndpointValues,
     },
 
     computed: {
@@ -62,7 +58,7 @@
       },
       setValue: {
         get () {
-          return Math.round(this.getCurrentValueObj.value)
+          return Math.round(this.getCurrentValueObj.value / 10) * 10
         },
         set (value) {
           const command = {
@@ -75,9 +71,8 @@
       },
       getColor () {
         if (this.getCurrentValueObj.value && this.getCurrentValueObj.value > 0) {
-          return 'yellow'
+          return 'brown lighten-2'
         }
-        return '#888'
       },
       updatedAt () {
         if (this.getCurrentValueObj) {
@@ -89,6 +84,18 @@
           this.control.values['window-state-response'] &&
           this.control.values['window-state-response'].value &&
           this.control.values['window-state-response'].value === true
+      }
+    },
+
+    data () {
+      return {
+        options: Array.from(Array(11), (x, index) => {
+          const value = index * 10
+          return {
+            text: value + ' %',
+            value
+          }
+        }),
       }
     },
 
@@ -106,3 +113,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .v-card__text {
+    padding-top: 6px;
+  }
+</style>

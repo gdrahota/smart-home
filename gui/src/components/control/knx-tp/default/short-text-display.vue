@@ -2,22 +2,21 @@
   <v-card>
     <control-header
       left-icon="fa-text-width"
+      :left-icon-color="getColor"
       :label="control.name"
-      right-icon="fa-circle"
-      :right-icon-color="getColor"
+      :control="control"
     />
     <v-card-text>
-      <div class="pl-2 pr-2 pb-0 caption grey--text hidden-xs-only">
-        <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-        <control-endpoint-values :control="control" class="float-right"/>
+      <div class="pl-1 pr-1 caption grey--text hidden-xs-only">
+        <span v-if="updatedAt" class="float-right">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
       <br/>
       <v-text-field
         v-model="setValue"
         label="Anzeigetext"
         hide-details
-        ripple
-        class="pt-0 mt-1"
+        class="pt-0"
+        box
       ></v-text-field>
     </v-card-text>
   </v-card>
@@ -57,9 +56,9 @@
       },
       getColor () {
         if (this.getCurrentValueObj.timestamp) {
-          return 'yellow'
+          return 'orange'
         }
-        return '#888'
+        return '#ccc'
       },
       updatedAt () {
         if (this.getCurrentValueObj) {
@@ -82,3 +81,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .v-card__text {
+    padding-top: 6px;
+  }
+</style>

@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <knx-default-light-switch :control="control" v-if="control.controlType === 'lightSwitch'"/>
-    <knx-default-light-dimmer :control="control" v-if="control.controlType === 'lightDimmer'"/>
-    <knx-default-shutter :control="control" v-if="control.controlType === 'shutter'"/>
-    <knx-default-rtc :control="control" v-if="control.controlType === 'rtc'"/>
-    <knx-default-short-text :control="control" v-if="control.controlType === '14CharTextDisplay'"/>
-    <knx-default-day-night-switch :control="control" v-if="control.controlType === 'dayNightSwitch'"/>
-  </div>
+  <component :is="component" :control="control"/>
 </template>
 
 <script>
@@ -27,6 +20,25 @@
       knxDefaultShortText,
     },
 
+    computed: {
+      component () {
+        switch (this.control.controlType) {
+          case 'lightSwitch':
+            return knxDefaultLightSwitch
+          case 'lightDimmer':
+            return knxDefaultLightDimmer
+          case 'shutter':
+            return knxDefaultShutter
+          case 'rtc':
+            return knxDefaultRtc
+          case '14CharTextDisplay':
+            return knxDefaultShortText
+          case 'dayNightSwitch':
+            return knxDefaultDayNightSwitch
+        }
+      }
+    },
+
     props: {
       control: {
         type: Object,
@@ -38,6 +50,6 @@
 
 <style scoped>
   div {
-    height: 160px;
+    height: 180px;
   }
 </style>

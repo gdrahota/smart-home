@@ -2,18 +2,17 @@
   <v-card>
     <control-header
       left-icon="fa-toggle-on"
+      :left-icon-color="getColor"
       :label="control.name"
-      right-icon="fa-circle"
-      :right-icon-color="getColor"
+      :control="control"
     />
     <v-card-text>
       <div class="pl-2 pr-2 pb-0 caption grey--text hidden-xs-only">
-        <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-        <control-endpoint-values :control="control" class="float-right"/>
+        <span v-if="updatedAt" class="float-right">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
       <br/>
       <v-switch
-        color="orange"
+        color="yellow"
         v-model="setValue"
         :label="setValue ? 'Tag' : 'Nacht'"
         hide-details
@@ -95,3 +94,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .v-card__text {
+    padding-top: 6px;
+  }
+</style>

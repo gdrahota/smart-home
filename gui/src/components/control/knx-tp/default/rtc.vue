@@ -2,15 +2,13 @@
   <v-card>
     <control-header
       left-icon="fa-thermometer-half"
+      :left-icon-color="getColor"
       :label="control.name"
-      right-icon="fa-circle"
-      :right-icon-color="getColor"
+      :control="control"
     />
-
     <v-card-text>
-      <div class="pl-1 pr-1 pb-2 caption grey--text hidden-xs-only">
-        <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-        <control-endpoint-values :control="control" class="float-right"/>
+      <div class="pl-1 pr-1 caption grey--text hidden-xs-only">
+      <span v-if="updatedAt" class="float-right">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
       <br/>
       <v-layout row wrap>
@@ -107,7 +105,7 @@
 
         if (valueObj !== undefined && valueObj !== null) {
           if (valueObj.value === true || valueObj.value > 0) {
-            return 'orange'
+            return 'red'
           }
         }
       }
@@ -127,3 +125,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .v-card__text {
+    padding-top: 6px;
+  }
+</style>

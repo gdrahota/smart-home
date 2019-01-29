@@ -2,14 +2,13 @@
   <v-card>
     <control-header
       left-icon="fa-lightbulb-o"
+      :left-icon-color="getColor"
       :label="control.name"
-      right-icon="fa-circle"
-      :right-icon-color="getColor"
+      :control="control"
     />
     <v-card-text>
       <div class="pl-1 pr-1 caption grey--text hidden-xs-only">
-        <span v-if="updatedAt" class="float-left">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
-        <control-endpoint-values :control="control" class="float-right"/>
+        <span v-if="updatedAt" class="float-right">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
       <br/>
       <v-slider
@@ -19,7 +18,7 @@
         :label="setValue + ' %'"
         color="orange"
         hide-details
-        class="pt-0 mt-0"
+        class="pt-4 mt-0"
       />
     </v-card-text>
   </v-card>
@@ -59,9 +58,8 @@
       },
       getColor () {
         if (this.getCurrentValueObj.value && this.getCurrentValueObj.value > 0) {
-          return 'yellow'
+          return 'orange'
         }
-        return '#888'
       },
       updatedAt () {
         if (this.getCurrentValueObj) {
@@ -84,3 +82,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .v-card__text {
+    padding-top: 6px;
+  }
+</style>

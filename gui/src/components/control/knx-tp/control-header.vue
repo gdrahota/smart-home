@@ -2,43 +2,44 @@
   <v-card-title>
     <v-icon class="header-icon" :color="leftIconColor">{{ leftIcon }}</v-icon>
     <span class="header-label">{{ label }}</span>
-    <v-icon class="header-indicator float-right" :color="rightIconColor">{{ rightIcon }}</v-icon>
+    <control-endpoint-values :control="control"/>
   </v-card-title>
 </template>
 
 <script>
+  import ControlEndpointValues from './control-endpoint-values'
+
   export default {
+    components: {
+      ControlEndpointValues,
+    },
+
     props: {
+      control: {
+        type: Object,
+        required: true,
+      },
       leftIcon: {
         type: String,
         default: ''
       },
       leftIconColor: {
         type: String,
-        default: 'white'
+        default: '#fff'
       },
       label: {
         type: String,
         default: ''
       },
-      rightIcon: {
-        type: String,
-        default: ''
-      },
-      rightIconColor: {
-        type: String,
-        default: 'grey'
-      }
     }
   }
 </script>
 
 <style scoped>
   .v-card__title {
-    background-color: #969595;
+    background-color: #ddd;
     padding-right: 5px;
     padding-left: 5px;
-    color: white;
     font-weight: 800;
     height: 40px;
   }
@@ -54,15 +55,17 @@
   }
 
   .header-label {
+    color: #444;
     float: left;
     font-size: 16px;
-    padding-left: 5px;
+    font-weight: normal;
+    padding-left: 3px;
     position: relative;
-    top: 4px;
-    width: calc(100% - 60px);
-    white-space: nowrap;
     overflow-x: hidden;
     text-overflow: ellipsis;
+    top: 2px;
+    width: calc(100% - 50px);
+    white-space: nowrap;
   }
 
   .header-indicator {
