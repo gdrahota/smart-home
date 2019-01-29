@@ -25,7 +25,7 @@ export const startCronJob = () => {
 
     const jobs = await getSchedules()
 
-    console.log(' ')
+    //console.log(' ')
 
     jobs.forEach(async job => {
         // if today is not a valid day for this job then skip it1
@@ -57,6 +57,7 @@ export const startCronJob = () => {
           } else if (time.isAfter(timeFrameEnds)) {
             time = timeFrameEnds
           }
+/*
 
           console.log(
             moment().format('HH:mm:ss') + ':',
@@ -65,11 +66,12 @@ export const startCronJob = () => {
             timeFrameEnds.format('HH:mm'),
             job.name
           )
+*/
         }
 
         // check, if it's time now to execute the job commands
         if (time.format('HH:mm').toString() === moment(now).format('HH:mm')) {
-          console.log('executing job:', job)
+          //console.log('executing job:', job)
 
           job.commands.forEach(async command => {
               const endpointCommand = {
