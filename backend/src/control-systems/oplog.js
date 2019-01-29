@@ -43,16 +43,6 @@ export const handleOplog = oplog => {
           }
         }
 
-        const cbRemoveCommand = async () => {
-          try {
-            // remove command
-            await removeCommand(doc.o._id)
-          }
-          catch (err) {
-            console.log('=> ', new Date().getMilliseconds(), err)
-          }
-        }
-
         if (command) {
           console.log('=> ', moment(new Date()).format('HH:mm:ss'), command.commandType + ' to bus', command.targetAddress,
             'DPT' + command.dataType)
