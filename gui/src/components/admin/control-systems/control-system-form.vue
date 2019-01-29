@@ -12,8 +12,20 @@
         <v-icon color="white" small v-text="state.icon"/>
       </v-btn>
 
+      <v-btn
+        v-if="addNew"
+        @click.stop="() => { addNew = false }"
+        class="float-right elevation-1 ml-0"
+        color="red darken-2"
+        fab
+        small
+        dark
+      >
+        <v-icon color="white" small>fa-times</v-icon>
+      </v-btn>
+
       <confirm
-        v-if="!disabled || addNew"
+        v-if="!disabled && controlSystem"
         title="Bussystem löschen"
         :description="'Wollen Sie das Bussystem mit dem Namen <b>' + name + '</b> löschen?'"
         @agree="removeOrCancel"
@@ -177,9 +189,9 @@
       removeOrCancel () {
         if (this.controlSystem) {
           this.remove(this.controlSystem._id)
-        } else {
-          this.addNew = false
         }
+        this.addNew = false
+        this.disabled = true
       },
       showAddNew () {
         this.addNew = true

@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5fa8a30f-911b-4abf-958a-204308acb4c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/control-systems/eibd-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/control-systems/eibd-api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/rest-api/control-systems.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/rest-api/control-systems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/control-systems.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/control-systems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/assets/general-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/assets/general-styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/components/admin/control-systems/control-system-form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/control-systems/control-system-form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/control-systems/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/control-systems/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/store/control-systems.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/control-systems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/store/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/controls.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +45,7 @@
           <entry key="sh" value="2" />
           <entry key="ts" value="19" />
           <entry key="txt" value="1" />
-          <entry key="vue" value="701" />
+          <entry key="vue" value="702" />
           <entry key="xml" value="2" />
           <entry key="yaml" value="4" />
         </counts>
@@ -68,7 +60,7 @@
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="TypeScript" value="19" />
-          <entry key="Vue.js" value="701" />
+          <entry key="Vue.js" value="702" />
           <entry key="XML" value="2" />
           <entry key="YAML" value="4" />
           <entry key="yarn.lock" value="1" />
@@ -86,8 +78,8 @@
           <entry key="js" value="46245" />
           <entry key="json" value="79" />
           <entry key="log" value="1" />
-          <entry key="txt" value="3837" />
-          <entry key="vue" value="68225" />
+          <entry key="txt" value="3873" />
+          <entry key="vue" value="68332" />
           <entry key="yaml" value="26" />
         </counts>
       </usages-collector>
@@ -98,8 +90,8 @@
           <entry key="JSON" value="79" />
           <entry key="JavaScript" value="46245" />
           <entry key="Markdown" value="13" />
-          <entry key="PLAIN_TEXT" value="4011" />
-          <entry key="Vue.js" value="68225" />
+          <entry key="PLAIN_TEXT" value="4047" />
+          <entry key="Vue.js" value="68332" />
           <entry key="YAML" value="26" />
         </counts>
       </usages-collector>
@@ -114,13 +106,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/src/control-systems/eibd-api.js">
+        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/control-systems/control-system-form.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="459">
+              <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -232,8 +221,8 @@
         <option value="$PROJECT_DIR$/gui/src/App.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/control-systems/index.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/control-systems/control-system-form.vue" />
         <option value="$PROJECT_DIR$/backend/src/control-systems/eibd-api.js" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/control-systems/control-system-form.vue" />
       </list>
     </option>
   </component>
@@ -295,19 +284,36 @@
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="control-systems" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -320,7 +326,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548784480872" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548785324885" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -409,14 +415,7 @@
       <workItem from="1548459961518" duration="389000" />
       <workItem from="1548675013502" duration="280000" />
       <workItem from="1548700790656" duration="14000" />
-      <workItem from="1548762326179" duration="14952000" />
-    </task>
-    <task id="LOCAL-00049" summary="frontend: all controls refactored&#10;backend: database schema of control changed">
-      <created>1547481957104</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1547481957104</updated>
+      <workItem from="1548762326179" duration="15728000" />
     </task>
     <task id="LOCAL-00050" summary="frontend: all controls slightly redesigned">
       <created>1547493571733</created>
@@ -754,11 +753,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548772543778</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="backend: ip address sanitisation added">
+      <created>1548784601902</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1548784601902</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="509028000" />
+    <option name="totallyTimeSpent" value="509804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -783,7 +789,7 @@
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32939914" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32878152" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32983193" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4963145" weight="0.5311159" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4963145" weight="0.27575108" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.32958034" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.32983193" />
@@ -809,7 +815,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="config refactored" />
     <MESSAGE value="frontend: sorting of listed controls changed" />
     <MESSAGE value="backend: knx commands processing changed" />
     <MESSAGE value="new backend lib added" />
@@ -834,7 +839,8 @@
     <MESSAGE value="frontend: controls redesigned and refactored" />
     <MESSAGE value="frontend: control day-night-switch: color added to icon and switch" />
     <MESSAGE value="backend: unused code in control-system -&gt; oplog removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="backend: unused code in control-system -&gt; oplog removed" />
+    <MESSAGE value="backend: ip address sanitisation added" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend: ip address sanitisation added" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/index.vue">
@@ -1161,13 +1167,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/control-systems/control-system-form.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17" column="81" selection-start-line="17" selection-start-column="81" selection-end-line="17" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/admin/control-systems/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -1189,6 +1188,13 @@
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/control-systems/control-system-form.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
         </state>
       </provider>
     </entry>
