@@ -1,5 +1,5 @@
 <template>
-  <component :is="component" :control="control"/>
+  <component :is="component" :control="control" class="control"/>
 </template>
 
 <script>

@@ -19,3 +19,22 @@
 .text-right, [text-right] {
 	text-align: right;
 }
+
+.control .v-text-field__slot {
+	border: 1px dotted #ddd;
+	margin-top: 10px;
+}
+
+.control .v-text-field__slot > input {
+	padding-left: 10px;
+}
+
+.control .v-text-field__slot > .v-text-field__suffix {
+	padding-right: 5px;
+}
+
+.control .v-text-field__slot > label,
+.control .v-select__slot > label {
+	padding-left: 5px;
+	top: 0 !important;
+}

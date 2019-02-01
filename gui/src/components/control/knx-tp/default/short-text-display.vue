@@ -14,9 +14,7 @@
       <v-text-field
         v-model="setValue"
         label="Anzeigetext"
-        hide-details
-        class="pt-0"
-        box
+        :counter="14"hint="Max. 14 Zeichen"
       ></v-text-field>
     </v-card-text>
   </v-card>

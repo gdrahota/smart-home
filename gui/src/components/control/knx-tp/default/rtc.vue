@@ -20,7 +20,7 @@
             suffix="°C"
             type="number"
             class="pr-1"
-            box
+            hide-details
             disabled
           />
         </v-flex>
@@ -34,7 +34,7 @@
             :step="0.5"
             type="number"
             class="pl-1"
-            box
+            hide-details
           />
         </v-flex>
       </v-layout>

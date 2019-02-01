@@ -40,6 +40,7 @@
     background-color: #ddd;
     padding-right: 5px;
     padding-left: 5px;
+    padding-top: 8px;
     font-weight: 800;
     height: 40px;
   }

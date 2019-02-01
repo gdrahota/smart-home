@@ -18,7 +18,7 @@
         :color="getColor"
         hide-details
         ripple
-        class="pt-0 mt-1 pl-5"
+        class="pt-0 mt-4 pl-5"
       />
     </v-card-text>
   </v-card>

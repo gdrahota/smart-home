@@ -18,8 +18,11 @@
         item-value="value"
         label="Position"
         hide-details
-        box
-      />
+      >
+        <template slot="selection" slot-scope="{ item }">
+          <span :step="item.value" outline>{{ item.text }}</span>
+        </template>
+      </v-select>
       <v-chip
         :value="isWindowOpen === true"
         color="rgb(193, 1, 1)"
@@ -67,6 +70,8 @@
             value
           }
           this.sendCommand(command)
+
+          this.setStyles()
         }
       },
       getColor () {
@@ -89,6 +94,8 @@
 
     data () {
       return {
+        selectedElement: null,
+        selectedLabel: null,
         options: Array.from(Array(11), (x, index) => {
           const value = index * 10
           return {
@@ -102,7 +109,30 @@
     methods: {
       ...mapActions({
         sendCommand: 'commands/sendCommandAction'
-      })
+      }),
+      setStyles () {
+        const bgColorDimFactor = this.setValue / 200
+        const elementStyle = '' +
+          'background-color: rgba(107, 30, 0, ' + bgColorDimFactor + ');' +
+          'padding-left: 10px;' +
+          'border: 1px dotted rgba(107, 30, 0, ' + (this.setValue / 200 + 0.2) + ');'
+        this.selectedElement.setAttribute('style', elementStyle)
+
+        const color = bgColorDimFactor > 0.34 ? '#fff' : 'black'
+        const labelStyle = '' +
+          'color:' + color + ';'
+        this.selectedLabel.setAttribute('style', labelStyle)
+      }
+    },
+
+    mounted () {
+      const styles = this.$el.querySelector('.v-select__slot > label').getAttribute('style') + 'top: 0px;'
+      this.$el.querySelector('.v-select__slot > label').setAttribute('style', styles)
+
+      this.selectedLabel = this.$el.querySelector('.v-select__selections > span')
+      this.selectedElement = this.$el.querySelector('.v-select__slot')
+
+      this.setStyles()
     },
 
     props: {
@@ -110,12 +140,17 @@
         type: Object,
         required: true
       }
+    },
+
+    watch: {
+      setValue () {
+        this.setStyles()
+      }
     }
   }
 </script>
-
-<style scoped>
-  .v-card__text {
-    padding-top: 6px;
+<style>
+  .ertzui {
+    color: #6b1e00;
   }
 </style>
