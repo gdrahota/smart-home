@@ -38,9 +38,14 @@ const SOCKET_LOGIN_FAILED = (state, err) => {
 }
 
 const SOCKET_LOGIN_RESPONSE = (state, response) => {
-  state.client = response[0].client
-  state.loggedIn = true
-  localStorage.setItem('clientId', response[0].client.clientId)
+  if (response[0]) {
+    state.client = response[0].client
+    state.loggedIn = true
+    localStorage.setItem('clientId', response[0].client.clientId)
+  } else {
+    state.client = null
+    state.loggedIn = false
+  }
 }
 
 const logoutMutation = state => {
