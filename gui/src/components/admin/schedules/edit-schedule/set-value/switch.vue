@@ -1,20 +1,25 @@
 <template>
-  <v-layout row>
-    <v-flex xs12>
-      <v-switch
-        v-model="newValue"
-        @change="v => $emit('setValue', v)"
-        :label="getValueText()"
-      />
-    </v-flex>
-  </v-layout>
+  <v-switch
+    v-model="newValue"
+    @change="v => $emit('setValue', v)"
+    :label="getValueText()"
+  ></v-switch>
 </template>
 
 <script>
   export default {
-    data () {
-      return {
-        newValue: this.value
+    computed: {
+      newValue: {
+        get () {
+          return this.value
+        },
+        set () {}
+      }
+    },
+
+    created () {
+      if (this.value === null) {
+        this.$emit('setValue', this.endpoint[this.defaultValueName])
       }
     },
 
@@ -35,7 +40,17 @@
       value: {
         type: Boolean,
         default: false
-      }
+      },
+      defaultValueName: {
+        type: String,
+        required: true,
+      },
     }
   }
 </script>
+
+<style scoped>
+  .v-input {
+    margin-top: 5px;
+  }
+</style>

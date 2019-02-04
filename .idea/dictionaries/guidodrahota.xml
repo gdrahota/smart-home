@@ -4,6 +4,7 @@
       <w>abfragen</w>
       <w>abmeldung</w>
       <w>adresse</w>
+      <w>aktiviert</w>
       <w>aktuelle</w>
       <w>aktueller</w>
       <w>angeschlossen</w>
@@ -20,6 +21,7 @@
       <w>ausrichtung</w>
       <w>ausschlusstage</w>
       <w>befehl</w>
+      <w>befehle</w>
       <w>benennen</w>
       <w>bestätigung</w>
       <w>betroffene</w>
@@ -50,6 +52,7 @@
       <w>fahrbefehl</w>
       <w>fahre</w>
       <w>falsch</w>
+      <w>feiertag</w>
       <w>fenster</w>
       <w>fersterkontakt</w>
       <w>feste</w>
@@ -67,7 +70,9 @@
       <w>heizzustand</w>
       <w>hinten</w>
       <w>hinterlegt</w>
+      <w>innerhalb</w>
       <w>istwert</w>
+      <w>keydown</w>
       <w>kommando</w>
       <w>kommt</w>
       <w>kontakt</w>
@@ -79,6 +84,9 @@
       <w>lichtschalter</w>
       <w>minuten</w>
       <w>montag</w>
+      <w>mousedown</w>
+      <w>mouseout</w>
+      <w>mouseup</w>
       <w>nacht</w>
       <w>nachtumschaltung</w>
       <w>namespaced</w>
@@ -125,6 +133,7 @@
       <w>zeit</w>
       <w>zeitplan</w>
       <w>zeitrahmen</w>
+      <w>zeitschlitze</w>
       <w>zeitstempel</w>
       <w>zeitsteuerung</w>
       <w>zentrale</w>

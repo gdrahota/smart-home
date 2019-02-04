@@ -1,35 +1,72 @@
 <template>
-  <tr class="schedule" :class="{ inactive: !active }">
-    <td class="pl-1">
+  <v-layout wrap row class="schedule" :class="{ inactive: !active }">
+    <v-flex xs1 top>
       <v-switch
         v-model="active"
         color="success"
+        hide-details
       ></v-switch>
-    </td>
-    <td>{{ schedule.name }}</td>
-    <td dim-if-inactive><span>{{ getTimeTypeAndOffset(schedule) }}</span></td>
-    <td dim-if-inactive><span v-if="schedule.time !== 'fixed'">{{ getFormattedTimeFrame }} Uhr</span></td>
-    <td dim-if-inactive><span>{{ getWeekDays }}</span></td>
-    <td dim-if-inactive><span>{{ schedule.excludeDays.join(', ') }}</span></td>
-    <td colspan="3" dim-if-inactive>
-      <table class="table full-width">
-        <tbody>
-        <tr v-for="command of schedule.commands">
-          <td>{{ getControlName(command.control) }}</td>
-          <td>{{ getCommandName(command) }}</td>
-          <td align="right">{{ command.value }}</td>
-        </tr>
-        </tbody>
-      </table>
-    </td>
-    <td align="right" class="actions">
+    </v-flex>
+
+    <v-flex xs3 pr-2 class="dim-if-inactive">
+      <div>{{ schedule.name }}</div>
+
+      <template v-if="['sunrise', 'sunset'].indexOf(schedule.time) !== -1">
+        <ul>
+          <li>Innerhalb: {{ getFormattedTimeFrame }} Uhr</li>
+          <li>{{ getTimeTypeAndOffset(schedule) }}</li>
+        </ul>
+      </template>
+
+      <template v-else-if="schedule.time === 'fixedTime'">
+        <ul>
+          <li>Feste Zeit: {{ getTimeTypeAndOffset(schedule) }}</li>
+        </ul>
+      </template>
+      <template v-if="schedule.time === 'timeSlots'">
+        <ul>
+          <li>Zeitschlitze</li>
+        </ul>
+      </template>
+    </v-flex>
+
+    <v-flex xs1 class="dim-if-inactive pr-2">
+      <span v-if="schedule.time !== 'timeSlots'">{{ getWeekDays }}</span>
+    </v-flex>
+
+    <v-flex xs1 pr-2>
+      <span v-if="schedule.time !== 'timeSlots'">{{ schedule.excludeDays.join(', ') }}</span>
+    </v-flex>
+
+    <v-flex xs5 class="dim-if-inactive pr-2">
+      <v-layout
+        v-for="(command, idx) of schedule.commands"
+        :key="schedule._id + idx"
+        class="commands"
+        row
+        wrap
+      >
+        <template v-if="schedule.time !== 'timeSlots'">
+          <v-flex xs7>{{ getControlName(command.control) }}</v-flex>
+          <v-flex xs4>{{ getCommandName(command) }}</v-flex>
+          <v-flex xs1 class="text-xs-right">{{ command.value }}</v-flex>
+        </template>
+        <template v-if="schedule.time === 'timeSlots'">
+          <v-flex xs7>{{ getControlName(command.control) }}</v-flex>
+          <v-flex xs3>{{ getCommandName(command) }}</v-flex>
+          <v-flex xs1 class="text-xs-right">{{ command.maxValue }}</v-flex>
+          <v-flex xs1 class="text-xs-right">{{ command.minValue }}</v-flex>
+        </template>
+      </v-layout>
+    </v-flex>
+    <v-flex xs1 pr-2>
       <edit-schedule :scheduleToEdit="schedule"/>
       <confirm
         :title="'Diese Zeitsteuerung löschen'"
         @agree="() => remove(schedule._id)"
       ></confirm>
-    </td>
-  </tr>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -145,33 +182,27 @@
 </script>
 
 <style scoped>
-  .inactive > td[dim-if-inactive] > * {
+  .layout.schedule:nth-child(even) {
+    background-color: #eee;
+  }
+
+  .flex {
+    padding: 5px;
+  }
+
+  .inactive .dim-if-inactive {
     opacity: 0.5;
   }
 
-  td {
-    vertical-align: top;
+  .commands > .flex {
+    padding-bottom: 0;
+    padding-top: 0;
   }
 
-  tr.schedule:first-child > td {
-    border-top: 2px solid #ddd;
-  }
-
-  tr.schedule > td {
-    padding-top: 22px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  tr.schedule > td:first-child {
-    padding-top: 0px;
-  }
-
-  tr.schedule > td:last-child {
-    padding-top: 10px;
-  }
-
-  tr.schedule > td.actions {
+  .top .v-input--selection-controls {
+    margin-top: 0 !important;
     position: relative;
-    padding-top: 13px;
+    top: -5px;
+    width: 40px;
   }
 </style>

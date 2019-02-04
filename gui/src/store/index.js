@@ -11,8 +11,10 @@ import externalDataSources from './external-data-sources'
 import facilities from './facilities'
 import facilityAttributes from './facility-attributes'
 import facilityAttributeValues from './facility-attribute-values'
+import helpers from './helpers'
 import knxEvents from './knx-events'
 import schedules from './schedules'
+import timeSlots from './time-slots'
 
 
 Vue.use(Vuex)
@@ -29,7 +31,9 @@ export default new Vuex.Store({
     facilities,
     facilityAttributes,
     facilityAttributeValues,
+    helpers,
     knxEvents,
-    schedules
+    schedules,
+    timeSlots
   }
 })

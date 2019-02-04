@@ -3,6 +3,7 @@
     :is="component"
     :endpoint="endpoint"
     :value="value"
+    :defaultValueName="defaultValueName"
     @setValue="v => $emit('setValue', v)"
   />
 </template>
@@ -38,7 +39,12 @@
         required: true
       },
       value: {
-        default: null
+        type: Boolean | Number,
+        required: false,
+      },
+      defaultValueName: {
+        type: String,
+        required: true,
       }
     }
   }

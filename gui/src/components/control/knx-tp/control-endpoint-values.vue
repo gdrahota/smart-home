@@ -1,6 +1,8 @@
 <template>
   <v-dialog :width="800">
-    <v-icon slot="activator" small color="info">fa-info</v-icon>
+    <v-btn slot="activator" icon small outline color="grey lighten-1">
+      <v-icon small color="grey">fa-info</v-icon>
+    </v-btn>
     <v-card>
       <v-card-text>
         <table class="table full-width">

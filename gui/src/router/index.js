@@ -13,6 +13,7 @@ import KnxMonitor from '../components/utils/knx-monitor'
 import Schedules from '../components/admin/schedules'
 import ExternalDataSources from '../components/admin/external-data-sources'
 import OpenWeatherMap from '../components/admin/external-data-sources/open-weather-map'
+import SelectDayAndTime from '../components/admin/schedules/index2'
 
 Vue.use(Router)
 
@@ -102,6 +103,13 @@ const router = new Router({
               component: Schedules,
               meta: {
                 title: 'Zeitsteuerung'
+              }
+            },
+            {
+              path: 'schedules-2',
+              component: SelectDayAndTime,
+              meta: {
+                title: 'Zeitsteuerung II'
               }
             },
             {

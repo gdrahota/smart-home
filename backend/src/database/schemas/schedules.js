@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import {CommandSchema} from './command'
+import { CommandSchema } from './command'
 
 export const registerSchema = () => {
   const Schema = mongoose.Schema
@@ -42,6 +42,10 @@ export const registerSchema = () => {
         type: String,
         default: '23:59'
       }
+    },
+    timeSlots: {
+      type: Object,
+      required: false
     },
     commands: {
       type: [CommandSchema],

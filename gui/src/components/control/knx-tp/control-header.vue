@@ -40,7 +40,7 @@
     background-color: #ddd;
     padding-right: 5px;
     padding-left: 5px;
-    padding-top: 8px;
+    padding-top: 0px;
     font-weight: 800;
     height: 40px;
   }
@@ -65,7 +65,7 @@
     overflow-x: hidden;
     text-overflow: ellipsis;
     top: 2px;
-    width: calc(100% - 50px);
+    width: calc(100% - 75px);
     white-space: nowrap;
   }
 

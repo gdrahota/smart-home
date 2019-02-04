@@ -13,6 +13,14 @@ export const CommandSchema = new Schema({
   },
   value: {
     type: Schema.Types.Mixed,
-    required: true
-  }
+    required: false
+  },
+  minValue: {
+    type: Schema.Types.Mixed,
+    required: false
+  },
+  maxValue: {
+    type: Schema.Types.Mixed,
+    required: false
+  },
 })

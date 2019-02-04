@@ -1,50 +1,54 @@
 <template>
-  <tr v-if="mode === 'standBy'">
-    <td>
+  <v-layout wrap row pl-1>
+    <v-flex xs12 v-if="mode === 'standBy'">
       <v-btn fab small color="primary" @click="mode = 'add'">
         <v-icon small>fa-plus</v-icon>
       </v-btn>
-    </td>
-  </tr>
-  <tr v-else>
-    <td>
-      <v-combobox
-        v-model="control"
-        :items="controlOptions"
-        label="Steuerelement"
-        item-text="name"
-        clearable
-      />
-    </td>
-    <td v-if="control">
-      <v-select
-        v-model="endpoint"
-        :items="control.def.endPoints"
-        label="Befehl"
-        item-text="label"
-        return-object
-        clearable
-      ></v-select>
-    </td>
-    <td v-if="endpoint" align="right">
-      <SetValue
-        :endpoint="endpoint"
-        :value="endpoint.defaultValue"
-        @setValue="v => { value = v }"
-      />
-    </td>
-    <td class="pt-2" align="center">
-      <v-btn
-        v-if="value !== null"
-        fab
-        small
-        color="success"
-        @click="addCommandToSchedule"
-      >
-        <v-icon small>fa-save</v-icon>
-      </v-btn>
-    </td>
-  </tr>
+    </v-flex>
+
+    <template v-else>
+      <v-flex xs3 pr-3>
+        <v-combobox
+          v-model="control"
+          :items="controlOptions"
+          label="Steuerelement"
+          item-text="name"
+          clearable
+        />
+      </v-flex>
+      <v-flex xs2 v-if="control" pr-3>
+        <v-select
+          v-model="endpoint"
+          :items="control.def.endPoints"
+          label="Befehl"
+          item-text="label"
+          return-object
+          clearable
+        ></v-select>
+      </v-flex>
+
+      <v-flex xs6 v-if="endpoint" align="right" pr-3 set-value>
+        <SetValue
+          :endpoint="endpoint"
+          :value="value"
+          :defaultValue="endpoint.defaultValue"
+          @setValue="v => { value = v }"
+        />
+      </v-flex>
+
+      <v-flex xs1 align="center">
+        <v-btn
+          v-if="value !== null"
+          fab
+          small
+          color="success"
+          @click="addCommandToSchedule"
+        >
+          <v-icon small>fa-save</v-icon>
+        </v-btn>
+      </v-flex>
+    </template>
+  </v-layout>
 </template>
 
 <script>
@@ -109,11 +113,8 @@
 </script>
 
 <style scoped>
-  td {
-    padding-right: 30px;
-  }
-
-  td:last-child {
-    padding-right: 0px;
+  .set-value {
+    position: relative;
+    top: 10px;
   }
 </style>

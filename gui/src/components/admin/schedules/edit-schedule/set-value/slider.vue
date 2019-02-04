@@ -13,18 +13,30 @@
 
 <script>
   export default {
-    data () {
-      return {
-        newValue: this.value
+    created () {
+      if (this.value === null) {
+        this.$emit('setValue', this.endpoint[this.defaultValueName])
+      }
+    },
+
+    computed: {
+      newValue: {
+        get () {
+          return this.value
+        },
+        set () {}
       }
     },
 
     methods: {
       getLabel () {
-        if (this.endpoint && this.endpoint.unit) {
+        if (this.endpoint && this.endpoint.unit && this.newValue) {
           return this.newValue.toString() + ' ' + this.endpoint.unit
         }
-        return this.newValue.toString()
+        if (this.newValue) {
+          return this.newValue.toString()
+        }
+        return ''
       }
     },
 
@@ -35,8 +47,19 @@
       },
       value: {
         type: Number,
-        default: 0
-      }
+        required: false,
+      },
+      defaultValueName: {
+        type: String,
+        required: true,
+      },
     }
   }
 </script>
+
+<style scoped>
+  .v-input--slider {
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+</style>

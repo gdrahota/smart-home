@@ -5,10 +5,11 @@ const state = {
   items: [],
   timeTypes: [
     { value: 'fixed', text: 'Feste Zeit' },
+    { value: 'timeSlots', text: 'Zeitschlitze' },
     { value: 'sunrise', text: 'Sonnenaufgang' },
     { value: 'sunset', text: 'Sonnenuntergang' },
   ],
-  selected: null
+  selected: null,
 }
 
 const addAction = (context, item) => {
@@ -61,7 +62,7 @@ const mutations = {
   SOCKET_ADD_SCHEDULES_RESPONSE,
   SOCKET_UPDATE_SCHEDULES_RESPONSE,
   SOCKET_REMOVE_SCHEDULES_RESPONSE,
-  select
+  select,
 }
 
 const getters = {
@@ -70,7 +71,7 @@ const getters = {
   getById: state => id => state.items.find(f => f._id === id),
   getSelected: state => state.selected,
   getTimeTypes: state => state.timeTypes,
-  getTimeTypeAndOffset: state => value => state.timeTypes.find(i => i.value === value)
+  getTimeTypeAndOffset: state => value => state.timeTypes.find(i => i.value === value),
 }
 
 export default {
