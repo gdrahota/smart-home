@@ -118,6 +118,7 @@
       <w>szenennummer</w>
       <w>telegrammtyp</w>
       <w>temperatur</w>
+      <w>todays</w>
       <w>upsert</w>
       <w>verfügbare</w>
       <w>verschiebung</w>

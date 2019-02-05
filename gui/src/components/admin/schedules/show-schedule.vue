@@ -18,11 +18,12 @@
         </ul>
       </template>
 
-      <template v-else-if="schedule.time === 'fixedTime'">
+      <template v-else-if="schedule.time === 'fixed'">
         <ul>
           <li>Feste Zeit: {{ getTimeTypeAndOffset(schedule) }}</li>
         </ul>
       </template>
+
       <template v-if="schedule.time === 'timeSlots'">
         <ul>
           <li>Zeitschlitze</li>

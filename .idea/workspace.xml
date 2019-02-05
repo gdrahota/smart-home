@@ -2,36 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa8a30f-911b-4abf-958a-204308acb4c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/add-command-normal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/list-edit-commands-normal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/list-edit-commands-time-slots.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/schedule-types/fixed-time.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/schedule-types/time-functions.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/schedule-types/time-slots.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/index2.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/general/select-day-and-time/day.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/general/select-day-and-time/hour.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/general/select-day-and-time/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/components/general/select-day-and-time/time-slot.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/store/helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/src/store/time-slots.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/daytimes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/fixed.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/time-slots.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/guidodrahota.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/guidodrahota.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/command.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/command.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/database/schemas/schedules.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/schemas/schedules.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/add-command.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/add-command-time-slots.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/slider.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/switch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/switch.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/admin/schedules/list-schedules.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/list-schedules.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/cron/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/cron/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/control/knx-tp/control-endpoint-values.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/control/knx-tp/control-endpoint-values.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/control/knx-tp/control-header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/control/knx-tp/control-header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/store/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/controls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/store/schedules.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/schedules.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +44,7 @@
           <entry key="gitignore" value="6" />
           <entry key="html" value="5" />
           <entry key="ico" value="1" />
-          <entry key="js" value="1275" />
+          <entry key="js" value="1290" />
           <entry key="json" value="28" />
           <entry key="lock" value="1" />
           <entry key="log" value="1" />
@@ -74,7 +52,7 @@
           <entry key="sh" value="2" />
           <entry key="ts" value="20" />
           <entry key="txt" value="1" />
-          <entry key="vue" value="786" />
+          <entry key="vue" value="787" />
           <entry key="xml" value="2" />
           <entry key="yaml" value="4" />
         </counts>
@@ -85,12 +63,12 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="28" />
-          <entry key="JavaScript" value="1275" />
+          <entry key="JavaScript" value="1290" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="RNG Compact" value="1" />
           <entry key="TypeScript" value="20" />
-          <entry key="Vue.js" value="786" />
+          <entry key="Vue.js" value="787" />
           <entry key="XML" value="2" />
           <entry key="YAML" value="4" />
           <entry key="yarn.lock" value="1" />
@@ -105,11 +83,11 @@
           <entry key="css" value="318" />
           <entry key="gitignore" value="37" />
           <entry key="html" value="14" />
-          <entry key="js" value="48895" />
+          <entry key="js" value="50769" />
           <entry key="json" value="79" />
           <entry key="log" value="1" />
-          <entry key="txt" value="4162" />
-          <entry key="vue" value="81393" />
+          <entry key="txt" value="4225" />
+          <entry key="vue" value="81394" />
           <entry key="yaml" value="26" />
         </counts>
       </usages-collector>
@@ -118,10 +96,10 @@
           <entry key="CSS" value="318" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="79" />
-          <entry key="JavaScript" value="48895" />
+          <entry key="JavaScript" value="50769" />
           <entry key="Markdown" value="13" />
-          <entry key="PLAIN_TEXT" value="4336" />
-          <entry key="Vue.js" value="81393" />
+          <entry key="PLAIN_TEXT" value="4399" />
+          <entry key="Vue.js" value="81394" />
           <entry key="YAML" value="26" />
         </counts>
       </usages-collector>
@@ -136,13 +114,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/list-edit-commands-normal.vue">
+        <entry file="file://$PROJECT_DIR$/backend/src/cron/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
-                <element signature="e#1055#1114#0" expanded="true" />
+                <element signature="e#0#53#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="e#0#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/time-slots.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -151,7 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>v-text-field__slot</find>
       <find>.v-input__slot .v-text-field__slot</find>
       <find>weekdays</find>
       <find>localStorage.setItem('clientId', response[0].client.clientId)</find>
@@ -181,6 +179,7 @@
       <find>toString(</find>
       <find>command in schedule.commands</find>
       <find>v-for</find>
+      <find>job.</find>
     </findStrings>
     <replaceStrings>
       <replace>control</replace>
@@ -206,12 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/src/control-systems/eibd-api.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/control-systems/control-system-form.vue" />
-        <option value="$PROJECT_DIR$/backend/src/rest-api/oplog.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/shutter.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/light-switch.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/day-night-switch.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/control.vue" />
         <option value="$PROJECT_DIR$/gui/src/assets/general-styles.css" />
@@ -255,8 +248,14 @@
         <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/set-value/switch.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/add-command-time-slots.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/list-edit-commands-time-slots.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/list-edit-commands-normal.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue" />
+        <option value="$PROJECT_DIR$/backend/src/cron/jobs/schuduled.js" />
+        <option value="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/daytimes.js" />
+        <option value="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/fixed.js" />
+        <option value="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/time-slots.js" />
+        <option value="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/index.js" />
+        <option value="$PROJECT_DIR$/backend/src/cron/index.js" />
       </list>
     </option>
   </component>
@@ -315,47 +314,37 @@
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="cron" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="cron" type="462c0819:PsiDirectoryNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="schedules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="schedules" type="462c0819:PsiDirectoryNode" />
-              <item name="edit-schedule" type="462c0819:PsiDirectoryNode" />
+              <item name="cron" type="462c0819:PsiDirectoryNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="scheduled-jobs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -370,7 +359,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549320723285" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549360349928" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -389,11 +378,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs" />
       <recent name="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/schedule-types" />
       <recent name="$PROJECT_DIR$/gui/src/components/general/select-day-and-time" />
       <recent name="$PROJECT_DIR$/gui/src/components/general" />
       <recent name="$PROJECT_DIR$/gui/src/components/admin/select-day-and-time" />
-      <recent name="$PROJECT_DIR$/gui/src/components/admin/external-data-sources/open-weather-api" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule" />
@@ -461,14 +450,7 @@
       <workItem from="1548675013502" duration="280000" />
       <workItem from="1548700790656" duration="14000" />
       <workItem from="1548762326179" duration="16858000" />
-      <workItem from="1549011630775" duration="68845000" />
-    </task>
-    <task id="LOCAL-00055" summary="time controlled jobs are being executed by the backend now">
-      <created>1547934979896</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1547934979896</updated>
+      <workItem from="1549011630775" duration="75116000" />
     </task>
     <task id="LOCAL-00056" summary="time controlled jobs are being executed by the backend now">
       <created>1547934998084</created>
@@ -806,11 +788,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549101091167</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="frontend: time slots control added to scheduled jobs">
+      <created>1549320841587</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1549320841587</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="579779000" />
+    <option name="totallyTimeSpent" value="586050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -861,7 +850,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="import default user &quot;administrator&quot; if not already present&#10;&#10;Signed-off-by: Guido Drahota &lt;guido@drahota.de&gt;" />
     <MESSAGE value="backend: code format streamlined" />
     <MESSAGE value="backend: control-data-point service: method find() added" />
     <MESSAGE value="time scheduled external data request to OpenWeatherMap introduced" />
@@ -886,44 +874,10 @@
     <MESSAGE value="backend: console.log messages sorted oit if the collection is not defined as schema" />
     <MESSAGE value="frontend: appearance of all controls slightly changed" />
     <MESSAGE value="frontend: bug fixed in client store module" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend: bug fixed in client store module" />
+    <MESSAGE value="frontend: time slots control added to scheduled jobs" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend: time slots control added to scheduled jobs" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/control-systems/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/eibd-api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/control-systems/control-system-form.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="134" column="28" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/handleKnxIncommingValue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/rest-api/oplog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -1260,16 +1214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3400">
-          <caret line="200" lean-forward="true" selection-start-line="200" selection-end-line="200" />
-          <folding>
-            <element signature="e#2253#2312#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/list-edit-commands-time-slots.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1290,9 +1234,60 @@
     <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/list-edit-commands-normal.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding>
             <element signature="e#1055#1114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#2253#2312#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/daytimes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/fixed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/time-slots.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/cron/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
