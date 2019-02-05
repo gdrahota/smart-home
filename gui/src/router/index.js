@@ -1,19 +1,20 @@
 import Vue from 'vue'
 import Store from '../store'
 import Router from 'vue-router'
-import Login from '../components/login'
-import Controls from '../components/admin/controls'
-import ControlSystems from '../components/admin/control-systems'
-import DataPoints from '../components/admin/data-points'
-import Facilities from '../components/admin/facilities'
 import Home from '../views/Home.vue'
 import RouterContainer from '../components/router-container'
-import Control from '../components/control'
-import KnxMonitor from '../components/utils/knx-monitor'
-import Schedules from '../components/admin/schedules'
-import ExternalDataSources from '../components/admin/external-data-sources'
-import OpenWeatherMap from '../components/admin/external-data-sources/open-weather-map'
-import SelectDayAndTime from '../components/admin/schedules/index2'
+
+const Schedules = () => import ('../components/admin/schedules')
+const ExternalDataSources = () => import ('../components/admin/external-data-sources')
+const OpenWeatherMap = () => import ('../components/admin/external-data-sources/open-weather-map')
+const SelectDayAndTime = () => import ('../components/admin/schedules/index2')
+const KnxMonitor = () => import ('../components/utils/knx-monitor')
+const Control = () => import ('../components/control')
+const Facilities = () => import('../components/admin/facilities')
+const DataPoints = () => import('../components/admin/data-points')
+const ControlSystems = () => import('../components/admin/control-systems')
+const Controls = () => import('../components/admin/controls')
+const Login = () => import('../components/login')
 
 Vue.use(Router)
 
