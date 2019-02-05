@@ -15,26 +15,14 @@
       app
       fixed
     >
-      <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
-        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-        <span class="hidden-sm-and-down">SmartHome</span>
-      </v-toolbar-title>
-      <v-text-field
-        flat
-        solo-inverted
-        hide-details
-        prepend-inner-icon="fa-search"
-        label="Search"
-        class="hidden-sm-and-down"
-      ></v-text-field>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title style="width: 300px" class="ml-0">SmartHome</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>fa-calendar</v-icon>
-      </v-btn>
-      <v-btn icon @click="logout" :disabled="!isLoggedIn">
+      <v-btn @click="logout" icon :disabled="!isLoggedIn">
         <v-icon>fa-sign-out</v-icon>
       </v-btn>
     </v-toolbar>
+
     <v-content align-start>
       <div class="pl-3 pr-3 pb-3">
         <page-header/>
