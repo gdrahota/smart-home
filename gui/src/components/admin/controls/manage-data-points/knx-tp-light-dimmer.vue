@@ -43,6 +43,11 @@
             label: 'Dimmen, Bestätigung',
             dataType: '5.001',
             endPoint: 'dim-response'
+          },
+          {
+            label: 'Maximaler Dimmwert',
+            dataType: '5.001',
+            endPoint: 'max-dim-value'
           }
         ]
       }

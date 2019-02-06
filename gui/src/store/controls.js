@@ -105,6 +105,17 @@ const state = {
           dpt: '5.001',
           controlType: 'readOnly',
         },
+        {
+          endPoint: 'max-dim-value',
+          label: 'Maximaler Dimmwert',
+          dpt: '5.001',
+          controlType: 'slider',
+          min: 10,
+          max: 100,
+          step: 10,
+          defaultValue: 100,
+          unit: '%'
+        },
       ]
     },
     {
