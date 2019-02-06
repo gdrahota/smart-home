@@ -62,7 +62,7 @@ export const connectToKnx = async serverConfig => {
       // use tunneling with multicast (router) - this is NOT supported by all routers! See README-resilience.md
       forceTunneling: false,
       // wait at least 10 millisec between each datagram
-      minimumDelay: 10,
+      minimumDelay: 20,
       // enable this option to suppress the acknowledge flag with outgoing L_Data.req requests. LoxOne needs this
       suppress_ack_ldatareq: false,
       manualConnect: true,
