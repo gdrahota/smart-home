@@ -45,9 +45,9 @@
             endPoint: 'dim-response'
           },
           {
-            label: 'Maximaler Dimmwert',
-            dataType: '5.001',
-            endPoint: 'max-dim-value'
+            endPoint: 'max-lux-value',
+            label: 'Max. Lux-Wert',
+            dataType: '7.013',
           }
         ]
       }
