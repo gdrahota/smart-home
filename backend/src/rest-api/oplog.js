@@ -30,14 +30,18 @@ export const handleOplog = () => {
 
     try {
       if (collection === 'values-from-knx') {
-        handleKnxValue(doc).then()
+        handleKnxValue(doc.o._id).then()
       }
 
-      mongoose.model(collection).findOne(doc.o).exec((err, data) => {
-        if (io) {
-          io.emit('add_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
-        }
-      })
+      mongoose
+        .model(collection)
+        .findOne(doc.o)
+        .exec(
+          (err, data) => {
+            if (io) {
+              io.emit('add_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
+            }
+          })
     }
     catch (e) {
       if (e.name !== 'MissingSchemaError') {
@@ -54,28 +58,28 @@ export const handleOplog = () => {
     const collection = nsParts[1]
 
     if (collection === 'values-from-knx') {
-      const valueFromKnx = await mongoose.model(collection).findOne(doc.o2)
-      handleKnxValue(doc).then()
-    } else {
-      try {
-        mongoose
-          .model(collection)
-          .findOne(doc.o2)
-          .exec((err, data) => {
-            if (!err && data && io) {
-              io.emit('update_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
-            }
-          })
-      }
-      catch (e) {
-        if (e.name !== 'MissingSchemaError') {
-          console.log(' ')
-          console.log('update error', doc)
-          console.log(e)
-          console.log(' ')
-        }
+      handleKnxValue(doc.o2._id).then()
+    }
+
+    try {
+      mongoose
+        .model(collection)
+        .findOne(doc.o2)
+        .exec((err, data) => {
+          if (!err && data && io) {
+            io.emit('update_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
+          }
+        })
+    }
+    catch (e) {
+      if (e.name !== 'MissingSchemaError') {
+        console.log(' ')
+        console.log('update error', doc)
+        console.log(e)
+        console.log(' ')
       }
     }
+
   })
 
   oplog.on('delete', doc => {

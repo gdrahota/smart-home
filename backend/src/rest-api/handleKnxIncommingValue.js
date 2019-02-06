@@ -14,9 +14,9 @@ const handleControlValue = async (control, endPoint, value) => {
   await ControlService.update(controlData)
 }
 
-export const handleKnxValue = async doc => {
+export const handleKnxValue = async docId => {
   try {
-    const valueFromKnx = await ValuesFromKnxService.findOne(doc.o2)
+    const valueFromKnx = await ValuesFromKnxService.findOne({ _id: docId })
 
     const query = {
       address: valueFromKnx.address,
@@ -33,7 +33,6 @@ export const handleKnxValue = async doc => {
       }
 
       await DataPointService.update(update)
-      //await ValuesFromKnxService.remove(valueFromKnx._id)
 
       let query = { dataPoint: dataPoint._id }
 
@@ -51,6 +50,9 @@ export const handleKnxValue = async doc => {
       } else {
         console.log('=> No data point registered with this address', valueFromKnx)
       }
+
+      // remove the doc, so we know that this data point is registered in our app (but not necessary used in any control)
+      await ValuesFromKnxService.remove(docId)
     }
   }
   catch (err) {

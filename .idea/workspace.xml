@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5fa8a30f-911b-4abf-958a-204308acb4c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/backend/src/rest-api/handleKnxIncommingValue.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/rest-api/handleKnxIncommingValue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/rest-api/oplog.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/rest-api/oplog.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +77,7 @@
           <entry key="css" value="318" />
           <entry key="gitignore" value="37" />
           <entry key="html" value="14" />
-          <entry key="js" value="51185" />
+          <entry key="js" value="51186" />
           <entry key="json" value="79" />
           <entry key="log" value="1" />
           <entry key="txt" value="4307" />
@@ -89,7 +90,7 @@
           <entry key="CSS" value="318" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="79" />
-          <entry key="JavaScript" value="51185" />
+          <entry key="JavaScript" value="51186" />
           <entry key="Markdown" value="13" />
           <entry key="PLAIN_TEXT" value="4481" />
           <entry key="Vue.js" value="81394" />
@@ -109,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/rest-api/oplog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="269">
+              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -121,20 +122,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/src/rest-api/handleKnxIncommingValue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="445">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/dist/rest-api/handleKnxIncommingValue.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -348,7 +340,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549439382581" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549441259459" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -440,13 +432,6 @@
       <workItem from="1548700790656" duration="14000" />
       <workItem from="1548762326179" duration="16858000" />
       <workItem from="1549011630775" duration="75965000" />
-    </task>
-    <task id="LOCAL-00057" summary="check for time controlled job interval changed to one minute (from 5 seconds)">
-      <created>1547935167968</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1547935167968</updated>
     </task>
     <task id="LOCAL-00058" summary="check for time controlled job interval changed to one minute (from 5 seconds)">
       <created>1547935177699</created>
@@ -784,11 +769,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549360402881</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="backend: bug fixed: docs in knx-values will now be automatically deleted">
+      <created>1549441169490</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1549441169490</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="586909000" />
+    <option name="totallyTimeSpent" value="586954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -869,8 +861,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/backend/src/rest-api/oplog.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="269">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
