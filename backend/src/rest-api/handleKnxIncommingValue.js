@@ -33,7 +33,7 @@ export const handleKnxValue = async doc => {
       }
 
       await DataPointService.update(update)
-      await ValuesFromKnxService.remove(valueFromKnx._id)
+      //await ValuesFromKnxService.remove(valueFromKnx._id)
 
       let query = { dataPoint: dataPoint._id }
 
