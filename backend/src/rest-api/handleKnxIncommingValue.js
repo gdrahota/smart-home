@@ -15,8 +15,14 @@ const handleControlValue = async (control, endPoint, value) => {
 }
 
 export const handleKnxValue = async docId => {
+  const valueFromKnx = await ValuesFromKnxService.findOne({ _id: docId })
+
   try {
-    const valueFromKnx = await ValuesFromKnxService.findOne({ _id: docId })
+
+    if (!valueFromKnx) {
+      console.log('unknown valueFromKnc._id', docId)
+      return
+    }
 
     const query = {
       address: valueFromKnx.address,
@@ -56,6 +62,6 @@ export const handleKnxValue = async docId => {
     }
   }
   catch (err) {
-    console.log(err)
+    console.log(err, valueFromKnx)
   }
 }
