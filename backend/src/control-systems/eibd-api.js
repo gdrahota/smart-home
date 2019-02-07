@@ -90,3 +90,13 @@ export const connectToKnx = async serverConfig => {
     connection.Connect()
   })
 }
+
+const disconnect = () => {
+  console.info('Exit/kill signal received. Disconnection from knx adapter.')
+  connection.Disconnect()
+}
+
+process.on('SIGTERM', disconnect)
+process.on('SIGINT', disconnect)
+process.on('uncaughtException', disconnect)
+
