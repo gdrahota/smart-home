@@ -105,17 +105,6 @@ const state = {
           dpt: '5.001',
           controlType: 'readOnly',
         },
-        {
-          endPoint: 'max-lux-value',
-          label: 'Max. Lux-Wert',
-          dpt: '7.013',
-          controlType: 'slider',
-          min: 50,
-          max: 2000,
-          step: 50,
-          defaultValue: 100,
-          unit: '%'
-        },
       ]
     },
     {

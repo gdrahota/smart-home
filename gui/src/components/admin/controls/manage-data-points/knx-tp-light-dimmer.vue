@@ -44,11 +44,6 @@
             dataType: '5.001',
             endPoint: 'dim-response'
           },
-          {
-            endPoint: 'max-lux-value',
-            label: 'Max. Lux-Wert',
-            dataType: '7.013',
-          }
         ]
       }
     },
