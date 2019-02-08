@@ -104,7 +104,7 @@
 
 
         if (valueObj !== undefined && valueObj !== null) {
-          if (valueObj.value === true || valueObj.value > 0) {
+          if (valueObj.value === true || valueObj.value > 1) {
             return 'red'
           }
         }
