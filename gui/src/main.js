@@ -12,6 +12,7 @@ import config from '../config/client'
 import Confirm from './components/general/confirm-dialog'
 import KnxAddress from './components/general/knx-address'
 import filters from './filter'
+import { EventBus } from './event-bus'
 
 import ('./assets/general-styles.css')
 
@@ -20,6 +21,17 @@ filters.register(Vue)
 localStorage.debug = '*##'
 
 export const socket = socketIoClient(location.hostname + ':' + config.server.port)
+
+socket
+  .on('connect', () => {
+    // after every connect/reconnect we need fresh data from the
+    // server in order to be sure to operate on accurate data
+    EventBus.$emit('connected')
+    EventBus.$emit('reLogin')
+  })
+  .on('disconnect', () => {
+    EventBus.$emit('disconnected')
+  })
 
 Vue.use(vueSocketIO, socket, store)
 Vue.use(VueMomentJS, moment)

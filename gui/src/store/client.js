@@ -4,7 +4,8 @@ const state = {
   loggedIn: false,
   error: null,
   client: null,
-  requestedRouteBeforeLogin: null
+  requestedRouteBeforeLogin: null,
+  socketState: 'disconnected'
 }
 
 const loginAction = (context, credential) => {
@@ -54,11 +55,16 @@ const logoutMutation = state => {
   state.error = null
 }
 
+const setSocketStateMutation = (state, socketState) => {
+  state.socketState = socketState
+}
+
 const mutations = {
   setRequestedRouteBeforeLogin,
   SOCKET_LOGIN_RESPONSE,
   SOCKET_LOGIN_FAILED,
-  logoutMutation
+  logoutMutation,
+  setSocketStateMutation
 }
 
 const getClientId = state => {
@@ -70,7 +76,8 @@ const getClientId = state => {
 const getters = {
   userIsLoggedIn: state => state.loggedIn,
   getError: state => state.error,
-  getClientId
+  getClientId,
+  getSocketState: state => state.socketState,
 }
 
 export default {

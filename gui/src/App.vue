@@ -29,6 +29,10 @@
         <router-view/>
       </div>
     </v-content>
+    <v-footer app :class="socketState">
+      <v-icon :color="socketStateColor" class="pl-3">fa-plug</v-icon>
+      <span class="pl-2 red--text darken-3" v-if="socketState === 'disconnected'">Es besteht derzeit keine Verbindung zum Server!</span>
+    </v-footer>
   </v-app>
 </template>
 
@@ -46,12 +50,15 @@
 
     computed: {
       ...mapGetters({
-        isLoggedIn: 'client/userIsLoggedIn'
-      })
-    },
-
-    created () {
-      EventBus.$emit('reLogin')
+        isLoggedIn: 'client/userIsLoggedIn',
+        socketState: 'client/getSocketState',
+      }),
+      socketStateColor () {
+        if (this.socketState === 'connected') {
+          return 'green lighten-0'
+        }
+        return 'red lighten-1'
+      },
     },
 
     data: () => ({
@@ -70,3 +77,13 @@
     }
   }
 </script>
+
+<style scoped>
+  .disconnected {
+    border-top: 2px solid red;
+  }
+
+  .connected {
+    border-top: 2px solid rgb(12, 179, 12);
+  }
+</style>
