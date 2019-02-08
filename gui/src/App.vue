@@ -33,6 +33,16 @@
       <v-icon :color="socketStateColor" class="pl-3">fa-plug</v-icon>
       <span class="pl-2 red--text darken-3" v-if="socketState === 'disconnected'">Es besteht derzeit keine Verbindung zum Server!</span>
     </v-footer>
+    <v-dialog
+      v-model="showNoConnectionOverlay"
+      fullscreen
+      hide-overlay
+      transition="dialog-bottom-transition"
+    >
+      <v-layout align-center justify-center row fill-height half-transparent row wrap>
+        <v-flex xs12>Die Verbindung zum Server ist unterbrochen.</v-flex>
+      </v-layout>
+    </v-dialog>
   </v-app>
 </template>
 
@@ -52,6 +62,7 @@
       ...mapGetters({
         isLoggedIn: 'client/userIsLoggedIn',
         socketState: 'client/getSocketState',
+        getReLoginFailed: 'client/getReLoginFailed',
       }),
       socketStateColor () {
         if (this.socketState === 'connected') {
@@ -59,6 +70,12 @@
         }
         return 'red lighten-1'
       },
+      showNoConnectionOverlay: {
+        get () {
+          return this.socketState !== 'connected'
+        },
+        set () {}
+      }
     },
 
     data: () => ({
@@ -85,5 +102,16 @@
 
   .connected {
     border-top: 2px solid rgb(12, 179, 12);
+  }
+
+  .half-transparent {
+    background-color: coral;
+    opacity: 0.9;
+  }
+
+  .flex {
+    background-color: transparent;
+    font-size: 30px;
+    text-align: center;
   }
 </style>

@@ -3,6 +3,7 @@ import Store from '../store'
 import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import RouterContainer from '../components/router-container'
+import { EventBus } from '../event-bus'
 
 const Schedules = () => import ('../components/admin/schedules')
 const ExternalDataSources = () => import ('../components/admin/external-data-sources')
@@ -22,6 +23,7 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      name: 'home',
       component: RouterContainer,
       meta: {
         title: 'Home'
@@ -46,6 +48,7 @@ const router = new Router({
         },
         {
           path: 'tools',
+          name: 'tools',
           component: RouterContainer,
           meta: {
             requiresAuth: true,
@@ -54,6 +57,7 @@ const router = new Router({
           },
           children: [
             {
+              name: 'knx-monitor',
               path: 'knx-monitor',
               component: KnxMonitor,
               meta: {
@@ -137,32 +141,13 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!Store.getters['client/userIsLoggedIn']) {
-      Store.commit('client/setRequestedRouteBeforeLogin', to)
-      next({
-        name: 'login',
-        path: '/login',
-        query: { redirect: to.fullPath }
-      })
-    } else {
-      next()
-    }
+  const cond1 = to.matched.some(record => record.meta.requiresAuth)
+  const cond2 = Store.getters['client/userIsLoggedIn'] === false
+
+  if (cond1 && cond2) {
+    EventBus.$emit('login-or-re-login', to)
   } else {
     next()
-  }
-})
-
-Store.subscribe((mutation, state) => {
-  if (mutation.type === 'client/SOCKET_LOGIN_RESPONSE' && state.client.loggedIn === true) {
-    const lastRoute = state.client.requestedRouteBeforeLogin
-
-    if (lastRoute && state.client.requestedRouteBeforeLogin.path !== 'login') {
-      router.replace(lastRoute.fullPath)
-      Store.commit('client/setRequestedRouteBeforeLogin', null)
-    } else {
-      router.push('/')
-    }
   }
 })
 

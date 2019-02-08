@@ -4,7 +4,7 @@
       <v-flex lg4 xs12>
         <v-card class="elevation-12 pt-5 pr-4 pb-5 pl-4" id="card-login">
           <v-card-title class="title">Anmelden bei Smart Home (lokal)</v-card-title>
-          <v-alert color="error" :value="error" transition="scale-transition">{{ error }}</v-alert>
+          <v-alert color="error" :value="loginFailure" transition="scale-transition">{{ loginFailure }}</v-alert>
           <v-card-text>
             <v-form @submit.prevent="doLogin">
               <v-text-field
@@ -49,7 +49,7 @@
   export default {
     computed: {
       ...mapGetters({
-        error: 'client/getError'
+        loginFailure: 'client/getLoginFailure'
       })
     },
 

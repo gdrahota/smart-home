@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa8a30f-911b-4abf-958a-204308acb4c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/guidodrahota.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/guidodrahota.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/rest-api/clients.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/rest-api/clients.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/event-bus/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/event-bus/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/store/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/store/client.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +45,7 @@
           <entry key="gitignore" value="6" />
           <entry key="html" value="5" />
           <entry key="ico" value="1" />
-          <entry key="js" value="1312" />
+          <entry key="js" value="1318" />
           <entry key="json" value="29" />
           <entry key="lock" value="1" />
           <entry key="log" value="1" />
@@ -46,7 +53,7 @@
           <entry key="sh" value="2" />
           <entry key="ts" value="20" />
           <entry key="txt" value="1" />
-          <entry key="vue" value="797" />
+          <entry key="vue" value="807" />
           <entry key="xml" value="2" />
           <entry key="yaml" value="4" />
         </counts>
@@ -57,12 +64,12 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="29" />
-          <entry key="JavaScript" value="1312" />
+          <entry key="JavaScript" value="1318" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="RNG Compact" value="1" />
           <entry key="TypeScript" value="20" />
-          <entry key="Vue.js" value="797" />
+          <entry key="Vue.js" value="807" />
           <entry key="XML" value="2" />
           <entry key="YAML" value="4" />
           <entry key="yarn.lock" value="1" />
@@ -77,11 +84,11 @@
           <entry key="css" value="318" />
           <entry key="gitignore" value="37" />
           <entry key="html" value="14" />
-          <entry key="js" value="51873" />
+          <entry key="js" value="53301" />
           <entry key="json" value="79" />
           <entry key="log" value="1" />
-          <entry key="txt" value="4673" />
-          <entry key="vue" value="82149" />
+          <entry key="txt" value="4802" />
+          <entry key="vue" value="82737" />
           <entry key="yaml" value="26" />
         </counts>
       </usages-collector>
@@ -90,10 +97,10 @@
           <entry key="CSS" value="318" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="79" />
-          <entry key="JavaScript" value="51873" />
+          <entry key="JavaScript" value="53301" />
           <entry key="Markdown" value="13" />
-          <entry key="PLAIN_TEXT" value="4847" />
-          <entry key="Vue.js" value="82149" />
+          <entry key="PLAIN_TEXT" value="4976" />
+          <entry key="Vue.js" value="82737" />
           <entry key="YAML" value="26" />
         </counts>
       </usages-collector>
@@ -108,10 +115,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue">
+        <entry file="file://$PROJECT_DIR$/gui/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="701">
-              <caret line="106" column="59" selection-start-line="106" selection-start-column="59" selection-end-line="106" selection-end-column="59" />
+            <state relative-caret-position="85">
+              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-app#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,13 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>value</find>
-      <find>rootElement</find>
-      <find>$emit</find>
-      <find>.$emit</find>
-      <find>test</find>
-      <find>setTimeSlotValueFnc</find>
-      <find>border</find>
       <find>data</find>
       <find>'setValueToUseMutation'</find>
       <find>getTimeTypes</find>
@@ -150,6 +153,13 @@
       <find>'reLogin'</find>
       <find>consol</find>
       <find>socketState</find>
+      <find>'reLogin</find>
+      <find>router.push</find>
+      <find>getError</find>
+      <find>error</find>
+      <find>EventBus.</find>
+      <find>^</find>
+      <find>loginA</find>
     </findStrings>
     <replaceStrings>
       <replace>control</replace>
@@ -164,6 +174,7 @@
       <replace>'</replace>
       <replace>collection</replace>
       <replace>0, 0</replace>
+      <replace>loginFailure</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/backend/src/rest-api</dir>
@@ -175,12 +186,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gui/src/components/admin/select-day-and-time.vue" />
-        <option value="$PROJECT_DIR$/gui/src/store/helpers.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/select-day-and-time/hour.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/select-day-and-time/time-slot.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/select-day-and-time/index.vue" />
-        <option value="$PROJECT_DIR$/gui/src/router/index.js" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/schedules/index2.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/general/select-day-and-time/index3.vue" />
         <option value="$PROJECT_DIR$/gui/src/store/select-time-slots.js" />
@@ -222,10 +229,14 @@
         <option value="$PROJECT_DIR$/backend/src/control-systems/eibd-api.js" />
         <option value="$PROJECT_DIR$/gui/src/store/controls.js" />
         <option value="$PROJECT_DIR$/gui/src/main.js" />
-        <option value="$PROJECT_DIR$/gui/src/store/client.js" />
-        <option value="$PROJECT_DIR$/gui/src/event-bus/index.js" />
-        <option value="$PROJECT_DIR$/gui/src/App.vue" />
         <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/default/rtc.vue" />
+        <option value="$PROJECT_DIR$/gui/src/components/login/index.vue" />
+        <option value="$PROJECT_DIR$/backend/src/rest-api/clients.js" />
+        <option value="$PROJECT_DIR$/gui/src/store/client.js" />
+        <option value="$PROJECT_DIR$/gui/src/router/index.js" />
+        <option value="$PROJECT_DIR$/gui/src/event-bus/index.js" />
+        <option value="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" />
+        <option value="$PROJECT_DIR$/gui/src/App.vue" />
       </list>
     </option>
   </component>
@@ -284,6 +295,24 @@
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-home" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="rest-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -305,7 +334,7 @@
               <item name="gui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
@@ -313,18 +342,7 @@
               <item name="gui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="knx-tp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="knx-tp" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="menu-bar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
@@ -346,7 +364,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549619396507" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549745927199" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -438,20 +456,6 @@
       <workItem from="1548700790656" duration="14000" />
       <workItem from="1548762326179" duration="16858000" />
       <workItem from="1549011630775" duration="75965000" />
-    </task>
-    <task id="LOCAL-00063" summary="for every control system (knx node) a dedicated node process will be started automatically on startup">
-      <created>1548099772086</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1548099772086</updated>
-    </task>
-    <task id="LOCAL-00064" summary="log messages changed a bit">
-      <created>1548101326083</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1548101326083</updated>
     </task>
     <task id="LOCAL-00065" summary="config refactored">
       <created>1548101613676</created>
@@ -782,11 +786,34 @@
       <option name="project" value="LOCAL" />
       <updated>1549619067898</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="frontend: rtc control status color: turns red only if current value is true or &gt; 1">
+      <created>1549619593977</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1549619593977</updated>
+    </task>
+    <task id="LOCAL-00113" summary="frontend: bug fixed: no client side re-route after re-login anymore">
+      <created>1549621892338</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1549621892338</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="599382000" />
+    <option name="totallyTimeSpent" value="608751000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -806,7 +833,7 @@
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989429" weight="0.43067226" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4989429" weight="0.32928607" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4989429" weight="0.32832617" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5036855" side_tool="true" weight="0.21566524" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32939914" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32878152" />
@@ -837,8 +864,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="frontend: sorting of shown controls changed" />
-    <MESSAGE value="frontend: short-text-display control: icon changed" />
     <MESSAGE value="frontend: icon changed" />
     <MESSAGE value="frontend: admin -&gt; maintain controls -&gt; select control: text changed" />
     <MESSAGE value="knx control to control day / night switch added" />
@@ -862,27 +887,15 @@
     <MESSAGE value="backend: knx connection will be shutdown if the node process exits" />
     <MESSAGE value="frontend: max lux value removed from light dim control" />
     <MESSAGE value="frontend: connection status is being indicated at the app footer, after reconnect the client re-login in order to obtain fresh data" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend: connection status is being indicated at the app footer, after reconnect the client re-login in order to obtain fresh data" />
+    <MESSAGE value="frontend: rtc control status color: turns red only if current value is true or &gt; 1" />
+    <MESSAGE value="frontend: bug fixed: no client side re-route after re-login anymore" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend: bug fixed: no client side re-route after re-login anymore" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="16194" column="4" selection-start-line="16194" selection-start-column="4" selection-end-line="16194" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/store/helpers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -1200,16 +1213,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/clients.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -1221,45 +1224,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/menu-bar/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/components/main/page-header.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-app#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#1092#1125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/store/client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-613">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/event-bus/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1277,6 +1245,67 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="701">
           <caret line="106" column="59" selection-start-line="106" selection-start-column="59" selection-end-line="106" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/login/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/clients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="94" column="16" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/event-bus/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/menu-bar/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-app#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

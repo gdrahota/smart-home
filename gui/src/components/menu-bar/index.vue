@@ -53,7 +53,6 @@
           </v-list-tile-action>
         </v-list-tile>
       </v-list-group>
-
     </template>
   </v-list>
 </template>

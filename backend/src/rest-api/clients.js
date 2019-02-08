@@ -60,13 +60,18 @@ export const registerClientEndpoints = (io, socket) => {
   const cbReLogin = async clientId => {
     try {
       const client = await ClientService.reLogin(socket.id, clientId)
+
+      if (client === null) {
+        throw 'client_not_found'
+      }
+
       const clientAndRoles = { client }
-      socket.emit('login_response', clientAndRoles)
+      socket.emit('reLogin_response', clientAndRoles)
       socket.join(clientAndRoles.client.clientId)
       await sendDataToClient()
     }
     catch (err) {
-      socket.emit('login_failed')
+      socket.emit('relogin_failed', err)
     }
   }
 

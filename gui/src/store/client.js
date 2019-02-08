@@ -2,7 +2,8 @@ import { socket } from '../main'
 
 const state = {
   loggedIn: false,
-  error: null,
+  loginFailure: null,
+  reLoginFailure: null,
   client: null,
   requestedRouteBeforeLogin: null,
   socketState: 'disconnected'
@@ -35,19 +36,30 @@ const setRequestedRouteBeforeLogin = (state, routeObj) => {
 }
 
 const SOCKET_LOGIN_FAILED = (state, err) => {
-  state.error = err[0]
+  state.loginFailure = err[0]
+  state.reLoginFailed = false
 }
 
-const SOCKET_LOGIN_RESPONSE = (state, response) => {
-  if (response[0]) {
+const SOCKET_RELOGIN_FAILED = (state, response) => {
+  state.reLoginFailure = response[0]
+}
+
+const processLogin = (state, response) => {
+  if (response[0] && response[0].client) {
     state.client = response[0].client
     state.loggedIn = true
     localStorage.setItem('clientId', response[0].client.clientId)
   } else {
     state.client = null
     state.loggedIn = false
+    state.reLoginFailed = true
+    state.loginFailure = null
   }
 }
+
+const SOCKET_LOGIN_RESPONSE = processLogin
+
+const SOCKET_RELOGIN_RESPONSE = processLogin
 
 const logoutMutation = state => {
   state.client = null
@@ -62,9 +74,11 @@ const setSocketStateMutation = (state, socketState) => {
 const mutations = {
   setRequestedRouteBeforeLogin,
   SOCKET_LOGIN_RESPONSE,
+  SOCKET_RELOGIN_RESPONSE,
   SOCKET_LOGIN_FAILED,
+  SOCKET_RELOGIN_FAILED,
   logoutMutation,
-  setSocketStateMutation
+  setSocketStateMutation,
 }
 
 const getClientId = state => {
@@ -75,7 +89,8 @@ const getClientId = state => {
 
 const getters = {
   userIsLoggedIn: state => state.loggedIn,
-  getError: state => state.error,
+  getLoginFailure: state => state.loginFailure,
+  getReLoginFailed: state => state.reLoginFailed,
   getClientId,
   getSocketState: state => state.socketState,
 }
