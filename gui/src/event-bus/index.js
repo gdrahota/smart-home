@@ -11,7 +11,6 @@ EventBus
   })
   .$on('reLogin', () => {
     store.dispatch('client/reLoginAction')
-    router.push('/')
   })
   .$on('connected', () => store.commit('client/setSocketStateMutation', 'connected'))
   .$on('disconnected', () => store.commit('client/setSocketStateMutation', 'disconnected'))
