@@ -5,6 +5,7 @@ const state = {
   loading: true,
   items: [],
   selected: null,
+  latestUpdate: null,
   definitions: [
     {
       name: 'shutter',
@@ -182,11 +183,7 @@ const state = {
   ],
 }
 
-const SOCKET_CONTROLS_RESPONSE = (state, response) => {
-  state.items = response[0]
-  state.loading = false
-}
-
+/* Actions */
 const addAction = (context, item) => {
   socket.emit('add_control', item)
 }
@@ -205,13 +202,17 @@ const actions = {
   removeAction
 }
 
-const selectControl = (state, item) => {
-  state.selected = item
+/* Mutations */
+const SOCKET_CONTROLS_RESPONSE = (state, response) => {
+  state.items = response[0]
+  state.loading = false
+  state.latestUpdate = new Date()
 }
 
 const SOCKET_ADD_CONTROLS_RESPONSE = (state, response) => {
   state.items.push(response[0])
   state.selected = response[0]._id
+  state.latestUpdate = new Date()
 }
 
 const SOCKET_UPDATE_CONTROLS_RESPONSE = (state, response) => {
@@ -222,11 +223,17 @@ const SOCKET_UPDATE_CONTROLS_RESPONSE = (state, response) => {
     return item
   }
   state.items = state.items.map(mapFnc)
+  state.latestUpdate = new Date()
 }
 
 const SOCKET_REMOVE_CONTROLS_RESPONSE = (state, response) => {
   state.items = state.items.filter(i => i._id !== response[0])
   state.selected = null
+  state.latestUpdate = new Date()
+}
+
+const selectControl = (state, item) => {
+  state.selected = item
 }
 
 const mutations = {
@@ -238,6 +245,7 @@ const mutations = {
   SOCKET_REMOVE_CONTROLS_RESPONSE
 }
 
+/* Getters */
 const getActive = state =>
   state
     .items
@@ -277,6 +285,7 @@ const getters = {
   getSelectedControl,
   getDefinitions,
   getDefinitionByName,
+  getLatestUpdateDate: state => state.latestUpdate,
 }
 
 export default {

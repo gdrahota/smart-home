@@ -34,6 +34,8 @@ socket
   })
 
 Vue.use(vueSocketIO, socket, store)
+
+moment.locale('de')
 Vue.use(VueMomentJS, moment)
 Vue.component('confirm', Confirm)
 Vue.component('KnxAddress', KnxAddress)

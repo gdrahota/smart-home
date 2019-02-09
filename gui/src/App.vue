@@ -32,6 +32,10 @@
     <v-footer app :class="socketState">
       <v-icon :color="socketStateColor" class="pl-3">fa-plug</v-icon>
       <span class="pl-2 red--text darken-3" v-if="socketState === 'disconnected'">Es besteht derzeit keine Verbindung zum Server!</span>
+      <v-spacer/>
+      <span class="pr-2">
+        Letzte Datenänderung: {{ $moment(latestUpdateDate).fromNow() }}
+      </span>
     </v-footer>
     <v-dialog
       v-model="showNoConnectionOverlay"
@@ -63,6 +67,7 @@
         isLoggedIn: 'client/userIsLoggedIn',
         socketState: 'client/getSocketState',
         getReLoginFailed: 'client/getReLoginFailed',
+        latestUpdateDate: 'controls/getLatestUpdateDate',
       }),
       socketStateColor () {
         if (this.socketState === 'connected') {
