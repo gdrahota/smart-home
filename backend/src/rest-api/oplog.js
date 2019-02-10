@@ -4,6 +4,21 @@ import mongoose from 'mongoose'
 import { io } from '../infrastructure/websocket'
 import { handleKnxValue } from './handleKnxIncommingValue'
 
+const subscribeToCollections = [
+  'control-data-points',
+  'control-systems',
+  'controls',
+  'data-points',
+  'external-data-sources',
+  'facilities',
+  'facility-attribute-values',
+  'facility-attributes',
+  'knx-events',
+  'schedules',
+  'users',
+  'values-from-knx',
+]
+
 export let oplog
 
 export const connectToOplog = async () => {
@@ -27,6 +42,10 @@ export const handleOplog = () => {
   oplog.on('insert', doc => {
     const nsParts = doc.ns.split('.')
     const collection = nsParts[1]
+
+    if (subscribeToCollections.indexOf(collection) === -1) {
+      return
+    }
 
     try {
       if (collection === 'values-from-knx') {
@@ -57,6 +76,10 @@ export const handleOplog = () => {
     const nsParts = doc.ns.split('.')
     const collection = nsParts[1]
 
+    if (subscribeToCollections.indexOf(collection) === -1) {
+      return
+    }
+
     if (collection === 'values-from-knx') {
       handleKnxValue(doc.o2._id).then()
     }
@@ -85,6 +108,11 @@ export const handleOplog = () => {
   oplog.on('delete', doc => {
     const nsParts = doc.ns.split('.')
     const collection = nsParts[1]
+
+    if (subscribeToCollections.indexOf(collection) === -1) {
+      return
+    }
+
     if (io) {
       io.emit('remove_' + collection.replace(/-/g, '_').toLowerCase() + '_response', doc.o._id)
     }
