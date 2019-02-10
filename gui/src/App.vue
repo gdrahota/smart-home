@@ -66,7 +66,6 @@
       ...mapGetters({
         isLoggedIn: 'client/userIsLoggedIn',
         socketState: 'client/getSocketState',
-        getReLoginFailed: 'client/getReLoginFailed',
         latestUpdateDate: 'controls/getLatestUpdateDate',
       }),
       socketStateColor () {

@@ -5,10 +5,12 @@ const state = {
   loginFailure: null,
   reLoginFailure: null,
   client: null,
+  user: null,
   requestedRouteBeforeLogin: null,
   socketState: 'disconnected'
 }
 
+/* Actions */
 const loginAction = (context, credential) => {
   socket.emit('login', credential)
 }
@@ -31,30 +33,28 @@ const actions = {
   logoutAction
 }
 
+/* Mutations */
 const setRequestedRouteBeforeLogin = (state, routeObj) => {
   state.requestedRouteBeforeLogin = routeObj
 }
 
-const SOCKET_LOGIN_FAILED = (state, err) => {
-  state.loginFailure = err[0]
-  state.reLoginFailed = false
+const SOCKET_LOGIN_FAILED = (state, response) => {
+  state.loginFailure = response[0]
+  state.user = null
+  state.client = null
 }
 
 const SOCKET_RELOGIN_FAILED = (state, response) => {
   state.reLoginFailure = response[0]
+  state.user = null
+  state.client = null
 }
 
 const processLogin = (state, response) => {
-  if (response[0] && response[0].client) {
-    state.client = response[0].client
-    state.loggedIn = true
-    localStorage.setItem('clientId', response[0].client.clientId)
-  } else {
-    state.client = null
-    state.loggedIn = false
-    state.reLoginFailed = true
-    state.loginFailure = null
-  }
+  state.client = response[0].client
+  state.user = response[0].user
+  state.loggedIn = true
+  localStorage.setItem('clientId', response[0].client.clientId)
 }
 
 const SOCKET_LOGIN_RESPONSE = processLogin
@@ -63,6 +63,7 @@ const SOCKET_RELOGIN_RESPONSE = processLogin
 
 const logoutMutation = state => {
   state.client = null
+  state.user = null
   state.loggedIn = false
   state.error = null
 }
@@ -81,6 +82,7 @@ const mutations = {
   setSocketStateMutation,
 }
 
+/* Getters */
 const getClientId = state => {
   if (state.client) {
     return state.client.clientId
@@ -90,7 +92,7 @@ const getClientId = state => {
 const getters = {
   userIsLoggedIn: state => state.loggedIn,
   getLoginFailure: state => state.loginFailure,
-  getReLoginFailed: state => state.reLoginFailed,
+  getReLoginFailre: state => state.reLoginFailure,
   getClientId,
   getSocketState: state => state.socketState,
 }

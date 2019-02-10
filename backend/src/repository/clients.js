@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
-const add = (clientId, user, socketId, expires) => {
-  const client = { clientId, user, socketId, expires }
+const add = (clientId, userId, socketId, expires) => {
+  const client = { clientId, userId, socketId, expires }
   const collection = mongoose.model('client')
   return new collection(client).save()
 }

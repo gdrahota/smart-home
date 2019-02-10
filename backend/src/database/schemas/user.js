@@ -1,5 +1,7 @@
 import mongoose from 'mongoose'
 
+const passwordPlugin = require('mongoose-bcrypt')
+
 export const userStates = ['active', 'inactive']
 
 export const registerSchema = () => {
@@ -9,6 +11,11 @@ export const registerSchema = () => {
     accountName: {
       type: String,
       required: true
+    },
+    password: {
+      type: String,
+      required: true,
+      bcrypt: true
     },
     firstName: {
       type: String,
@@ -31,10 +38,11 @@ export const registerSchema = () => {
 
   const options = { collection: 'users', timestamps: {} }
 
-  const ControlSchema = new Schema(typeDefinition, options)
+  const UserSchema = new Schema(typeDefinition, options)
+  UserSchema.plugin(passwordPlugin)
 
   try {
-    mongoose.model('users', ControlSchema)
+    mongoose.model('users', UserSchema)
   } catch (err) {
   }
 }

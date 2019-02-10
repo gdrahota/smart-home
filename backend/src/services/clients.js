@@ -1,5 +1,6 @@
 import ClientRepository from '../repository/clients'
 import config from '../../config/server'
+import { UserService } from '../services/users'
 
 const AppRolesToLdapRoles = config.appRolesToLdapRoles
 
@@ -27,26 +28,28 @@ export const mapLdapGroupsToAppRoles = (appRolesToLdapRoles, userGroups) => {
   return userRights
 }
 
-const login = async (credentials, socketId) => {
+const login = async ({ username, password }, socketId) => {
   try {
-    const { username, password } = credentials
+    const user = await UserService.findOne({ accountName: username })
+    if (!user) {
+      throw 'UNKNOWN_USER_OR_WRONG_PASSWORD'
+    }
+
+    const isThePasswordCorrect = await user.verifyPassword(password)
+    if (isThePasswordCorrect === false) {
+      throw 'UNKNOWN_USER_OR_WRONG_PASSWORD'
+    }
+
     const uuid = require('uuid/v4')
 
-    // local auth
-    const user = registeredUsers.find(regUser => regUser.accountName === username)
+    const expires = new Date()
+    expires.setHours(expires.getHours() + 4)
 
-    if (user) {
-      const expires = new Date()
-      expires.setHours(expires.getHours() + 4)
-
-      console.log(uuid(), user, socketId, expires)
-      return await ClientRepository.add(uuid(), user, socketId, expires)
-    }
+    const client = await ClientRepository.add(uuid(), user._id, socketId, expires)
+    return { client, user }
   }
   catch (err) {
-    console.log(err)
-
-    return 'UNKNOWN_USER_OR_WRONG_PASSWORD'
+    throw 'UNKNOWN_USER_OR_WRONG_PASSWORD'
   }
 }
 
@@ -54,7 +57,16 @@ const reLogin = async (socketId, clientId) => {
   const expires = new Date()
   expires.setHours(expires.getHours() + 4)
 
-  return ClientRepository.relogin(socketId, clientId, expires)
+  const client = await ClientRepository.relogin(socketId, clientId, expires)
+
+  if (!client) {
+    throw 'UNKNOWN_USER_CLIENT'
+  }
+
+  const user = await UserService.findOne({ _id: client.userId }).lean()
+  console.log('re-login', { client, user })
+
+  return { client, user }
 }
 
 const logOut = async clientId => ClientRepository.logOut(clientId)

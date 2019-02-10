@@ -41,16 +41,10 @@ export const registerClientEndpoints = (io, socket) => {
 
   const cbLogin = async credentials => {
     try {
-      const client = await ClientService.login(credentials, socket.id)
-
-      if (client === 'UNKNOWN_USER_OR_WRONG_PASSWORD') {
-        socket.emit('login_failed', client)
-      } else {
-        const clientAndRoles = { client }
-        socket.emit('login_response', clientAndRoles)
-        socket.join(clientAndRoles.client.clientId)
-        await sendDataToClient()
-      }
+      const response = await ClientService.login(credentials, socket.id)
+      socket.emit('login_response', response)
+      socket.join(response.client.clientId)
+      await sendDataToClient()
     }
     catch (err) {
       socket.emit('login_failed', err)
@@ -59,15 +53,10 @@ export const registerClientEndpoints = (io, socket) => {
 
   const cbReLogin = async clientId => {
     try {
-      const client = await ClientService.reLogin(socket.id, clientId)
+      const response = await ClientService.reLogin(socket.id, clientId)
 
-      if (client === null) {
-        throw 'client_not_found'
-      }
-
-      const clientAndRoles = { client }
-      socket.emit('reLogin_response', clientAndRoles)
-      socket.join(clientAndRoles.client.clientId)
+      socket.emit('reLogin_response', response)
+      socket.join(response.client.clientId)
       await sendDataToClient()
     }
     catch (err) {

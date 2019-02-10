@@ -3,18 +3,6 @@ import mongoose from 'mongoose'
 export const registerSchema = () => {
   const Schema = mongoose.Schema
 
-  const UserSchema = new Schema({
-    accountName: {
-      type: String,
-      required: true
-    },
-    mail: {
-      type: String,
-      required: true
-    },
-    groups: [String]
-  })
-
   const ClientSchema = new Schema({
     clientId: {
       type: String,
@@ -24,8 +12,8 @@ export const registerSchema = () => {
       type: [String],
       required: true
     },
-    user: {
-      type: UserSchema,
+    userId: {
+      type: Schema.Types.ObjectId,
       required: true
     },
     expires: {

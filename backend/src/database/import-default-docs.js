@@ -10,7 +10,8 @@ const defaultDocs = [
         lastName: 'Administrator',
         state: ['active'],
         groups: ['GlobalAdmin'],
-        accountName: 'admin'
+        accountName: 'admin',
+        password: 'admin',
       }
     ]
   }
