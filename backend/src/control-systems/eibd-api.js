@@ -1,12 +1,13 @@
 import { KnxEventService } from '../services/knx-events'
 import { ValuesFromKnxService } from '../services/values-from-knx'
-import moment from 'moment'
 
 let config
 
 const saveEventToDb = (evt, src, dest, value) => {
-  //console.log("event: %s, src: %j, dest: %j, value: %j", evt, src, dest, value)
-  console.log('<= ', moment().format('HH:mm:ss'), evt, src, dest, value)
+  if (evt === 'readValue') {
+    return
+  }
+  //console.log('[inbound]', moment().format('HH:mm:ss'), evt, src, dest, value)
 
   // upsert doc in 'values-from-knx'
   const valueFromKnx = {
@@ -40,20 +41,17 @@ const saveEventToDb = (evt, src, dest, value) => {
 
 export let connection
 
-export const connectToKnx = async serverConfig => {
+export const connectToKnx = serverConfig => {
   config = serverConfig
 
-  const sanitizeHostAddress = address => {
-    return address.split('.').map(item => parseInt(item)).join('.')
-  }
+  return new Promise((resolve, reject) => {
+    config.host = config.host.split('.').map(item => parseInt(item)).join('.')
 
-  new Promise((resolve, reject) => {
-    const knx = require('knx')
-    connection = new knx.Connection({
+    const options = {
       debug: false,
       // ip address and port of the KNX router or interface
-      ipAddr: sanitizeHostAddress(serverConfig.host),
-      ipPort: serverConfig.port,
+      ipAddr: config.host,
+      ipPort: config.port,
 
       // the KNX physical address we'd like to use
       physAddr: '1.0.201',
@@ -78,8 +76,8 @@ export const connectToKnx = async serverConfig => {
       handlers: {
         // wait for connection establishment before sending anything!
         connected: () => {
-          console.log('connected to knx')
-          resolve(connection)
+          console.log('| connected to knx')
+          resolve()
         },
 
         // get notified for all KNX events:
@@ -90,21 +88,12 @@ export const connectToKnx = async serverConfig => {
       },
       // get notified on connection errors
       err: connStatus => {
-        console.log("connection to knx FAILED!", connStatus)
-        reject(connStatus)
+        console.log("| connection to knx FAILED!", connStatus)
+        reject()
       }
-    })
+    }
 
-    return connection.Connect()
+    console.log('| Connecting to knx interface at', config.host, 'on port', config.port, '...')
+    connection = new require('knx').Connection(options).Connect()
   })
 }
-
-const disconnect = () => {
-  console.info('Exit/kill signal received. Disconnection from knx adapter.')
-  connection.Disconnect()
-}
-
-process.on('SIGTERM', disconnect)
-process.on('SIGINT', disconnect)
-process.on('uncaughtException', disconnect)
-

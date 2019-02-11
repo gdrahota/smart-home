@@ -1,65 +1,86 @@
-import MongoOplog from "mongo-oplog"
-import { getCommand, removeCommand } from './data-access'
+import { addCommand, getEndPoints, getNextCommand, removeCommand } from './data-access'
 import { connection } from './eibd-api'
-import moment from 'moment'
+import async from 'async'
 
-export const connectToOplog = config =>
-  new Promise((resolve, reject) => {
-    const oplog = MongoOplog(config.mongoDb.oplog.url, { coll: config.mongoDb.oplog.collection })
-    oplog.tail().then(
-      () => {
-        console.log('| oplog started')
-        resolve(oplog)
-      }
-    ).catch(err => {
-      console.error('| CANNOT connect to oplog!', err)
-      reject(err)
-    })
+const cbAskForFeedback = command =>
+  new Promise(async (resolveBig, rejectBig) => {
+    try {
+      await connection.read(command.targetAddress)
+      await removeCommand(command._id)
+      resolveBig()
+    }
+    catch (err) {
+      console.log('[ERROR]', new Date().getMilliseconds(), ' command NOT handed over to bus', err)
+      rejectBig(err)
+    }
   })
 
-export const handleOplog =
-  oplog => {
-    oplog.on('insert',
-      async doc => {
-        const nsParts = doc.ns.split('.')
-        const collection = nsParts[1]
+const sendToBus = command =>
+  connection.write(
+    command.targetAddress,
+    command.payload,
+    'DPT' + command.dataType
+  )
 
-        if (collection === 'command-queue') {
-          try {
-            const command = await getCommand(doc.o._id)
-
-            // this callback is only being called if the command had been sent onto the knx bus successfully
-            const cbRemoveCommandAndAskForFeedback = async () => {
-              try {
-                // in case the device doesn't offer to send a feedback on a different address, then this helps a lot :)
-                await new Promise(resolve => setTimeout(resolve, 500))
-                connection.read(command.targetAddress, (src, responseValue) => {
-                  console.log('feedback requested', src, responseValue)
-                })
-
-                // remove command
-                await removeCommand(doc.o._id)
-              }
-              catch (err) {
-                console.log('=> ', new Date().getMilliseconds(), ' command NOT handed over to bus', err)
-              }
-            }
-
-            if (command) {
-              console.log('=> ', moment(new Date()).format('HH:mm:ss'), command.commandType + ' to bus', command.targetAddress,
-                'DPT' + command.dataType)
-
-              if (command.commandType === 'writeValue') {
-                connection.write(command.targetAddress, command.payload, 'DPT' + command.dataType, cbRemoveCommandAndAskForFeedback)
-              } else {
-                await cbRemoveCommandAndAskForFeedback()
-              }
-            }
-          }
-          catch (err) {
-            console.log(err)
-          }
-        }
+const processNextCommand = () =>
+  new Promise(async (resolve, reject) => {
+    try {
+      const command = await getNextCommand()
+      if (!command) {
+        resolve()
+        return
       }
-    )
+
+      if (command.commandType === 'writeValue') {
+        await sendToBus(command)
+        await new Promise(resolve => setTimeout(resolve, 200))
+      } else {
+        await connection.read(command.targetAddress)
+      }
+
+      await cbAskForFeedback(command)
+      resolve()
+    }
+    catch (err) {
+      reject(err)
+    }
+  })
+
+export const startCommandQueueWatcher = () => {
+  const run = next => {
+    processNextCommand().then(() => new Promise(resolve => setTimeout(resolve, 200)).then(() => next()))
   }
+
+  async.forever(run, err => {
+    console.log('ERROR', err)
+  })
+
+  console.log('| commandQueueWatcher started')
+}
+
+export const requestAllDataPopintValues = async controlSystemId => {
+  const endPoints = await getEndPoints(controlSystemId)
+  endPoints.forEach(endPoint => {
+    const command = {
+      commandType: 'readValue',
+      targetAddress: endPoint.address
+    }
+    addCommand(command)
+  })
+}
+
+const disconnect = (code) => {
+  console.log('Shutting down knx adapter due to exit signal', code)
+
+  if (connection) {
+    console.info('Disconnecting from knx adapter...')
+    connection.Disconnect()
+  }
+
+  process.exit(1)
+}
+
+process.on('SIGTERM', disconnect)
+process.on('SIGINT', disconnect)
+process.on('uncaughtException', disconnect)
+process.on('exit', disconnect)

@@ -17,7 +17,7 @@ export const registerSchema = () => {
     },
     dataType: {
       type: String,
-      required: true
+      required: false
     },
     payload: {
       type: Schema.Types.Mixed,
