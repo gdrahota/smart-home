@@ -17,46 +17,49 @@ export const connectToOplog = config =>
     })
   })
 
-export const handleOplog = oplog => {
-  oplog.on('insert', async doc => {
-    const nsParts = doc.ns.split('.')
-    const collection = nsParts[1]
+export const handleOplog =
+  oplog => {
+    oplog.on('insert',
+      async doc => {
+        const nsParts = doc.ns.split('.')
+        const collection = nsParts[1]
 
-    if (collection === 'command-queue') {
-      try {
-        const command = await getCommand(doc.o._id)
-
-        // this callback is only being called if the command had been sent onto the knx bus successfully
-        const cbRemoveCommandAndAskForFeedback = async () => {
+        if (collection === 'command-queue') {
           try {
-            // remove command
-            await removeCommand(doc.o._id)
+            const command = await getCommand(doc.o._id)
 
-            // in case the device doesn't offer to send a feedback on a different address, then this helps a lot :)
-            await new Promise(resolve => setTimeout(resolve, 500))
-            connection.read(command.targetAddress, (src, responseValue) => {
-              console.log('feedback requested', src, responseValue)
-            })
+            // this callback is only being called if the command had been sent onto the knx bus successfully
+            const cbRemoveCommandAndAskForFeedback = async () => {
+              try {
+                // in case the device doesn't offer to send a feedback on a different address, then this helps a lot :)
+                await new Promise(resolve => setTimeout(resolve, 500))
+                connection.read(command.targetAddress, (src, responseValue) => {
+                  console.log('feedback requested', src, responseValue)
+                })
+
+                // remove command
+                await removeCommand(doc.o._id)
+              }
+              catch (err) {
+                console.log('=> ', new Date().getMilliseconds(), ' command NOT handed over to bus', err)
+              }
+            }
+
+            if (command) {
+              console.log('=> ', moment(new Date()).format('HH:mm:ss'), command.commandType + ' to bus', command.targetAddress,
+                'DPT' + command.dataType)
+
+              if (command.commandType === 'writeValue') {
+                connection.write(command.targetAddress, command.payload, 'DPT' + command.dataType, cbRemoveCommandAndAskForFeedback)
+              } else {
+                await cbRemoveCommandAndAskForFeedback()
+              }
+            }
           }
           catch (err) {
-            console.log('=> ', new Date().getMilliseconds(), ' command NOT handed over to bus', err)
-          }
-        }
-
-        if (command) {
-          console.log('=> ', moment(new Date()).format('HH:mm:ss'), command.commandType + ' to bus', command.targetAddress,
-            'DPT' + command.dataType)
-
-          if (command.commandType === 'writeValue') {
-            connection.write(command.targetAddress, command.payload, 'DPT' + command.dataType, cbRemoveCommandAndAskForFeedback)
-          } else {
-            await cbRemoveCommandAndAskForFeedback()
+            console.log(err)
           }
         }
       }
-      catch (err) {
-        console.log(err)
-      }
-    }
-  })
-}
+    )
+  }
