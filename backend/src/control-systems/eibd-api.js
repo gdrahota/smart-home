@@ -95,7 +95,7 @@ export const connectToKnx = async serverConfig => {
       }
     })
 
-    connection.Connect()
+    return connection.Connect()
   })
 }
 
