@@ -4,7 +4,12 @@
       <v-flex lg4 xs12>
         <v-card class="elevation-12 pt-5 pr-4 pb-5 pl-4" id="card-login">
           <v-card-title class="title">Anmelden bei Smart Home (lokal)</v-card-title>
-          <v-alert color="error" :value="loginFailure" transition="scale-transition">{{ loginFailure }}</v-alert>
+          <v-alert color="error" :value="loginFailure" transition="scale-transition">
+            <span v-if="loginFailure === 'UNKNOWN_USER_OR_WRONG_PASSWORD'">
+              Dieser Benutzer ist entweder deaktiviert, unbekannt oder Sie haben ein falsches Kennwort angegeben.
+            </span>
+            <span v-else>{{ loginFailure }}</span>
+          </v-alert>
           <v-card-text>
             <v-form @submit.prevent="doLogin">
               <v-text-field

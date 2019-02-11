@@ -10,6 +10,7 @@ import { registerFacilityEndpoints } from './facilities'
 import { registerFacilityAttributeEndpoints } from './facility-attributes'
 import { registerFacilityAttributeValuesEndpoints } from './facility-attribute-values'
 import { registerScheduleEndpoints } from './schedules'
+import { registerUserEndpoints } from './users'
 import UserService from '../services/clients'
 
 export const registerEndpoints = () => {
@@ -32,6 +33,7 @@ export const registerEndpoints = () => {
       registerFacilityAttributeEndpoints(io, socket)
       registerFacilityAttributeValuesEndpoints(io, socket)
       registerScheduleEndpoints(io, socket)
+      registerUserEndpoints(io, socket)
     })
     .on('disconnect', reason => {
       if (reason === 'io server disconnect') {

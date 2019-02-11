@@ -30,7 +30,11 @@ export const mapLdapGroupsToAppRoles = (appRolesToLdapRoles, userGroups) => {
 
 const login = async ({ username, password }, socketId) => {
   try {
-    const user = await UserService.findOne({ accountName: username })
+    const query = {
+      accountName: username,
+      state: 'active',
+    }
+    const user = await UserService.findOne(query)
     if (!user) {
       throw 'UNKNOWN_USER_OR_WRONG_PASSWORD'
     }
@@ -39,6 +43,10 @@ const login = async ({ username, password }, socketId) => {
     if (isThePasswordCorrect === false) {
       throw 'UNKNOWN_USER_OR_WRONG_PASSWORD'
     }
+
+    // set new lastLoginAt
+    user.lastLoginAt = new Date()
+    await UserService.update(user)
 
     const uuid = require('uuid/v4')
 
@@ -63,8 +71,19 @@ const reLogin = async (socketId, clientId) => {
     throw 'UNKNOWN_USER_CLIENT'
   }
 
-  const user = await UserService.findOne({ _id: client.userId }).lean()
-  console.log('re-login', { client, user })
+  const query = {
+    _id: client.userId,
+    state: 'active',
+  }
+  const user = await UserService.findOne(query).lean()
+
+  if (!user) {
+    throw 'UNKNOWN_USER'
+  }
+
+  // set new lastLoginAt
+  user.lastLoginAt = new Date()
+  await UserService.update(user)
 
   return { client, user }
 }

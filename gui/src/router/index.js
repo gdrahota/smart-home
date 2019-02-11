@@ -8,7 +8,6 @@ import { EventBus } from '../event-bus'
 const Schedules = () => import ('../components/admin/schedules')
 const ExternalDataSources = () => import ('../components/admin/external-data-sources')
 const OpenWeatherMap = () => import ('../components/admin/external-data-sources/open-weather-map')
-const SelectDayAndTime = () => import ('../components/admin/schedules/index2')
 const KnxMonitor = () => import ('../components/utils/knx-monitor')
 const Control = () => import ('../components/control')
 const Facilities = () => import('../components/admin/facilities')
@@ -16,6 +15,7 @@ const DataPoints = () => import('../components/admin/data-points')
 const ControlSystems = () => import('../components/admin/control-systems')
 const Controls = () => import('../components/admin/controls')
 const Login = () => import('../components/login')
+const ManageUsers = () => import('../components/admin/users')
 
 Vue.use(Router)
 
@@ -111,10 +111,10 @@ const router = new Router({
               }
             },
             {
-              path: 'schedules-2',
-              component: SelectDayAndTime,
+              path: 'users',
+              component: ManageUsers,
               meta: {
-                title: 'Zeitsteuerung II'
+                title: 'Benutzerverwaltung'
               }
             },
             {

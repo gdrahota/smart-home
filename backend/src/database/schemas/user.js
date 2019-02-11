@@ -33,6 +33,10 @@ export const registerSchema = () => {
     groups: {
       type: Array,
       default: () => []
+    },
+    lastLoginAt: {
+      type: Date,
+      required: false
     }
   }
 

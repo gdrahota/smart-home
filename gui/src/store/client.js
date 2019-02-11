@@ -5,7 +5,6 @@ const state = {
   loginFailure: null,
   reLoginFailure: null,
   client: null,
-  user: null,
   requestedRouteBeforeLogin: null,
   socketState: 'disconnected'
 }
@@ -40,20 +39,19 @@ const setRequestedRouteBeforeLogin = (state, routeObj) => {
 
 const SOCKET_LOGIN_FAILED = (state, response) => {
   state.loginFailure = response[0]
-  state.user = null
   state.client = null
 }
 
 const SOCKET_RELOGIN_FAILED = (state, response) => {
   state.reLoginFailure = response[0]
-  state.user = null
   state.client = null
 }
 
 const processLogin = (state, response) => {
   state.client = response[0].client
-  state.user = response[0].user
   state.loggedIn = true
+  state.loginFailure = null
+  state.reloginFailure = null
   localStorage.setItem('clientId', response[0].client.clientId)
 }
 
@@ -63,9 +61,9 @@ const SOCKET_RELOGIN_RESPONSE = processLogin
 
 const logoutMutation = state => {
   state.client = null
-  state.user = null
   state.loggedIn = false
-  state.error = null
+  state.loginFailure = null
+  state.reloginFailure = null
 }
 
 const setSocketStateMutation = (state, socketState) => {
@@ -91,8 +89,8 @@ const getClientId = state => {
 
 const getters = {
   userIsLoggedIn: state => state.loggedIn,
+  getClient: state => state.client,
   getLoginFailure: state => state.loginFailure,
-  getReLoginFailre: state => state.reLoginFailure,
   getClientId,
   getSocketState: state => state.socketState,
 }

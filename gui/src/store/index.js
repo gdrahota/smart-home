@@ -15,6 +15,7 @@ import helpers from './helpers'
 import knxEvents from './knx-events'
 import schedules from './schedules'
 import timeSlots from './time-slots'
+import users from './users'
 
 
 Vue.use(Vuex)
@@ -34,6 +35,7 @@ export default new Vuex.Store({
     helpers,
     knxEvents,
     schedules,
-    timeSlots
+    timeSlots,
+    users,
   }
 })

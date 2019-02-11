@@ -18,7 +18,7 @@
       </v-list-tile>
 
       <v-list-group
-        v-else
+        v-else-if="grantAccess(item.requiredGroup)"
         v-model="item.model"
         :key="item.text"
         :append-icon="item.model ? 'fa-angle-left' : 'fa-angle-right'"
@@ -49,7 +49,7 @@
             </v-list-tile-title>
           </v-list-tile-content>
           <v-list-tile-action v-if="child.icon">
-            <v-icon>{{ child.icon }}</v-icon>
+            <v-icon small>{{ child.icon }}</v-icon>
           </v-list-tile-action>
         </v-list-tile>
       </v-list-group>
@@ -58,25 +58,36 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
+
   export default {
+    computed: {
+      ...mapGetters({
+        currentUser: 'users/getCurrentUser'
+      }),
+    },
+
     data () {
       return {
         items: [
           { icon: 'fa-home', text: 'Home', to: { path: '/' } },
           {
+            requiredGroup: 'GlobalAdmin',
             icon: 'fa-cog',
             text: 'Einstellungen',
             model: false,
             children: [
-              { icon: 'fa-add', text: 'Gebäude', to: { path: '/admin/facilities' } },
-              { icon: 'fa-add', text: 'Schnittstellensysteme', to: { path: '/admin/control-systems' } },
-              { icon: 'fa-add', text: 'Endpunkte', to: { path: '/admin/data-points' } },
-              { icon: 'fa-add', text: 'Steuerelemente', to: { path: '/admin/controls' } },
-              { icon: 'fa-add', text: 'Zeitsteuerung', to: { path: '/admin/schedules' } },
+              { icon: 'fa-university', text: 'Gebäude', to: { path: '/admin/facilities' } },
+              { icon: 'fa-link', text: 'Schnittstellensysteme', to: { path: '/admin/control-systems' } },
+              { icon: 'fa-arrow-circle-o-down', text: 'Endpunkte', to: { path: '/admin/data-points' } },
+              { icon: 'fa-dot-circle-o', text: 'Steuerelemente', to: { path: '/admin/controls' } },
+              { icon: 'fa-clock-o', text: 'Zeitsteuerung', to: { path: '/admin/schedules' } },
               { icon: 'fa-add', text: 'Externe Datenquellen', to: { path: '/admin/external-data-sources' } },
+              { icon: 'fa-users', text: 'Benutzerverwaltung', to: { path: '/admin/users' } },
             ]
           },
           {
+            requiredGroup: 'GlobalAdmin',
             icon: 'fa-wrench',
             text: 'Werkzeug',
             model: false,
@@ -87,6 +98,20 @@
           { icon: 'fa-dot-circle-o', text: 'Steuerung', to: { path: '/control' } },
         ]
       }
-    }
+    },
+
+    methods: {
+      grantAccess (requiredGroup) {
+        if (!this.currentUser) {
+          return false
+        }
+
+        if (!requiredGroup || requiredGroup === '') {
+          return true
+        }
+
+        return this.currentUser.groups.find(group => group === requiredGroup)
+      },
+    },
   }
 </script>
