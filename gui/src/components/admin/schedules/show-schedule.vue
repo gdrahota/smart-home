@@ -85,7 +85,7 @@
         selected: 'schedules/getSelected',
         getControlById: 'controls/getById',
         timeType: 'schedules/getTimeTypeAndOffset',
-        getDefinitionByName: 'controls/getDefinitionByName',
+        getDefinitionByName: 'controlDefinitions/getByName',
       }),
       active: {
         get () {

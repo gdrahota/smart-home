@@ -5,6 +5,7 @@ import client from './client'
 import commands from './commands'
 import controls from './controls'
 import controlDataPoints from './control-data-points'
+import controlDefinitions from './control-definitions'
 import controlSystems from './control-systems'
 import dataPoints from './data-points'
 import externalDataSources from './external-data-sources'
@@ -17,7 +18,6 @@ import schedules from './schedules'
 import timeSlots from './time-slots'
 import users from './users'
 
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -26,6 +26,7 @@ export default new Vuex.Store({
     commands,
     controls,
     controlDataPoints,
+    controlDefinitions,
     controlSystems,
     dataPoints,
     externalDataSources,

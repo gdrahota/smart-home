@@ -82,7 +82,7 @@
     computed: {
       ...mapGetters({
         facilities: 'facilities/getActive',
-        controlTypeDefinitions: 'controls/getDefinitions'
+        controlTypeDefinitions: 'controlDefinitions/get',
       }),
       items () {
         return this.facilities.map(i => {

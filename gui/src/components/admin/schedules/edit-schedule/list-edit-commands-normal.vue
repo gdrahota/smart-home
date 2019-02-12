@@ -49,7 +49,7 @@
         timeTypes: 'schedules/getTimeTypes',
         controls: 'controls/get',
         controlById: 'controls/getById',
-        getDefinitionByName: 'controls/getDefinitionByName',
+        getDefinitionByName: 'controlDefinitions/getByName',
       }),
     },
 

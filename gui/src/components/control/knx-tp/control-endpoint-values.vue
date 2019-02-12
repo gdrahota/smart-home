@@ -49,7 +49,7 @@
       ...mapGetters({
         getByControlAndEndPoint: 'controlDataPoints/getByControlAndEndPoint',
         getDataPointById: 'dataPoints/getById',
-        getControlDefinition: 'controls/getDefinitionByName',
+        getControlDefinition: 'controlDefinitions/getByName',
       }),
       controlDefinition () {
         return this.getControlDefinition(this.control.controlType)

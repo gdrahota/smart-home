@@ -2,6 +2,7 @@ export const registerMongooseSchemas = () => {
   require('./client').registerSchema()
   require('./command-queue').registerSchema()
   require('./controls').registerSchema()
+  require('./control-definitions').registerSchema()
   require('./control-system').registerSchema()
   require('./control-data-points').registerSchema()
   require('./data-points').registerSchema()

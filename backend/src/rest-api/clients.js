@@ -1,5 +1,6 @@
 import ClientService from '../services/clients'
 import { ControlDataPointService } from '../services/control-data-points'
+import { ControlDefinitionService } from '../services/control-definitions'
 import { ControlSystemService } from '../services/control-systems'
 import { ControlService } from '../services/controls'
 import { DataPointService } from '../services/data-points'
@@ -27,6 +28,7 @@ export const registerClientEndpoints = (io, socket) => {
     await getValues('control_data_points', ControlDataPointService)
     await getValues('control_systems', ControlSystemService)
     await getValues('control_system_types', ControlSystemService)
+    await getValues('control_definitions', ControlDefinitionService)
     await getValues('controls', ControlService)
     await getValues('data_points', DataPointService)
     await getValues('external_data_sources', ExternalDataSourceService)

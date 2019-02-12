@@ -64,7 +64,8 @@
       ...mapGetters({
         controls: 'controls/get',
         getSelectedControl: 'controls/getSelectedControl',
-        getControlDefinition: 'controls/getDefinitionByName',
+        getControlDefinition: 'controlDefinitions/getByName',
+
       }),
       controlOptions () {
         return this.controls.map(c => {
