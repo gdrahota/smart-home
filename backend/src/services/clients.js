@@ -1,32 +1,5 @@
 import ClientRepository from '../repository/clients'
-import config from '../../config/server'
 import { UserService } from '../services/users'
-
-const AppRolesToLdapRoles = config.appRolesToLdapRoles
-
-const registeredUsers = [
-  {
-    accountName: 'robert',
-    mail: 'robert@taster.de',
-    groups: []
-  }
-]
-
-export const mapLdapGroupsToAppRoles = (appRolesToLdapRoles, userGroups) => {
-  const userRights = {}
-
-  Object.keys(appRolesToLdapRoles).forEach(feature => {
-    userRights[feature] = {}
-
-    Object
-      .keys(appRolesToLdapRoles[feature])
-      .forEach(role => {
-        userRights[feature][role] = appRolesToLdapRoles[feature][role].some(needed => userGroups.some(userGroup => needed === userGroup))
-      })
-  })
-
-  return userRights
-}
 
 const login = async ({ username, password }, socketId) => {
   try {
