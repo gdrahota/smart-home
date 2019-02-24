@@ -42,7 +42,7 @@ export class DaytimesJob {
     let todaysExecutionTime
 
     if (daytime.isBefore(timeFrameStarts)) {
-      todaysExecutionTime = timeFrameStarts
+      todaysExecutionTime = daytime
     } else if (daytime.isAfter(timeFrameEnds)) {
       todaysExecutionTime = timeFrameEnds
     } else {
