@@ -3,7 +3,12 @@ import connectHistoryApiFallback from 'connect-history-api-fallback'
 import path from 'path'
 
 export const serveStaticFiles = app => {
-  if (!(process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'development')) {
+  app.use('/', (a, b, next) => {
+    console.log('local', __dirname, path.join(__dirname + '../../../../gui/dist/'))
+    next()
+  })
+
+  if (!(process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'development' || 1 === 1)) {
     // Static file middleware
     app.use('/', serveStatic(path.join(__dirname + '../../../../gui/dist/')))
 

@@ -2,8 +2,8 @@ import express from 'express'
 import http from 'http'
 import MongoDb from './infrastructure/mongodb'
 import { registerMongooseSchemas } from './database/schemas'
-import { bindWebSocketToServer } from './infrastructure/websocket'
 import { serveStaticFiles } from './infrastructure/static-files'
+import { bindWebSocketToServer } from './infrastructure/websocket'
 import { registerEndpoints } from './rest-api'
 import { connectToOplog, handleOplog } from './rest-api/oplog'
 import { startCronJob } from './cron'
@@ -26,7 +26,7 @@ const start = async () => {
     await MongoDb.connect()
     registerMongooseSchemas()
     loadDefaultDocs()
-    serveStaticFiles()
+    serveStaticFiles(app)
     await bindWebSocketToServer(server)
     registerEndpoints()
     await connectToOplog()
