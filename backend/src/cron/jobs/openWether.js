@@ -23,7 +23,7 @@ export const getWeatherDataJob = async () => {
         })
         resp.on('end', async () => {
           data = JSON.parse(data)
-          const value = Math.round(data.main.temp) + ' C ' + data.main.temp_min + '/' + data.main.temp_max
+          const value = Math.round(data.main.temp) + 'C -> ' + Math.round(data.main.temp_min) + '/' + Math.round(data.main.temp_max)
           openWeatherConfig.commands.forEach(async controlId => {
             const command = {
               control: controlId,
