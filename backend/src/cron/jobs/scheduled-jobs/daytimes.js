@@ -42,13 +42,13 @@ export class DaytimesJob {
     let todaysExecutionTime
 
     if (daytime.isBefore(timeFrameStarts)) {
-      todaysExecutionTime = daytime
+      todaysExecutionTime = timeFrameStarts
     } else if (daytime.isAfter(timeFrameEnds)) {
       todaysExecutionTime = timeFrameEnds
     } else {
       todaysExecutionTime = daytime
     }
 
-    return todaysExecutionTime.format('HH:mm').toString() === moment(now).format('HH:mm') ? 'value' : null
+    return todaysExecutionTime.format('HH:mm').toString() === moment(now).format('HH:mm')
   }
 }
