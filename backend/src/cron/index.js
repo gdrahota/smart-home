@@ -1,4 +1,4 @@
-import { getWeatherDataJob } from './jobs/openWether'
+import { getWeatherDataJob } from './jobs/openWeather'
 import { runScheduledJobs } from './jobs/scheduled-jobs'
 
 // get weather data updates

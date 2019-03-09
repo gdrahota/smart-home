@@ -23,6 +23,6 @@ export class FixedTimeJob {
     const minute = timeParts[1]
     const todaysExecutionTime = moment().set('hour', hour).set('minute', minute).set('second', 0)
 
-    return todaysExecutionTime.format('HH:mm').toString() === moment(now).format('HH:mm') ? 'value' : null
+    return todaysExecutionTime.format('HH:mm') === moment(now).format('HH:mm')
   }
 }

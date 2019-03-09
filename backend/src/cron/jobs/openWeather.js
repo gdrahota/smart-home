@@ -40,21 +40,3 @@ export const getWeatherDataJob = async () => {
     )
   })
 }
-/*
-const response = {
-  "coord": { "lon": 13.59, "lat": 52.52 },
-  "weather": [{ "id": 800, "main": "Clear", "description": "clear sky", "icon": "01n" }],
-  "base": "stations",
-  "main": { "temp": -3.99, "pressure": 1007, "humidity": 85, "temp_min": -5, "temp_max": -3 },
-  "visibility": 10000,
-  "wind": { "speed": 5.1, "deg": 110 },
-  "clouds": { "all": 0 },
-  "dt": 1548192000,
-  "sys": { "type": 1, "id": 1262, "message": 0.0033, "country": "DE", "sunrise": 1548140456, "sunset": 1548171261 },
-  "id": 2892051,
-  "name": "Kaulsdorf",
-  "cod": 200
-}
-
-const w = '-10°C  -22/-18'
-*/
