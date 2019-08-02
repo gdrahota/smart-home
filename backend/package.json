@@ -2,7 +2,7 @@
 	"name": "noc-berlin-nue-tools",
 	"version": "0.1.0",
 	"main": "src/index.js",
-	"author": "Guido Drahota und Robert Enk",
+  "author": "Guido Drahota",
 	"private": true,
 	"scripts": {
 		"dev": "NODE_ENV=development NO_DEPRECATION=tedious nodemon src/index.js --exec babel-node",
@@ -10,8 +10,10 @@
 		"build": "NODE_ENV=production babel src -d dist",
 		"lint": "eslint src",
 		"jest": "node node_modules/.bin/jest --runInBand --no-cache --watch",
-		"jest:clearcache": "node node_modules/.bin/jest --clearCache"
-	},
+    "jest:clearcache": "node node_modules/.bin/jest --clearCache",
+    "docker": "docker-compose up -d",
+    "docker-stop": "docker-compose down -v"
+  },
 	"devDependencies": {
 		"@babel/cli": "^7.0.0-beta.52",
 		"@babel/core": "^7.0.0-beta.52",
@@ -43,7 +45,6 @@
 		"mongoose": "^5.2.2",
 		"mongoose-bcrypt": "^1.6.0",
 		"node-cron": "^2.0.3",
-    "node-red": "^0.19.5",
 		"serve-static": "^1.13.2",
 		"socket.io": "^2.1.1",
 		"solar-calc": "^1.1.0",

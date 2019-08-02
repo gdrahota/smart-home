@@ -61,8 +61,7 @@ export const handleOplog = () => {
               io.emit('add_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
             }
           })
-    }
-    catch (e) {
+    } catch (e) {
       if (e.name !== 'MissingSchemaError') {
         console.log(' ')
         console.log('insert error', doc)
@@ -93,8 +92,7 @@ export const handleOplog = () => {
             io.emit('update_' + collection.replace(/-/g, '_').toLowerCase() + '_response', data)
           }
         })
-    }
-    catch (e) {
+    } catch (e) {
       if (e.name !== 'MissingSchemaError') {
         console.log(' ')
         console.log('update error', doc)

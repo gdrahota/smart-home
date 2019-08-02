@@ -1,0 +1,75 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: smart-home--server
+    command: npm run dev
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - smart-home--mongodb-0
+      - smart-home--mongodb-1
+      - smart-home--mongodb-2
+      - mongoclient
+    expose:
+      - 3000
+
+  smart-home--mongodb-2:
+    hostname: smart-home--mongodb-2
+    container_name: smart-home--mongodb-2
+    image: mongo:3.6
+    ports:
+      - 27019:27017
+    restart: always
+    volumes:
+      - ./docker/mongo/data/db:/data/db-2
+    environment:
+      - AUTH=no
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0", "--journal","--smallfiles" ]
+
+  smart-home--mongodb-1:
+    hostname: smart-home--mongodb-1
+    container_name: smart-home--mongodb-1
+    image: mongo:3.6
+    ports:
+      - 27018:27017
+    restart: always
+    volumes:
+      - ./init-repl-set.sh:/docker-entrypoint-initdb.d/init-repl-set.sh
+      - ./docker/mongo/data/db:/data/db-1
+    environment:
+      - AUTH=no
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0", "--journal","--smallfiles" ]
+
+  smart-home--mongodb-0:
+    hostname: smart-home--mongodb-0
+    container_name: smart-home--mongodb-0
+    image: mongo:3.6
+    ports:
+      - 27017:27017
+    restart: always
+    volumes:
+      - ./docker/mongo/data/db:/data/db-0
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0", "--journal","--smallfiles" ]
+    environment:
+      - AUTH=no
+    links:
+      - smart-home--mongodb-1:smart-home--mongodb-1
+      - smart-home--mongodb-2:smart-home--mongodb-2
+
+  mongoclient:
+    image: mongo
+    depends_on:
+      - smart-home--mongodb-0
+      - smart-home--mongodb-1
+      - smart-home--mongodb-2
+    volumes:
+      - ./deployment_scripts:/deployment_scripts
+    entrypoint:
+      - /deployment_scripts/setup.sh

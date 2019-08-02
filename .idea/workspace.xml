@@ -2,14 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa8a30f-911b-4abf-958a-204308acb4c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/tests/unit/cron/scheduled-jobs/daytimes.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/deployment_scripts/setup.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/public/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jest.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/cron/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/cron/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/cron/jobs/openWether.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/cron/jobs/openWeather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/daytimes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/daytimes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/fixed.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/fixed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/unit/services/clients.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/unit/services/clients.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/database/import-default-docs.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/database/import-default-docs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/infrastructure/static-files.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/infrastructure/static-files.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/infrastructure/websocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/infrastructure/websocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/rest-api/oplog.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/rest-api/oplog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/gui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/gui/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/components/router-container.vue" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/components/router-container.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/gui/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,121 +30,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1795504917">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="49" />
-          <entry key="project.open.time.0" value="7" />
-          <entry key="project.open.time.1" value="26" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.2" value="7" />
-          <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.8" value="3" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="51" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="Dockerfile" value="2" />
-          <entry key="MD" value="1" />
-          <entry key="browserslistrc" value="3" />
-          <entry key="cnf" value="1" />
-          <entry key="css" value="9" />
-          <entry key="env" value="1" />
-          <entry key="ext" value="1" />
-          <entry key="gitignore" value="6" />
-          <entry key="html" value="5" />
-          <entry key="ico" value="1" />
-          <entry key="js" value="1475" />
-          <entry key="json" value="40" />
-          <entry key="lock" value="1" />
-          <entry key="log" value="1" />
-          <entry key="md" value="1" />
-          <entry key="rnc" value="1" />
-          <entry key="sh" value="2" />
-          <entry key="ts" value="26" />
-          <entry key="txt" value="1" />
-          <entry key="vue" value="832" />
-          <entry key="xml" value="2" />
-          <entry key="yaml" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="9" />
-          <entry key="HTML" value="5" />
-          <entry key="Image" value="1" />
-          <entry key="JSON" value="42" />
-          <entry key="JavaScript" value="1498" />
-          <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="18" />
-          <entry key="RNG Compact" value="1" />
-          <entry key="TypeScript" value="26" />
-          <entry key="Vue.js" value="833" />
-          <entry key="XML" value="2" />
-          <entry key="YAML" value="4" />
-          <entry key="yarn.lock" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="Dockerfile" value="59" />
-          <entry key="MD" value="13" />
-          <entry key="browserslistrc" value="1" />
-          <entry key="cnf" value="76" />
-          <entry key="css" value="318" />
-          <entry key="gitignore" value="37" />
-          <entry key="html" value="14" />
-          <entry key="js" value="62699" />
-          <entry key="json" value="118" />
-          <entry key="log" value="1" />
-          <entry key="md" value="22" />
-          <entry key="ts" value="6" />
-          <entry key="txt" value="5567" />
-          <entry key="vue" value="86982" />
-          <entry key="yaml" value="26" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="318" />
-          <entry key="HTML" value="14" />
-          <entry key="JSON" value="118" />
-          <entry key="JavaScript" value="63438" />
-          <entry key="Markdown" value="35" />
-          <entry key="PLAIN_TEXT" value="5910" />
-          <entry key="TypeScript" value="6" />
-          <entry key="Vue.js" value="86982" />
-          <entry key="YAML" value="26" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="ESLintLanguageService" value="1" />
-          <entry key="TypeScriptServerServiceImpl" value="7" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/openWeather.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/src/cron/index.js">
+        <entry file="file://$PROJECT_DIR$/backend/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="54" lean-forward="true" selection-start-column="54" selection-end-column="54" />
+            <state relative-caret-position="442">
+              <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,21 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user</find>
-      <find>error</find>
-      <find>knxDataPoints</find>
-      <find>read</find>
-      <find>ERR_SOCKET_DGRAM_NOT_RUNNING</find>
-      <find>sanitizeHostAddress</find>
-      <find>return</find>
-      <find>reject</find>
-      <find>=&gt; '</find>
-      <find>'knx'</find>
-      <find>write</find>
-      <find>resolve</find>
-      <find>cbAskForFeedback 1</find>
-      <find>'</find>
-      <find>max: 100,</find>
       <find>step: 10,</find>
       <find>defaultValue</find>
       <find>unit:</find>
@@ -170,6 +66,21 @@
       <find>userData</find>
       <find>CommandQueueService</find>
       <find>timeFrameStarts, timeFrameEnds</find>
+      <find>router</find>
+      <find>vue-momentjs</find>
+      <find>VueMomentJS</find>
+      <find>EventBus</find>
+      <find>vueSocketIO</find>
+      <find>27017</find>
+      <find>CONTROLS</find>
+      <find>emit('controls</find>
+      <find>emit('add_control</find>
+      <find>oplog</find>
+      <find>v-chip</find>
+      <find>state:</find>
+      <find>active</find>
+      <find>['a</find>
+      <find>['active</find>
     </findStrings>
     <replaceStrings>
       <replace>control</replace>
@@ -203,6 +114,7 @@
     <dirStrings>
       <dir>$PROJECT_DIR$/backend/src/rest-api</dir>
       <dir>$PROJECT_DIR$/backend/node_modules/knx</dir>
+      <dir>$PROJECT_DIR$/backend/src/database/schemas</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -211,29 +123,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gui/src/components/admin/users/add-user.vue" />
-        <option value="$PROJECT_DIR$/backend/src/database/schemas/user.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/login/index.vue" />
-        <option value="$PROJECT_DIR$/gui/src/store/client.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/menu-bar/index.vue" />
-        <option value="$PROJECT_DIR$/gui/src/store/users.js" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/users/index.vue" />
-        <option value="$PROJECT_DIR$/gui/src/components/admin/users/user.vue" />
-        <option value="$PROJECT_DIR$/backend/node_modules/knx/index.d.ts" />
-        <option value="$PROJECT_DIR$/backend/src/infrastructure/spawn-process-per-knx-control-system.js" />
-        <option value="$PROJECT_DIR$/backend/src/database/schemas/command-queue.js" />
-        <option value="$PROJECT_DIR$/backend/src/control-systems/index.js" />
-        <option value="$PROJECT_DIR$/backend/src/control-systems/data-access.js" />
-        <option value="$PROJECT_DIR$/backend/src/control-systems/oplog.js" />
-        <option value="$PROJECT_DIR$/gui/test.json" />
-        <option value="$PROJECT_DIR$/gui/data.json" />
-        <option value="$PROJECT_DIR$/backend/src/database/import-default-docs.js" />
         <option value="$PROJECT_DIR$/backend/src/database/schemas/control-definitions.js" />
         <option value="$PROJECT_DIR$/backend/src/database/schemas/index.js" />
         <option value="$PROJECT_DIR$/backend/src/services/control-definitions.js" />
-        <option value="$PROJECT_DIR$/gui/src/store/index.js" />
         <option value="$PROJECT_DIR$/backend/src/rest-api/clients.js" />
-        <option value="$PROJECT_DIR$/gui/src/main.js" />
         <option value="$PROJECT_DIR$/gui/src/components/control/knx-tp/control-endpoint-values.vue" />
         <option value="$PROJECT_DIR$/gui/src/store/control-definitions.js" />
         <option value="$PROJECT_DIR$/gui/src/components/admin/controls/controls-list.vue" />
@@ -248,11 +141,8 @@
         <option value="$PROJECT_DIR$/backend/src/services/command-queue.js" />
         <option value="$PROJECT_DIR$/backend/src/repository/any-collection.js" />
         <option value="$PROJECT_DIR$/backend/tests/unit/services/command-queue.spec.js" />
-        <option value="$PROJECT_DIR$/backend/src/index.js" />
-        <option value="$PROJECT_DIR$/backend/src/infrastructure/static-files.js" />
         <option value="$PROJECT_DIR$/backend/src/rest-api/data-points.js" />
         <option value="$PROJECT_DIR$/backend/src/control-systems/eibd-api.js" />
-        <option value="$PROJECT_DIR$/backend/package.json" />
         <option value="$PROJECT_DIR$/backend/src/rest-api/controls.js" />
         <option value="$PROJECT_DIR$/backend/src/cron/jobs/openWether.js" />
         <option value="$PROJECT_DIR$/backend/tests/unit/services/clients.spec.js" />
@@ -262,35 +152,40 @@
         <option value="$PROJECT_DIR$/backend/tests/unit/cron/scheduled-jobs/daytimes.spec.js" />
         <option value="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/fixed.js" />
         <option value="$PROJECT_DIR$/backend/src/cron/index.js" />
+        <option value="$PROJECT_DIR$/gui/src/store/index.js" />
+        <option value="$PROJECT_DIR$/gui/src/components/router-container.vue" />
+        <option value="$PROJECT_DIR$/backend/src/rest-api/oplog.js" />
+        <option value="$PROJECT_DIR$/docker/docker-compose.yaml" />
+        <option value="$PROJECT_DIR$/docker/.dockerignore" />
+        <option value="$PROJECT_DIR$/docker/Dockerfile" />
+        <option value="$PROJECT_DIR$/backend/package.json" />
+        <option value="$PROJECT_DIR$/backend/Dockerfile" />
+        <option value="$PROJECT_DIR$/backend/src/infrastructure/mongodb.js" />
+        <option value="$PROJECT_DIR$/backend/src/database/import-default-docs.js" />
+        <option value="$PROJECT_DIR$/backend/config/server.js" />
+        <option value="$PROJECT_DIR$/backend/src/infrastructure/websocket.js" />
+        <option value="$PROJECT_DIR$/backend/public/config.js" />
+        <option value="$PROJECT_DIR$/gui/public/index.html" />
+        <option value="$PROJECT_DIR$/gui/public/config.js" />
+        <option value="$PROJECT_DIR$/backend/src/infrastructure/static-files.js" />
+        <option value="$PROJECT_DIR$/gui/vue.config.js" />
+        <option value="$PROJECT_DIR$/gui/src/main.js" />
+        <option value="$PROJECT_DIR$/backend/init-repl-set.sh" />
+        <option value="$PROJECT_DIR$/backend/deployment_scripts/setup.sh" />
+        <option value="$PROJECT_DIR$/backend/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/backend/src/index.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/backend/node_modules" />
-    <handled-path value="$PROJECT_DIR$/gui/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/backend/package.json" />
-      <path value="$PROJECT_DIR$/gui/package.json" />
-    </packageJsonPaths>
-  </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1680" />
-    <option name="height" value="1027" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -311,6 +206,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -330,62 +226,19 @@
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cron" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cron" type="462c0819:PsiDirectoryNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-              <item name="cron" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-home" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-home" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552135589203" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556484205864" />
+    <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -408,11 +261,11 @@
       <recent name="$PROJECT_DIR$/gui/src/components/control/knx-tp/default" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gui/public" />
+      <recent name="$PROJECT_DIR$/gui" />
+      <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/backend/tests/unit/cron/scheduled-jobs" />
       <recent name="$PROJECT_DIR$/backend/tests/unit/services" />
-      <recent name="$PROJECT_DIR$/backend/tests/unit/cron" />
-      <recent name="$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs" />
-      <recent name="$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/schedule-types" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -484,14 +337,28 @@
       <workItem from="1551039812366" duration="72000" />
       <workItem from="1551348748823" duration="482000" />
       <workItem from="1551809386770" duration="1034000" />
-      <workItem from="1552132236640" duration="2917000" />
-    </task>
-    <task id="LOCAL-00086" summary="frontend: sorting of shown controls changed">
-      <created>1548329383422</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1548329383422</updated>
+      <workItem from="1552132236640" duration="3238000" />
+      <workItem from="1552381547320" duration="22000" />
+      <workItem from="1552472285070" duration="1414000" />
+      <workItem from="1552642033169" duration="480000" />
+      <workItem from="1555495075331" duration="5430000" />
+      <workItem from="1555662613200" duration="2934000" />
+      <workItem from="1557397189978" duration="22000" />
+      <workItem from="1558002897748" duration="24000" />
+      <workItem from="1558087629738" duration="866000" />
+      <workItem from="1560842607027" duration="1167000" />
+      <workItem from="1561117258783" duration="928000" />
+      <workItem from="1561309788031" duration="1595000" />
+      <workItem from="1561313737254" duration="6437000" />
+      <workItem from="1561452273072" duration="327000" />
+      <workItem from="1561470019252" duration="2097000" />
+      <workItem from="1561535309890" duration="23000" />
+      <workItem from="1561535971599" duration="1344000" />
+      <workItem from="1563454574829" duration="18000" />
+      <workItem from="1564519332306" duration="7012000" />
+      <workItem from="1564599881236" duration="3346000" />
+      <workItem from="1564730107485" duration="314000" />
+      <workItem from="1564780529999" duration="7643000" />
     </task>
     <task id="LOCAL-00087" summary="frontend: short-text-display control: icon changed">
       <created>1548368846907</created>
@@ -829,11 +696,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551809824119</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="backend: tests for daytimes cron jobs added, daytimes cron jobs refactored">
+      <created>1552135693547</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1552135693548</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="683313000" />
+    <option name="totallyTimeSpent" value="727077000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -845,10 +719,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49430895" visible="true" weight="0.252457" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49430895" visible="true" weight="0.24078624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -867,11 +741,12 @@
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32939914" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32878152" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32983193" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4963145" weight="0.22317597" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4963145" weight="0.22103004" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.32958034" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.32983193" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969324" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -884,6 +759,7 @@
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.32883435" />
       <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32928118" />
       <window_info anchor="right" id="Preview" order="11" weight="0.32985258" />
+      <window_info anchor="right" id="Maven" order="12" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49430895" visible="true" weight="0.25184274" />
@@ -927,11 +803,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="frontend: appearance of all controls slightly changed" />
     <MESSAGE value="frontend: bug fixed in client store module" />
     <MESSAGE value="frontend: time slots control added to scheduled jobs" />
     <MESSAGE value="backend: cron jobs runner refactored + time slot scheduler implemented" />
@@ -956,305 +828,12 @@
     <MESSAGE value="backend: knx lib exchanged by enhanced_knx lib" />
     <MESSAGE value="backend: bug fixed" />
     <MESSAGE value="backend: openweathermap temperature data: values rounded" />
-    <option name="LAST_COMMIT_MESSAGE" value="backend: openweathermap temperature data: values rounded" />
+    <MESSAGE value="backend: tests for daytimes cron jobs added, daytimes cron jobs refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend: tests for daytimes cron jobs added, daytimes cron jobs refactored" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/add-control-form.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="84" column="55" lean-forward="true" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/controls-list.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="66" selection-start-line="66" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/controls/manage-data-points/knx-tp-14CharTextDisplay.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/show-schedule.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="87" selection-start-line="87" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/list-edit-commands-time-slots.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="60" column="6" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/schedules/edit-schedule/list-edit-commands-normal.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="51" selection-start-line="51" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/controls.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/command-queue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/external-data-sources.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/tests/unit/services/command-queue.spec.js" />
-    <entry file="file://$PROJECT_DIR$/backend/src/services/facilities.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/facility-attribute-values.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/facility-attributes.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/knx-events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="39" lean-forward="true" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/values-from-knx.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/users.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/handleKnxIncommingValue.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/schedules.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/control/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/store/client.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/server.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/database/import-default-docs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="182" column="19" selection-start-line="182" selection-start-column="19" selection-end-line="182" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/data-points.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/repository/any-collection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/clients.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/services/data-points.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/infrastructure/spawn-process-per-knx-control-system.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/clients.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/infrastructure/websocket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/data-points.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/oplog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/infrastructure/static-files.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/eibd-api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/components/general/confirm-dialog.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/oplog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="54" column="14" lean-forward="true" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/controls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/tests/unit/example.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/jest.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/tests/unit/services/clients.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="65" column="39" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/time-slots.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/fixed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/tests/unit/cron/scheduled-jobs/daytimes.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/scheduled-jobs/daytimes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="730">
@@ -1262,17 +841,346 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/openWeather.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/cron/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="54" lean-forward="true" selection-start-column="54" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/services/command-queue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/cron/jobs/openWeather.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/login/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/dist/index.js" />
+    <entry file="file://$PROJECT_DIR$/backend/src/infrastructure/spawn-process-per-knx-control-system.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/oplog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/control-systems/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/services/data-points.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/data-points.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/event-bus/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/router-container.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/menu-bar/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/components/admin/control-systems/index.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/control-data-points.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/repository/any-collection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/services/controls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="45" selection-start-column="45" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/controls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="46" lean-forward="true" selection-start-column="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/babel.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/commands.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/store/controls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/oplog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="48" lean-forward="true" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/rest-api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/.dockerignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/docker-compose.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.MD">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/schemas/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/infrastructure/mongodb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/database/import-default-docs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="209" column="4" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/backend/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="733">
+          <caret line="51" column="3" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/public/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/infrastructure/websocket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/config/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/vue.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/infrastructure/static-files.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/init-repl-set.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/deployment_scripts/setup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

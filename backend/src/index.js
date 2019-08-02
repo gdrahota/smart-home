@@ -23,6 +23,9 @@ const options = {
 
 const start = async () => {
   try {
+    console.log('start waiting')
+    await new Promise(resolve => setTimeout(resolve, 10000))
+    console.log('finished waiting')
     await MongoDb.connect()
     registerMongooseSchemas()
     loadDefaultDocs()
@@ -38,8 +41,7 @@ const start = async () => {
 
     console.log('== SERVER STARTUP SUCCESSFULLY :) <<<')
     console.log('')
-  }
-  catch (err) {
+  } catch (err) {
     console.log('=> ERROR during server startup:')
     console.log(err)
     console.log('========= SERVER STARTUP STOPPED ========')

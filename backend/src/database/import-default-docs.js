@@ -8,7 +8,7 @@ const defaultDocs = [
         _id: '5c464965abb000da021fe582',
         firstName: 'SmartHome',
         lastName: 'Administrator',
-        state: ['active'],
+        state: 'active',
         groups: ['GlobalAdmin'],
         accountName: 'admin',
         password: 'admin',
@@ -205,11 +205,11 @@ export const loadDefaultDocs = () => {
 
   defaultDocs.forEach(entity => {
     const model = mongoose.model(entity.collection)
+
     entity.items.forEach(async item => {
       try {
         await new model(item).save()
-      }
-      catch (e) {
+      } catch (e) {
         if (e.code !== 11000) {
           console.log(e)
         }

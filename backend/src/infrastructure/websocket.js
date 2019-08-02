@@ -18,7 +18,7 @@ export const bindWebSocketToServer = async server => {
           console.log('=! Server does NOT listening!', err)
           reject(err)
         } else {
-          console.log('=> Server listens on port ' + config.server.port + ' bind to ip address ' + config.server.host)
+          console.log('=> Server listens on port ' + config.server.port + ' bind to ip address 0.0.0.0')
           resolve(conn)
         }
       }
