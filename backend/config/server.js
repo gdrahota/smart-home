@@ -23,7 +23,8 @@ const config = {
       port: 3000
     },
     mongoDb: {
-      url: 'mongodb://docker.for.mac.localhost:27017,docker.for.mac.localhost:27018,docker.for.mac.localhost:27019/smart-home?replicaSet=rs0',
+      url: 'mongodb://smart-home--mongodb-0:27017,smart-home--mongodb-1:27017,smart-home--mongodb-2:27017/smart-home?replicaSet=rs0',
+      //url: 'mongodb://127.0.0.1:27017,127.0.0.1:27018,127.0.0.1:27019/smart-home?replicaSet=rs0',
       options: {
         useNewUrlParser: true
       },

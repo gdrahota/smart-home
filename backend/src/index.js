@@ -23,9 +23,6 @@ const options = {
 
 const start = async () => {
   try {
-    console.log('start waiting')
-    await new Promise(resolve => setTimeout(resolve, 10000))
-    console.log('finished waiting')
     await MongoDb.connect()
     registerMongooseSchemas()
     loadDefaultDocs()

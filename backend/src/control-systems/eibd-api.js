@@ -94,6 +94,6 @@ export const connectToKnx = serverConfig => {
     }
 
     console.log('| Connecting to knx interface at', config.host, 'on port', config.port, '...')
-    connection = new require('advanced_knx').Connection(options).Connect()
+    connection = new require('knx').Connection(options).Connect()
   })
 }

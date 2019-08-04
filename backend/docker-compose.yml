@@ -9,16 +9,16 @@ services:
       - .:/usr/app/
       - /usr/app/node_modules
     ports:
-      - "3000:3000"
+      - "3000:3000/tcp"
+      - "3000:3000/udp"
     environment:
       - NODE_ENV=development
     depends_on:
       - smart-home--mongodb-0
       - smart-home--mongodb-1
       - smart-home--mongodb-2
-      - mongoclient
-    expose:
-      - 3000
+    networks:
+      - app-network
 
   smart-home--mongodb-2:
     hostname: smart-home--mongodb-2
@@ -28,10 +28,12 @@ services:
       - 27019:27017
     restart: always
     volumes:
-      - ./docker/mongo/data/db:/data/db-2
+      - ./docker/mongo/data/db-2:/data/db
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0", "--journal","--smallfiles" ]
     environment:
       - AUTH=no
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0", "--journal","--smallfiles" ]
+    networks:
+      - app-network
 
   smart-home--mongodb-1:
     hostname: smart-home--mongodb-1
@@ -42,10 +44,12 @@ services:
     restart: always
     volumes:
       - ./init-repl-set.sh:/docker-entrypoint-initdb.d/init-repl-set.sh
-      - ./docker/mongo/data/db:/data/db-1
+      - ./docker/mongo/data/db-1:/data/db
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0", "--journal","--smallfiles" ]
     environment:
       - AUTH=no
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0", "--journal","--smallfiles" ]
+    networks:
+      - app-network
 
   smart-home--mongodb-0:
     hostname: smart-home--mongodb-0
@@ -55,21 +59,19 @@ services:
       - 27017:27017
     restart: always
     volumes:
-      - ./docker/mongo/data/db:/data/db-0
+      - ./docker/mongo/data/db-0:/data/db
     entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0", "--journal","--smallfiles" ]
     environment:
       - AUTH=no
     links:
       - smart-home--mongodb-1:smart-home--mongodb-1
       - smart-home--mongodb-2:smart-home--mongodb-2
+    networks:
+      - app-network
 
-  mongoclient:
-    image: mongo
-    depends_on:
-      - smart-home--mongodb-0
-      - smart-home--mongodb-1
-      - smart-home--mongodb-2
-    volumes:
-      - ./deployment_scripts:/deployment_scripts
-    entrypoint:
-      - /deployment_scripts/setup.sh
+networks:
+  app-network:
+    driver: bridge
+
+#  config={"_id":"rs0","members":[{"_id":0,"host":"smart-home--mongodb-0:27017"},{"_id":1,"host":"smart-home--mongodb-1:27017"},{"_id":2,"host":"smart-home--mongodb-2:27017"}]}
+# rs.initiate(config)
