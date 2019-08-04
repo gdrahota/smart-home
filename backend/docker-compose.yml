@@ -17,6 +17,7 @@ services:
       - smart-home--mongodb-0
       - smart-home--mongodb-1
       - smart-home--mongodb-2
+      - mongoclient
     networks:
       - app-network
 
@@ -43,7 +44,6 @@ services:
       - 27018:27017
     restart: always
     volumes:
-      - ./init-repl-set.sh:/docker-entrypoint-initdb.d/init-repl-set.sh
       - ./docker/mongo/data/db-1:/data/db
     entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0", "--journal","--smallfiles" ]
     environment:
@@ -68,6 +68,19 @@ services:
       - smart-home--mongodb-2:smart-home--mongodb-2
     networks:
       - app-network
+
+  mongoclient:
+    image: mongo
+    networks:
+      - app-network
+    depends_on:
+      - smart-home--mongodb-0
+      - smart-home--mongodb-1
+      - smart-home--mongodb-2
+    volumes:
+      - ./deployment_scripts:/deployment_scripts
+    entrypoint:
+      - /deployment_scripts/setup.sh
 
 networks:
   app-network:

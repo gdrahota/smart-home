@@ -1,13 +1,13 @@
 #!/bin/bash
 
 echo "Starting replica set initialize"
-until mongo --host smart-home--mongodb-0 --eval "print(\"waited for connection\")"
+until mongo --host docker.for.mac.localhost --eval "print(\"waited for connection\")"
 do
     sleep 2
 done
 echo "Connection finished"
 echo "Creating replica set"
-mongo --host smart-home--mongodb-0 <<EOF
+mongo --host docker.for.mac.localhost <<EOF
 rs.initiate(
   {
     _id : 'rs0',
