@@ -10,6 +10,7 @@ export const registerMongooseSchemas = () => {
   require('./facility-attribute-values').registerSchema()
   require('./facility-attributes').registerSchema()
   require('./facilities').registerSchema()
+  require('./file-uploads').registerSchema()
   require('./knx-events').registerSchema()
   require('./schedules').registerSchema()
   require('./user').registerSchema()

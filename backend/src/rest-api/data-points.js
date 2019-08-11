@@ -4,8 +4,7 @@ export const registerDataPointEndpoints = (io, socket) => {
   const cbAdd = async item => {
     try {
       await DataPointService.add(item)
-    }
-    catch (err) {
+    } catch (err) {
       socket.emit('add_data_point_failed', err)
     }
   }
@@ -13,8 +12,7 @@ export const registerDataPointEndpoints = (io, socket) => {
   const cbRemove = async id => {
     try {
       await DataPointService.remove(id)
-    }
-    catch (err) {
+    } catch (err) {
       socket.emit('remove_data_point_failed', err)
     }
   }
@@ -22,8 +20,7 @@ export const registerDataPointEndpoints = (io, socket) => {
   const cbUpdate = async control => {
     try {
       await DataPointService.update(control)
-    }
-    catch (err) {
+    } catch (err) {
       socket.emit('update_data_point_failed', err)
     }
   }

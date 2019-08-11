@@ -9,6 +9,7 @@ const Schedules = () => import ('../components/admin/schedules')
 const ExternalDataSources = () => import ('../components/admin/external-data-sources')
 const OpenWeatherMap = () => import ('../components/admin/external-data-sources/open-weather-map')
 const KnxMonitor = () => import ('../components/utils/knx-monitor')
+const FirstSetup = () => import ('../components/utils/first-setup')
 const Control = () => import ('../components/control')
 const Facilities = () => import('../components/admin/facilities')
 const DataPoints = () => import('../components/admin/data-points')
@@ -52,7 +53,7 @@ const router = new Router({
           component: RouterContainer,
           meta: {
             requiresAuth: true,
-            title: 'Werkzeug',
+            title: 'Werkzeuge',
             hasNoContent: true,
           },
           children: [
@@ -62,6 +63,14 @@ const router = new Router({
               component: KnxMonitor,
               meta: {
                 title: 'KNX-Monitor'
+              }
+            },
+            {
+              name: 'first-setup',
+              path: 'first-setup',
+              component: FirstSetup,
+              meta: {
+                title: 'Ersteinrichtung'
               }
             },
           ]

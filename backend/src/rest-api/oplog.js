@@ -13,6 +13,7 @@ const subscribeToCollections = [
   'facilities',
   'facility-attribute-values',
   'facility-attributes',
+  'file-uploads',
   'knx-events',
   'schedules',
   'users',

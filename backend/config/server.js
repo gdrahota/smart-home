@@ -30,6 +30,7 @@ const config = {
       },
       oplog: {
         url: 'mongodb://docker.for.mac.localhost:27017/local',
+        //url: 'mongodb://localhost:27017/local',
         collection: 'oplog.rs'
       }
     }

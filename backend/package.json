@@ -11,7 +11,8 @@
 		"lint": "eslint src",
 		"jest": "node node_modules/.bin/jest --runInBand --no-cache --watch",
     "jest:clearcache": "node node_modules/.bin/jest --clearCache",
-    "docker": "docker-compose up -d",
+    "docker-build": "docker-compose build",
+    "docker-start": "docker-compose up -d",
     "docker-stop": "docker-compose down -v"
   },
 	"devDependencies": {

@@ -10,6 +10,8 @@ import { startCronJob } from './cron'
 import { startKnxAdapters } from './infrastructure/spawn-process-per-knx-control-system'
 import { loadDefaultDocs } from './database/import-default-docs'
 
+const siofu = require('socketio-file-upload')
+
 const app = express()
 const server = http.createServer(app)
 
@@ -23,19 +25,28 @@ const options = {
 
 const start = async () => {
   try {
+    // mongodb
     await MongoDb.connect()
     registerMongooseSchemas()
     loadDefaultDocs()
+
+    // add file upload fn to stack
+    app.use(siofu.router)
+
+    await bindWebSocketToServer(server, app)
+
     serveStaticFiles(app)
-    await bindWebSocketToServer(server)
+
     registerEndpoints()
+
     await connectToOplog()
+
     handleOplog()
+
     startCronJob()
+
     const subProcesses = await startKnxAdapters()
-
     console.log('starting', subProcesses.length, 'knx adapter(s)...')
-
     console.log('== SERVER STARTUP SUCCESSFULLY :) <<<')
     console.log('')
   } catch (err) {

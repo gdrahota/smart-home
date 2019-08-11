@@ -1,8 +1,9 @@
 const state = {
-  isInSelectionMode: false
+  isInSelectionMode: false,
 }
 
 const startMutation = state => state.selecting = true
+
 const stopMutation = state => state.selecting = false
 
 const mutations = {
@@ -11,7 +12,7 @@ const mutations = {
 }
 
 const getters = {
-  isInSelectionMode: state => state.isInSelectionMode
+  isInSelectionMode: state => state.isInSelectionMode,
 }
 
 export default {

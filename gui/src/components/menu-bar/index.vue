@@ -3,9 +3,9 @@
     <template v-for="item in items">
 
       <v-list-tile
-        v-if="!item.children || item.children.length === 0"
         :key="item.text"
         :to="item.to"
+        v-if="!item.children || item.children.length === 0"
       >
         <v-list-tile-action>
           <v-icon>{{ item.icon }}</v-icon>
@@ -18,15 +18,15 @@
       </v-list-tile>
 
       <v-list-group
+        :append-icon="item.model ? 'fa-angle-left' : 'fa-angle-right'"
+        :key="item.text"
+        :prepend-icon="item.icon"
         v-else-if="grantAccess(item.requiredGroup)"
         v-model="item.model"
-        :key="item.text"
-        :append-icon="item.model ? 'fa-angle-left' : 'fa-angle-right'"
-        :prepend-icon="item.icon"
       >
         <v-list-tile slot="activator">
           <v-list-tile-content>
-            <v-list-tile-title v-if="item.to" :to="item.to">
+            <v-list-tile-title :to="item.to" v-if="item.to">
               <span class="subheading">{{ item.text }}</span>
             </v-list-tile-title>
             <v-list-tile-title v-else>
@@ -35,10 +35,10 @@
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile
-          v-for="(child, i) in item.children"
           :key="i"
-          @click=""
           :to="child.to"
+          @click=""
+          v-for="(child, i) in item.children"
         >
           <v-list-tile-action v-if="child.icon">
             <v-icon></v-icon>
@@ -92,7 +92,8 @@
             text: 'Werkzeug',
             model: false,
             children: [
-              { icon: 'fa-add', text: 'KNX-Monitor', to: { path: '/tools/knx-monitor' } },
+              { icon: 'fa-file-text-o', text: 'KNX-Monitor', to: { path: '/tools/knx-monitor' } },
+              { icon: 'fa-cog', text: 'Setup', to: { path: '/tools/first-setup' } },
             ]
           },
           { icon: 'fa-dot-circle-o', text: 'Steuerung', to: { path: '/control' } },

@@ -18,12 +18,9 @@ import ('./assets/general-styles.css')
 
 filters.register(Vue)
 
-localStorage.debug = '*'
+localStorage.debug = '*#'
 
 console.log('location', location.hostname + ':' + config.server.port)
-
-//export const socket = socketIoClient('127.0.0.1:' + config.server.port)
-//export const socket = socketIoClient()
 
 const inDevMode = process.env.NODE_ENV === 'development'
 const socketOptions = { transports: ['websocket'], }
