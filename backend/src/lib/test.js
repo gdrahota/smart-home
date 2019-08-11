@@ -1,42 +1,44 @@
-import etsProjectParser from './project-parser'
-
 async function main () {
   let result
   let retVal
 
-  // Check the commandline arguments
-  if (!(process.argv[2] && process.argv[3])) {
-    console.error('Usage: %s %s [pathToProjectFile] [pathToWorkingDirectory]', process.argv[0], process.argv[1])
-    process.exit(-1)
-  } else {
-    console.log('Project file: %s', process.argv[2])
-    console.log('Working dir.: %s', process.argv[3])
-    console.log('#################################')
-  }
+  /*
+    // Check the commandline arguments
+    if (!(process.argv[2] && process.argv[3])) {
+      console.error('Usage: %s %s [pathToProjectFile] [pathToWorkingDirectory]', process.argv[0], process.argv[1])
+      process.exit(-1)
+    } else {
+      console.log('Project file: %s', process.argv[2])
+      console.log('Working dir.: %s', process.argv[3])
+      console.log('#################################')
+    }
+  */
 
   /*
    * Initialize the parser - it already unzips the knxproj-file into workdir
    * Both etsProjectFilePath and workdir must be absolute paths
    */
-  retVal = await etsProjectParser(process.argv[2], process.argv[3])
+  //retVal = await etsProjectParser(process.argv[2], process.argv[3])
 
-  // Caught errors will be returned in retVal.error
-  if (retVal.constructor === Error) {
-    console.error(retVal)
-    process.exit(-1)
-  }
-
-  // Parse the project and check the result
-  if ((result = await retVal(true))) {
-    if (!result || result.constructor === Error) {
-      console.log('ERROR!', result)
+  /*
+    // Caught errors will be returned in retVal.error
+    if (retVal.constructor === Error) {
+      console.error(retVal)
+      process.exit(-1)
     }
-  }
+
+    // Parse the project and check the result
+    if ((result = await retVal(true))) {
+      if (!result || result.constructor === Error) {
+        console.log('ERROR!', result)
+      }
+    }
+  */
 
   // Loads the project from 'OUTPUT.json'
-  //result = await readProject('OUTPUT.json').catch(e => {
-  //  throw e
-  //})
+  result = await readProject('OUTPUT.json').catch(e => {
+    throw e
+  })
 
   /*
    * For all get*ByKey() functions:
@@ -91,9 +93,10 @@ async function main () {
    * Prints all building parts without their subarrays. This is done to prevent building parts from being returned
    * multiple times at the same times in different places
    */
-  // console.log(result.getBuildingParts(false))
+  const buildingParts = result.getBuildingParts(false)
+  console.log(JSON.stringify(buildingParts))
 
-  // console.log(JSON.stringify(result.buildings))
+  //console.log(JSON.stringify(result.buildings))
 
   // Prints all building parts with the given attribute
   // console.log(result.getBuildingPartByKey('name', 'WC'))

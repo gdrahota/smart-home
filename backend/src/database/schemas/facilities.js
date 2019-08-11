@@ -4,7 +4,7 @@ import { FacilityAttributeSchema } from './facility-attributes'
 export const registerSchema = () => {
   const Schema = mongoose.Schema
 
-  const FacilitySchema = new Schema({
+  const schema = {
     address: {
       postCode: {
         type: String,
@@ -24,7 +24,14 @@ export const registerSchema = () => {
       type: String,
       default: 'active'
     },
-  }, { collection: 'facilities', timestamps: {} })
+  }
+
+  const options = {
+    collection: 'facilities',
+    timestamps: {}
+  }
+
+  const FacilitySchema = new Schema(schema, options)
 
   // prevent overwriting an existing model during unit testing
   try {

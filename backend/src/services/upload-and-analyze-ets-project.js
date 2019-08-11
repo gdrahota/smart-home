@@ -46,6 +46,14 @@ export default async (socket, fileEvent) => {
     console.log('==> 3 groupAddresses', groupAddresses)
 
     socket.emit('project_group_addresses', groupAddresses)
+
+    const buildingParts = project.getBuildingParts()
+    console.log('==> 4 buildingParts', buildingParts)
+
+    socket.emit('setup_building_parts', buildingParts)
+
+    const devices = project.getDevices()
+    socket.emit('setup_devices', devices)
   } catch (err) {
     console.error('ERROR', err)
   }

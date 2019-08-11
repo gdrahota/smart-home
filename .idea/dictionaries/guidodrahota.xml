@@ -46,6 +46,7 @@
       <w>einträge</w>
       <w>elektro</w>
       <w>elektroenergie</w>
+      <w>empfehlungen</w>
       <w>endpunkte</w>
       <w>entsperrt</w>
       <w>entweder</w>
@@ -65,7 +66,10 @@
       <w>franka</w>
       <w>funktion</w>
       <w>gebäude</w>
+      <w>gebäudestruktur</w>
       <w>gelöscht</w>
+      <w>geräte</w>
+      <w>gerätetyp</w>
       <w>gesendet</w>
       <w>geöffnet</w>
       <w>gruppenadresse</w>
@@ -102,6 +106,7 @@
       <w>neues</w>
       <w>offen</w>
       <w>oplog</w>
+      <w>physikalische</w>
       <w>postleitzahl</w>
       <w>raum</w>
       <w>raumtemperatursteuerung</w>
@@ -133,6 +138,7 @@
       <w>temperatur</w>
       <w>todays</w>
       <w>unterbrochen</w>
+      <w>untertyp</w>
       <w>upsert</w>
       <w>verbindung</w>
       <w>verbunden</w>
@@ -140,6 +146,7 @@
       <w>verschiebung</w>
       <w>verwendung</w>
       <w>vorne</w>
+      <w>weiter</w>
       <w>welche</w>
       <w>werkzeug</w>
       <w>wert</w>

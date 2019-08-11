@@ -11,10 +11,11 @@
         <thead>
         <tr>
           <th class="check">
-            <v-checkbox></v-checkbox>
-            <!--            <v-btn fab small>-->
-            <!--              <v-icon>fa-check</v-icon>-->
-            <!--            </v-btn>-->
+            <v-checkbox
+              :indeterminate="indeterminate"
+              hide-details
+              v-model="toggleAll"
+            />
           </th>
           <th>Adresse</th>
           <th>Name</th>
@@ -54,6 +55,25 @@
         </tbody>
       </table>
     </div>
+
+    <v-divider></v-divider>
+
+    <div class="pt-3">
+      <v-btn
+        :disabled="!projectGroupAddresses || !projectGroupAddresses.some(i => i.selected)"
+        class="right"
+        color="primary"
+      >
+        Ausgewählte Übernehmen
+      </v-btn>
+      <v-btn
+        class="right"
+        color="error"
+        flat
+      >
+        Nichts übernehmen
+      </v-btn>
+    </div>
   </div>
 </template>
 
@@ -78,6 +98,25 @@
             'Nur verwendete ' :
             'Alle im Projekt definierten '
         ) + numberOfGroupAddresses + 'Adressen werden angezeigt'
+      },
+      toggleAll: {
+        get () {
+          if (!this.groupAddresses) {
+            return false
+          }
+
+          return this.groupAddresses.every(i => i.selected)
+        },
+        set (newValue) {
+          this.groupAddresses.forEach(i => i.selected = newValue)
+        }
+      },
+      indeterminate () {
+        if (!this.groupAddresses) {
+          return false
+        }
+
+        return !this.groupAddresses.every(i => i.selected) && this.groupAddresses.some(i => i.selected)
       }
     },
 
@@ -92,7 +131,7 @@
 
 <style scoped>
   #wrapper {
-    max-height: calc(100vh - 355px);
+    max-height: calc(100vh - 420px);
     overflow-y: auto;
   }
 
@@ -117,8 +156,9 @@
   th {
     text-align: left;
     vertical-align: top;
-    background-color: rgba(30, 136, 229, 1);
-    color: #fff;
+    background-color: #eee;
+    color: #666;
+    font-size: 17px;
   }
 
   td {

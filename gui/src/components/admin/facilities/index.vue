@@ -1,27 +1,26 @@
 <template>
-  <v-layout wrap row>
-    <v-flex xs4 class="mb-2 elevation-0">
+  <v-layout row wrap>
+    <v-flex class="mb-2 elevation-0" xs4>
       <facilities-list @facility="facility => select(facility)"/>
     </v-flex>
-    <v-flex xs8 class="pt-4">
+    <v-flex class="pt-4" xs8>
       <add-facility-form
-        v-if="!selectedFacility"
         :showDialog="showAddNewDialog"
-        @add="facility => addFacility(facility)"
         @cancel="() => cancelAddFacility()"
+        v-if="!selectedFacility"
       />
 
       <confirm
-        title="Löschen"
-        description="Löschen XXX"
-        :small="true"
         :fab="true"
+        :small="true"
         @agree="() => removeFacility(selected._id)"
+        description="Löschen XXX"
+        title="Löschen"
         v-if="selectedFacility"
       />
     </v-flex>
 
-    <v-flex xs12 v-if="selected">
+    <v-flex v-if="selected" xs12>
       <facility :facility="selected"/>
     </v-flex>
 
@@ -64,7 +63,6 @@
 
     methods: {
       ...mapActions({
-        add: 'facilities/addAction',
         remove: 'facilities/removeAction',
       }),
 

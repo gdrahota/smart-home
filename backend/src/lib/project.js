@@ -135,4 +135,8 @@ export default class {
 
     return response
   }
+
+  getBuildingParts () {
+    return this.dataObj.getBuildingParts(true)
+  }
 }
