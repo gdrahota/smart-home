@@ -24,7 +24,7 @@
     </v-toolbar>
 
     <v-content align-start>
-      <div class="pl-3 pr-3 pb-3">
+      <div class="pl-3 pr-3">
         <page-header/>
         <router-view/>
       </div>

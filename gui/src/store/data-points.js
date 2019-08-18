@@ -3,6 +3,7 @@ import { sortByAddress } from '../sorters'
 
 const state = {
   loading: true,
+  showOnlyUnusedDataPoints: true,
   items: [],
   dataPointTypes: [
     { value: '1.001', label: '1.001: Ein / Aus' },
@@ -92,12 +93,17 @@ const SOCKET_REMOVE_DATA_POINTS_RESPONSE = (state, response) => {
   state.items = state.item.filter(i => i._id !== response[0])
 }
 
+const setShowOnlyUnusedDataPointsMutation = (state, value) => {
+  this.showOnlyUnusedDataPointsMutation = value
+}
+
 const mutations = {
   setLoading: (state, status) => state.isLoading = status,
   SOCKET_DATA_POINTS_RESPONSE,
   SOCKET_ADD_DATA_POINTS_RESPONSE,
   SOCKET_UPDATE_DATA_POINTS_RESPONSE,
-  SOCKET_REMOVE_DATA_POINTS_RESPONSE
+  SOCKET_REMOVE_DATA_POINTS_RESPONSE,
+  setShowOnlyUnusedDataPointsMutation,
 }
 
 const isAddressAlreadyUsed =
@@ -117,6 +123,7 @@ const getByControlSystemId =
 
 const getters = {
   isLoading: state => state.loading,
+  getShowOnlyUnusedDataPoints: state => state.showOnlyUnusedDataPoints,
   get: state => state.items.sort(sortByAddress),
   getById: state => id => state.items.find(item => item._id === id),
   getByControlSystemId,

@@ -29,7 +29,7 @@
         :key="control._id"
         class="pb-3"
         :class="{ 'pr-0': $vuetify.breakpoint.xsOnly, 'pr-3': !$vuetify.breakpoint.xsOnly }"
-        lg2 md3 sm4 xs6
+        lg3 md3 sm4 xs6
       >
         <control :control="control"/>
       </v-flex>

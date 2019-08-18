@@ -61,6 +61,7 @@
     <div class="pt-3">
       <v-btn
         :disabled="!projectGroupAddresses || !projectGroupAddresses.some(i => i.selected)"
+        @click="continueToNextStep"
         class="right"
         color="primary"
       >
@@ -125,6 +126,21 @@
         showUsedAddressesOnly: true,
       }
     },
+
+    methods: {
+      continueToNextStep () {
+        const transformIntoGroupAddress = etsGroupAddress => {
+          return {
+            etsId: etsGroupAddress.ID,
+            address: etsGroupAddress.address,
+            description: etsGroupAddress.name,
+            dataType: etsGroupAddress.dataPointType ? etsGroupAddress.dataPointType.number.toString() : '',
+          }
+        }
+
+        this.$emit('addGroupAddresses', this.groupAddresses.filter(ga => ga.selected).map(transformIntoGroupAddress))
+      }
+    }
   }
 </script>
 

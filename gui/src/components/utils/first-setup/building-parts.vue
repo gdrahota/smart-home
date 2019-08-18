@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="subheading">Gebäudestruktur</div>
+  <v-card>
+    <v-card-title class="subheading">Räume</v-card-title>
 
     <div class="wrapper">
       <v-treeview
@@ -22,24 +22,22 @@
       </v-treeview>
     </div>
 
-    <div class="pt-3">
+    <v-card-actions class="actions-section">
+      <v-spacer></v-spacer>
       <v-btn
-        @click="moveToNextStep"
-        class="right"
-        color="primary"
-      >
-        {{ selectedNodesNumber }} Gebäudeteile übernehmen
-      </v-btn>
-      <v-btn
-        class="right"
         color="error"
         flat
       >
         Abbrechen
       </v-btn>
-    </div>
-
-  </div>
+      <v-btn
+        @click="moveToNextStep"
+        color="primary"
+      >
+        {{ selectedNodesNumber }} Räume übernehmen
+      </v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>
@@ -94,7 +92,7 @@
   .wrapper {
     border: 1px dotted #bbb;
     border-radius: 4px;
-    height: calc(100vh - 380px);
+    height: calc(100vh - 400px);
     padding: 0 10px;
     margin-top: 10px;
     overflow-y: auto;

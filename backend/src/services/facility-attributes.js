@@ -1,8 +1,10 @@
 import Repository from '../repository/any-collection'
 
-const add = (item, cb) => Repository('facility-attributes').add(item, cb)
+const add = item => Repository('facility-attributes').add(item)
 
 const getAll = cb => Repository('facility-attributes').getAll(cb)
+
+const findOne = searchObj => Repository('facility-attributes').findOne(searchObj)
 
 const remove = (id, cb) => Repository('facility-attributes').remove(id, cb)
 
@@ -11,6 +13,7 @@ const update = (facility, cb) => Repository('facility-attributes').update(facili
 export const FacilityAttributesService = {
   add,
   getAll,
+  findOne,
   remove,
   update
 }

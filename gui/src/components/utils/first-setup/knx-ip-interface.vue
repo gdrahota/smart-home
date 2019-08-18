@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div class="subheading">
+  <v-card>
+    <v-card-title class="subheading">
       <span>Gebäude</span>
       <knx-ip-interface/>
-    </div>
+    </v-card-title>
 
     <v-data-table
       :headers="headers"
@@ -32,25 +32,23 @@
 
     <v-divider></v-divider>
 
-    <div class="pt-3">
+    <v-card-actions class="actions-section">
+      <v-spacer></v-spacer>
       <v-btn
-        :disabled="!selected"
-        @click="moveToNextStep"
-        class="right"
-        color="primary"
-      >
-        Weiter
-      </v-btn>
-      <v-btn
-        class="right"
         color="error"
         flat
       >
         Abbrechen
       </v-btn>
-    </div>
-
-  </div>
+      <v-btn
+        :disabled="!selected"
+        @click="moveToNextStep"
+        color="primary"
+      >
+        Weiter
+      </v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>

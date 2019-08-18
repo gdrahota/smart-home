@@ -37,9 +37,7 @@ export default class {
     this.project = project
 
     // Function to export the project into a JSON file (without functions)
-    this.project.exportToJson = (outputFile) => {
-      return fs.writeFileSync(outputFile, JSON.stringify(this.project, null, 4))
-    }
+    this.project.exportToJson = outputFile => fs.writeFileSync(outputFile, JSON.stringify(this.project, null, 4))
 
     // Function to get general project information
     this.project.getProjectInformation = () => {

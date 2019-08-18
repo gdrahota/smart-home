@@ -9,6 +9,7 @@ import { registerExternalDataSourcesEndpoints } from './external-data-sources'
 import { registerFacilityEndpoints } from './facilities'
 import { registerFacilityAttributeEndpoints } from './facility-attributes'
 import { registerFacilityAttributeValuesEndpoints } from './facility-attribute-values'
+import { registerFileUploadEndpoints } from './file-uploads'
 import { registerScheduleEndpoints } from './schedules'
 import { registerUserEndpoints } from './users'
 import UserService from '../services/clients'
@@ -32,6 +33,7 @@ export const registerEndpoints = () => {
       registerFacilityEndpoints(io, socket)
       registerFacilityAttributeEndpoints(io, socket)
       registerFacilityAttributeValuesEndpoints(io, socket)
+      registerFileUploadEndpoints(io, socket)
       registerScheduleEndpoints(io, socket)
       registerUserEndpoints(io, socket)
     })

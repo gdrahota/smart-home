@@ -1,12 +1,12 @@
 <template>
   <v-card-text fifty>
     <knx-data-point
-      v-for="controlEndPoint of controlEndPoints"
-      :label="controlEndPoint.label"
+      :control="control"
       :dataType="controlEndPoint.dataType"
       :endPoint="controlEndPoint.endPoint"
-      :control="control"
       :key="control._id + controlEndPoint.endPoint"
+      :label="controlEndPoint.label"
+      v-for="controlEndPoint of controlEndPoints"
     />
   </v-card-text>
 </template>

@@ -5,7 +5,6 @@
 
 import ProjectStructure from './projectStructure'
 import ParsedProject from './parsed-project'
-import DecompressZip from 'decompress-zip'
 import util from 'util'
 import sax from 'sax'
 import fs from 'fs'
@@ -18,16 +17,13 @@ const projectParser = async function(etsProjectFilePath, workdir) {
   const self = {}
 
   // Initialisation function
-  const initEtsProjectParser = async (etsProjFilePath, workdir) => {
-    self.etsProjFilePath = etsProjFilePath
+  const initEtsProjectParser = async (workDir, fileName) => {
+    self.etsProjFilePath = workDir + '/' + fileName
     self.workdir = workdir
     self.projectFolder = null
 
     // The parsed project will be stored here
     self.project = new ProjectStructure()
-
-    // Unzip the stream into workdir
-    return unzip()
   }
 
   /* *********+********************************* */
@@ -37,31 +33,6 @@ const projectParser = async function(etsProjectFilePath, workdir) {
   // This function converts a String to Bool ("true" => true, "false" => false, "enabled" => true, ...)
   const strBool = str => {
     return Boolean(str && (str.match(/^true$/i) || str.match(/^enabled$/i) || str === '1'))
-  }
-
-  // This function unzips the stream into workdir
-  const unzip = () => {
-    // Create the unzipper
-    console.log('A', etsProjectFilePath, self.workdir)
-    const unzipper = new DecompressZip(etsProjectFilePath)
-
-    return new Promise((resolve) => {
-      // Install handlers
-      unzipper.on('error', err => {
-        console.log('B')
-        resolve(err)
-      })
-
-      unzipper.on('extract', () => {
-        console.log('C')
-        resolve()
-      })
-
-      // Start the extraction process
-      unzipper.extract({
-        path: self.workdir
-      })
-    })
   }
 
   // This function finds the project information folder
@@ -380,6 +351,7 @@ const projectParser = async function(etsProjectFilePath, workdir) {
         return err
       }
     }
+
     return new ParsedProject(self.project.project).project
   }
 
@@ -387,7 +359,7 @@ const projectParser = async function(etsProjectFilePath, workdir) {
   /* *************************************** */
 
   // Call the init function
-  let ret = await initEtsProjectParser(etsProjectFilePath, workdir)
+  const ret = await initEtsProjectParser(workdir, etsProjectFilePath)
 
   // Return functions/vars that should be public
   return ret || parse

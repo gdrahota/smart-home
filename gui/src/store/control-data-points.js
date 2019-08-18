@@ -54,13 +54,15 @@ const mutations = {
   SOCKET_REMOVE_CONTROL_DATA_POINTS_RESPONSE
 }
 
-const getByControlAndEndPoint = state => (controlId, endPoint) => state.items.find(i => i.control === controlId && i.endPoint === endPoint)
+const getByControlAndEndPoint =
+  state =>
+    (controlId, endPoint) => state.items.find(i => i.control === controlId && i.endPoint === endPoint)
 
 const getters = {
   isLoading: state => state.loading,
   get: state => state.items,
   getUsage: state => dataPointId => state.items.filter(item => item.dataPoint === dataPointId),
-  getByControlAndEndPoint
+  getByControlAndEndPoint,
 }
 
 export default {

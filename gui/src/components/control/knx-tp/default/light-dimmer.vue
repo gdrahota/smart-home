@@ -1,25 +1,25 @@
 <template>
   <v-card>
     <control-header
-      left-icon="fa-lightbulb-o"
-      :left-icon-color="getColor"
-      :label="control.name"
       :control="control"
+      :label="control.name"
+      :left-icon-color="getColor"
+      left-icon="fa-lightbulb-o"
     />
     <v-card-text>
       <div class="pl-1 pr-1 caption grey--text hidden-xs-only">
-        <span v-if="updatedAt" class="float-right">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
+        <span class="float-right" v-if="updatedAt">{{ $moment(updatedAt).format('DD.MM.YY / HH:mm:ss') }}</span>
       </div>
       <br/>
       <v-slider
-        inverse-label
-        v-model="setValue"
-        step="10"
         :label="setValue + ' %'"
+        class="pt-4 mt-0 pl-2"
         color="orange"
         hide-details
-        class="pt-4 mt-0"
-      />
+        inverse-label
+        step="10"
+        v-model="setValue"
+      ></v-slider>
     </v-card-text>
   </v-card>
 </template>

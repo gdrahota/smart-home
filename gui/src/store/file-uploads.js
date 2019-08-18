@@ -13,6 +13,10 @@ const addAction = (context, item) => {
   socket.emit('add.file-upload', item)
 }
 
+const saveNewObjectsAction = (context, setup) => {
+  socket.emit('addObjects.file-upload', setup)
+}
+
 const removeAction = (context, id) => {
   socket.emit('remove.file-upload', id)
 }
@@ -23,6 +27,7 @@ const updateAction = (context, item) => {
 
 const actions = {
   addAction,
+  saveNewObjectsAction,
   updateAction,
   removeAction,
 }
