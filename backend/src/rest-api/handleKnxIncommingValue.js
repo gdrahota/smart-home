@@ -15,12 +15,11 @@ const handleControlValue = async (control, endPoint, value) => {
 }
 
 export const handleKnxValue = async docId => {
-  const valueFromKnx = await ValuesFromKnxService.findOne({ _id: docId })
-
   try {
+    const valueFromKnx = await ValuesFromKnxService.findOne({ _id: docId })
 
     if (!valueFromKnx) {
-      console.log('unknown valueFromKnc._id', docId)
+      console.log('unknown valueFromKnc._id', { _id: docId })
       return
     }
 
@@ -60,8 +59,7 @@ export const handleKnxValue = async docId => {
       // remove the doc, so we know that this data point is registered in our app (but not necessary used in any control)
       await ValuesFromKnxService.remove(docId)
     }
-  }
-  catch (err) {
-    console.log(err, valueFromKnx)
+  } catch (err) {
+    console.log(err)
   }
 }

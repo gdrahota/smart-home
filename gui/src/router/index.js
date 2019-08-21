@@ -31,7 +31,7 @@ const router = new Router({
       },
       children: [
         {
-          path: 'login',
+          path: '/login',
           component: Login,
           name: 'login',
           meta: {

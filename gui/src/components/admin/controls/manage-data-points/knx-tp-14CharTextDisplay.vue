@@ -31,7 +31,7 @@
         controlEndPoints: [
           {
             label: 'Text senden',
-            dataType: '16.000',
+            dataType: '16.001',
             endPoint: 'set-text',
           }
         ]

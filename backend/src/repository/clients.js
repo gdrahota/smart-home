@@ -21,13 +21,16 @@ const logOut = clientId => {
 
 const logOutExpired = actualDate => {
   const query = { expires: { $lte: new Date(actualDate) } }
-  return mongoose.model('client').remove(query)
+  return mongoose.model('client').deleteMany(query)
 }
 
 const updateExpirationDate = (socketId, expires) => {
   const query = { socketId: socketId }
   const update = { $set: { expires: expires } }
-  return mongoose.model('client').findOneAndUpdate(query, update)
+  const options = {
+    useFindAndModify: false,
+  }
+  return mongoose.model('client').findOneAndUpdate(query, update, options)
 }
 
 export default {

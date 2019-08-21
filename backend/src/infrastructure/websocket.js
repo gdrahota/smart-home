@@ -19,13 +19,8 @@ export const bindWebSocketToServer = async server => {
 
       uploader.listen(socket);
 
-      uploader.on('start', event => {
-        console.log('start', event.file);
-      })
-
       // file has been uploaded
       uploader.on('saved', async event => {
-        console.log('saved', event.file);
         await uploadAndAnalyzeEtsProject(socket, event.file)
       })
 

@@ -40,7 +40,7 @@ export const connectToOplog = async () => {
 }
 
 export const handleOplog = () => {
-  oplog.on('insert', doc => {
+  oplog.on('insert', async doc => {
     const nsParts = doc.ns.split('.')
     const collection = nsParts[1]
 
@@ -50,10 +50,10 @@ export const handleOplog = () => {
 
     try {
       if (collection === 'values-from-knx') {
-        handleKnxValue(doc.o._id).then()
+        await handleKnxValue(doc.o._id)
       }
 
-      mongoose
+      await mongoose
         .model(collection)
         .findOne(doc.o)
         .exec(

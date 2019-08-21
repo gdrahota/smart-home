@@ -115,6 +115,7 @@ const getters = {
   getProjectGroupAddresses: state => state.groupAddresses,
   getBuildingParts: state => state.buildingParts,
   getDevices: state => state.devices,
+  getGroupAddressByAddress: state => address => state.groupAddresses ? state.groupAddresses.find(item => item.address === address) : null
 }
 
 export default {

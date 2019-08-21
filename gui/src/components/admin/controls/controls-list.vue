@@ -71,7 +71,7 @@
         return this.controls.map(c => {
           const def = this.getControlDefinition(c.controlType)
           return {
-            text: c.name,
+            text: c.description,
             textType: def.label,
             value: c._id,
             controlType: c.controlType,
@@ -84,7 +84,7 @@
           const selectedControl = this.getSelectedControl
           if (selectedControl) {
             return {
-              text: selectedControl.name,
+              text: selectedControl.description,
               value: selectedControl._id,
               controlType: selectedControl.controlType,
               technology: selectedControl.technology

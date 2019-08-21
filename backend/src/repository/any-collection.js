@@ -14,16 +14,19 @@ const add = collection => item =>
 const remove = collection => _id =>
   mongoose
     .model(collection)
-    .remove({ _id })
+    .deleteOne({ _id })
 
 const update = collection => item =>
   mongoose
     .model(collection)
-    .update({ _id: item._id }, item)
+    .updateOne({ _id: item._id }, item)
 
 const upsertCommand = collection => item => {
   const query = { targetAddress: item.targetAddress }
-  const options = { upsert: true }
+  const options = {
+    upsert: true,
+    useFindAndModify: false,
+  }
 
   return mongoose
     .model(collection)
@@ -35,6 +38,7 @@ const upsert = collection => (item, query) => {
     'new': true,
     upsert: true,
     setDefaultsOnInsert: true,
+    useFindAndModify: false,
   }
 
   return mongoose
@@ -57,7 +61,7 @@ const findOne = collection => searchObj =>
 const removeControlDataPoint = collection => (control, endPoint) =>
   mongoose
     .model(collection)
-    .remove({ control, endPoint })
+    .deleteMany({ control, endPoint })
 
 export default collection => {
   return {

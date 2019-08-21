@@ -1,18 +1,25 @@
 <template>
   <v-layout row wrap>
-    <v-flex xs6 class="pr-3">
+    <v-flex class="pr-3" xs6>
       <v-card tile>
         <v-text-field
-          v-model="controlName"
-          label="Name des Steuerelements"
           class="ml-3 mr-3 pt-5"
           flat
+          label="Kurzname"
+          v-model="controlName"
+        >
+        </v-text-field>
+        <v-text-field
+          class="ml-3 mr-3 pt-5"
+          flat
+          label="Beschreibung"
+          v-model="description"
         >
         </v-text-field>
         <component
-          v-if="control"
-          :is="currentComponent"
           :control="control"
+          :is="currentComponent"
+          v-if="control"
         />
       </v-card>
     </v-flex>
@@ -61,6 +68,16 @@
         },
         set (name) {
           this.update({ ...this.control, name })
+        }
+      },
+      description: {
+        get () {
+          if (this.control) {
+            return this.control.description
+          }
+        },
+        set (description) {
+          this.update({ ...this.control, description })
         }
       },
       currentComponent () {

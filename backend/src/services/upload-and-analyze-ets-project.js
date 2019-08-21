@@ -12,12 +12,11 @@ const unzip = pathAndFileName => {
   return new Promise((resolve) => {
     // Install handlers
     unZipper.on('error', err => {
-      console.log('B')
       resolve(err)
     })
 
-    unZipper.on('extract', (data) => {
-      console.log('file unzipped successfully', data)
+    unZipper.on('extract', () => {
+      console.log('file unzipped successfully')
       resolve(saveToDirectory)
     })
 
@@ -40,7 +39,7 @@ const saveNewFileUpLoad = async (name, inputPathName) => {
 const parseAndSaveProject = async workingDir => {
   try {
     const parser = await projectParser(workingDir, workingDir)
-    return await parser(true)
+    return await parser(false)
   } catch (error) {
     console.log(error)
   }
@@ -66,8 +65,6 @@ export default async (socket, fileEvent) => {
     doc.outputPathName = outputFileName
     await doc.save()
 
-    //console.log('==> 2 file analyzed', doc)
-
     // instantiate the project reader
     const reader = await readProjectFromJson(outputFileName)
 
@@ -77,12 +74,10 @@ export default async (socket, fileEvent) => {
 
     // collect all group addresses
     const groupAddresses = project.getGroupAddresses()
-    //console.log('==> 3 groupAddresses', groupAddresses)
 
     socket.emit('project_group_addresses', groupAddresses)
 
     const buildingParts = project.getBuildingParts()
-    //console.log('==> 4 buildingParts', buildingParts)
 
     socket.emit('setup_building_parts', buildingParts)
 

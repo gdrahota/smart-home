@@ -57,9 +57,7 @@
         v-model="host"
         :disabled="disabled"
         @input="value => updateControlSystem('host', value)"
-        mask="###.###.###.###"
         placeholder="___.___.___.___"
-        return-masked-value
         solo
       ></v-text-field>
     </v-flex>

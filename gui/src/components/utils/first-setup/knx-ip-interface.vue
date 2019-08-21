@@ -35,6 +35,7 @@
     <v-card-actions class="actions-section">
       <v-spacer></v-spacer>
       <v-btn
+        @click="$emit('cancel')"
         color="error"
         flat
       >

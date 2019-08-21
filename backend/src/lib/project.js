@@ -117,23 +117,24 @@ export default class {
 
     const mainDataPointTypeNumber = parseInt(dataPointName.split('-')[1])
 
-    const dataPointType = this.dataObj.getDatapointTypes().find(dataPointType => dataPointType.dptNumber === mainDataPointTypeNumber)
+    // get main DPT
+    const mainDataPointType = this.dataObj.getDatapointTypes().find(dataPointType => dataPointType.dptNumber === mainDataPointTypeNumber)
 
-    if (!dataPointType) {
+    if (!mainDataPointType) {
       return null
     }
 
-    const response = {
-      ID: dataPointType.ID,
-      number: dataPointType.dptNumber,
-      name: dataPointType.dptName,
-      text: dataPointType.dptText,
-      subtype: dataPointType.datapointSubtypes.find(st => st.ID === dataPointName),
-    }
+    const getSubType = subTypeNumber => '.000'.substr(0, 4 - subTypeNumber.toString().length) + subTypeNumber
 
-    delete response.datapointSubtypes
+    // get sub DPT if possible
+    const subtypeObj = mainDataPointType.datapointSubtypes.find(st => st.ID === dataPointName)
 
-    return response
+    // get sub DPT number
+    // defaults to first sub DPT from available option (from main DPT)
+    const subType = subtypeObj ? subtypeObj.subDptNumber : mainDataPointType.datapointSubtypes[0].subDptNumber
+
+    // e.g.: 1.002, 9.007, or 16.000
+    return mainDataPointType.dptNumber + getSubType(subType)
   }
 
   getBuildingParts () {

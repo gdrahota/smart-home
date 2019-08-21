@@ -1,13 +1,17 @@
 import { KnxEventService } from '../services/knx-events'
 import { ValuesFromKnxService } from '../services/values-from-knx'
+import moment from 'moment'
 
 let config
 
-const saveEventToDb = (evt, src, dest, value) => {
+const saveEventToDb = async (evt, src, dest, value) => {
   if (evt === 'readValue') {
     return
   }
-  //console.log('[inbound]', moment().format('HH:mm:ss'), evt, src, dest, value)
+
+  if (src === '2/1/4') {
+    console.log('[inbound]', moment().format('HH:mm:ss'), evt, src, dest, value)
+  }
 
   // upsert doc in 'values-from-knx'
   const valueFromKnx = {
@@ -19,24 +23,22 @@ const saveEventToDb = (evt, src, dest, value) => {
 
   const upsertQuery = { address: dest }
 
-  ValuesFromKnxService
-    .upsert(valueFromKnx, upsertQuery)
-    .then()
-    .catch()
+  try {
+    await ValuesFromKnxService.upsert(valueFromKnx, upsertQuery)
 
-  // insert into 'knx-events'
-  const knxEvent = {
-    controlSystem: config._id,
-    address: dest,
-    rawValue: value,
-    eventType: evt,
-    timestamp: Date()
+    // insert into 'knx-events'
+    const knxEvent = {
+      controlSystem: config._id,
+      address: dest,
+      rawValue: value,
+      eventType: evt,
+      timestamp: Date()
+    }
+
+    await KnxEventService.add(knxEvent)
+  } catch (error) {
+    console.log('ERROR', 'saveEventToDb', error)
   }
-
-  KnxEventService
-    .add(knxEvent)
-    .then()
-    .catch()
 }
 
 export let connection

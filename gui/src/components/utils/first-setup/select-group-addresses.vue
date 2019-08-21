@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="projectGroupAddresses">
     <v-switch
       :label="switchLabel" class="pl-2"
       color="warning"
@@ -20,38 +20,12 @@
           <th>Adresse</th>
           <th>Name</th>
           <th>DPT</th>
-          <th>Name</th>
-          <th>Text</th>
-          <th>Untertyp</th>
         </tr>
         </thead>
         <tbody>
-        <tr
-          v-for="ga of groupAddresses"
-        >
-          <td class="check">
-            <v-checkbox
-              hide-details
-              v-model="ga.selected"
-            ></v-checkbox>
-          </td>
-          <td v-text="ga.address"></td>
-          <td v-text="ga.name"></td>
-          <template v-if="ga.dataPointType">
-            <td v-text="ga.dataPointType.ID"></td>
-            <td v-text="ga.dataPointType.name"></td>
-            <td v-text="ga.dataPointType.text"></td>
-            <template v-if="ga.dataPointType.subtype">
-              <td v-text="ga.dataPointType.subtype.subDptText"></td>
-            </template>
-            <template v-else>
-              <td>&nbsp;</td>
-            </template>
-          </template>
-          <template v-else>
-            <td colspan="4">&nbsp;</td>
-          </template>
-        </tr>
+        <template v-for="ga of groupAddresses">
+          <select-group-address :address="ga.address"/>
+        </template>
         </tbody>
       </table>
     </div>
@@ -68,6 +42,7 @@
         Ausgewählte Übernehmen
       </v-btn>
       <v-btn
+        @click="cancel"
         class="right"
         color="error"
         flat
@@ -80,8 +55,13 @@
 
 <script>
   import { mapGetters } from 'vuex'
+  import SelectGroupAddress from './select-group-address'
 
   export default {
+    components: {
+      SelectGroupAddress,
+    },
+
     computed: {
       ...mapGetters({
         projectGroupAddresses: 'fileUploads/getProjectGroupAddresses',
@@ -134,16 +114,18 @@
             etsId: etsGroupAddress.ID,
             address: etsGroupAddress.address,
             description: etsGroupAddress.name,
-            dataType: etsGroupAddress.dataPointType ? etsGroupAddress.dataPointType.number.toString() : '',
+            dataType: etsGroupAddress.dataPointType,
           }
         }
 
         this.$emit('addGroupAddresses', this.groupAddresses.filter(ga => ga.selected).map(transformIntoGroupAddress))
+      },
+      cancel () {
+        this.$emit('cancel')
       }
     }
   }
 </script>
-
 
 <style scoped>
   #wrapper {

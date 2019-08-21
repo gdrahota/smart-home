@@ -48,7 +48,9 @@ const processNextCommand = () =>
 
 export const startCommandQueueWatcher = () => {
   const run = next => {
-    processNextCommand().then(() => new Promise(resolve => setTimeout(resolve, 200)).then(() => next()))
+    processNextCommand().then(
+      () => new Promise(resolve => setTimeout(resolve, 200)).then(() => next())
+    )
   }
 
   async.forever(run, err => {
@@ -58,7 +60,7 @@ export const startCommandQueueWatcher = () => {
   console.log('| commandQueueWatcher started')
 }
 
-export const requestAllDataPopintValues = async controlSystemId => {
+export const requestAllDataPointValues = async controlSystemId => {
   const endPoints = await getEndPoints(controlSystemId)
   endPoints.forEach(endPoint => {
     const command = {

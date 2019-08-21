@@ -51,26 +51,25 @@
         </v-stepper-content>
 
         <v-stepper-content step="2">
-          <facilities
-            @setFacility="setFacility"
-          />
+          <facilities @cancel="reset" @setFacility="setFacility"/>
         </v-stepper-content>
 
         <v-stepper-content step="3">
-          <building-parts @setBuildingParts="setRooms"/>
+          <building-parts @cancel="reset" @setBuildingParts="setRooms"/>
         </v-stepper-content>
 
         <v-stepper-content step="4">
-          <knx-ip-interface @setKnxIpInterface="setKnxIpInterface"/>
+          <knx-ip-interface @cancel="reset" @setKnxIpInterface="setKnxIpInterface"/>
         </v-stepper-content>
 
         <v-stepper-content step="5">
-          <select-group-addresses @addGroupAddresses="addGroupAddresses"/>
+          <select-group-addresses @addGroupAddresses="addGroupAddresses" @cancel="reset"/>
         </v-stepper-content>
 
         <v-stepper-content step="6">
           <create-selected-objects
             :setup="setup"
+            @cancel="reset"
             @save="save"
             v-if="currentStep === 6"
           />
@@ -188,6 +187,7 @@
           knxIpInterface: null,
           groupAddresses: null,
         }
+        this.currentStep = 1
       },
       save () {
         this.saveNewObjects(this.setup)
