@@ -1062,7 +1062,7 @@ bluebird@3.5.1:
 
 bluebird@~2.2.2:
   version "2.2.2"
-  resolved "http://registry.npmjs.org/bluebird/-/bluebird-2.2.2.tgz#f1bf05abc887cf9a703886237c28610a43b1f114"
+  resolved "https://registry.npmjs.org/bluebird/-/bluebird-2.2.2.tgz#f1bf05abc887cf9a703886237c28610a43b1f114"
 
 body-parser@1.18.2:
   version "1.18.2"
@@ -1771,7 +1771,7 @@ es-to-primitive@^1.1.1:
 
 es6-promise@3.2.1:
   version "3.2.1"
-  resolved "http://registry.npmjs.org/es6-promise/-/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
+  resolved "https://registry.npmjs.org/es6-promise/-/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
 
 escape-html@~1.0.3:
   version "1.0.3"
@@ -1892,7 +1892,7 @@ etag@~1.8.1:
 
 event-stream@~3.3.0:
   version "3.3.4"
-  resolved "http://registry.npmjs.org/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
+  resolved "https://registry.npmjs.org/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
   dependencies:
     duplexer "~0.1.1"
     from "~0"
@@ -3366,7 +3366,7 @@ lodash.sortby@^4.7.0:
 
 lodash@3.x:
   version "3.10.1"
-  resolved "http://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+  resolved "https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
 lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.10"
@@ -3399,7 +3399,7 @@ lru-cache@^4.0.1:
 
 machina@^2.0.0-1:
   version "2.0.2"
-  resolved "http://registry.npmjs.org/machina/-/machina-2.0.2.tgz#aa17a51293abb02313da4e6120f234d3eadbf650"
+  resolved "https://registry.npmjs.org/machina/-/machina-2.0.2.tgz#aa17a51293abb02313da4e6120f234d3eadbf650"
   dependencies:
     lodash "3.x"
 
@@ -3457,8 +3457,9 @@ merge-stream@^1.0.1:
     readable-stream "^2.0.1"
 
 merge@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
+  integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
 
 methods@~1.1.2:
   version "1.1.2"
