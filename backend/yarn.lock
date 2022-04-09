@@ -1062,7 +1062,7 @@ bluebird@3.5.1:
 
 bluebird@~2.2.2:
   version "2.2.2"
-  resolved "http://registry.npmjs.org/bluebird/-/bluebird-2.2.2.tgz#f1bf05abc887cf9a703886237c28610a43b1f114"
+  resolved "https://registry.npmjs.org/bluebird/-/bluebird-2.2.2.tgz#f1bf05abc887cf9a703886237c28610a43b1f114"
 
 body-parser@1.18.2:
   version "1.18.2"
@@ -1771,7 +1771,7 @@ es-to-primitive@^1.1.1:
 
 es6-promise@3.2.1:
   version "3.2.1"
-  resolved "http://registry.npmjs.org/es6-promise/-/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
+  resolved "https://registry.npmjs.org/es6-promise/-/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
 
 escape-html@~1.0.3:
   version "1.0.3"
@@ -1892,7 +1892,7 @@ etag@~1.8.1:
 
 event-stream@~3.3.0:
   version "3.3.4"
-  resolved "http://registry.npmjs.org/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
+  resolved "https://registry.npmjs.org/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
   dependencies:
     duplexer "~0.1.1"
     from "~0"
@@ -3366,7 +3366,7 @@ lodash.sortby@^4.7.0:
 
 lodash@3.x:
   version "3.10.1"
-  resolved "http://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+  resolved "https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
 lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.10"
@@ -3399,7 +3399,7 @@ lru-cache@^4.0.1:
 
 machina@^2.0.0-1:
   version "2.0.2"
-  resolved "http://registry.npmjs.org/machina/-/machina-2.0.2.tgz#aa17a51293abb02313da4e6120f234d3eadbf650"
+  resolved "https://registry.npmjs.org/machina/-/machina-2.0.2.tgz#aa17a51293abb02313da4e6120f234d3eadbf650"
   dependencies:
     lodash "3.x"
 
@@ -3562,13 +3562,10 @@ moment-timezone@^0.5.21, moment-timezone@^0.5.x:
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0", moment@^2.10.6:
-  version "2.22.2"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
-
-moment@^2.23.0:
-  version "2.23.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
+"moment@>= 2.9.0", moment@^2.10.6, moment@^2.29.2:
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
+  integrity sha512-UgzG4rvxYpN15jgCmVJwac49h9ly9NurikMWGPdVxm8GZD6XjkKPxDTjQQ43gtGgnV3X0cAyWDdP2Wexoquifg==
 
 mongo-bcryptjs-user@^2.0.5:
   version "2.0.5"
