@@ -31,7 +31,7 @@
 		"@mdi/font": "^2.5.94",
 		"activedirectory": "^0.7.2",
     "advanced_knx": "^2.3.2",
-		"async": "^2.6.1",
+		"async": "^3.2.2",
 		"bcrypt-nodejs": "0.0.3",
 		"body-parser": "^1.18.3",
 		"connect-history-api-fallback": "^1.5.0",
